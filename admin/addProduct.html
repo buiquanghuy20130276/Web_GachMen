@@ -3,12 +3,7 @@
 
 <head>
     <title>
-        <c:choose>
-            <c:when test="${param.action eq 'getadd'}">Thêm</c:when>
-            <c:when test="${param.action eq 'getupdate'}">Chỉnh sửa</c:when>
-            <c:when test="${param.action eq 'add'}">Thêm </c:when>
-            <c:when test="${param.action eq 'update'}">Chỉnh sửa</c:when>
-        </c:choose> sản phẩm</title>
+        Thêm sản phẩm</title>
     <!-- Bootstrap -->
     <meta charset="utf-8">
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
@@ -54,7 +49,6 @@
             </div>
         </div>
     </div>
-
     <div class="span3" id="sidebar">
         <ul class="nav nav-list bs-docs-sidenav nav-collapse collapse">
             <li>
@@ -88,13 +82,13 @@
                 <a href="interface.html"><i class="icon-chevron-right"></i> UI & Interface</a>
             </li>
             <li>
-                <a href="#"><span class="badge badge-success pull-right"></span> Đơn đặt hàng</a>
+                <a href="DetailOrder.html"><span class="badge badge-success pull-right"></span> Đơn đặt hàng</a>
             </li>
             <li>
                 <a href="#"><span class="badge badge-info pull-right"></span> Users</a>
             </li>
             <li>
-                <a href="#"><span class="badge badge-info pull-right"></span> Liên hệ</a>
+                <a href="DetailContact.html"><span class="badge badge-info pull-right"></span> Liên hệ</a>
             </li>
             <li>
                 <a href="#"><span class="badge badge-info pull-right"></span> Sản phẩm</a>
@@ -111,12 +105,7 @@
                     <div class="block">
                         <div class="navbar navbar-inner block-header">
                             <div class="muted pull-left">
-                                <c:choose>
-                                    <c:when test="${param.action eq 'getadd'}">Thêm</c:when>
-                                    <c:when test="${param.action eq 'getupdate'}">Chỉnh sửa</c:when>
-                                    <c:when test="${param.action eq 'add'}">Thêm </c:when>
-                                    <c:when test="${param.action eq 'update'}">Chỉnh sửa</c:when>
-                                </c:choose> sản phẩm</div>
+                                Thêm sản phẩm</div>
                         </div>
                         <div class="block-content collapse in">
                             <div class="span12">
@@ -125,115 +114,102 @@
                                 </h4>
                                 <form class="form-horizontal" action="AddOrUpdateProductAd" method="get">
                                     <fieldset>
-                                        <legend>
+                                        <!-- <legend>
                                             <c:choose>
                                                 <c:when test="${param.action eq 'getadd'}">Thêm</c:when>
                                                 <c:when test="${param.action eq 'getupdate'}">Chỉnh sửa</c:when>
                                                 <c:when test="${param.action eq 'add'}">Thêm </c:when>
                                                 <c:when test="${param.action eq 'update'}">Chỉnh sửa </c:when>
-                                            </c:choose> sản phẩm</legend>
-                                        <input style="display: block" name="action" value="<c:choose><c:when test=" ${param.action eq 'getadd'} ">add</c:when><c:when test="${param.action eq 'getupdate'} ">update</c:when><c:when test="${param.action eq 'add'} ">add</c:when><c:when test="${param.action
+                                            </c:choose> sản phẩm</legend> -->
+                                        <!-- <input style="display: block" name="action" value="<c:choose><c:when test=" ${param.action eq 'getadd'} ">add</c:when><c:when test="${param.action eq 'getupdate'} ">update</c:when><c:when test="${param.action eq 'add'} ">add</c:when><c:when test="${param.action
                                             eq 'update'} ">update</c:when></c:choose>">
                                         <c:choose>
                                             <c:when test="${param.action eq 'getupdate'}"><input style="display: none" name="id" value="<%=request.getParameter(" id ")%>"></c:when>
                                             <c:when test="${param.action eq 'update'}"><input style="display: none" name="id" value="<%=request.getParameter(" id ")%>"></c:when>
-                                        </c:choose>
+                                        </c:choose> -->
                                         <div class="control-group">
-                                            <label class="control-label" for="productname">Tên sách (*) </label>
+                                            <label class="control-label" for="productname">Tên Gạch (*) </label>
                                             <div class="controls">
                                                 <input type="text" name="productname" class="span6" id="productname" placeholder="Nhập tên sách" value="">
                                             </div>
                                         </div>
                                         <div class="control-group">
-                                            <label class="control-label" for="publisher">Nhà xuất bản (*) </label>
+                                            <label class="control-label" for="type">Loại gạch </label>
                                             <div class="controls">
-                                                <input type="text" name="publisher" class="span6" id="publisher" placeholder="Nhập nhà xuất bản" value="">
-                                            </div>
-                                        </div>
-                                        <div class="control-group">
-                                            <label class="control-label" for="author">Tác giả (*) </label>
-                                            <div class="controls">
-                                                <input type="text" name="author" class="span6" id="author" placeholder="Nhập tác giả" value="<%=request.getParameter(" author ")==null? " ":request.getParameter("author ")%>">
-                                            </div>
-                                        </div>
-                                        <div class="control-group">
-                                            <label class="control-label" for="type">Thể loại</label>
-                                            <div class="controls">
-                                                <select id="type" class="chzn-select" name="type">
-                                                    <option value="Chính Trị" <c:if test="${param.type eq 'Chính Trị'}">selected="selected"</c:if>>Chính Trị</option>
-                                                    <option value="Triết Học" <c:if test="${param.type eq 'Triết Học'}">selected="selected"</c:if>>Triết Học</option>
-                                                    <option value="Pháp Luật" <c:if test="${param.type eq 'Pháp Luật'}">selected="selected"</c:if>>Pháp Luật</option>
-                                                    <option value="Đời Sống" <c:if test="${param.type eq 'Đời Sống'}">selected="selected"</c:if>>Đời Sống</option>
-                                                    <option value="Tình Yêu Gia Đình" <c:if test="${param.type eq 'Tình Yêu Gia Đình'}">selected="selected"</c:if>>Tình Yêu & Gia Đình</option>
-                                                    <option value="Kinh Dị" <c:if test="${param.type eq 'Kinh Dị'}">selected="selected"</c:if>>Kinh Dị</option>
-                                                    <option value="Tiểu Thuyết" <c:if test="${param.type eq 'Tiểu Thuyết'}">selected="selected"</c:if>>Tiểu Thuyết</option>
-                                                    <option value="Giáo Trình" <c:if test="${param.type eq 'Giáo Trình'}">selected="selected"</c:if>>Giáo Trình</option>
-                                                    <option value="Từ Điển Bách Khoa" <c:if test="${param.type eq 'Từ Điển Bách Khoa'}">selected="selected"</c:if>>Từ Điển Bách Khoa</option>
-                                                    <option value="Sách Giải" <c:if test="${param.type eq 'Sách Giải'}">selected="selected"</c:if>>Sách Giải</option>
-                                                    <option value="Sinh Tồn" <c:if test="${param.type eq 'Sinh Tồn'}">selected="selected"</c:if>>Sinh Tồn</option>
-                                                    <option value="Làm Giàu" <c:if test="${param.type eq 'Làm Giàu'}">selected="selected"</c:if>>Làm Giàu</option>
-                                                    <option value="Nấu Ăn" <c:if test="${param.type eq 'Nấu Ăn'}">selected="selected"</c:if>>Nấu Ăn</option>
-                                                    <option value="Sách Giáo Khoa" <c:if test="${param.type eq 'Sách Giáo Khoa'}">selected="selected"</c:if>>Sách Giáo Khoa</option>
-                                                    <option value="Học Tập" <c:if test="${param.type eq 'Học Tập'}">selected="selected"</c:if>>Học Tập</option>
+                                                <select id="type" class="chzn-select" name="type" style="width:49% ;">
+                                                    <option value="Lát nền">Lát nền</option>
+                                                    <option value="Ốp tường">Ốp tường</option>
+                                                    <option value="Trang trí">Trang trí</option>
+                                                    <option value="Vân gỗ">Vân gỗ</option>
+
+                                                   
                                                 </select>
                                             </div>
                                         </div>
+
                                         <div class="control-group">
-                                            <label class="control-label" for="publishingyear">Năm xuất bản (*) </label>
+                                            <label class="control-label" for="type">Kích thước </label>
                                             <div class="controls">
-                                                <input type="text" name="publishingyear" class="span6" id="publishingyear" placeholder="Nhập năm xuất bản" value="">
+                                                <select id="type" class="chzn-select" name="type" style="width:49% ;">
+                                                    <option value="600x600">600 x 600</option>
+                                                    <option value="800x800">800 x 800</option>
+                                                    <option value="600x1200">600 x 1200</option>
+                                                    <option value="300x600">300 x 600</option>
+                                                    <option value="300x800">300 x 800</option>
+                                                    <option value="150x900">150 x 900</option>
+                                                    <option value="150x800">150 x 800</option>
+                                                    <option value="200x1200">200 x 1200</option>
+                                                    <option value="200x200">200 x 200</option>
+                                                    <option value="200x230">200 x 230</option>
+                                                    
+                                                    
+                                                    
+                                                    <!-- <option value="Nấu Ăn" <c:if test="${param.type eq 'Nấu Ăn'}">selected="selected"</c:if>>Nấu Ăn</option>
+                                                    <option value="Sách Giáo Khoa" <c:if test="${param.type eq 'Sách Giáo Khoa'}">selected="selected"</c:if>>Sách Giáo Khoa</option>
+                                                    <option value="Học Tập" <c:if test="${param.type eq 'Học Tập'}">selected="selected"</c:if>>Học Tập</option> -->
+                                                </select>
                                             </div>
                                         </div>
+
                                         <div class="control-group">
                                             <label class="control-label" for="price">Giá tiền (*) </label>
                                             <div class="controls">
-                                                <input type="number" name="price" class="span6" id="price" placeholder="Nhập giá tiền" value="<%=request.getParameter(" price ")==null? " ":request.getParameter("price ")%>">
+                                                <input type="number" name="price" class="span6" id="price" placeholder="Nhập giá tiền" value="">
                                             </div>
                                         </div>
                                         <div class="control-group">
                                             <label class="control-label" for="quantity">Số lượng (*) </label>
                                             <div class="controls">
-                                                <input type="number" name="quantity" class="span6" id="quantity" placeholder="Nhập số lượng" value="<%=request.getParameter(" quantity ")==null? " ":request.getParameter("quantity ")%>">
+                                                <input type="number" name="quantity" class="span6" id="quantity" placeholder="Nhập số lượng" value="">
                                             </div>
                                         </div>
                                         <div class="control-group">
-                                            <label class="control-label" for="link1">Link ảnh sách 1(*) </label>
+                                            <label class="control-label" for="link1">Link ảnh gạch 1(*) </label>
                                             <div class="controls">
-                                                <input type="text" name="link1" class="span6" id="link1" placeholder="Nhập link ảnh sách" value="<%=request.getParameter(" link1 ")==null? " ":request.getParameter("link1 ")%>">
+                                                <input type="text" name="link1" class="span6" id="link1" placeholder="Nhập link ảnh sách" value="">
                                             </div>
                                         </div>
                                         <div class="control-group">
-                                            <label class="control-label" for="link2">Link ảnh sách 2(*) </label>
+                                            <label class="control-label" for="link2">Link ảnh gạch 2(*) </label>
                                             <div class="controls">
-                                                <input type="text" name="link2" class="span6" id="link2" placeholder="Nhập link ảnh sách" value="<%=request.getParameter(" link2 ")==null? " ":request.getParameter("link2 ")%>">
+                                                <input type="text" name="link2" class="span6" id="link2" placeholder="Nhập link ảnh sách" value="">
                                             </div>
                                         </div>
                                         <div class="control-group">
-                                            <label class="control-label" for="link3">Link ảnh sách 3(*) </label>
+                                            <label class="control-label" for="link3">Link ảnh gạch 3(*) </label>
                                             <div class="controls">
-                                                <input type="text" name="link3" class="span6" id="link3" placeholder="Nhập link ảnh sách" value="<%=request.getParameter(" link3 ")==null? " ":request.getParameter("link3 ")%>">
+                                                <input type="text" name="link3" class="span6" id="link3" placeholder="Nhập link ảnh sách" value="">
                                             </div>
                                         </div>
                                         <div class="control-group">
                                             <label class="control-label" for="description">Mô tả (*) </label>
                                             <div class="controls">
-                                                <textarea rows="100" cols="200" name="description" id="description" class="description" placeholder="Nhập mô tả" style="width: 810px; height: 200px"><%=request.getParameter("description")==null? "":request.getParameter("description")%></textarea>
+                                                <textarea rows="100" cols="200" name="description" id="description" class="description" placeholder="Nhập mô tả" style="width: 810px; height: 200px"></textarea>
                                             </div>
                                         </div>
-                                        <!--                                    <div class="control-group">-->
-                                        <!--                                        <label class="control-label" for="date01">Ngày sinh</label>-->
-                                        <!--                                        <div class="controls">-->
-                                        <!--                                            <input type="text" class="input-xlarge datepicker" id="date01">-->
-                                        <!--                                        </div>-->
-                                        <!--                                    </div>-->
-                                        <!--                                    <div class="control-group">-->
-                                        <!--                                        <label class="control-label" for="fileInput">File input</label>-->
-                                        <!--                                        <div class="controls">-->
-                                        <!--                                            <input class="input-file uniform_on" id="fileInput" type="file">-->
-                                        <!--                                        </div>-->
-                                        <!--                                    </div>-->
-                                        <div class="form-actions">
-                                            <button type="submit" class="btn btn-primary"><c:choose><c:when test="${param.action eq 'getadd'}">Thêm </c:when><c:when test="${param.action eq 'getupdate'}">Chỉnh sửa </c:when><c:when test="${param.action eq 'add'}">Thêm </c:when><c:when test="${param.action eq 'update'}">Chỉnh sửa </c:when></c:choose>sản phẩm</button>
+
+                                        <div class="form-actions" style="background-color: white;">
+                                            <button type="submit" class="btn btn-primary">Thêm sản phẩm</button>
                                         </div>
                                     </fieldset>
                                 </form>

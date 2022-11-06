@@ -81,13 +81,13 @@
                 <a href="interface.html"><i class="icon-chevron-right"></i> UI & Interface</a>
             </li>
             <li>
-                <a href="#"><span class="badge badge-success pull-right"></span> Đơn đặt hàng</a>
+                <a href="DetailOrder.html"><span class="badge badge-success pull-right"></span> Đơn đặt hàng</a>
             </li>
             <li>
                 <a href="#"><span class="badge badge-info pull-right"></span> Users</a>
             </li>
             <li>
-                <a href="#"><span class="badge badge-info pull-right"></span> Liên hệ</a>
+                <a href="DetailContact.html"><span class="badge badge-info pull-right"></span> Liên hệ</a>
             </li>
             <li>
                 <a href="#"><span class="badge badge-info pull-right"></span> Sản phẩm</a>
@@ -107,45 +107,44 @@
                         </div>
                         <div class="block-content collapse in">
                             <div class="span12">
-                                <h4 style="color:#62ab00;">
+                                <!-- <h4 style="color:#62ab00;">
                                     <%=request.getAttribute("err")==null? "":request.getAttribute("err")%>
                                 </h4>
                                 <h4 style="color:red;">
                                     <%=request.getAttribute("message")==null? "":request.getAttribute("message")%>
-                                </h4>
+                                </h4> -->
                                 <form class="form-horizontal" action="ReplyContact" method="get">
                                     <fieldset>
                                         <legend>Phản hồi liên hệ</legend>
-                                        <input style="display: none" name="action" value="<c:choose><c:when test=" ${param.action eq 'getcontact'} ">replycontact</c:when><c:when test="${param.action eq 'replycontact'} ">replycontact</c:when></c:choose>">
-                                        <input style="display: none" name="id" value="<%=request.getParameter(" id ")%>">
+
                                         <div class="control-group">
                                             <label class="control-label" for="fullname">Họ và tên </label>
                                             <div class="controls">
-                                                <input type="text" class="span6" id="fullname" placeholder="Nhập họ và tên" value="<%=request.getParameter(" fullname ")==null? " ":request.getParameter("fullname ")%>" readonly>
+                                                <input type="text" class="span6" id="fullname" placeholder="Nhập họ và tên" value="" readonly>
                                             </div>
                                         </div>
                                         <div class="control-group">
                                             <label class="control-label" for="email">Email </label>
                                             <div class="controls">
-                                                <input type="text" class="span6" id="email" placeholder="Nhập email" value="<%=request.getParameter(" email ")==null? " ":request.getParameter("email ")%>" readonly>
+                                                <input type="text" class="span6" id="email" placeholder="Nhập email" value="" readonly>
                                             </div>
                                         </div>
                                         <div class="control-group">
                                             <label class="control-label" for="usersubject">Tiêu đề liên hệ </label>
                                             <div class="controls">
-                                                <input type="text" name="usersubject" class="span6" id="usersubject" placeholder="Nhập email" value="<%=request.getParameter(" usersubject ")==null? " ":request.getParameter("usersubject ")%>" readonly>
+                                                <input type="text" name="usersubject" class="span6" id="usersubject" placeholder="Nhập email" value="" readonly>
                                             </div>
                                         </div>
                                         <div class="control-group">
                                             <label class="control-label" for="contactcontent">Chi tiết liên hệ </label>
                                             <div class="controls">
-                                                <textarea rows="100" cols="200" id="contactcontent" class="description" placeholder="Nhập mô tả" style="width: 810px; height: 200px" readonly><%=request.getParameter("contactcontent")==null? "":request.getParameter("contactcontent")%></textarea>
+                                                <textarea rows="100" cols="200" id="contactcontent" class="description" placeholder="Nhập mô tả" style="width: 810px; height: 200px" readonly></textarea>
                                             </div>
                                         </div>
                                         <div class="control-group">
                                             <label class="control-label" for="replytext">Phản hồi (*) </label>
                                             <div class="controls">
-                                                <textarea rows="100" cols="200" name="replytext" id="replytext" class="description" placeholder="Nhập phản hồi" style="width: 810px; height: 200px"><%=request.getParameter("replytext")==null? "":request.getParameter("replytext")%></textarea>
+                                                <textarea rows="100" cols="200" name="replytext" id="replytext" class="description" placeholder="Nhập phản hồi" style="width: 810px; height: 200px"></textarea>
                                             </div>
                                         </div>
                                         <!--                                    <div class="control-group">-->
@@ -160,7 +159,7 @@
                                         <!--                                            <input class="input-file uniform_on" id="fileInput" type="file">-->
                                         <!--                                        </div>-->
                                         <!--                                    </div>-->
-                                        <div class="form-actions">
+                                        <div class="form-actions" style="background-color: white;">
                                             <button type="submit" class="btn btn-primary">Gửi phản hồi</button>
                                         </div>
                                     </fieldset>
@@ -173,7 +172,7 @@
             </div>
         </div>
         <hr>
-        <jsp:include page="footer.jsp" />
+        <!-- <jsp:include page="footer.jsp" /> -->
     </div>
 
     <!--/.fluid-container-->
