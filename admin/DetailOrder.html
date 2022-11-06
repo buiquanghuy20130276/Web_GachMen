@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Chi tiết đơn hàng</title>
+    <!-- Bootstrap -->
+    <meta charset="utf-8">
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" media="screen">
+    <link href="assets/styles.css" rel="stylesheet" media="screen">
+    <link href="assets/DT_bootstrap.css" rel="stylesheet" media="screen">
+    <!--[if lte IE 8]><script language="javascript" type="text/javascript" src="vendors/flot/excanvas.min.js"></script><![endif]-->
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <script src="vendors/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container-fluid">
+                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </a>
+                <a class="brand" href="#">Admin Truemart</a>
+                <div class="nav-collapse collapse">
+                    <ul class="nav pull-right">
+                        <li class="dropdown">
+                            <a href="#" role="button" class="dropdown-toggle" data-toggle="dropdown"> <i class="icon-user"></i>Quang Huy<i class="caret"></i>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a tabindex="-1" href="">Thông tin cá nhân</a>
+                                </li>
+                                <li class="divider"></li>
+                                <li>
+                                    <a tabindex="-1" href="">Đăng xuất</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                </c:if>
+                <!--/.nav-collapse -->
+            </div>
+        </div>
+    </div>
+
+    <div class="span3" id="sidebar">
+        <ul class="nav nav-list bs-docs-sidenav nav-collapse collapse">
+            <li>
+                <a href="index.html"><i class="icon-chevron-right"></i> Trang chủ</a>
+            </li>
+            <li>
+                <a href="index.html"><i class="icon-chevron-right"></i> Thông tin chung</a>
+            </li>
+            <li>
+                <a href="calendar.html"><i class="icon-chevron-right"></i> Lịch</a>
+            </li>
+            <li>
+                <a href="statistical.html"><i class="icon-chevron-right"></i> Thống kê</a>
+            </li>
+            <li>
+                <a href="ManagerMember.html"><i class="icon-chevron-right"></i> Quản lý thành viên</a>
+            </li>
+            <li>
+                <a href="ManagerProduct.html"><i class="icon-chevron-right"></i> Quản lý sản phẩm</a>
+            </li>
+            <li>
+                <a href="ManagerContact.html"><i class="icon-chevron-right"></i> Quản lý đơn hàng</a>
+            </li>
+            <li>
+                <a href="ManagerContact.html"><i class="icon-chevron-right"></i> Quản lý liên hệ</a>
+            </li>
+            <li>
+                <a href="button.html"><i class="icon-chevron-right"></i> Buttons & Icons</a>
+            </li>
+            <li>
+                <a href="interface.html"><i class="icon-chevron-right"></i> UI & Interface</a>
+            </li>
+            <li>
+                <a href="DetailOrder.html"><span class="badge badge-success pull-right"></span> Đơn đặt hàng</a>
+            </li>
+            <li>
+                <a href="#"><span class="badge badge-info pull-right"></span> Users</a>
+            </li>
+            <li>
+                <a href="DetailContact.html"><span class="badge badge-info pull-right"></span> Liên hệ</a>
+            </li>
+            <li>
+                <a href="#"><span class="badge badge-info pull-right"></span> Sản phẩm</a>
+            </li>
+        </ul>
+    </div>
+    <div class="container-fluid">
+        <div class="row-fluid">
+            <jsp:include page="menu.jsp" />
+            <!--/span-->
+            <div class="span9" id="content">
+                <div class="row-fluid">
+                    <!-- block -->
+                    <div class="block">
+                        <div class="navbar navbar-inner block-header">
+                            <div class="muted pull-left">Chi tiết đơn hàng</div>
+                        </div>
+                        <div class="block-content collapse in">
+                            <div class="span12">
+                                <div class="info-user">
+                                    <h5><a style="color: blue">Họ và tên:</a>
+
+                                    </h5>
+                                    <h5><a style="color: blue">Địa chỉ:</a>
+
+                                    </h5>
+                                    <h5><a style="color: blue">Số điện thoại:</a>
+
+                                    </h5>
+                                    <h5><a style="color: blue">Ngày đặt hàng:</a>
+
+                                    </h5>
+                                </div>
+                                <div class="table-toolbar">
+                                    <div class="btn-group" style="visibility: hidden">
+                                        <a href="#"><button class="btn btn-success"><i class="icon-plus icon-white"></i></button></a>
+                                    </div>
+                                    <div class="btn-group pull-right">
+                                        <button data-toggle="dropdown" class="btn dropdown-toggle">Công cụ <span class="caret"></span></button>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="#">In</a></li>
+                                            <li><a href="#">Lưu file PDF</a></li>
+                                            <li><a href="#">Xuất ra Excel</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <table cellpadding="0" cellspacing="0" border="0" class="table table-bordered" id="example2">
+                                    <thead>
+                                        <tr>
+                                            <th>Tên gạch</th>
+                                            <th>Số lượng</th>
+                                            <th>Giá tiền</th>
+
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <c:forEach items="${listOrderDetails}" var="orderDetail">
+                                            <tr>
+                                                <!-- <td>${orderDetail.nameProduct}</td>
+                                                <td>${orderDetail.productQuantity}</td>
+                                                <td>${orderDetail.totalPrice} vnđ</td> -->
+                                            </tr>
+                                        </c:forEach>
+                                    </tbody>
+                                </table>
+                                <div class="info-price">
+                                    <div>
+
+                                    </div>
+                                    <div>
+                                        <h5><a style="color: blue">Phí vận chuyển:</a>
+                                        </h5>
+                                    </div>
+                                    <div>
+                                        <h5><a style="color: blue">Tổng tiền:</a>
+                                        </h5>
+                                    </div>
+                                </div>
+                                <div id="id01" class="modal">
+                                    <!-- Modal Content -->
+                                    <form class="modal-content animate" action="">
+                                        <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+                                        <div class="header-modal">
+                                            <h3>Bạn có chắc là muốn xóa đơn hàng này</h3>
+                                        </div>
+                                        <div class="button-group">
+                                            <button class="btn-yes">Có</button>
+                                            <button class="btn-no" onclick="document.getElementById('id01').style.display='none'">Không</button>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div id="id02" class="modal">
+                                    <!-- Modal Content -->
+                                    <form class="modal-content animate" action="">
+                                        <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
+                                        <div class="header-modal">
+                                            <h3>Bạn có chắc là muốn khóa đơn hàng này</h3>
+                                        </div>
+                                        <div class="button-group">
+                                            <button class="btn-yes">Có</button>
+                                            <button class="btn-no" onclick="document.getElementById('id02').style.display='none'">Không</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /block -->
+                </div>
+            </div>
+        </div>
+        <hr>
+        <jsp:include page="footer.jsp" />
+    </div>
+    <!--/.fluid-container-->
+
+    <script src="Admin/vendors/jquery-1.9.1.js"></script>
+    <script src="Admin/bootstrap/js/bootstrap.min.js"></script>
+    <script src="Admin/vendors/datatables/js/jquery.dataTables.min.js"></script>
+
+
+    <script src="Admin/assets/scripts.js"></script>
+    <script src="Admin/assets/DT_bootstrap.js"></script>
+    <script>
+        // $(document).ready( function () {
+        //     $('#example2').DataTable();
+        // } );
+    </script>
+    <script>
+        // Get the modal
+        var modal = document.getElementById('id01');
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
+            // Get the modal
+        var modal2 = document.getElementById('id02');
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            if (event.target == modal2) {
+                modal2.style.display = "none";
+            }
+        }
+    </script>
+    <script>
+        $(document).ready(function() {
+            $(".text-danger").click(function() {
+                document.getElementById('id01').style.display = 'block'
+            });
+            $(".text-lock").click(function() {
+                document.getElementById('id02').style.display = 'block'
+            });
+        })
+    </script>
+</body>
+
+</html>

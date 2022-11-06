@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        Thêm sản phẩm</title>
+    <!-- Bootstrap -->
+    <meta charset="utf-8">
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" media="screen">
+    <link href="assets/styles.css" rel="stylesheet" media="screen">
+    <!--[if lte IE 8]><script language="javascript" type="text/javascript" src="vendors/flot/excanvas.min.js"></script><![endif]-->
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <script src="Avendors/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+    <script src="ckeditor/ckeditor.js"></script>
+</head>
+
+<body>
+    <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container-fluid">
+                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </a>
+                <a class="brand" href="#">Admin Truemart</a>
+                <div class="nav-collapse collapse">
+                    <ul class="nav pull-right">
+                        <li class="dropdown">
+                            <a href="#" role="button" class="dropdown-toggle" data-toggle="dropdown"> <i class="icon-user"></i>Quang Huy<i class="caret"></i>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a tabindex="-1" href="">Thông tin cá nhân</a>
+                                </li>
+                                <li class="divider"></li>
+                                <li>
+                                    <a tabindex="-1" href="">Đăng xuất</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                </c:if>
+                <!--/.nav-collapse -->
+            </div>
+        </div>
+    </div>
+    <div class="span3" id="sidebar">
+        <ul class="nav nav-list bs-docs-sidenav nav-collapse collapse">
+            <li>
+                <a href="index.html"><i class="icon-chevron-right"></i> Trang chủ</a>
+            </li>
+            <li>
+                <a href="index.html"><i class="icon-chevron-right"></i> Thông tin chung</a>
+            </li>
+            <li>
+                <a href="calendar.html"><i class="icon-chevron-right"></i> Lịch</a>
+            </li>
+            <li>
+                <a href="statistical.html"><i class="icon-chevron-right"></i> Thống kê</a>
+            </li>
+            <li>
+                <a href="ManagerMember.html"><i class="icon-chevron-right"></i> Quản lý thành viên</a>
+            </li>
+            <li>
+                <a href="ManagerProduct.html"><i class="icon-chevron-right"></i> Quản lý sản phẩm</a>
+            </li>
+            <li>
+                <a href="ManagerContact.html"><i class="icon-chevron-right"></i> Quản lý đơn hàng</a>
+            </li>
+            <li>
+                <a href="ManagerContact.html"><i class="icon-chevron-right"></i> Quản lý liên hệ</a>
+            </li>
+            <li>
+                <a href="button.html"><i class="icon-chevron-right"></i> Buttons & Icons</a>
+            </li>
+            <li>
+                <a href="interface.html"><i class="icon-chevron-right"></i> UI & Interface</a>
+            </li>
+            <li>
+                <a href="DetailOrder.html"><span class="badge badge-success pull-right"></span> Đơn đặt hàng</a>
+            </li>
+            <li>
+                <a href="#"><span class="badge badge-info pull-right"></span> Users</a>
+            </li>
+            <li>
+                <a href="DetailContact.html"><span class="badge badge-info pull-right"></span> Liên hệ</a>
+            </li>
+            <li>
+                <a href="#"><span class="badge badge-info pull-right"></span> Sản phẩm</a>
+            </li>
+        </ul>
+    </div>
+    <div class="container-fluid">
+        <div class="row-fluid">
+            <jsp:include page="menu.jsp" />
+            <!--/span-->
+            <div class="span9" id="content">
+                <div class="row-fluid">
+                    <!-- block -->
+                    <div class="block">
+                        <div class="navbar navbar-inner block-header">
+                            <div class="muted pull-left">
+                                Thêm sản phẩm</div>
+                        </div>
+                        <div class="block-content collapse in">
+                            <div class="span12">
+                                <h4>
+                                    <!-- <%=request.getAttribute("err")==null? "":request.getAttribute("err")%> -->
+                                </h4>
+                                <form class="form-horizontal" action="AddOrUpdateProductAd" method="get">
+                                    <fieldset>
+                                        <!-- <legend>
+                                            <c:choose>
+                                                <c:when test="${param.action eq 'getadd'}">Thêm</c:when>
+                                                <c:when test="${param.action eq 'getupdate'}">Chỉnh sửa</c:when>
+                                                <c:when test="${param.action eq 'add'}">Thêm </c:when>
+                                                <c:when test="${param.action eq 'update'}">Chỉnh sửa </c:when>
+                                            </c:choose> sản phẩm</legend> -->
+                                        <!-- <input style="display: block" name="action" value="<c:choose><c:when test=" ${param.action eq 'getadd'} ">add</c:when><c:when test="${param.action eq 'getupdate'} ">update</c:when><c:when test="${param.action eq 'add'} ">add</c:when><c:when test="${param.action
+                                            eq 'update'} ">update</c:when></c:choose>">
+                                        <c:choose>
+                                            <c:when test="${param.action eq 'getupdate'}"><input style="display: none" name="id" value="<%=request.getParameter(" id ")%>"></c:when>
+                                            <c:when test="${param.action eq 'update'}"><input style="display: none" name="id" value="<%=request.getParameter(" id ")%>"></c:when>
+                                        </c:choose> -->
+                                        <div class="control-group">
+                                            <label class="control-label" for="productname">Tên Gạch (*) </label>
+                                            <div class="controls">
+                                                <input type="text" name="productname" class="span6" id="productname" placeholder="Nhập tên sách" value="">
+                                            </div>
+                                        </div>
+                                        <div class="control-group">
+                                            <label class="control-label" for="type">Loại gạch </label>
+                                            <div class="controls">
+                                                <select id="type" class="chzn-select" name="type" style="width:49% ;">
+                                                    <option value="Lát nền">Lát nền</option>
+                                                    <option value="Ốp tường">Ốp tường</option>
+                                                    <option value="Trang trí">Trang trí</option>
+                                                    <option value="Vân gỗ">Vân gỗ</option>
+
+                                                   
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="control-group">
+                                            <label class="control-label" for="type">Kích thước </label>
+                                            <div class="controls">
+                                                <select id="type" class="chzn-select" name="type" style="width:49% ;">
+                                                    <option value="600x600">600 x 600</option>
+                                                    <option value="800x800">800 x 800</option>
+                                                    <option value="600x1200">600 x 1200</option>
+                                                    <option value="300x600">300 x 600</option>
+                                                    <option value="300x800">300 x 800</option>
+                                                    <option value="150x900">150 x 900</option>
+                                                    <option value="150x800">150 x 800</option>
+                                                    <option value="200x1200">200 x 1200</option>
+                                                    <option value="200x200">200 x 200</option>
+                                                    <option value="200x230">200 x 230</option>
+                                                    
+                                                    
+                                                    
+                                                    <!-- <option value="Nấu Ăn" <c:if test="${param.type eq 'Nấu Ăn'}">selected="selected"</c:if>>Nấu Ăn</option>
+                                                    <option value="Sách Giáo Khoa" <c:if test="${param.type eq 'Sách Giáo Khoa'}">selected="selected"</c:if>>Sách Giáo Khoa</option>
+                                                    <option value="Học Tập" <c:if test="${param.type eq 'Học Tập'}">selected="selected"</c:if>>Học Tập</option> -->
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="control-group">
+                                            <label class="control-label" for="price">Giá tiền (*) </label>
+                                            <div class="controls">
+                                                <input type="number" name="price" class="span6" id="price" placeholder="Nhập giá tiền" value="">
+                                            </div>
+                                        </div>
+                                        <div class="control-group">
+                                            <label class="control-label" for="quantity">Số lượng (*) </label>
+                                            <div class="controls">
+                                                <input type="number" name="quantity" class="span6" id="quantity" placeholder="Nhập số lượng" value="">
+                                            </div>
+                                        </div>
+                                        <div class="control-group">
+                                            <label class="control-label" for="link1">Link ảnh gạch 1(*) </label>
+                                            <div class="controls">
+                                                <input type="text" name="link1" class="span6" id="link1" placeholder="Nhập link ảnh sách" value="">
+                                            </div>
+                                        </div>
+                                        <div class="control-group">
+                                            <label class="control-label" for="link2">Link ảnh gạch 2(*) </label>
+                                            <div class="controls">
+                                                <input type="text" name="link2" class="span6" id="link2" placeholder="Nhập link ảnh sách" value="">
+                                            </div>
+                                        </div>
+                                        <div class="control-group">
+                                            <label class="control-label" for="link3">Link ảnh gạch 3(*) </label>
+                                            <div class="controls">
+                                                <input type="text" name="link3" class="span6" id="link3" placeholder="Nhập link ảnh sách" value="">
+                                            </div>
+                                        </div>
+                                        <div class="control-group">
+                                            <label class="control-label" for="description">Mô tả (*) </label>
+                                            <div class="controls">
+                                                <textarea rows="100" cols="200" name="description" id="description" class="description" placeholder="Nhập mô tả" style="width: 810px; height: 200px"></textarea>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-actions" style="background-color: white;">
+                                            <button type="submit" class="btn btn-primary">Thêm sản phẩm</button>
+                                        </div>
+                                    </fieldset>
+                                </form>
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /block -->
+                </div>
+            </div>
+        </div>
+        <hr>
+        <jsp:include page="footer.jsp" />
+    </div>
+    <!--/.fluid-container-->
+    <link href="vendors/datepicker.css" rel="stylesheet" media="screen">
+    <link href="vendors/uniform.default.css" rel="stylesheet" media="screen">
+    <link href="vendors/chosen.min.css" rel="stylesheet" media="screen">
+    <link href="vendors/wysiwyg/bootstrap-wysihtml5.css" rel="stylesheet" media="screen">
+    <script src="vendors/jquery-1.9.1.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="vendors/jquery.uniform.min.js"></script>
+    <script src="vendors/chosen.jquery.min.js"></script>
+    <script src="vendors/bootstrap-datepicker.js"></script>
+
+    <script src="vendors/wysiwyg/wysihtml5-0.3.0.js"></script>
+    <script src="vendors/wysiwyg/bootstrap-wysihtml5.js"></script>
+
+    <script src="Admin/vendors/wizard/jquery.bootstrap.wizard.min.js"></script>
+
+    <script type="text/javascript" src="Admin/vendors/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="Admin/assets/form-validation.js"></script>
+
+    <script src="Admin/assets/scripts.js"></script>
+    <script>
+        $(document).ready(function() {
+            var editor = CKEDITOR.replace('description');
+        })
+    </script>
+    <script>
+        jQuery(document).ready(function() {
+            FormValidation.init();
+        });
+
+
+        $(function() {
+            $(".datepicker").datepicker();
+            $(".uniform_on").uniform();
+            $(".chzn-select").chosen();
+            $('.textarea').wysihtml5();
+
+            $('#rootwizard').bootstrapWizard({
+                onTabShow: function(tab, navigation, index) {
+                    var $total = navigation.find('li').length;
+                    var $current = index + 1;
+                    var $percent = ($current / $total) * 100;
+                    $('#rootwizard').find('.bar').css({
+                        width: $percent + '%'
+                    });
+                    // If it's the last tab then hide the last button and show the finish instead
+                    if ($current >= $total) {
+                        $('#rootwizard').find('.pager .next').hide();
+                        $('#rootwizard').find('.pager .finish').show();
+                        $('#rootwizard').find('.pager .finish').removeClass('disabled');
+                    } else {
+                        $('#rootwizard').find('.pager .next').show();
+                        $('#rootwizard').find('.pager .finish').hide();
+                    }
+                }
+            });
+            $('#rootwizard .finish').click(function() {
+                alert('Finished!, Starting over!');
+                $('#rootwizard').find("a[href*='tab1']").trigger('click');
+            });
+        });
+    </script>
+</body>
+
+</html>
