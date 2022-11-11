@@ -140,6 +140,18 @@ body {
 }
 
 
+/*User*/
+
+.user-table {
+    border: 1px solid #ccc;
+    background: white;
+    margin: 1em 1em;
+    border-top: none;
+    width: 220%;
+    height: 200%;
+}
+
+
 /** Side Bar **/
 
 .bs-docs-sidenav {

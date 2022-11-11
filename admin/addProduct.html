@@ -52,7 +52,7 @@
     <div class="span3" id="sidebar">
         <ul class="nav nav-list bs-docs-sidenav nav-collapse collapse">
             <li>
-                <a href="index.html"><i class="icon-chevron-right"></i> Trang chủ</a>
+                <a href="../index.html"><i class="icon-chevron-right"></i> Trang chủ</a>
             </li>
             <li>
                 <a href="index.html"><i class="icon-chevron-right"></i> Thông tin chung</a>
@@ -70,7 +70,7 @@
                 <a href="ManagerProduct.html"><i class="icon-chevron-right"></i> Quản lý sản phẩm</a>
             </li>
             <li>
-                <a href="ManagerContact.html"><i class="icon-chevron-right"></i> Quản lý đơn hàng</a>
+                <a href="ManagerOder.html"><i class="icon-chevron-right"></i> Quản lý đơn hàng</a>
             </li>
             <li>
                 <a href="ManagerContact.html"><i class="icon-chevron-right"></i> Quản lý liên hệ</a>
@@ -85,14 +85,12 @@
                 <a href="DetailOrder.html"><span class="badge badge-success pull-right"></span> Đơn đặt hàng</a>
             </li>
             <li>
-                <a href="#"><span class="badge badge-info pull-right"></span> Users</a>
+                <a href="manageUser.html"><span class="badge badge-info pull-right"></span> Users</a>
             </li>
             <li>
                 <a href="DetailContact.html"><span class="badge badge-info pull-right"></span> Liên hệ</a>
             </li>
-            <li>
-                <a href="#"><span class="badge badge-info pull-right"></span> Sản phẩm</a>
-            </li>
+
         </ul>
     </div>
     <div class="container-fluid">
@@ -130,7 +128,7 @@
                                         <div class="control-group">
                                             <label class="control-label" for="productname">Tên Gạch (*) </label>
                                             <div class="controls">
-                                                <input type="text" name="productname" class="span6" id="productname" placeholder="Nhập tên sách" value="">
+                                                <input type="text" name="productname" class="span6" id="productname" placeholder="Nhập tên gạch" value="">
                                             </div>
                                         </div>
                                         <div class="control-group">
@@ -164,9 +162,7 @@
                                                     
                                                     
                                                     
-                                                    <!-- <option value="Nấu Ăn" <c:if test="${param.type eq 'Nấu Ăn'}">selected="selected"</c:if>>Nấu Ăn</option>
-                                                    <option value="Sách Giáo Khoa" <c:if test="${param.type eq 'Sách Giáo Khoa'}">selected="selected"</c:if>>Sách Giáo Khoa</option>
-                                                    <option value="Học Tập" <c:if test="${param.type eq 'Học Tập'}">selected="selected"</c:if>>Học Tập</option> -->
+                                                   
                                                 </select>
                                             </div>
                                         </div>
@@ -186,19 +182,19 @@
                                         <div class="control-group">
                                             <label class="control-label" for="link1">Link ảnh gạch 1(*) </label>
                                             <div class="controls">
-                                                <input type="text" name="link1" class="span6" id="link1" placeholder="Nhập link ảnh sách" value="">
+                                                <input type="text" name="link1" class="span6" id="link1" placeholder="Nhập link ảnh gạch" value="">
                                             </div>
                                         </div>
                                         <div class="control-group">
                                             <label class="control-label" for="link2">Link ảnh gạch 2(*) </label>
                                             <div class="controls">
-                                                <input type="text" name="link2" class="span6" id="link2" placeholder="Nhập link ảnh sách" value="">
+                                                <input type="text" name="link2" class="span6" id="link2" placeholder="Nhập link ảnh gạch" value="">
                                             </div>
                                         </div>
                                         <div class="control-group">
                                             <label class="control-label" for="link3">Link ảnh gạch 3(*) </label>
                                             <div class="controls">
-                                                <input type="text" name="link3" class="span6" id="link3" placeholder="Nhập link ảnh sách" value="">
+                                                <input type="text" name="link3" class="span6" id="link3" placeholder="Nhập link ảnh gạch" value="">
                                             </div>
                                         </div>
                                         <div class="control-group">
@@ -242,8 +238,21 @@
 
     <script type="text/javascript" src="Admin/vendors/jquery-validation/dist/jquery.validate.min.js"></script>
     <script src="Admin/assets/form-validation.js"></script>
+    <script src="vendors/jquery-1.9.1.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="vendors/easypiechart/jquery.easy-pie-chart.js"></script>
+    <script src="assets/scripts.js"></script>
+    <script src="vendors/jquery-1.9.1.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="vendors/easypiechart/jquery.easy-pie-chart.js"></script>
+    <script src="assets/scripts.js"></script>
+    <script src="vendors/jquery-1.9.1.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="vendors/easypiechart/jquery.easy-pie-chart.js"></script>
+    <script src="assets/scripts.js"></script>
 
-    <script src="Admin/assets/scripts.js"></script>
+    <script script script src="Admin/assets/scripts.js">
+    </script>
     <script>
         $(document).ready(function() {
             var editor = CKEDITOR.replace('description');
