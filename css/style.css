@@ -1654,6 +1654,11 @@ li.megamenu-img a {
     margin-bottom: 20px;
 }
 
+#team {
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
 .titleh4 h5 {
     margin-left: 70px;
     text-align: left;
@@ -4303,6 +4308,7 @@ a.shipping-calculator-button:hover {
 }
 .single-team {
     background: #f1f1f1 none repeat scroll 0 0;
+    align-items: center !important;
 }
 .team-info {
     padding: 15px;
