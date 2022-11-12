@@ -134,20 +134,20 @@
                                     </thead>
                                     <tbody>
                                         <c:forEach var="product">
-                                            <tr id="${product.productID}">
+                                            <tr id="">
                                                 <td class="align-middle"></td>
                                                 <td></td>
                                                 <td></td>
                                                 <td></td>
                                                 <td id="status"></td>
                                                 <td id="hide-nothide">
-                                                    <c:if test="${product.status eq 'Hiển thị'}">
-                                                        <a class="text-hide text-primary" onclick="hideProduct(${product.productID})"><span class="fas fa-eye-slash"></span> Ẩn</a></c:if>
-                                                    <c:if test="${product.status eq 'Ẩn'}">
-                                                        <a class="text-nothide text-primary" onclick="nothideProduct(${product.productID})"><span class="fas fa-eye"></span> Hiển thị</a></c:if>
+                                                    <c:if test="">
+                                                        <a class="text-hide text-primary" onclick=""><span class="fas fa-eye-slash"></span> Ẩn</a></c:if>
+                                                    <c:if test="">
+                                                        <a class="text-nothide text-primary" onclick=""><span class="fas fa-eye"></span> Hiển thị</a></c:if>
                                                 </td>
-                                                <td><a class="text-lock text-primary" href="AddOrUpdateProductAd?action=getupdate&id=${product.productID}"><span class="fas fa-edit"></span> Chỉnh sửa</a></td>
-                                                <td><a class="text-danger" href="${product.productID}" onclick="return false;"><span class="far fa-window-close"></span> Xóa</a></td>
+                                                <td><a class="text-lock text-primary" href=""><span class="fas fa-edit"></span> Chỉnh sửa</a></td>
+                                                <td><a class="text-danger" href="" onclick="return false;"><span class="far fa-window-close"></span> Xóa</a></td>
                                             </tr>
                                         </c:forEach>
                                     </tbody>

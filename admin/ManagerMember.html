@@ -135,26 +135,26 @@
                                     </thead>
                                     <tbody>
                                         <c:forEach items="${listUsers}" var="user">
-                                            <tr id="${user.userID}">
+                                            <tr id="">
                                                 <td>Bùi Quang Huy</td>
                                                 <td>
                                                     Admin
                                                 </td>
                                                 <td id="status">Active</td>
                                                 <td id="lock-unlock">
-                                                    <c:if test="${user.status eq 'Bị khóa'}">
+                                                    <c:if test="">
                                                         <a class="text-unlock text-primary" onclick="">
                                                             <span class="fas fa-lock-open"></span> Mở khóa </a>
                                                     </c:if>
-                                                    <c:if test="${user.status eq 'Đang sử dụng'}">
+                                                    <c:if test="">
                                                         <a class="text-lock text-primary">
                                                             <span class="fas fa-lock "></span> Khóa</a>
                                                     </c:if>
 
                                                 </td>
-                                                <td><a class="text-lock text-primary " href=" "><span class="fas fa-edit "></span> Chỉnh sửa</a></td>
+                                                <td><a class="text-lock text-primary " href=""><span class="fas fa-edit "></span> Chỉnh sửa</a></td>
                                                 <td>
-                                                    <a class="text-danger " href=" " onclick="return false; "><span class="far fa-window-close "></span> Xóa</a>
+                                                    <a class="text-danger " href="" onclick="return false; "><span class="far fa-window-close "></span> Xóa</a>
                                                 </td>
                                             </tr>
                                         </c:forEach>
