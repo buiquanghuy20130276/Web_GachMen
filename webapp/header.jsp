@@ -50,10 +50,11 @@
                 <div class="col-lg-4 col-md-12">
                     <div class="cart-box mt-all-30">
                         <ul class="d-flex justify-content-lg-end justify-content-center align-items-center">
-                            <li><a href="cart.html"><i class="lnr lnr-cart"></i><span class="my-cart"><span class="total-pro">0</span><span>Giỏ hàng</span></span></a>
+                            <li><a href="cart.jsp"><i class="lnr lnr-cart"></i><span class="my-cart"><span class="total-pro">0</span><span>Giỏ hàng</span></span></a>
                             </li>
-
-                            <li><a href="login.html"><i class="lnr lnr-user"></i><span class="my-cart"><span> <strong>Đăng nhập</strong></span><span> đăng kí</span></span></a>
+                            <li><a href="cart.jsp"><i class="lnr lnr-user"></i><span class="my-cart"><span><strong>Username</strong></span></span></a>
+                            </li>
+                            <li><a href="login.jsp"><i class="lnr lnr-user"></i><span class="my-cart"><span> <strong>Đăng nhập</strong></span><span> đăng kí</span></span></a>
                             </li>
                         </ul>
                     </div>
@@ -71,16 +72,16 @@
                 <div class="col-xl-9 col-lg-8 col-md-12 ">
                     <nav class="d-none d-lg-block">
                         <ul class="header-bottom-list d-flex">
-                            <li class="active"><a href="index.jsp">Trang chủ</a>
+                            <li><a id="index" href="index.jsp">Trang chủ</a>
                                 <!-- Home Version Dropdown Start -->
 
                             </li>
-                            <li><a href="shop.html">Sản phẩm</a>
+                            <li><a id="product-list" href="product-list.jsp">Sản phẩm</a>
 
                             </li>
 
-                            <li><a href="about.html">Giới thiệu</a></li>
-                            <li><a href="contact.html">Liên hệ</a></li>
+                            <li><a id="about" href="about.jsp">Giới thiệu</a></li>
+                            <li><a id="contact" href="contact.jsp">Liên hệ</a></li>
                         </ul>
                     </nav>
                     <div class="mobile-menu d-block d-lg-none">
@@ -90,14 +91,14 @@
                                     <!-- Home Version Dropdown Start -->
 
                                 </li>
-                                <li><a href="shop.html">Sản phẩm</a>
+                                <li><a href="product-list.jsp">Sản phẩm</a>
                                     <!-- Mobile Menu Dropdown Start -->
 
                                 </li>
 
 
-                                <li><a href="about.html">Giới thiệu</a></li>
-                                <li><a href="contact.html">Liên hệ</a></li>
+                                <li><a href="about.jsp">Giới thiệu</a></li>
+                                <li><a href="contact.jsp">Liên hệ</a></li>
                             </ul>
                         </nav>
                     </div>
@@ -149,21 +150,21 @@
                 <div class="vertical-menu mb-all-30">
                     <nav>
                         <ul class="vertical-menu-list" style="display: none;">
-                            <li class=""><a href="shop.html">Gạch lát nền</a>
+                            <li ><a href="product-list.jsp">Gạch lát nền</a>
                             </li>
-                            <li><a href="shop.html">Gạch ốp tường</a>
+                            <li><a href="product-list.jsp">Gạch ốp tường</a>
                                 <!-- Vertical Mega-Menu Start -->
 
                             </li>
 
-                            <li><a href="shop.html">Gạch trang trí</a>
+                            <li><a href="product-list.jsp">Gạch trang trí</a>
 
                             </li>
-                            <li><a href="shop.html">Gạch giả gỗ</i>
+                            <li><a href="product-list.jsp">Gạch giả gỗ</i>
                             </a>
 
                             </li>
-                            <li><a href="shop.html">Gạch Terrazzo</a>
+                            <li><a href="product-list.jsp">Gạch Terrazzo</a>
 
                             </li>
                         </ul>
@@ -175,8 +176,8 @@
                 <div class="slider-wrapper theme-default">
                     <!-- Slider Background  Image Start-->
                     <div id="slider" class="nivoSlider">
-                        <a href="shop.html"><img src="img\slider\banner-the.png" data-thumb="img/slider/1.jpg" alt="" title="#htmlcaption"></a>
-                        <a href="shop.html"><img src="img\slider\image2.jpg" data-thumb="img/slider/2.jpg" alt="" title="#htmlcaption2"></a>
+                        <a href="product-list.jsp"><img src="img\slider\banner-the.png" data-thumb="img/slider/1.jpg" alt="" title="#htmlcaption"></a>
+                        <a href="product-list.jsp"><img src="img\slider\image2.jpg" data-thumb="img/slider/2.jpg" alt="" title="#htmlcaption2"></a>
                     </div>
                     <!-- Slider Background  Image Start-->
                 </div>

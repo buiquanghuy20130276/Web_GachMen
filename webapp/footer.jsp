@@ -88,7 +88,7 @@
                         <h3 class="footer-title">THÔNG TIN</h3>
                         <div class="footer-content">
                             <ul class="footer-list">
-                                <li><a href="deliverypolicy.html">Chính sách giao hàng</a></li>
+                                <li><a href="deliverypolicy.jsp">Chính sách giao hàng</a></li>
                                 <li><a href="privacy.html">Chính sách bảo mật</a></li>
 
 
@@ -103,11 +103,11 @@
                         <h3 class="footer-title">SẢN PHẨM</h3>
                         <div class="footer-content">
                             <ul class="footer-list">
-                                <li><a href="shop.html">Gạch lát nền</a></li>
-                                <li><a href="shop.html">Gạch ốp tường</a></li>
-                                <li><a href="shop.html">Gạch trang trí</a></li>
-                                <li><a href="shop.html">Gạch giả gỗ</a></li>
-                                <li><a href="shop.html">Gạch Terrazzo</a></li>
+                                <li><a href="product-list.jsp">Gạch lát nền</a></li>
+                                <li><a href="product-list.jsp">Gạch ốp tường</a></li>
+                                <li><a href="product-list.jsp">Gạch trang trí</a></li>
+                                <li><a href="product-list.jsp">Gạch giả gỗ</a></li>
+                                <li><a href="product-list.jsp">Gạch Terrazzo</a></li>
                             </ul>
                         </div>
                     </div>
@@ -120,9 +120,9 @@
                         <div class="footer-content">
                             <ul class="footer-list">
                                 <li><a href="index.jsp">Trang chủ</a></li>
-                                <li><a href="shop.html">Sản phẩm</a></li>
-                                <li><a href="about.html">Giới thiệu</a></li>
-                                <li><a href="contact.html">Liên hệ</a></li>
+                                <li><a href="product-list.jsp">Sản phẩm</a></li>
+                                <li><a href="about.jsp">Giới thiệu</a></li>
+                                <li><a href="contact.jsp">Liên hệ</a></li>
                             </ul>
                         </div>
                     </div>
@@ -134,7 +134,7 @@
                         <!-- <h3 class="footer-title">Tài khoản của tôi</h3>
                             <div class="footer-content">
                                 <ul class="footer-list">
-                                    <li><a href="contact.html">Liên hệ chúng tôi</a></li>
+                                    <li><a href="contact.jsp">Liên hệ chúng tôi</a></li>
                                     <li><a href="#">Returns</a></li>
                                     <li><a href="#">My Account</a></li>
                                     <li><a href="#">Order History</a></li>

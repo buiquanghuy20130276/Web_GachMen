@@ -38,6 +38,9 @@
 
     <!-- Modernizer js -->
     <script src="js\vendor\modernizr-3.5.0.min.js"></script>
+    <script>
+        document.getElementById("index").classList.add('active');
+    </script>
 </head>
 
 <body>
@@ -64,7 +67,7 @@
                 <div class="single-product">
                     <!-- Product Image Start -->
                     <div class="pro-img">
-                        <a href="product.html">
+                        <a href="product-detail.jsp">
                             <img class="primary-img" src="img/products/nền%20gạch%20granite%20FN6029.jpg"
                                  alt="single-product">
                             <img class="secondary-img" src="img/products/gạch%20granite%20FN6029.jpg"
@@ -77,7 +80,7 @@
                     <!-- Product Content Start -->
                     <div class="pro-content">
                         <div class="pro-info">
-                            <h4><a href="product.html">Gạch Granite FN6029</a></h4>
+                            <h4><a href="product-detail.jsp">Gạch Granite FN6029</a></h4>
                             <p><span class="price">356,400đ</span>
                                 <del class="prev-price">370,400đ</del>
                             </p>
@@ -85,10 +88,10 @@
                         </div>
                         <div class="pro-actions">
                             <div class="actions-primary">
-                                <a href="cart.html" title="Thêm vào giỏ hàng"> + Thêm vào giỏ hàng</a>
+                                <a href="cart.jsp" title="Thêm vào giỏ hàng"> + Thêm vào giỏ hàng</a>
                             </div>
                             <div class="actions-primary">
-                                <a href="checkout.html" title="Mua ngay">Mua ngay</a>
+                                <a href="checkout.jsp" title="Mua ngay">Mua ngay</a>
                             </div>
 
                         </div>
@@ -98,7 +101,7 @@
                 <div class="single-product">
                     <!-- Product Image Start -->
                     <div class="pro-img">
-                        <a href="product.html">
+                        <a href="product-detail.jsp">
                             <img class="primary-img" src="img/products/nền%20gạch%20Terrazzo%20ốp%20tường%20K382.jpg"
                                  alt="single-product">
                             <img class="secondary-img" src="img/products/gạch%20Terrazzo%20ốp%20tường%20K382.jpg"
@@ -111,7 +114,7 @@
                     <!-- Product Content Start -->
                     <div class="pro-content">
                         <div class="pro-info">
-                            <h4><a href="product.html">Gạch Terrazzo ốp tường K382</a></h4>
+                            <h4><a href="product-detail.jsp">Gạch Terrazzo ốp tường K382</a></h4>
                             <p><span class="price">191,750đ</span>
                                 <del class="prev-price">295,000đ</del>
                             </p>
@@ -119,10 +122,10 @@
                         </div>
                         <div class="pro-actions">
                             <div class="actions-primary">
-                                <a href="cart.html" title="Thêm vào giỏ hàng"> + Thêm vào giỏ hàng</a>
+                                <a href="cart.jsp" title="Thêm vào giỏ hàng"> + Thêm vào giỏ hàng</a>
                             </div>
                             <div class="actions-primary">
-                                <a href="checkout.html" title="Mua ngay">Mua ngay</a>
+                                <a href="checkout.jsp" title="Mua ngay">Mua ngay</a>
                             </div>
 
                         </div>
@@ -132,7 +135,7 @@
                 <div class="single-product">
                     <!-- Product Image Start -->
                     <div class="pro-img">
-                        <a href="product.html">
+                        <a href="product-detail.jsp">
                             <img class="primary-img" src="img/products/nền%20gạch%20lát%20nền%20JY88SP025.jpg"
                                  alt="single-product">
                             <img class="secondary-img" src="img/products/gạch%20lát%20nền%20JY88SP025.jpg"
@@ -145,7 +148,7 @@
                     <!-- Product Content Start -->
                     <div class="pro-content">
                         <div class="pro-info">
-                            <h4><a href="product.html">Gạch lát nền JY88SP025</a></h4>
+                            <h4><a href="product-detail.jsp">Gạch lát nền JY88SP025</a></h4>
                             <p><span class="price">133,250đ</span>
                                 <del class="prev-price">205,000đ</del>
                             </p>
@@ -153,10 +156,10 @@
                         </div>
                         <div class="pro-actions">
                             <div class="actions-primary">
-                                <a href="cart.html" title="Thêm vào giỏ hàng"> + Thêm vào giỏ hàng</a>
+                                <a href="cart.jsp" title="Thêm vào giỏ hàng"> + Thêm vào giỏ hàng</a>
                             </div>
                             <div class="actions-primary">
-                                <a href="checkout.html" title="Mua ngay">Mua ngay</a>
+                                <a href="checkout.jsp" title="Mua ngay">Mua ngay</a>
                             </div>
 
                         </div>
@@ -167,7 +170,7 @@
                 <div class="single-product">
                     <!-- Product Image Start -->
                     <div class="pro-img">
-                        <a href="product.html">
+                        <a href="product-detail.jsp">
                             <img class="primary-img" src="img/products/nền%20gạch%20gỗ%20vân1.jpg" alt="single-product">
                             <img class="secondary-img" src="img/products/gạch%20gỗ%20vân1.jpg" alt="single-product">
                         </a>
@@ -178,7 +181,7 @@
                     <!-- Product Content Start -->
                     <div class="pro-content">
                         <div class="pro-info">
-                            <h4><a href="product.html">Gạch vân gỗ NA-20010</a></h4>
+                            <h4><a href="product-detail.jsp">Gạch vân gỗ NA-20010</a></h4>
                             <p><span class="price">250,000đ</span>
                                 <del class="prev-price">300,000đ</del>
                             </p>
@@ -186,10 +189,10 @@
                         </div>
                         <div class="pro-actions">
                             <div class="actions-primary">
-                                <a href="cart.html" title="Thêm vào giỏ hàng"> + Thêm vào giỏ hàng</a>
+                                <a href="cart.jsp" title="Thêm vào giỏ hàng"> + Thêm vào giỏ hàng</a>
                             </div>
                             <div class="actions-primary">
-                                <a href="checkout.html" title="Mua ngay">Mua ngay</a>
+                                <a href="checkout.jsp" title="Mua ngay">Mua ngay</a>
                             </div>
 
                         </div>
@@ -199,7 +202,7 @@
                 <div class="single-product">
                     <!-- Product Image Start -->
                     <div class="pro-img">
-                        <a href="product.html">
+                        <a href="product-detail.jsp">
                             <img class="primary-img" src="img/products/nền%20gạch%20ốp%20tường%20BAT3675.jpg"
                                  alt="single-product">
                             <img class="secondary-img" src="img/products/gạch%20ốp%20tường%20BAT3675.jpg"
@@ -212,7 +215,7 @@
                     <!-- Product Content Start -->
                     <div class="pro-content">
                         <div class="pro-info">
-                            <h4><a href="product.html">Gạch ốp tường BAT3675</a></h4>
+                            <h4><a href="product-detail.jsp">Gạch ốp tường BAT3675</a></h4>
                             <p><span class="price">205,000đ</span>
                                 <del class="prev-price">285,000đ</del>
                             </p>
@@ -220,10 +223,10 @@
                         </div>
                         <div class="pro-actions">
                             <div class="actions-primary">
-                                <a href="cart.html" title="Thêm vào giỏ hàng"> + Thêm vào giỏ hàng</a>
+                                <a href="cart.jsp" title="Thêm vào giỏ hàng"> + Thêm vào giỏ hàng</a>
                             </div>
                             <div class="actions-primary">
-                                <a href="checkout.html" title="Mua ngay">Mua ngay</a>
+                                <a href="checkout.jsp" title="Mua ngay">Mua ngay</a>
                             </div>
 
                         </div>
@@ -234,7 +237,7 @@
                 <div class="single-product">
                     <!-- Product Image Start -->
                     <div class="pro-img">
-                        <a href="product.html">
+                        <a href="product-detail.jsp">
                             <img class="primary-img" src="img/products/nền%20gạch%20gỗ%20vân2.jpg" alt="single-product">
                             <img class="secondary-img" src="img/products/gạch%20gỗ%20vân2.jpg" alt="single-product">
                         </a>
@@ -245,7 +248,7 @@
                     <!-- Product Content Start -->
                     <div class="pro-content">
                         <div class="pro-info">
-                            <h4><a href="product.html">Gạch gỗ KHA-58303 </a></h4>
+                            <h4><a href="product-detail.jsp">Gạch gỗ KHA-58303 </a></h4>
                             <p><span class="price">205,000đ</span>
                                 <del class="prev-price">285,000đ</del>
                             </p>
@@ -253,10 +256,10 @@
                         </div>
                         <div class="pro-actions">
                             <div class="actions-primary">
-                                <a href="cart.html" title="Thêm vào giỏ hàng"> + Thêm vào giỏ hàng</a>
+                                <a href="cart.jsp" title="Thêm vào giỏ hàng"> + Thêm vào giỏ hàng</a>
                             </div>
                             <div class="actions-primary">
-                                <a href="checkout.html" title="Mua ngay">Mua ngay</a>
+                                <a href="checkout.jsp" title="Mua ngay">Mua ngay</a>
                             </div>
 
                         </div>
@@ -347,7 +350,7 @@
                                 <div class="single-product">
                                     <!-- Product Image Start -->
                                     <div class="pro-img">
-                                        <a href="product.html">
+                                        <a href="product-detail.jsp">
                                             <img class="primary-img"
                                                  src="img/products/nền%20gạch%20lát%20nền%20K87009.jpg"
                                                  alt="single-product">
@@ -360,7 +363,7 @@
                                     <!-- Product Content Start -->
                                     <div class="pro-content">
                                         <div class="pro-info">
-                                            <h4><a href="product.html">Gạch lát nền K87009</a></h4>
+                                            <h4><a href="product-detail.jsp">Gạch lát nền K87009</a></h4>
                                             <p><span class="price">320,000đ</span>
                                                 <del class="prev-price">400,000đ</del>
                                             </p>
@@ -369,10 +372,10 @@
                                         </div>
                                         <div class="pro-actions">
                                             <div class="actions-primary">
-                                                <a href="cart.html" title="Thêm vào giỏ hàng"> + Thêm vào giỏ hàng</a>
+                                                <a href="cart.jsp" title="Thêm vào giỏ hàng"> + Thêm vào giỏ hàng</a>
                                             </div>
                                             <div class="actions-primary">
-                                                <a href="checkout.html" title="Mua ngay"> Mua ngay</a>
+                                                <a href="checkout.jsp" title="Mua ngay"> Mua ngay</a>
                                             </div>
                                         </div>
                                     </div>
@@ -382,7 +385,7 @@
                                 <div class="single-product">
                                     <!-- Product Image Start -->
                                     <div class="pro-img">
-                                        <a href="product.html">
+                                        <a href="product-detail.jsp">
                                             <img class="primary-img"
                                                  src="img/products/nền%20gạch%20lát%20nền%20JY88SP025.jpg"
                                                  alt="single-product">
@@ -396,7 +399,7 @@
                                     <!-- Product Content Start -->
                                     <div class="pro-content">
                                         <div class="pro-info">
-                                            <h4><a href="product.html">Gạch lát nền JY88SP025</a></h4>
+                                            <h4><a href="product-detail.jsp">Gạch lát nền JY88SP025</a></h4>
                                             <p><span class="price">133,250đ</span>
                                                 <del class="prev-price">205,000đ</del>
                                             </p>
@@ -405,10 +408,10 @@
                                         </div>
                                         <div class="pro-actions">
                                             <div class="actions-primary">
-                                                <a href="cart.html" title="Thêm vào giỏ hàng"> + Thêm vào giỏ hàng</a>
+                                                <a href="cart.jsp" title="Thêm vào giỏ hàng"> + Thêm vào giỏ hàng</a>
                                             </div>
                                             <div class="actions-primary">
-                                                <a href="checkout.html" title="Mua ngay"> Mua ngay</a>
+                                                <a href="checkout.jsp" title="Mua ngay"> Mua ngay</a>
                                             </div>
                                         </div>
                                     </div>
@@ -421,7 +424,7 @@
                                 <div class="single-product">
                                     <!-- Product Image Start -->
                                     <div class="pro-img">
-                                        <a href="product.html">
+                                        <a href="product-detail.jsp">
                                             <img class="primary-img"
                                                  src="img/products/nền%20gạch%20lát%20nền%20River%20Flow%2002GB.jpg"
                                                  alt="single-product">
@@ -435,7 +438,7 @@
                                     <!-- Product Content Start -->
                                     <div class="pro-content">
                                         <div class="pro-info">
-                                            <h4><a href="product.html">Gạch lát nền River Flow 02GB</a></h4>
+                                            <h4><a href="product-detail.jsp">Gạch lát nền River Flow 02GB</a></h4>
                                             <p><span class="price">380,400đ</span>
                                                 <del class="prev-price">390,000đ</del>
                                             </p>
@@ -444,10 +447,10 @@
                                         </div>
                                         <div class="pro-actions">
                                             <div class="actions-primary">
-                                                <a href="cart.html" title="Thêm vào giỏ hàng"> + Thêm vào giỏ hàng</a>
+                                                <a href="cart.jsp" title="Thêm vào giỏ hàng"> + Thêm vào giỏ hàng</a>
                                             </div>
                                             <div class="actions-primary">
-                                                <a href="checkout.html" title="Mua ngay"> Mua ngay</a>
+                                                <a href="checkout.jsp" title="Mua ngay"> Mua ngay</a>
                                             </div>
                                         </div>
                                     </div>
@@ -457,7 +460,7 @@
                                 <div class="single-product">
                                     <!-- Product Image Start -->
                                     <div class="pro-img">
-                                        <a href="product.html">
+                                        <a href="product-detail.jsp">
                                             <img class="primary-img"
                                                  src="img/products/nền%20gạch%20nhũ%20bạc%20612601D.jpg"
                                                  alt="single-product">
@@ -470,7 +473,7 @@
                                     <!-- Product Content Start -->
                                     <div class="pro-content">
                                         <div class="pro-info">
-                                            <h4><a href="product.html">Gạch nhũ bạc 612601D</a></h4>
+                                            <h4><a href="product-detail.jsp">Gạch nhũ bạc 612601D</a></h4>
                                             <p><span class="price">210,000đ</span>
                                                 <del class="prev-price">240,000đ</del>
                                             </p>
@@ -479,10 +482,10 @@
                                         </div>
                                         <div class="pro-actions">
                                             <div class="actions-primary">
-                                                <a href="cart.html" title="Thêm vào giỏ hàng"> + Thêm vào giỏ hàng</a>
+                                                <a href="cart.jsp" title="Thêm vào giỏ hàng"> + Thêm vào giỏ hàng</a>
                                             </div>
                                             <div class="actions-primary">
-                                                <a href="checkout.html" title="Mua ngay"> Mua ngay</a>
+                                                <a href="checkout.jsp" title="Mua ngay"> Mua ngay</a>
                                             </div>
                                         </div>
                                     </div>
@@ -495,7 +498,7 @@
                                 <div class="single-product">
                                     <!-- Product Image Start -->
                                     <div class="pro-img">
-                                        <a href="product.html">
+                                        <a href="product-detail.jsp">
                                             <img class="primary-img"
                                                  src="img/products/nền%20gạch%20lát%20nền%20Sandstone%2060SD12GB.jpg"
                                                  alt="single-product">
@@ -509,7 +512,7 @@
                                     <!-- Product Content Start -->
                                     <div class="pro-content">
                                         <div class="pro-info">
-                                            <h4><a href="product.html">Gạch lát nền Sandstone 60SD12GB</a></h4>
+                                            <h4><a href="product-detail.jsp">Gạch lát nền Sandstone 60SD12GB</a></h4>
                                             <p><span class="price">320,500đ</span>
                                                 <del class="prev-price">350,000đ</del>
                                             </p>
@@ -518,10 +521,10 @@
                                         </div>
                                         <div class="pro-actions">
                                             <div class="actions-primary">
-                                                <a href="cart.html" title="Thêm vào giỏ hàng"> + Thêm vào giỏ hàng</a>
+                                                <a href="cart.jsp" title="Thêm vào giỏ hàng"> + Thêm vào giỏ hàng</a>
                                             </div>
                                             <div class="actions-primary">
-                                                <a href="checkout.html" title="Mua ngay"> Mua ngay</a>
+                                                <a href="checkout.jsp" title="Mua ngay"> Mua ngay</a>
                                             </div>
                                         </div>
                                     </div>
@@ -531,7 +534,7 @@
                                 <div class="single-product">
                                     <!-- Product Image Start -->
                                     <div class="pro-img">
-                                        <a href="product.html">
+                                        <a href="product-detail.jsp">
                                             <img class="primary-img"
                                                  src="img/products/nền%20gạch%20granite%20FN6029.jpg"
                                                  alt="single-product">
@@ -544,7 +547,7 @@
                                     <!-- Product Content Start -->
                                     <div class="pro-content">
                                         <div class="pro-info">
-                                            <h4><a href="product.html">Gạch Granite FN6029</a></h4>
+                                            <h4><a href="product-detail.jsp">Gạch Granite FN6029</a></h4>
                                             <p><span class="price">356,400đ</span>
                                                 <del class="prev-price">370,400đ</del>
                                             </p>
@@ -553,10 +556,10 @@
                                         </div>
                                         <div class="pro-actions">
                                             <div class="actions-primary">
-                                                <a href="cart.html" title="Thêm vào giỏ hàng"> + Thêm vào giỏ hàng</a>
+                                                <a href="cart.jsp" title="Thêm vào giỏ hàng"> + Thêm vào giỏ hàng</a>
                                             </div>
                                             <div class="actions-primary">
-                                                <a href="checkout.html" title="Mua ngay"> Mua ngay</a>
+                                                <a href="checkout.jsp" title="Mua ngay"> Mua ngay</a>
                                             </div>
                                         </div>
                                     </div>
@@ -569,7 +572,7 @@
                                 <div class="single-product">
                                     <!-- Product Image Start -->
                                     <div class="pro-img">
-                                        <a href="product.html">
+                                        <a href="product-detail.jsp">
                                             <img class="primary-img"
                                                  src="img/products/nền%20gạch%20granite%20FN6035A.jpg"
                                                  alt="single-product">
@@ -582,7 +585,7 @@
                                     <!-- Product Content Start -->
                                     <div class="pro-content">
                                         <div class="pro-info">
-                                            <h4><a href="product.html">Gạch Granite FN6035A</a></h4>
+                                            <h4><a href="product-detail.jsp">Gạch Granite FN6035A</a></h4>
                                             <p><span class="price">416,400đ</span>
                                                 <del class="prev-price">436,000đ</del>
                                             </p>
@@ -591,10 +594,10 @@
                                         </div>
                                         <div class="pro-actions">
                                             <div class="actions-primary">
-                                                <a href="cart.html" title="Thêm vào giỏ hàng"> + Thêm vào giỏ hàng</a>
+                                                <a href="cart.jsp" title="Thêm vào giỏ hàng"> + Thêm vào giỏ hàng</a>
                                             </div>
                                             <div class="actions-primary">
-                                                <a href="checkout.html" title="Mua ngay"> Mua ngay</a>
+                                                <a href="checkout.jsp" title="Mua ngay"> Mua ngay</a>
                                             </div>
                                         </div>
                                     </div>
@@ -604,7 +607,7 @@
                                 <div class="single-product">
                                     <!-- Product Image Start -->
                                     <div class="pro-img">
-                                        <a href="product.html">
+                                        <a href="product-detail.jsp">
                                             <img class="primary-img"
                                                  src="img/products/nền%20gạch%20Granite%20GM6706.jpg"
                                                  alt="single-product">
@@ -617,7 +620,7 @@
                                     <!-- Product Content Start -->
                                     <div class="pro-content">
                                         <div class="pro-info">
-                                            <h4><a href="product.html">Gạch Granite GM6706</a></h4>
+                                            <h4><a href="product-detail.jsp">Gạch Granite GM6706</a></h4>
                                             <p><span class="price">420,000đ</span>
                                                 <del class="prev-price">432,000đ</del>
                                             </p>
@@ -626,10 +629,10 @@
                                         </div>
                                         <div class="pro-actions">
                                             <div class="actions-primary">
-                                                <a href="cart.html" title="Thêm vào giỏ hàng"> + Thêm vào giỏ hàng</a>
+                                                <a href="cart.jsp" title="Thêm vào giỏ hàng"> + Thêm vào giỏ hàng</a>
                                             </div>
                                             <div class="actions-primary">
-                                                <a href="checkout.html" title="Mua ngay"> Mua ngay</a>
+                                                <a href="checkout.jsp" title="Mua ngay"> Mua ngay</a>
                                             </div>
                                         </div>
                                     </div>
@@ -647,7 +650,7 @@
                                 <div class="single-product">
                                     <!-- Product Image Start -->
                                     <div class="pro-img">
-                                        <a href="product.html">
+                                        <a href="product-detail.jsp">
                                             <img class="primary-img"
                                                  src="img/products/nền%20gạch%20ốp%20tường%20BAT3675.jpg"
                                                  alt="single-product">
@@ -661,7 +664,7 @@
                                     <!-- Product Content Start -->
                                     <div class="pro-content">
                                         <div class="pro-info">
-                                            <h4><a href="product.html">Gạch ốp tường BAT3675</a></h4>
+                                            <h4><a href="product-detail.jsp">Gạch ốp tường BAT3675</a></h4>
                                             <p><span class="price">205,000đ</span>
                                                 <del class="prev-price">285,000đ</del>
                                             </p>
@@ -670,10 +673,10 @@
                                         </div>
                                         <div class="pro-actions">
                                             <div class="actions-primary">
-                                                <a href="cart.html" title="Thêm vào giỏ hàng"> + Thêm vào giỏ hàng</a>
+                                                <a href="cart.jsp" title="Thêm vào giỏ hàng"> + Thêm vào giỏ hàng</a>
                                             </div>
                                             <div class="actions-primary">
-                                                <a href="checkout.html" title="Mua ngay"> Mua ngay</a>
+                                                <a href="checkout.jsp" title="Mua ngay"> Mua ngay</a>
                                             </div>
                                         </div>
                                     </div>
@@ -683,7 +686,7 @@
                                 <div class="single-product">
                                     <!-- Product Image Start -->
                                     <div class="pro-img">
-                                        <a href="product.html">
+                                        <a href="product-detail.jsp">
                                             <img class="primary-img"
                                                  src="img/products/nền%20gạch%20ốp%20lát%20KHA-126052.jpg"
                                                  alt="single-product">
@@ -697,7 +700,7 @@
                                     <!-- Product Content Start -->
                                     <div class="pro-content">
                                         <div class="pro-info">
-                                            <h4><a href="product.html">Gạch ốp tường KHA-126052</a></h4>
+                                            <h4><a href="product-detail.jsp">Gạch ốp tường KHA-126052</a></h4>
                                             <p><span class="price">185,000đ</span>
                                                 <del class="prev-price">200,000đ</del>
                                             </p>
@@ -706,10 +709,10 @@
                                         </div>
                                         <div class="pro-actions">
                                             <div class="actions-primary">
-                                                <a href="cart.html" title="Thêm vào giỏ hàng"> + Thêm vào giỏ hàng</a>
+                                                <a href="cart.jsp" title="Thêm vào giỏ hàng"> + Thêm vào giỏ hàng</a>
                                             </div>
                                             <div class="actions-primary">
-                                                <a href="checkout.html" title="Mua ngay"> Mua ngay</a>
+                                                <a href="checkout.jsp" title="Mua ngay"> Mua ngay</a>
                                             </div>
                                         </div>
                                     </div>
@@ -722,7 +725,7 @@
                                 <div class="single-product">
                                     <!-- Product Image Start -->
                                     <div class="pro-img">
-                                        <a href="product.html">
+                                        <a href="product-detail.jsp">
                                             <img class="primary-img"
                                                  src="img/products/nền%20gạch%20ốp%20tường%20Jungle.jpg"
                                                  alt="single-product">
@@ -735,7 +738,7 @@
                                     <!-- Product Content Start -->
                                     <div class="pro-content">
                                         <div class="pro-info">
-                                            <h4><a href="product.html">Gạch ốp tường Jung Le</a></h4>
+                                            <h4><a href="product-detail.jsp">Gạch ốp tường Jung Le</a></h4>
                                             <p><span class="price">150,000đ</span>
                                                 <del class="prev-price">210,000đ</del>
                                             </p>
@@ -744,10 +747,10 @@
                                         </div>
                                         <div class="pro-actions">
                                             <div class="actions-primary">
-                                                <a href="cart.html" title="Thêm vào giỏ hàng"> + Thêm vào giỏ hàng</a>
+                                                <a href="cart.jsp" title="Thêm vào giỏ hàng"> + Thêm vào giỏ hàng</a>
                                             </div>
                                             <div class="actions-primary">
-                                                <a href="checkout.html" title="Mua ngay"> Mua ngay</a>
+                                                <a href="checkout.jsp" title="Mua ngay"> Mua ngay</a>
                                             </div>
                                         </div>
                                     </div>
@@ -757,7 +760,7 @@
                                 <div class="single-product">
                                     <!-- Product Image Start -->
                                     <div class="pro-img">
-                                        <a href="product.html">
+                                        <a href="product-detail.jsp">
                                             <img class="primary-img"
                                                  src="img/products/nền%20gạch%20ốp%20tường%20W365.jpg"
                                                  alt="single-product">
@@ -770,7 +773,7 @@
                                     <!-- Product Content Start -->
                                     <div class="pro-content">
                                         <div class="pro-info">
-                                            <h4><a href="product.html">Gạch ốp tường W365</a></h4>
+                                            <h4><a href="product-detail.jsp">Gạch ốp tường W365</a></h4>
                                             <p><span class="price">170,000đ</span>
                                                 <del class="prev-price">190,000đ</del>
                                             </p>
@@ -779,10 +782,10 @@
                                         </div>
                                         <div class="pro-actions">
                                             <div class="actions-primary">
-                                                <a href="cart.html" title="Thêm vào giỏ hàng"> + Thêm vào giỏ hàng</a>
+                                                <a href="cart.jsp" title="Thêm vào giỏ hàng"> + Thêm vào giỏ hàng</a>
                                             </div>
                                             <div class="actions-primary">
-                                                <a href="checkout.html" title="Mua ngay"> Mua ngay</a>
+                                                <a href="checkout.jsp" title="Mua ngay"> Mua ngay</a>
                                             </div>
                                         </div>
                                     </div>
@@ -795,7 +798,7 @@
                                 <div class="single-product">
                                     <!-- Product Image Start -->
                                     <div class="pro-img">
-                                        <a href="product.html">
+                                        <a href="product-detail.jsp">
                                             <img class="primary-img"
                                                  src="img/products/nền%20gạch%20ốp%20tường%20W366.jpg"
                                                  alt="single-product">
@@ -808,7 +811,7 @@
                                     <!-- Product Content Start -->
                                     <div class="pro-content">
                                         <div class="pro-info">
-                                            <h4><a href="product.html">Gạch ốp tường W366</a></h4>
+                                            <h4><a href="product-detail.jsp">Gạch ốp tường W366</a></h4>
                                             <p><span class="price">165,000đ</span>
                                                 <del class="prev-price">185,000đ</del>
                                             </p>
@@ -817,10 +820,10 @@
                                         </div>
                                         <div class="pro-actions">
                                             <div class="actions-primary">
-                                                <a href="cart.html" title="Thêm vào giỏ hàng"> + Thêm vào giỏ hàng</a>
+                                                <a href="cart.jsp" title="Thêm vào giỏ hàng"> + Thêm vào giỏ hàng</a>
                                             </div>
                                             <div class="actions-primary">
-                                                <a href="checkout.html" title="Mua ngay"> Mua ngay</a>
+                                                <a href="checkout.jsp" title="Mua ngay"> Mua ngay</a>
                                             </div>
                                         </div>
                                     </div>
@@ -830,7 +833,7 @@
                                 <div class="single-product">
                                     <!-- Product Image Start -->
                                     <div class="pro-img">
-                                        <a href="product.html">
+                                        <a href="product-detail.jsp">
                                             <img class="primary-img"
                                                  src="img/products/nền%20gạch%20ốp%20tường%2069000.jpg"
                                                  alt="single-product">
@@ -843,7 +846,7 @@
                                     <!-- Product Content Start -->
                                     <div class="pro-content">
                                         <div class="pro-info">
-                                            <h4><a href="product.html">Gạch ốp tường 69000</a></h4>
+                                            <h4><a href="product-detail.jsp">Gạch ốp tường 69000</a></h4>
                                             <p><span class="price">205,000đ</span>
                                                 <del class="prev-price">245,000đ</del>
                                             </p>
@@ -852,10 +855,10 @@
                                         </div>
                                         <div class="pro-actions">
                                             <div class="actions-primary">
-                                                <a href="cart.html" title="Thêm vào giỏ hàng"> + Thêm vào giỏ hàng</a>
+                                                <a href="cart.jsp" title="Thêm vào giỏ hàng"> + Thêm vào giỏ hàng</a>
                                             </div>
                                             <div class="actions-primary">
-                                                <a href="checkout.html" title="Mua ngay"> Mua ngay</a>
+                                                <a href="checkout.jsp" title="Mua ngay"> Mua ngay</a>
                                             </div>
                                         </div>
                                     </div>
@@ -868,7 +871,7 @@
                                 <div class="single-product">
                                     <!-- Product Image Start -->
                                     <div class="pro-img">
-                                        <a href="product.html">
+                                        <a href="product-detail.jsp">
                                             <img class="primary-img"
                                                  src="img/products/nền%20gạch%20ốp%20vi%20tinh%20K91029.jpg"
                                                  alt="single-product">
@@ -882,7 +885,7 @@
                                     <!-- Product Content Start -->
                                     <div class="pro-content">
                                         <div class="pro-info">
-                                            <h4><a href="product.html">Gạch Ốp Vi Tinh K91029</a></h4>
+                                            <h4><a href="product-detail.jsp">Gạch Ốp Vi Tinh K91029</a></h4>
                                             <p><span class="price">420,000đ</span>
                                                 <del class="prev-price">432,400đ</del>
                                             </p>
@@ -891,10 +894,10 @@
                                         </div>
                                         <div class="pro-actions">
                                             <div class="actions-primary">
-                                                <a href="cart.html" title="Thêm vào giỏ hàng"> + Thêm vào giỏ hàng</a>
+                                                <a href="cart.jsp" title="Thêm vào giỏ hàng"> + Thêm vào giỏ hàng</a>
                                             </div>
                                             <div class="actions-primary">
-                                                <a href="checkout.html" title="Mua ngay"> Mua ngay</a>
+                                                <a href="checkout.jsp" title="Mua ngay"> Mua ngay</a>
                                             </div>
                                         </div>
                                     </div>
@@ -904,7 +907,7 @@
                                 <div class="single-product">
                                     <!-- Product Image Start -->
                                     <div class="pro-img">
-                                        <a href="product.html">
+                                        <a href="product-detail.jsp">
                                             <img class="primary-img"
                                                  src="img/products/nền%20bộ%20gạch%20ốp%20tường%20G3801.jpg"
                                                  alt="single-product">
@@ -918,7 +921,7 @@
                                     <!-- Product Content Start -->
                                     <div class="pro-content">
                                         <div class="pro-info">
-                                            <h4><a href="product.html">Bộ gạch ốp tường G3801</a></h4>
+                                            <h4><a href="product-detail.jsp">Bộ gạch ốp tường G3801</a></h4>
                                             <p><span class="price">300,000đ</span>
                                                 <del class="prev-price">340,000đ</del>
                                             </p>
@@ -927,10 +930,10 @@
                                         </div>
                                         <div class="pro-actions">
                                             <div class="actions-primary">
-                                                <a href="cart.html" title="Thêm vào giỏ hàng"> + Thêm vào giỏ hàng</a>
+                                                <a href="cart.jsp" title="Thêm vào giỏ hàng"> + Thêm vào giỏ hàng</a>
                                             </div>
                                             <div class="actions-primary">
-                                                <a href="checkout.html" title="Mua ngay"> Mua ngay</a>
+                                                <a href="checkout.jsp" title="Mua ngay"> Mua ngay</a>
                                             </div>
                                         </div>
                                     </div>
@@ -948,7 +951,7 @@
                                 <div class="single-product">
                                     <!-- Product Image Start -->
                                     <div class="pro-img">
-                                        <a href="product.html">
+                                        <a href="product-detail.jsp">
                                             <img class="primary-img" src="img/products/nền%20gạch%20trang%20trí1.jpg"
                                                  alt="single-product">
                                             <img class="secondary-img" src="img/products/gạch%20trang%20trí1.jpg"
@@ -960,7 +963,7 @@
                                     <!-- Product Content Start -->
                                     <div class="pro-content">
                                         <div class="pro-info">
-                                            <h4><a href="product.html">Gạch thẻ Stripe 92TTTA-063</a></h4>
+                                            <h4><a href="product-detail.jsp">Gạch thẻ Stripe 92TTTA-063</a></h4>
                                             <p><span class="price">575,000đ</span>
                                                 <del class="prev-price">600,000đ</del>
                                             </p>
@@ -969,10 +972,10 @@
                                         </div>
                                         <div class="pro-actions">
                                             <div class="actions-primary">
-                                                <a href="cart.html" title="Thêm vào giỏ hàng"> + Thêm vào giỏ hàng</a>
+                                                <a href="cart.jsp" title="Thêm vào giỏ hàng"> + Thêm vào giỏ hàng</a>
                                             </div>
                                             <div class="actions-primary">
-                                                <a href="checkout.html" title="Mua ngay"> Mua ngay</a>
+                                                <a href="checkout.jsp" title="Mua ngay"> Mua ngay</a>
                                             </div>
                                         </div>
                                     </div>
@@ -982,7 +985,7 @@
                                 <div class="single-product">
                                     <!-- Product Image Start -->
                                     <div class="pro-img">
-                                        <a href="product.html">
+                                        <a href="product-detail.jsp">
                                             <img class="primary-img" src="img/products/nền%20gạch%20trang%20trí2.jpg"
                                                  alt="single-product">
                                             <img class="secondary-img" src="img/products/gạch%20trang%20trí2.jpg"
@@ -994,7 +997,7 @@
                                     <!-- Product Content Start -->
                                     <div class="pro-content">
                                         <div class="pro-info">
-                                            <h4><a href="product.html">Gạch bông Teheran 20109</a></h4>
+                                            <h4><a href="product-detail.jsp">Gạch bông Teheran 20109</a></h4>
                                             <p><span class="price">250,000đ</span>
                                                 <del class="prev-price">280,000đ</del>
                                             </p>
@@ -1003,10 +1006,10 @@
                                         </div>
                                         <div class="pro-actions">
                                             <div class="actions-primary">
-                                                <a href="cart.html" title="Thêm vào giỏ hàng"> + Thêm vào giỏ hàng</a>
+                                                <a href="cart.jsp" title="Thêm vào giỏ hàng"> + Thêm vào giỏ hàng</a>
                                             </div>
                                             <div class="actions-primary">
-                                                <a href="checkout.html" title="Mua ngay"> Mua ngay</a>
+                                                <a href="checkout.jsp" title="Mua ngay"> Mua ngay</a>
                                             </div>
                                         </div>
                                     </div>
@@ -1019,7 +1022,7 @@
                                 <div class="single-product">
                                     <!-- Product Image Start -->
                                     <div class="pro-img">
-                                        <a href="product.html">
+                                        <a href="product-detail.jsp">
                                             <img class="primary-img" src="img/products/nền%20gạch%20trang%20trí3.jpg"
                                                  alt="single-product">
                                             <img class="secondary-img" src="img/products/gạch%20trang%20trí3.jpg"
@@ -1031,7 +1034,7 @@
                                     <!-- Product Content Start -->
                                     <div class="pro-content">
                                         <div class="pro-info">
-                                            <h4><a href="product.html">Gạch lông vũ hoạ tiết</a></h4>
+                                            <h4><a href="product-detail.jsp">Gạch lông vũ hoạ tiết</a></h4>
                                             <p><span class="price">1,250,000đ</span>
                                                 <del class="prev-price">2,500,000đ</del>
                                             </p>
@@ -1040,10 +1043,10 @@
                                         </div>
                                         <div class="pro-actions">
                                             <div class="actions-primary">
-                                                <a href="cart.html" title="Thêm vào giỏ hàng"> + Thêm vào giỏ hàng</a>
+                                                <a href="cart.jsp" title="Thêm vào giỏ hàng"> + Thêm vào giỏ hàng</a>
                                             </div>
                                             <div class="actions-primary">
-                                                <a href="checkout.html" title="Mua ngay"> Mua ngay</a>
+                                                <a href="checkout.jsp" title="Mua ngay"> Mua ngay</a>
                                             </div>
                                         </div>
                                     </div>
@@ -1053,7 +1056,7 @@
                                 <div class="single-product">
                                     <!-- Product Image Start -->
                                     <div class="pro-img">
-                                        <a href="product.html">
+                                        <a href="product-detail.jsp">
                                             <img class="primary-img" src="img/products/nền%20gạch%20trang%20trí4.jpg"
                                                  alt="single-product">
                                             <img class="secondary-img" src="img/products/gạch%20trang%20trí4.jpg"
@@ -1065,7 +1068,7 @@
                                     <!-- Product Content Start -->
                                     <div class="pro-content">
                                         <div class="pro-info">
-                                            <h4><a href="product.html">Gạch bông xanh F2109</a></h4>
+                                            <h4><a href="product-detail.jsp">Gạch bông xanh F2109</a></h4>
                                             <p><span class="price">325,000đ</span>
                                                 <del class="prev-price">350.000đ</del>
                                             </p>
@@ -1074,10 +1077,10 @@
                                         </div>
                                         <div class="pro-actions">
                                             <div class="actions-primary">
-                                                <a href="cart.html" title="Thêm vào giỏ hàng"> + Thêm vào giỏ hàng</a>
+                                                <a href="cart.jsp" title="Thêm vào giỏ hàng"> + Thêm vào giỏ hàng</a>
                                             </div>
                                             <div class="actions-primary">
-                                                <a href="checkout.html" title="Mua ngay"> Mua ngay</a>
+                                                <a href="checkout.jsp" title="Mua ngay"> Mua ngay</a>
                                             </div>
                                         </div>
                                     </div>
@@ -1090,7 +1093,7 @@
                                 <div class="single-product">
                                     <!-- Product Image Start -->
                                     <div class="pro-img">
-                                        <a href="product.html">
+                                        <a href="product-detail.jsp">
                                             <img class="primary-img" src="img/products/nền%20gạch%20trang%20trí5.jpg"
                                                  alt="single-product">
                                             <img class="secondary-img" src="img/products/gạch%20trang%20trí5.jpg"
@@ -1102,7 +1105,7 @@
                                     <!-- Product Content Start -->
                                     <div class="pro-content">
                                         <div class="pro-info">
-                                            <h4><a href="product.html">Gạch vảy cá Grey</a></h4>
+                                            <h4><a href="product-detail.jsp">Gạch vảy cá Grey</a></h4>
                                             <p><span class="price">620.000đ</span>
                                                 <del class="prev-price">680.000đ</del>
                                             </p>
@@ -1111,10 +1114,10 @@
                                         </div>
                                         <div class="pro-actions">
                                             <div class="actions-primary">
-                                                <a href="cart.html" title="Thêm vào giỏ hàng"> + Thêm vào giỏ hàng</a>
+                                                <a href="cart.jsp" title="Thêm vào giỏ hàng"> + Thêm vào giỏ hàng</a>
                                             </div>
                                             <div class="actions-primary">
-                                                <a href="checkout.html" title="Mua ngay"> Mua ngay</a>
+                                                <a href="checkout.jsp" title="Mua ngay"> Mua ngay</a>
                                             </div>
                                         </div>
                                     </div>
@@ -1124,7 +1127,7 @@
                                 <div class="single-product">
                                     <!-- Product Image Start -->
                                     <div class="pro-img">
-                                        <a href="product.html">
+                                        <a href="product-detail.jsp">
                                             <img class="primary-img" src="img/products/nền%20gạch%20trang%20trí6.jpg"
                                                  alt="single-product">
                                             <img class="secondary-img" src="img/products/gạch%20trang%20trí6.jpg"
@@ -1136,7 +1139,7 @@
                                     <!-- Product Content Start -->
                                     <div class="pro-content">
                                         <div class="pro-info">
-                                            <h4><a href="product.html">Ripple Subway</a></h4>
+                                            <h4><a href="product-detail.jsp">Ripple Subway</a></h4>
                                             <p><span class="price">345,000đ</span>
                                                 <del class="prev-price">375,000đ</del>
                                             </p>
@@ -1145,10 +1148,10 @@
                                         </div>
                                         <div class="pro-actions">
                                             <div class="actions-primary">
-                                                <a href="cart.html" title="Thêm vào giỏ hàng"> + Thêm vào giỏ hàng</a>
+                                                <a href="cart.jsp" title="Thêm vào giỏ hàng"> + Thêm vào giỏ hàng</a>
                                             </div>
                                             <div class="actions-primary">
-                                                <a href="checkout.html" title="Mua ngay"> Mua ngay</a>
+                                                <a href="checkout.jsp" title="Mua ngay"> Mua ngay</a>
                                             </div>
                                         </div>
                                     </div>
@@ -1161,7 +1164,7 @@
                                 <div class="single-product">
                                     <!-- Product Image Start -->
                                     <div class="pro-img">
-                                        <a href="product.html">
+                                        <a href="product-detail.jsp">
                                             <img class="primary-img" src="img/products/nền%20gạch%20trang%20trí7.jpg"
                                                  alt="single-product">
                                             <img class="secondary-img" src="img/products/gạch%20trang%20trí7.jpg"
@@ -1173,7 +1176,7 @@
                                     <!-- Product Content Start -->
                                     <div class="pro-content">
                                         <div class="pro-info">
-                                            <h4><a href="product.html">Gạch men rạn Gold</a></h4>
+                                            <h4><a href="product-detail.jsp">Gạch men rạn Gold</a></h4>
                                             <p><span class="price">500,000đ</span>
                                                 <del class="prev-price">560,000đ</del>
                                             </p>
@@ -1182,10 +1185,10 @@
                                         </div>
                                         <div class="pro-actions">
                                             <div class="actions-primary">
-                                                <a href="cart.html" title="Thêm vào giỏ hàng"> + Thêm vào giỏ hàng</a>
+                                                <a href="cart.jsp" title="Thêm vào giỏ hàng"> + Thêm vào giỏ hàng</a>
                                             </div>
                                             <div class="actions-primary">
-                                                <a href="checkout.html" title="Mua ngay"> Mua ngay</a>
+                                                <a href="checkout.jsp" title="Mua ngay"> Mua ngay</a>
                                             </div>
                                         </div>
                                     </div>
@@ -1195,7 +1198,7 @@
                                 <div class="single-product">
                                     <!-- Product Image Start -->
                                     <div class="pro-img">
-                                        <a href="product.html">
+                                        <a href="product-detail.jsp">
                                             <img class="primary-img" src="img/products/nền%20gạch%20trang%20trí8.jpg"
                                                  alt="single-product">
                                             <img class="secondary-img" src="img/products/gạch%20trang%20trí8.jpg"
@@ -1207,7 +1210,7 @@
                                     <!-- Product Content Start -->
                                     <div class="pro-content">
                                         <div class="pro-info">
-                                            <h4><a href="product.html">Gạch thẻ</a></h4>
+                                            <h4><a href="product-detail.jsp">Gạch thẻ</a></h4>
                                             <p><span class="price">250,000đ</span>
                                                 <del class="prev-price">290,000đ</del>
                                             </p>
@@ -1216,10 +1219,10 @@
                                         </div>
                                         <div class="pro-actions">
                                             <div class="actions-primary">
-                                                <a href="cart.html" title="Thêm vào giỏ hàng"> + Thêm vào giỏ hàng</a>
+                                                <a href="cart.jsp" title="Thêm vào giỏ hàng"> + Thêm vào giỏ hàng</a>
                                             </div>
                                             <div class="actions-primary">
-                                                <a href="checkout.html" title="Mua ngay"> Mua ngay</a>
+                                                <a href="checkout.jsp" title="Mua ngay"> Mua ngay</a>
                                             </div>
                                         </div>
                                     </div>
@@ -1237,7 +1240,7 @@
                                 <div class="single-product">
                                     <!-- Product Image Start -->
                                     <div class="pro-img">
-                                        <a href="product.html">
+                                        <a href="product-detail.jsp">
                                             <img class="primary-img" src="img/products/nền%20gạch%20gỗ%20vân1.jpg"
                                                  alt="single-product">
                                             <img class="secondary-img" src="img/products/gạch%20gỗ%20vân1.jpg"
@@ -1249,7 +1252,7 @@
                                     <!-- Product Content Start -->
                                     <div class="pro-content">
                                         <div class="pro-info">
-                                            <h4><a href="product.html">Gạch vân gỗ NA-12073</a></h4>
+                                            <h4><a href="product-detail.jsp">Gạch vân gỗ NA-12073</a></h4>
                                             <p><span class="price">620.000đ</span>
                                                 <del class="prev-price">660,000đ</del>
                                             </p>
@@ -1258,10 +1261,10 @@
                                         </div>
                                         <div class="pro-actions">
                                             <div class="actions-primary">
-                                                <a href="cart.html" title="Thêm vào giỏ hàng"> + Thêm vào giỏ hàng</a>
+                                                <a href="cart.jsp" title="Thêm vào giỏ hàng"> + Thêm vào giỏ hàng</a>
                                             </div>
                                             <div class="actions-primary">
-                                                <a href="checkout.html" title="Mua ngay"> Mua ngay</a>
+                                                <a href="checkout.jsp" title="Mua ngay"> Mua ngay</a>
                                             </div>
                                         </div>
                                     </div>
@@ -1271,7 +1274,7 @@
                                 <div class="single-product">
                                     <!-- Product Image Start -->
                                     <div class="pro-img">
-                                        <a href="product.html">
+                                        <a href="product-detail.jsp">
                                             <img class="primary-img" src="img/products/nền%20gạch%20gỗ%20vân2.jpg"
                                                  alt="single-product">
                                             <img class="secondary-img" src="img/products/gạch%20gỗ%20vân2.jpg"
@@ -1283,7 +1286,7 @@
                                     <!-- Product Content Start -->
                                     <div class="pro-content">
                                         <div class="pro-info">
-                                            <h4><a href="product.html">Gạch gỗ KHA-58303</a></h4>
+                                            <h4><a href="product-detail.jsp">Gạch gỗ KHA-58303</a></h4>
                                             <p><span class="price">205,000đ</span>
                                                 <del class="prev-price">285,000đ</del>
                                             </p>
@@ -1292,10 +1295,10 @@
                                         </div>
                                         <div class="pro-actions">
                                             <div class="actions-primary">
-                                                <a href="cart.html" title="Thêm vào giỏ hàng"> + Thêm vào giỏ hàng</a>
+                                                <a href="cart.jsp" title="Thêm vào giỏ hàng"> + Thêm vào giỏ hàng</a>
                                             </div>
                                             <div class="actions-primary">
-                                                <a href="checkout.html" title="Mua ngay"> Mua ngay</a>
+                                                <a href="checkout.jsp" title="Mua ngay"> Mua ngay</a>
                                             </div>
                                         </div>
                                     </div>
@@ -1308,7 +1311,7 @@
                                 <div class="single-product">
                                     <!-- Product Image Start -->
                                     <div class="pro-img">
-                                        <a href="product.html">
+                                        <a href="product-detail.jsp">
                                             <img class="primary-img" src="img/products/nền%20gạch%20gỗ%20vân3.jpg"
                                                  alt="single-product">
                                             <img class="secondary-img" src="img/products/nền%20gạch%20gỗ%20vân3.jpg"
@@ -1320,7 +1323,7 @@
                                     <!-- Product Content Start -->
                                     <div class="pro-content">
                                         <div class="pro-info">
-                                            <h4><a href="product.html">Super Black Slate BY612001</a></h4>
+                                            <h4><a href="product-detail.jsp">Super Black Slate BY612001</a></h4>
                                             <p><span class="price">420,000đ</span>
                                                 <del class="prev-price">432,000đ</del>
                                             </p>
@@ -1329,10 +1332,10 @@
                                         </div>
                                         <div class="pro-actions">
                                             <div class="actions-primary">
-                                                <a href="cart.html" title="Thêm vào giỏ hàng"> + Thêm vào giỏ hàng</a>
+                                                <a href="cart.jsp" title="Thêm vào giỏ hàng"> + Thêm vào giỏ hàng</a>
                                             </div>
                                             <div class="actions-primary">
-                                                <a href="checkout.html" title="Mua ngay"> Mua ngay</a>
+                                                <a href="checkout.jsp" title="Mua ngay"> Mua ngay</a>
                                             </div>
                                         </div>
                                     </div>
@@ -1342,7 +1345,7 @@
                                 <div class="single-product">
                                     <!-- Product Image Start -->
                                     <div class="pro-img">
-                                        <a href="product.html">
+                                        <a href="product-detail.jsp">
                                             <img class="primary-img" src="img/products/nền%20gạch%20gỗ%20vân4.jpg"
                                                  alt="single-product">
                                             <img class="secondary-img" src="img/products/gạch%20gỗ%20vân4.jpg"
@@ -1354,7 +1357,7 @@
                                     <!-- Product Content Start -->
                                     <div class="pro-content">
                                         <div class="pro-info">
-                                            <h4><a href="product.html">Gạch vân gỗ W96003</a></h4>
+                                            <h4><a href="product-detail.jsp">Gạch vân gỗ W96003</a></h4>
                                             <p><span class="price">300,000đ</span>
                                                 <del class="prev-price">330,000đ</del>
                                             </p>
@@ -1363,10 +1366,10 @@
                                         </div>
                                         <div class="pro-actions">
                                             <div class="actions-primary">
-                                                <a href="cart.html" title="Thêm vào giỏ hàng"> + Thêm vào giỏ hàng</a>
+                                                <a href="cart.jsp" title="Thêm vào giỏ hàng"> + Thêm vào giỏ hàng</a>
                                             </div>
                                             <div class="actions-primary">
-                                                <a href="checkout.html" title="Mua ngay"> Mua ngay</a>
+                                                <a href="checkout.jsp" title="Mua ngay"> Mua ngay</a>
                                             </div>
                                         </div>
                                     </div>
@@ -1379,7 +1382,7 @@
                                 <div class="single-product">
                                     <!-- Product Image Start -->
                                     <div class="pro-img">
-                                        <a href="product.html">
+                                        <a href="product-detail.jsp">
                                             <img class="primary-img" src="img/products/nền%20gạch%20gỗ%20vân5.jpg"
                                                  alt="single-product">
                                             <img class="secondary-img" src="img/products/gạch%20gỗ%20vân5.jpg"
@@ -1391,7 +1394,7 @@
                                     <!-- Product Content Start -->
                                     <div class="pro-content">
                                         <div class="pro-info">
-                                            <h4><a href="product.html">Gạch gỗ W99007</a></h4>
+                                            <h4><a href="product-detail.jsp">Gạch gỗ W99007</a></h4>
                                             <p><span class="price">310,000đ</span>
                                                 <del class="prev-price">340,000đ</del>
                                             </p>
@@ -1400,10 +1403,10 @@
                                         </div>
                                         <div class="pro-actions">
                                             <div class="actions-primary">
-                                                <a href="cart.html" title="Thêm vào giỏ hàng"> + Thêm vào giỏ hàng</a>
+                                                <a href="cart.jsp" title="Thêm vào giỏ hàng"> + Thêm vào giỏ hàng</a>
                                             </div>
                                             <div class="actions-primary">
-                                                <a href="checkout.html" title="Mua ngay"> Mua ngay</a>
+                                                <a href="checkout.jsp" title="Mua ngay"> Mua ngay</a>
                                             </div>
                                         </div>
                                     </div>
@@ -1413,7 +1416,7 @@
                                 <div class="single-product">
                                     <!-- Product Image Start -->
                                     <div class="pro-img">
-                                        <a href="product.html">
+                                        <a href="product-detail.jsp">
                                             <img class="primary-img" src="img/products/nền%20gạch%20gỗ%20vân6.jpg"
                                                  alt="single-product">
                                             <img class="secondary-img" src="img/products/gạch%20gỗ%20vân6.jpg"
@@ -1425,7 +1428,7 @@
                                     <!-- Product Content Start -->
                                     <div class="pro-content">
                                         <div class="pro-info">
-                                            <h4><a href="product.html">Gạch gỗ KHA-207</a></h4>
+                                            <h4><a href="product-detail.jsp">Gạch gỗ KHA-207</a></h4>
                                             <p><span class="price">285,000đ</span>
                                                 <del class="prev-price">300,000đ</del>
                                             </p>
@@ -1434,10 +1437,10 @@
                                         </div>
                                         <div class="pro-actions">
                                             <div class="actions-primary">
-                                                <a href="cart.html" title="Thêm vào giỏ hàng"> + Thêm vào giỏ hàng</a>
+                                                <a href="cart.jsp" title="Thêm vào giỏ hàng"> + Thêm vào giỏ hàng</a>
                                             </div>
                                             <div class="actions-primary">
-                                                <a href="checkout.html" title="Mua ngay"> Mua ngay</a>
+                                                <a href="checkout.jsp" title="Mua ngay"> Mua ngay</a>
                                             </div>
                                         </div>
                                     </div>
@@ -1450,7 +1453,7 @@
                                 <div class="single-product">
                                     <!-- Product Image Start -->
                                     <div class="pro-img">
-                                        <a href="product.html">
+                                        <a href="product-detail.jsp">
                                             <img class="primary-img" src="img/products/nền%20gạch%20gỗ%20vân7.jpg"
                                                  alt="single-product">
                                             <img class="secondary-img" src="img/products/gạch%20gỗ%20vân7.jpg"
@@ -1462,7 +1465,7 @@
                                     <!-- Product Content Start -->
                                     <div class="pro-content">
                                         <div class="pro-info">
-                                            <h4><a href="product.html">Gạch vân gỗ NA-20010</a></h4>
+                                            <h4><a href="product-detail.jsp">Gạch vân gỗ NA-20010</a></h4>
                                             <p><span class="price">250,000đ</span>
                                                 <del class="prev-price">300,000đ</del>
                                             </p>
@@ -1471,10 +1474,10 @@
                                         </div>
                                         <div class="pro-actions">
                                             <div class="actions-primary">
-                                                <a href="cart.html" title="Thêm vào giỏ hàng"> + Thêm vào giỏ hàng</a>
+                                                <a href="cart.jsp" title="Thêm vào giỏ hàng"> + Thêm vào giỏ hàng</a>
                                             </div>
                                             <div class="actions-primary">
-                                                <a href="checkout.html" title="Mua ngay"> Mua ngay</a>
+                                                <a href="checkout.jsp" title="Mua ngay"> Mua ngay</a>
                                             </div>
                                         </div>
                                     </div>
@@ -1484,7 +1487,7 @@
                                 <div class="single-product">
                                     <!-- Product Image Start -->
                                     <div class="pro-img">
-                                        <a href="product.html">
+                                        <a href="product-detail.jsp">
                                             <img class="primary-img" src="img/products/nền%20gạch%20gỗ%20vân8.jpg"
                                                  alt="single-product">
                                             <img class="secondary-img" src="img/products/gạch%20gỗ%20vân8.jpg"
@@ -1496,7 +1499,7 @@
                                     <!-- Product Content Start -->
                                     <div class="pro-content">
                                         <div class="pro-info">
-                                            <h4><a href="product.html">Gạch vân gỗ KHA-7508</a></h4>
+                                            <h4><a href="product-detail.jsp">Gạch vân gỗ KHA-7508</a></h4>
                                             <p><span class="price">325,000đ</span>
                                                 <del class="prev-price">350,000đ</del>
                                             </p>
@@ -1505,10 +1508,10 @@
                                         </div>
                                         <div class="pro-actions">
                                             <div class="actions-primary">
-                                                <a href="cart.html" title="Thêm vào giỏ hàng"> + Thêm vào giỏ hàng</a>
+                                                <a href="cart.jsp" title="Thêm vào giỏ hàng"> + Thêm vào giỏ hàng</a>
                                             </div>
                                             <div class="actions-primary">
-                                                <a href="checkout.html" title="Mua ngay"> Mua ngay</a>
+                                                <a href="checkout.jsp" title="Mua ngay"> Mua ngay</a>
                                             </div>
                                         </div>
                                     </div>
@@ -1526,7 +1529,7 @@
                                 <div class="single-product">
                                     <!-- Product Image Start -->
                                     <div class="pro-img">
-                                        <a href="product.html">
+                                        <a href="product-detail.jsp">
                                             <img class="primary-img"
                                                  src="img/products/nền%20gạch%20Terrazzo%20K8755.jpg"
                                                  alt="single-product">
@@ -1539,7 +1542,7 @@
                                     <!-- Product Content Start -->
                                     <div class="pro-content">
                                         <div class="pro-info">
-                                            <h4><a href="product.html">Gạch Terrazzo K8755</a></h4>
+                                            <h4><a href="product-detail.jsp">Gạch Terrazzo K8755</a></h4>
                                             <p><span class="price">200,000đ</span>
                                                 <del class="prev-price">230,000đ</del>
                                             </p>
@@ -1548,10 +1551,10 @@
                                         </div>
                                         <div class="pro-actions">
                                             <div class="actions-primary">
-                                                <a href="cart.html" title="Thêm vào giỏ hàng"> + Thêm vào giỏ hàng</a>
+                                                <a href="cart.jsp" title="Thêm vào giỏ hàng"> + Thêm vào giỏ hàng</a>
                                             </div>
                                             <div class="actions-primary">
-                                                <a href="checkout.html" title="Mua ngay"> Mua ngay</a>
+                                                <a href="checkout.jsp" title="Mua ngay"> Mua ngay</a>
                                             </div>
                                         </div>
                                     </div>
@@ -1561,7 +1564,7 @@
                                 <div class="single-product">
                                     <!-- Product Image Start -->
                                     <div class="pro-img">
-                                        <a href="product.html">
+                                        <a href="product-detail.jsp">
                                             <img class="primary-img"
                                                  src="img/products/nền%20gạch%20Terrazzo%20nhũ%20KHTR-61288.jpg"
                                                  alt="single-product">
@@ -1575,7 +1578,7 @@
                                     <!-- Product Content Start -->
                                     <div class="pro-content">
                                         <div class="pro-info">
-                                            <h4><a href="product.html">Gạch Terrazzo nhũ KHTR-61288</a></h4>
+                                            <h4><a href="product-detail.jsp">Gạch Terrazzo nhũ KHTR-61288</a></h4>
                                             <p><span class="price">300,000đ</span>
                                                 <del class="prev-price">340,000đ</del>
                                             </p>
@@ -1584,10 +1587,10 @@
                                         </div>
                                         <div class="pro-actions">
                                             <div class="actions-primary">
-                                                <a href="cart.html" title="Thêm vào giỏ hàng"> + Thêm vào giỏ hàng</a>
+                                                <a href="cart.jsp" title="Thêm vào giỏ hàng"> + Thêm vào giỏ hàng</a>
                                             </div>
                                             <div class="actions-primary">
-                                                <a href="checkout.html" title="Mua ngay"> Mua ngay</a>
+                                                <a href="checkout.jsp" title="Mua ngay"> Mua ngay</a>
                                             </div>
                                         </div>
                                     </div>
@@ -1600,7 +1603,7 @@
                                 <div class="single-product">
                                     <!-- Product Image Start -->
                                     <div class="pro-img">
-                                        <a href="product.html">
+                                        <a href="product-detail.jsp">
                                             <img class="primary-img"
                                                  src="img/products/nền%20gạch%20Terrazzo%20TERA362.jpg"
                                                  alt="single-product">
@@ -1613,7 +1616,7 @@
                                     <!-- Product Content Start -->
                                     <div class="pro-content">
                                         <div class="pro-info">
-                                            <h4><a href="product.html">Gạch Terrazzo TERA362</a></h4>
+                                            <h4><a href="product-detail.jsp">Gạch Terrazzo TERA362</a></h4>
                                             <p><span class="price">220,000đ</span>
                                                 <del class="prev-price">250,500đ</del>
                                             </p>
@@ -1622,10 +1625,10 @@
                                         </div>
                                         <div class="pro-actions">
                                             <div class="actions-primary">
-                                                <a href="cart.html" title="Thêm vào giỏ hàng"> + Thêm vào giỏ hàng</a>
+                                                <a href="cart.jsp" title="Thêm vào giỏ hàng"> + Thêm vào giỏ hàng</a>
                                             </div>
                                             <div class="actions-primary">
-                                                <a href="checkout.html" title="Mua ngay"> Mua ngay</a>
+                                                <a href="checkout.jsp" title="Mua ngay"> Mua ngay</a>
                                             </div>
                                         </div>
                                     </div>
@@ -1635,7 +1638,7 @@
                                 <div class="single-product">
                                     <!-- Product Image Start -->
                                     <div class="pro-img">
-                                        <a href="product.html">
+                                        <a href="product-detail.jsp">
                                             <img class="primary-img"
                                                  src="img/products/nền%20gạch%20Terrazzo%20TERA363.jpg"
                                                  alt="single-product">
@@ -1648,7 +1651,7 @@
                                     <!-- Product Content Start -->
                                     <div class="pro-content">
                                         <div class="pro-info">
-                                            <h4><a href="product.html">Gạch Terrazzo TERA363</a></h4>
+                                            <h4><a href="product-detail.jsp">Gạch Terrazzo TERA363</a></h4>
                                             <p><span class="price">260,000đ</span>
                                                 <del class="prev-price">290,000đ</del>
                                             </p>
@@ -1657,10 +1660,10 @@
                                         </div>
                                         <div class="pro-actions">
                                             <div class="actions-primary">
-                                                <a href="cart.html" title="Thêm vào giỏ hàng"> + Thêm vào giỏ hàng</a>
+                                                <a href="cart.jsp" title="Thêm vào giỏ hàng"> + Thêm vào giỏ hàng</a>
                                             </div>
                                             <div class="actions-primary">
-                                                <a href="checkout.html" title="Mua ngay"> Mua ngay</a>
+                                                <a href="checkout.jsp" title="Mua ngay"> Mua ngay</a>
                                             </div>
                                         </div>
                                     </div>
@@ -1673,7 +1676,7 @@
                                 <div class="single-product">
                                     <!-- Product Image Start -->
                                     <div class="pro-img">
-                                        <a href="product.html">
+                                        <a href="product-detail.jsp">
                                             <img class="primary-img"
                                                  src="img/products/nền%20gạch%20Terrazzo%20ốp%20lát%20D6637.jpg"
                                                  alt="single-product">
@@ -1687,7 +1690,7 @@
                                     <!-- Product Content Start -->
                                     <div class="pro-content">
                                         <div class="pro-info">
-                                            <h4><a href="product.html">Gạch Terrazzo ốp lát D6637</a></h4>
+                                            <h4><a href="product-detail.jsp">Gạch Terrazzo ốp lát D6637</a></h4>
                                             <p><span class="price">220,000đ</span>
                                                 <del class="prev-price">250,000đ</del>
                                             </p>
@@ -1696,10 +1699,10 @@
                                         </div>
                                         <div class="pro-actions">
                                             <div class="actions-primary">
-                                                <a href="cart.html" title="Thêm vào giỏ hàng"> + Thêm vào giỏ hàng</a>
+                                                <a href="cart.jsp" title="Thêm vào giỏ hàng"> + Thêm vào giỏ hàng</a>
                                             </div>
                                             <div class="actions-primary">
-                                                <a href="checkout.html" title="Mua ngay"> Mua ngay</a>
+                                                <a href="checkout.jsp" title="Mua ngay"> Mua ngay</a>
                                             </div>
                                         </div>
                                     </div>
@@ -1709,7 +1712,7 @@
                                 <div class="single-product">
                                     <!-- Product Image Start -->
                                     <div class="pro-img">
-                                        <a href="product.html">
+                                        <a href="product-detail.jsp">
                                             <img class="primary-img"
                                                  src="img/products/nền%20gạch%20Terrazzo%20ốp%20tường%20K382.jpg"
                                                  alt="single-product">
@@ -1723,7 +1726,7 @@
                                     <!-- Product Content Start -->
                                     <div class="pro-content">
                                         <div class="pro-info">
-                                            <h4><a href="product.html">Gạch Terrazzo ốp tường K382</a></h4>
+                                            <h4><a href="product-detail.jsp">Gạch Terrazzo ốp tường K382</a></h4>
                                             <p><span class="price">280,000đ</span>
                                                 <del class="prev-price">310,000đ</del>
                                             </p>
@@ -1732,10 +1735,10 @@
                                         </div>
                                         <div class="pro-actions">
                                             <div class="actions-primary">
-                                                <a href="cart.html" title="Thêm vào giỏ hàng"> + Thêm vào giỏ hàng</a>
+                                                <a href="cart.jsp" title="Thêm vào giỏ hàng"> + Thêm vào giỏ hàng</a>
                                             </div>
                                             <div class="actions-primary">
-                                                <a href="checkout.html" title="Mua ngay"> Mua ngay</a>
+                                                <a href="checkout.jsp" title="Mua ngay"> Mua ngay</a>
                                             </div>
                                         </div>
                                     </div>
@@ -1748,7 +1751,7 @@
                                 <div class="single-product">
                                     <!-- Product Image Start -->
                                     <div class="pro-img">
-                                        <a href="product.html">
+                                        <a href="product-detail.jsp">
                                             <img class="primary-img"
                                                  src="img/products/nền%20gạch%20Terrazzo%20ốp%20tường%20TERA361.jpg"
                                                  alt="single-product">
@@ -1762,7 +1765,7 @@
                                     <!-- Product Content Start -->
                                     <div class="pro-content">
                                         <div class="pro-info">
-                                            <h4><a href="product.html">Gạch Terrazzo ốp tường TERA361</a></h4>
+                                            <h4><a href="product-detail.jsp">Gạch Terrazzo ốp tường TERA361</a></h4>
                                             <p><span class="price">230,000đ</span>
                                                 <del class="prev-price">250,000đ</del>
                                             </p>
@@ -1771,10 +1774,10 @@
                                         </div>
                                         <div class="pro-actions">
                                             <div class="actions-primary">
-                                                <a href="cart.html" title="Thêm vào giỏ hàng"> + Thêm vào giỏ hàng</a>
+                                                <a href="cart.jsp" title="Thêm vào giỏ hàng"> + Thêm vào giỏ hàng</a>
                                             </div>
                                             <div class="actions-primary">
-                                                <a href="checkout.html" title="Mua ngay"> Mua ngay</a>
+                                                <a href="checkout.jsp" title="Mua ngay"> Mua ngay</a>
                                             </div>
                                         </div>
                                     </div>
@@ -1784,7 +1787,7 @@
                                 <div class="single-product">
                                     <!-- Product Image Start -->
                                     <div class="pro-img">
-                                        <a href="product.html">
+                                        <a href="product-detail.jsp">
                                             <img class="primary-img"
                                                  src="img/products/nền%20gạch%20terrazzo%20ốp%20tường%20K381.jpg"
                                                  alt="single-product">
@@ -1798,7 +1801,7 @@
                                     <!-- Product Content Start -->
                                     <div class="pro-content">
                                         <div class="pro-info">
-                                            <h4><a href="product.html">Gạch Terrazzo ốp tường K381</a></h4>
+                                            <h4><a href="product-detail.jsp">Gạch Terrazzo ốp tường K381</a></h4>
                                             <p><span class="price">250,000đ</span>
                                                 <del class="prev-price">270,000đ</del>
                                             </p>
@@ -1807,10 +1810,10 @@
                                         </div>
                                         <div class="pro-actions">
                                             <div class="actions-primary">
-                                                <a href="cart.html" title="Thêm vào giỏ hàng"> + Thêm vào giỏ hàng</a>
+                                                <a href="cart.jsp" title="Thêm vào giỏ hàng"> + Thêm vào giỏ hàng</a>
                                             </div>
                                             <div class="actions-primary">
-                                                <a href="checkout.html" title="Mua ngay"> Mua ngay</a>
+                                                <a href="checkout.jsp" title="Mua ngay"> Mua ngay</a>
                                             </div>
                                         </div>
                                     </div>
@@ -1862,7 +1865,7 @@
                             <div class="single-product">
                                 <!-- Product Image Start -->
                                 <div class="pro-img">
-                                    <a href="product.html">
+                                    <a href="product-detail.jsp">
                                         <img class="primary-img"
                                              src="img/products/nền%20gạch%20lát%20nền%20River%20Flow%2002GB.jpg"
                                              alt="single-product">
@@ -1876,15 +1879,15 @@
                                 <!-- Product Content Start -->
                                 <div class="pro-content">
                                     <div class="pro-info">
-                                        <h4><a href="product.html">Gạch lát ốp River Flow 02GB</a></h4>
+                                        <h4><a href="product-detail.jsp">Gạch lát ốp River Flow 02GB</a></h4>
                                         <p><span class="price">380,400đ</span></p>
                                     </div>
                                     <div class="pro-actions">
                                         <div class="actions-primary">
-                                            <a href="cart.html" title="Thêm vào giỏ hàng"> + Thêm vào giỏ hàng</a>
+                                            <a href="cart.jsp" title="Thêm vào giỏ hàng"> + Thêm vào giỏ hàng</a>
                                         </div>
                                         <div class="actions-primary">
-                                            <a href="checkout.html" title="Mua ngay">Mua ngay</a>
+                                            <a href="checkout.jsp" title="Mua ngay">Mua ngay</a>
                                         </div>
 
                                     </div>
@@ -1894,7 +1897,7 @@
                             <div class="single-product">
                                 <!-- Product Image Start -->
                                 <div class="pro-img">
-                                    <a href="product.html">
+                                    <a href="product-detail.jsp">
                                         <img class="primary-img"
                                              src="img/products/nền%20gạch%20lát%20nền%20Sandstone%2060SD12GB.jpg"
                                              alt="single-product">
@@ -1908,15 +1911,15 @@
                                 <!-- Product Content Start -->
                                 <div class="pro-content">
                                     <div class="pro-info">
-                                        <h4><a href="product.html">Gạch lát nền Sandstone 60SD12GB</a></h4>
+                                        <h4><a href="product-detail.jsp">Gạch lát nền Sandstone 60SD12GB</a></h4>
                                         <p><span class="price">320,500đ</span></p>
                                     </div>
                                     <div class="pro-actions">
                                         <div class="actions-primary">
-                                            <a href="cart.html" title="Thêm vào giỏ hàng"> + Thêm vào giỏ hàng</a>
+                                            <a href="cart.jsp" title="Thêm vào giỏ hàng"> + Thêm vào giỏ hàng</a>
                                         </div>
                                         <div class="actions-primary">
-                                            <a href="checkout.html" title="Mua ngay">Mua ngay</a>
+                                            <a href="checkout.jsp" title="Mua ngay">Mua ngay</a>
                                         </div>
 
                                     </div>
@@ -1926,7 +1929,7 @@
                             <div class="single-product">
                                 <!-- Product Image Start -->
                                 <div class="pro-img">
-                                    <a href="product.html">
+                                    <a href="product-detail.jsp">
                                         <img class="primary-img" src="img/products/nền%20gạch%20lát%20nền%20K87009.jpg"
                                              alt="single-product">
                                         <img class="secondary-img" src="img/products/gạch%20lát%20nền%20K87009.jpg"
@@ -1938,15 +1941,15 @@
                                 <!-- Product Content Start -->
                                 <div class="pro-content">
                                     <div class="pro-info">
-                                        <h4><a href="product.html">Gạch lát nền K87009</a></h4>
+                                        <h4><a href="product-detail.jsp">Gạch lát nền K87009</a></h4>
                                         <p><span class="price">320.000đ</span></p>
                                     </div>
                                     <div class="pro-actions">
                                         <div class="actions-primary">
-                                            <a href="cart.html" title="Thêm vào giỏ hàng"> + Thêm vào giỏ hàng</a>
+                                            <a href="cart.jsp" title="Thêm vào giỏ hàng"> + Thêm vào giỏ hàng</a>
                                         </div>
                                         <div class="actions-primary">
-                                            <a href="checkout.html" title="Mua ngay">Mua ngay</a>
+                                            <a href="checkout.jsp" title="Mua ngay">Mua ngay</a>
                                         </div>
 
                                     </div>
@@ -1956,7 +1959,7 @@
                             <div class="single-product">
                                 <!-- Product Image Start -->
                                 <div class="pro-img">
-                                    <a href="product.html">
+                                    <a href="product-detail.jsp">
                                         <img class="primary-img"
                                              src="img/products/nền%20gạch%20lát%20nền%20JY88SP025.jpg"
                                              alt="single-product">
@@ -1969,15 +1972,15 @@
                                 <!-- Product Content Start -->
                                 <div class="pro-content">
                                     <div class="pro-info">
-                                        <h4><a href="product.html">Gạch lát nền JY88SP025</a></h4>
+                                        <h4><a href="product-detail.jsp">Gạch lát nền JY88SP025</a></h4>
                                         <p><span class="price">133.250đ</span></p>
                                     </div>
                                     <div class="pro-actions">
                                         <div class="actions-primary">
-                                            <a href="cart.html" title="Thêm vào giỏ hàng"> + Thêm vào giỏ hàng</a>
+                                            <a href="cart.jsp" title="Thêm vào giỏ hàng"> + Thêm vào giỏ hàng</a>
                                         </div>
                                         <div class="actions-primary">
-                                            <a href="checkout.html" title="Mua ngay">Mua ngay</a>
+                                            <a href="checkout.jsp" title="Mua ngay">Mua ngay</a>
                                         </div>
 
                                     </div>
@@ -1987,7 +1990,7 @@
                             <div class="single-product">
                                 <!-- Product Image Start -->
                                 <div class="pro-img">
-                                    <a href="product.html">
+                                    <a href="product-detail.jsp">
                                         <img class="primary-img" src="img/products/nền%20gạch%20Granite%20GM6706.jpg"
                                              alt="single-product">
                                         <img class="secondary-img" src="img/products/gạch%20Granite%20GM6706.jpg"
@@ -1999,15 +2002,15 @@
                                 <!-- Product Content Start -->
                                 <div class="pro-content">
                                     <div class="pro-info">
-                                        <h4><a href="product.html">Gạch Granite GM6706</a></h4>
+                                        <h4><a href="product-detail.jsp">Gạch Granite GM6706</a></h4>
                                         <p><span class="price">420,000đ</span></p>
                                     </div>
                                     <div class="pro-actions">
                                         <div class="actions-primary">
-                                            <a href="cart.html" title="Thêm vào giỏ hàng"> + Thêm vào giỏ hàng</a>
+                                            <a href="cart.jsp" title="Thêm vào giỏ hàng"> + Thêm vào giỏ hàng</a>
                                         </div>
                                         <div class="actions-primary">
-                                            <a href="checkout.html" title="Mua ngay">Mua ngay</a>
+                                            <a href="checkout.jsp" title="Mua ngay">Mua ngay</a>
                                         </div>
 
                                     </div>
@@ -2022,7 +2025,7 @@
                             <div class="single-product">
                                 <!-- Product Image Start -->
                                 <div class="pro-img">
-                                    <a href="product.html">
+                                    <a href="product-detail.jsp">
                                         <img class="primary-img"
                                              src="img/products/nền%20gạch%20ốp%20tường%20BAT3675.jpg"
                                              alt="single-product">
@@ -2035,15 +2038,15 @@
                                 <!-- Product Content Start -->
                                 <div class="pro-content">
                                     <div class="pro-info">
-                                        <h4><a href="product.html">Gạch ốp tường BAT3675</a></h4>
+                                        <h4><a href="product-detail.jsp">Gạch ốp tường BAT3675</a></h4>
                                         <p><span class="price">205,000đ</span></p>
                                     </div>
                                     <div class="pro-actions">
                                         <div class="actions-primary">
-                                            <a href="cart.html" title="Thêm vào giỏ hàng"> + Thêm vào giỏ hàng</a>
+                                            <a href="cart.jsp" title="Thêm vào giỏ hàng"> + Thêm vào giỏ hàng</a>
                                         </div>
                                         <div class="actions-primary">
-                                            <a href="checkout.html" title="Mua ngay">Mua ngay</a>
+                                            <a href="checkout.jsp" title="Mua ngay">Mua ngay</a>
                                         </div>
 
                                     </div>
@@ -2053,7 +2056,7 @@
                             <div class="single-product">
                                 <!-- Product Image Start -->
                                 <div class="pro-img">
-                                    <a href="product.html">
+                                    <a href="product-detail.jsp">
                                         <img class="primary-img" src="img/products/nền%20gạch%20ốp%20tường%2069000.jpg"
                                              alt="single-product">
                                         <img class="secondary-img" src="img/products/gạch%20ốp%20tường%2069000.jpg"
@@ -2065,15 +2068,15 @@
                                 <!-- Product Content Start -->
                                 <div class="pro-content">
                                     <div class="pro-info">
-                                        <h4><a href="product.html">Gạch ốp tường 69000 </a></h4>
+                                        <h4><a href="product-detail.jsp">Gạch ốp tường 69000 </a></h4>
                                         <p><span class="price">250,000đ</span></p>
                                     </div>
                                     <div class="pro-actions">
                                         <div class="actions-primary">
-                                            <a href="cart.html" title="Thêm vào giỏ hàng"> + Thêm vào giỏ hàng</a>
+                                            <a href="cart.jsp" title="Thêm vào giỏ hàng"> + Thêm vào giỏ hàng</a>
                                         </div>
                                         <div class="actions-primary">
-                                            <a href="checkout.html" title="Mua ngay">Mua ngay</a>
+                                            <a href="checkout.jsp" title="Mua ngay">Mua ngay</a>
                                         </div>
 
                                     </div>
@@ -2083,7 +2086,7 @@
                             <div class="single-product">
                                 <!-- Product Image Start -->
                                 <div class="pro-img">
-                                    <a href="product.html">
+                                    <a href="product-detail.jsp">
                                         <img class="primary-img" src="img/products/nền%20gạch%20ốp%20tường%20W366.jpg"
                                              alt="single-product">
                                         <img class="secondary-img" src="img/products/gạch%20ốp%20tường%20W366.jpg"
@@ -2095,15 +2098,15 @@
                                 <!-- Product Content Start -->
                                 <div class="pro-content">
                                     <div class="pro-info">
-                                        <h4><a href="product.html">Gạch ốp tường W366</a></h4>
+                                        <h4><a href="product-detail.jsp">Gạch ốp tường W366</a></h4>
                                         <p><span class="price">165,000đ</span></p>
                                     </div>
                                     <div class="pro-actions">
                                         <div class="actions-primary">
-                                            <a href="cart.html" title="Thêm vào giỏ hàng"> + Thêm vào giỏ hàng</a>
+                                            <a href="cart.jsp" title="Thêm vào giỏ hàng"> + Thêm vào giỏ hàng</a>
                                         </div>
                                         <div class="actions-primary">
-                                            <a href="checkout.html" title="Mua ngay">Mua ngay</a>
+                                            <a href="checkout.jsp" title="Mua ngay">Mua ngay</a>
                                         </div>
 
                                     </div>
@@ -2113,7 +2116,7 @@
                             <div class="single-product">
                                 <!-- Product Image Start -->
                                 <div class="pro-img">
-                                    <a href="product.html">
+                                    <a href="product-detail.jsp">
                                         <img class="primary-img"
                                              src="img/products/nền%20gạch%20ốp%20vi%20tinh%20K91029.jpg"
                                              alt="single-product">
@@ -2126,15 +2129,15 @@
                                 <!-- Product Content Start -->
                                 <div class="pro-content">
                                     <div class="pro-info">
-                                        <h4><a href="product.html">Gạch Ốp Vi Tinh K91029</a></h4>
+                                        <h4><a href="product-detail.jsp">Gạch Ốp Vi Tinh K91029</a></h4>
                                         <p><span class="price">420,000đ</span></p>
                                     </div>
                                     <div class="pro-actions">
                                         <div class="actions-primary">
-                                            <a href="cart.html" title="Thêm vào giỏ hàng"> + Thêm vào giỏ hàng</a>
+                                            <a href="cart.jsp" title="Thêm vào giỏ hàng"> + Thêm vào giỏ hàng</a>
                                         </div>
                                         <div class="actions-primary">
-                                            <a href="checkout.html" title="Mua ngay">Mua ngay</a>
+                                            <a href="checkout.jsp" title="Mua ngay">Mua ngay</a>
                                         </div>
 
                                     </div>
@@ -2144,7 +2147,7 @@
                             <div class="single-product">
                                 <!-- Product Image Start -->
                                 <div class="pro-img">
-                                    <a href="product.html">
+                                    <a href="product-detail.jsp">
                                         <img class="primary-img" src="img/products/nền%20gạch%20ốp%20tường%20W365.jpg"
                                              alt="single-product">
                                         <img class="secondary-img" src="img/products/20gạch%20ốp%20tường%20W365.jpg"
@@ -2156,15 +2159,15 @@
                                 <!-- Product Content Start -->
                                 <div class="pro-content">
                                     <div class="pro-info">
-                                        <h4><a href="product.html">Gạch ốp tường W365</a></h4>
+                                        <h4><a href="product-detail.jsp">Gạch ốp tường W365</a></h4>
                                         <p><span class="price">170,000đ</span></p>
                                     </div>
                                     <div class="pro-actions">
                                         <div class="actions-primary">
-                                            <a href="cart.html" title="Thêm vào giỏ hàng"> + Thêm vào giỏ hàng</a>
+                                            <a href="cart.jsp" title="Thêm vào giỏ hàng"> + Thêm vào giỏ hàng</a>
                                         </div>
                                         <div class="actions-primary">
-                                            <a href="checkout.html" title="Mua ngay">Mua ngay</a>
+                                            <a href="checkout.jsp" title="Mua ngay">Mua ngay</a>
                                         </div>
 
                                     </div>
@@ -2179,7 +2182,7 @@
                             <div class="single-product">
                                 <!-- Product Image Start -->
                                 <div class="pro-img">
-                                    <a href="product.html">
+                                    <a href="product-detail.jsp">
                                         <img class="primary-img" src="img/products/nền%20gạch%20trang%20trí1.jpg"
                                              alt="single-product">
                                         <img class="secondary-img" src="img/products/gạch%20trang%20trí1.jpg"
@@ -2191,15 +2194,15 @@
                                 <!-- Product Content Start -->
                                 <div class="pro-content">
                                     <div class="pro-info">
-                                        <h4><a href="product.html">Gạch thẻ Stripe 92TTTA-063</a></h4>
+                                        <h4><a href="product-detail.jsp">Gạch thẻ Stripe 92TTTA-063</a></h4>
                                         <p><span class="price">575,000đ</span></p>
                                     </div>
                                     <div class="pro-actions">
                                         <div class="actions-primary">
-                                            <a href="cart.html" title="Thêm vào giỏ hàng"> + Thêm vào giỏ hàng</a>
+                                            <a href="cart.jsp" title="Thêm vào giỏ hàng"> + Thêm vào giỏ hàng</a>
                                         </div>
                                         <div class="actions-primary">
-                                            <a href="checkout.html" title="Mua ngay">Mua ngay</a>
+                                            <a href="checkout.jsp" title="Mua ngay">Mua ngay</a>
                                         </div>
 
                                     </div>
@@ -2209,7 +2212,7 @@
                             <div class="single-product">
                                 <!-- Product Image Start -->
                                 <div class="pro-img">
-                                    <a href="product.html">
+                                    <a href="product-detail.jsp">
                                         <img class="primary-img" src="img/products/nền%20gạch%20trang%20trí2.jpg"
                                              alt="single-product">
                                         <img class="secondary-img" src="img/products/gạch%20trang%20trí2.jpg"
@@ -2221,15 +2224,15 @@
                                 <!-- Product Content Start -->
                                 <div class="pro-content">
                                     <div class="pro-info">
-                                        <h4><a href="product.html">Gạch bông Teheran 20109</a></h4>
+                                        <h4><a href="product-detail.jsp">Gạch bông Teheran 20109</a></h4>
                                         <p><span class="price">250,000đ</span></p>
                                     </div>
                                     <div class="pro-actions">
                                         <div class="actions-primary">
-                                            <a href="cart.html" title="Thêm vào giỏ hàng"> + Thêm vào giỏ hàng</a>
+                                            <a href="cart.jsp" title="Thêm vào giỏ hàng"> + Thêm vào giỏ hàng</a>
                                         </div>
                                         <div class="actions-primary">
-                                            <a href="checkout.html" title="Mua ngay">Mua ngay</a>
+                                            <a href="checkout.jsp" title="Mua ngay">Mua ngay</a>
                                         </div>
 
                                     </div>
@@ -2239,7 +2242,7 @@
                             <div class="single-product">
                                 <!-- Product Image Start -->
                                 <div class="pro-img">
-                                    <a href="product.html">
+                                    <a href="product-detail.jsp">
                                         <img class="primary-img" src="img/products/nền%20gạch%20trang%20trí3.jpg"
                                              alt="single-product">
                                         <img class="secondary-img" src="img/products/gạch%20trang%20trí3.jpg"
@@ -2251,15 +2254,15 @@
                                 <!-- Product Content Start -->
                                 <div class="pro-content">
                                     <div class="pro-info">
-                                        <h4><a href="product.html">Gạch lông vũ hoạ tiết</a></h4>
+                                        <h4><a href="product-detail.jsp">Gạch lông vũ hoạ tiết</a></h4>
                                         <p><span class="price">1,250,000đ</span></p>
                                     </div>
                                     <div class="pro-actions">
                                         <div class="actions-primary">
-                                            <a href="cart.html" title="Thêm vào giỏ hàng"> + Thêm vào giỏ hàng</a>
+                                            <a href="cart.jsp" title="Thêm vào giỏ hàng"> + Thêm vào giỏ hàng</a>
                                         </div>
                                         <div class="actions-primary">
-                                            <a href="checkout.html" title="Mua ngay">Mua ngay</a>
+                                            <a href="checkout.jsp" title="Mua ngay">Mua ngay</a>
                                         </div>
 
                                     </div>
@@ -2269,7 +2272,7 @@
                             <div class="single-product">
                                 <!-- Product Image Start -->
                                 <div class="pro-img">
-                                    <a href="product.html">
+                                    <a href="product-detail.jsp">
                                         <img class="primary-img" src="img/products/nền%20gạch%20trang%20trí4.jpg"
                                              alt="single-product">
                                         <img class="secondary-img" src="img/products/gạch%20trang%20trí4.jpg"
@@ -2281,15 +2284,15 @@
                                 <!-- Product Content Start -->
                                 <div class="pro-content">
                                     <div class="pro-info">
-                                        <h4><a href="product.html">Gạch bông xanh F2109</a></h4>
+                                        <h4><a href="product-detail.jsp">Gạch bông xanh F2109</a></h4>
                                         <p><span class="price">325,000đ</span></p>
                                     </div>
                                     <div class="pro-actions">
                                         <div class="actions-primary">
-                                            <a href="cart.html" title="Thêm vào giỏ hàng"> + Thêm vào giỏ hàng</a>
+                                            <a href="cart.jsp" title="Thêm vào giỏ hàng"> + Thêm vào giỏ hàng</a>
                                         </div>
                                         <div class="actions-primary">
-                                            <a href="checkout.html" title="Mua ngay">Mua ngay</a>
+                                            <a href="checkout.jsp" title="Mua ngay">Mua ngay</a>
                                         </div>
 
                                     </div>
@@ -2299,7 +2302,7 @@
                             <div class="single-product">
                                 <!-- Product Image Start -->
                                 <div class="pro-img">
-                                    <a href="product.html">
+                                    <a href="product-detail.jsp">
                                         <img class="primary-img" src="img/products/nền%20gạch%20trang%20trí5.jpg"
                                              alt="single-product">
                                         <img class="secondary-img" src="img/products/gạch%20trang%20trí5.jpg"
@@ -2311,15 +2314,15 @@
                                 <!-- Product Content Start -->
                                 <div class="pro-content">
                                     <div class="pro-info">
-                                        <h4><a href="product.html">Gạch vảy cá Grey</a></h4>
+                                        <h4><a href="product-detail.jsp">Gạch vảy cá Grey</a></h4>
                                         <p><span class="price">620,000đ</span></p>
                                     </div>
                                     <div class="pro-actions">
                                         <div class="actions-primary">
-                                            <a href="cart.html" title="Thêm vào giỏ hàng"> + Thêm vào giỏ hàng</a>
+                                            <a href="cart.jsp" title="Thêm vào giỏ hàng"> + Thêm vào giỏ hàng</a>
                                         </div>
                                         <div class="actions-primary">
-                                            <a href="checkout.html" title="Mua ngay">Mua ngay</a>
+                                            <a href="checkout.jsp" title="Mua ngay">Mua ngay</a>
                                         </div>
 
                                     </div>
@@ -2334,7 +2337,7 @@
                             <div class="single-product">
                                 <!-- Product Image Start -->
                                 <div class="pro-img">
-                                    <a href="product.html">
+                                    <a href="product-detail.jsp">
                                         <img class="primary-img" src="img/products/nền%20gạch%20gỗ%20vân1.jpg"
                                              alt="single-product">
                                         <img class="secondary-img" src="img/products/gạch%20gỗ%20vân1.jpg"
@@ -2346,15 +2349,15 @@
                                 <!-- Product Content Start -->
                                 <div class="pro-content">
                                     <div class="pro-info">
-                                        <h4><a href="product.html">Gạch vân gỗ NA-12073</a></h4>
+                                        <h4><a href="product-detail.jsp">Gạch vân gỗ NA-12073</a></h4>
                                         <p><span class="price">620,000đ</span></p>
                                     </div>
                                     <div class="pro-actions">
                                         <div class="actions-primary">
-                                            <a href="cart.html" title="Thêm vào giỏ hàng"> + Thêm vào giỏ hàng</a>
+                                            <a href="cart.jsp" title="Thêm vào giỏ hàng"> + Thêm vào giỏ hàng</a>
                                         </div>
                                         <div class="actions-primary">
-                                            <a href="checkout.html" title="Mua ngay">Mua ngay</a>
+                                            <a href="checkout.jsp" title="Mua ngay">Mua ngay</a>
                                         </div>
 
                                     </div>
@@ -2364,7 +2367,7 @@
                             <div class="single-product">
                                 <!-- Product Image Start -->
                                 <div class="pro-img">
-                                    <a href="product.html">
+                                    <a href="product-detail.jsp">
                                         <img class="primary-img" src="img/products/nền%20gạch%20gỗ%20vân2.jpg"
                                              alt="single-product">
                                         <img class="secondary-img" src="img/products/gạch%20gỗ%20vân2.jpg"
@@ -2376,15 +2379,15 @@
                                 <!-- Product Content Start -->
                                 <div class="pro-content">
                                     <div class="pro-info">
-                                        <h4><a href="product.html">Gạch gỗ KHA-58303</a></h4>
+                                        <h4><a href="product-detail.jsp">Gạch gỗ KHA-58303</a></h4>
                                         <p><span class="price">205,000đ</span></p>
                                     </div>
                                     <div class="pro-actions">
                                         <div class="actions-primary">
-                                            <a href="cart.html" title="Thêm vào giỏ hàng"> + Thêm vào giỏ hàng</a>
+                                            <a href="cart.jsp" title="Thêm vào giỏ hàng"> + Thêm vào giỏ hàng</a>
                                         </div>
                                         <div class="actions-primary">
-                                            <a href="checkout.html" title="Mua ngay">Mua ngay</a>
+                                            <a href="checkout.jsp" title="Mua ngay">Mua ngay</a>
                                         </div>
 
                                     </div>
@@ -2394,7 +2397,7 @@
                             <div class="single-product">
                                 <!-- Product Image Start -->
                                 <div class="pro-img">
-                                    <a href="product.html">
+                                    <a href="product-detail.jsp">
                                         <img class="primary-img" src="img/products/nền%20gạch%20gỗ%20vân3.jpg"
                                              alt="single-product">
                                         <img class="secondary-img" src="img/products/gạch%20gỗ%20vân3.jpg"
@@ -2406,15 +2409,15 @@
                                 <!-- Product Content Start -->
                                 <div class="pro-content">
                                     <div class="pro-info">
-                                        <h4><a href="product.html">Super Black Slate BY612001</a></h4>
+                                        <h4><a href="product-detail.jsp">Super Black Slate BY612001</a></h4>
                                         <p><span class="price">420,000đ</span></p>
                                     </div>
                                     <div class="pro-actions">
                                         <div class="actions-primary">
-                                            <a href="cart.html" title="Thêm vào giỏ hàng"> + Thêm vào giỏ hàng</a>
+                                            <a href="cart.jsp" title="Thêm vào giỏ hàng"> + Thêm vào giỏ hàng</a>
                                         </div>
                                         <div class="actions-primary">
-                                            <a href="checkout.html" title="Mua ngay">Mua ngay</a>
+                                            <a href="checkout.jsp" title="Mua ngay">Mua ngay</a>
                                         </div>
 
                                     </div>
@@ -2424,7 +2427,7 @@
                             <div class="single-product">
                                 <!-- Product Image Start -->
                                 <div class="pro-img">
-                                    <a href="product.html">
+                                    <a href="product-detail.jsp">
                                         <img class="primary-img" src="img/products/nền%20gạch%20gỗ%20vân4.jpg"
                                              alt="single-product">
                                         <img class="secondary-img" src="img/products/gạch%20gỗ%20vân4.jpg"
@@ -2436,15 +2439,15 @@
                                 <!-- Product Content Start -->
                                 <div class="pro-content">
                                     <div class="pro-info">
-                                        <h4><a href="product.html">Gạch vân gỗ W96003</a></h4>
+                                        <h4><a href="product-detail.jsp">Gạch vân gỗ W96003</a></h4>
                                         <p><span class="price">300,000đ</span></p>
                                     </div>
                                     <div class="pro-actions">
                                         <div class="actions-primary">
-                                            <a href="cart.html" title="Thêm vào giỏ hàng"> + Thêm vào giỏ hàng</a>
+                                            <a href="cart.jsp" title="Thêm vào giỏ hàng"> + Thêm vào giỏ hàng</a>
                                         </div>
                                         <div class="actions-primary">
-                                            <a href="checkout.html" title="Mua ngay">Mua ngay</a>
+                                            <a href="checkout.jsp" title="Mua ngay">Mua ngay</a>
                                         </div>
 
                                     </div>
@@ -2454,7 +2457,7 @@
                             <div class="single-product">
                                 <!-- Product Image Start -->
                                 <div class="pro-img">
-                                    <a href="product.html">
+                                    <a href="product-detail.jsp">
                                         <img class="primary-img" src="img/products/nền%20gạch%20gỗ%20vân5.jpg"
                                              alt="single-product">
                                         <img class="secondary-img" src="img/products/gạch%20gỗ%20vân5.jpg"
@@ -2466,15 +2469,15 @@
                                 <!-- Product Content Start -->
                                 <div class="pro-content">
                                     <div class="pro-info">
-                                        <h4><a href="product.html">Gạch gỗ W99007</a></h4>
+                                        <h4><a href="product-detail.jsp">Gạch gỗ W99007</a></h4>
                                         <p><span class="price">310,000đ</span></p>
                                     </div>
                                     <div class="pro-actions">
                                         <div class="actions-primary">
-                                            <a href="cart.html" title="Thêm vào giỏ hàng"> + Thêm vào giỏ hàng</a>
+                                            <a href="cart.jsp" title="Thêm vào giỏ hàng"> + Thêm vào giỏ hàng</a>
                                         </div>
                                         <div class="actions-primary">
-                                            <a href="checkout.html" title="Mua ngay">Mua ngay</a>
+                                            <a href="checkout.jsp" title="Mua ngay">Mua ngay</a>
                                         </div>
 
                                     </div>
@@ -2489,7 +2492,7 @@
                             <div class="single-product">
                                 <!-- Product Image Start -->
                                 <div class="pro-img">
-                                    <a href="product.html">
+                                    <a href="product-detail.jsp">
                                         <img class="primary-img"
                                              src="img/products/nền%20gạch%20Terrazzo%20ốp%20tường%20TERA361.jpg"
                                              alt="single-product">
@@ -2503,15 +2506,15 @@
                                 <!-- Product Content Start -->
                                 <div class="pro-content">
                                     <div class="pro-info">
-                                        <h4><a href="product.html">Gạch Terrezzo ốp tường TERA361</a></h4>
+                                        <h4><a href="product-detail.jsp">Gạch Terrezzo ốp tường TERA361</a></h4>
                                         <p><span class="price">230,000đ</span></p>
                                     </div>
                                     <div class="pro-actions">
                                         <div class="actions-primary">
-                                            <a href="cart.html" title="Thêm vào giỏ hàng"> + Thêm vào giỏ hàng</a>
+                                            <a href="cart.jsp" title="Thêm vào giỏ hàng"> + Thêm vào giỏ hàng</a>
                                         </div>
                                         <div class="actions-primary">
-                                            <a href="checkout.html" title="Mua ngay">Mua ngay</a>
+                                            <a href="checkout.jsp" title="Mua ngay">Mua ngay</a>
                                         </div>
 
                                     </div>
@@ -2521,7 +2524,7 @@
                             <div class="single-product">
                                 <!-- Product Image Start -->
                                 <div class="pro-img">
-                                    <a href="product.html">
+                                    <a href="product-detail.jsp">
                                         <img class="primary-img"
                                              src="img/products/nền%20gạch%20Terrazzo%20ốp%20tường%20K382.jpg"
                                              alt="single-product">
@@ -2535,15 +2538,15 @@
                                 <!-- Product Content Start -->
                                 <div class="pro-content">
                                     <div class="pro-info">
-                                        <h4><a href="product.html">Gạch Terrazzo ốp tường K382</a></h4>
+                                        <h4><a href="product-detail.jsp">Gạch Terrazzo ốp tường K382</a></h4>
                                         <p><span class="price">280,000đ</span></p>
                                     </div>
                                     <div class="pro-actions">
                                         <div class="actions-primary">
-                                            <a href="cart.html" title="Thêm vào giỏ hàng"> + Thêm vào giỏ hàng</a>
+                                            <a href="cart.jsp" title="Thêm vào giỏ hàng"> + Thêm vào giỏ hàng</a>
                                         </div>
                                         <div class="actions-primary">
-                                            <a href="checkout.html" title="Mua ngay">Mua ngay</a>
+                                            <a href="checkout.jsp" title="Mua ngay">Mua ngay</a>
                                         </div>
 
                                     </div>
@@ -2553,7 +2556,7 @@
                             <div class="single-product">
                                 <!-- Product Image Start -->
                                 <div class="pro-img">
-                                    <a href="product.html">
+                                    <a href="product-detail.jsp">
                                         <img class="primary-img"
                                              src="img/products/nền%20gạch%20Terrazzo%20ốp%20lát%20D6637.jpg"
                                              alt="single-product">
@@ -2567,15 +2570,15 @@
                                 <!-- Product Content Start -->
                                 <div class="pro-content">
                                     <div class="pro-info">
-                                        <h4><a href="product.html">Gạch Terrazzo ốp lát D6637</a></h4>
+                                        <h4><a href="product-detail.jsp">Gạch Terrazzo ốp lát D6637</a></h4>
                                         <p><span class="price">220,000đ</span></p>
                                     </div>
                                     <div class="pro-actions">
                                         <div class="actions-primary">
-                                            <a href="cart.html" title="Thêm vào giỏ hàng"> + Thêm vào giỏ hàng</a>
+                                            <a href="cart.jsp" title="Thêm vào giỏ hàng"> + Thêm vào giỏ hàng</a>
                                         </div>
                                         <div class="actions-primary">
-                                            <a href="checkout.html" title="Mua ngay">Mua ngay</a>
+                                            <a href="checkout.jsp" title="Mua ngay">Mua ngay</a>
                                         </div>
 
                                     </div>
@@ -2585,7 +2588,7 @@
                             <div class="single-product">
                                 <!-- Product Image Start -->
                                 <div class="pro-img">
-                                    <a href="product.html">
+                                    <a href="product-detail.jsp">
                                         <img class="primary-img" src="img/products/nền%20gạch%20Terrazzo%20K8755.jpg"
                                              alt="single-product">
                                         <img class="secondary-img" src="img/products/gạch%20Terrazzo%20K8755.jpg"
@@ -2597,15 +2600,15 @@
                                 <!-- Product Content Start -->
                                 <div class="pro-content">
                                     <div class="pro-info">
-                                        <h4><a href="product.html">Gạch Terrazzo K8755</a></h4>
+                                        <h4><a href="product-detail.jsp">Gạch Terrazzo K8755</a></h4>
                                         <p><span class="price">200,000đ</span></p>
                                     </div>
                                     <div class="pro-actions">
                                         <div class="actions-primary">
-                                            <a href="cart.html" title="Thêm vào giỏ hàng"> + Thêm vào giỏ hàng</a>
+                                            <a href="cart.jsp" title="Thêm vào giỏ hàng"> + Thêm vào giỏ hàng</a>
                                         </div>
                                         <div class="actions-primary">
-                                            <a href="checkout.html" title="Mua ngay">Mua ngay</a>
+                                            <a href="checkout.jsp" title="Mua ngay">Mua ngay</a>
                                         </div>
 
                                     </div>
@@ -2615,7 +2618,7 @@
                             <div class="single-product">
                                 <!-- Product Image Start -->
                                 <div class="pro-img">
-                                    <a href="product.html">
+                                    <a href="product-detail.jsp">
                                         <img class="primary-img" src="img/products/nền%20gạch%20Terrazzo%20TERA362.jpg"
                                              alt="single-product">
                                         <img class="secondary-img" src="img/products/gạch%20Terrazzo%20TERA362.jpg"
@@ -2627,15 +2630,15 @@
                                 <!-- Product Content Start -->
                                 <div class="pro-content">
                                     <div class="pro-info">
-                                        <h4><a href="product.html">Gạch Terrazzo TERA362</a></h4>
+                                        <h4><a href="product-detail.jsp">Gạch Terrazzo TERA362</a></h4>
                                         <p><span class="price">220,000đ</span></p>
                                     </div>
                                     <div class="pro-actions">
                                         <div class="actions-primary">
-                                            <a href="cart.html" title="Thêm vào giỏ hàng"> + Thêm vào giỏ hàng</a>
+                                            <a href="cart.jsp" title="Thêm vào giỏ hàng"> + Thêm vào giỏ hàng</a>
                                         </div>
                                         <div class="actions-primary">
-                                            <a href="checkout.html" title="Mua ngay">Mua ngay</a>
+                                            <a href="checkout.jsp" title="Mua ngay">Mua ngay</a>
                                         </div>
 
                                     </div>
@@ -2660,7 +2663,7 @@
                             <div class="single-product">
                                 <!-- Product Image Start -->
                                 <div class="pro-img">
-                                    <a href="product.html">
+                                    <a href="product-detail.jsp">
                                         <img class="primary-img" src="img/products/nền%20gạch%20trang%20trí3.jpg"
                                              alt="single-product">
                                         <img class="secondary-img" src="img/products/gạch%20trang%20trí3.jpg"
@@ -2672,7 +2675,7 @@
                                 <!-- Product Content Start -->
                                 <div class="pro-content">
                                     <div class="pro-info">
-                                        <h4><a href="product.html">Gạch lông vũ hoạ tiết</a></h4>
+                                        <h4><a href="product-detail.jsp">Gạch lông vũ hoạ tiết</a></h4>
                                         <p><span class="price">1,250,000đ</span>
                                             <del class="prev-price">2,500,000đ</del>
                                         </p>
@@ -2680,10 +2683,10 @@
                                     </div>
                                     <div class="pro-actions">
                                         <div class="actions-primary">
-                                            <a href="cart.html" title="Thêm vào giỏ hàng"> + Thêm vào giỏ hàng</a>
+                                            <a href="cart.jsp" title="Thêm vào giỏ hàng"> + Thêm vào giỏ hàng</a>
                                         </div>
                                         <div class="actions-primary">
-                                            <a href="checkout.html" title="Mua ngay">Mua ngay</a>
+                                            <a href="checkout.jsp" title="Mua ngay">Mua ngay</a>
                                         </div>
 
                                     </div>
@@ -2693,7 +2696,7 @@
                             <div class="single-product">
                                 <!-- Product Image Start -->
                                 <div class="pro-img">
-                                    <a href="product.html">
+                                    <a href="product-detail.jsp">
                                         <img class="primary-img"
                                              src="img/products/nền%20gạch%20Terrazzo%20ốp%20tường%20TERA361.jpg"
                                              alt="single-product">
@@ -2707,7 +2710,7 @@
                                 <!-- Product Content Start -->
                                 <div class="pro-content">
                                     <div class="pro-info">
-                                        <h4><a href="product.html">Gạch nền Terrazzo ốp tường TERA361</a></h4>
+                                        <h4><a href="product-detail.jsp">Gạch nền Terrazzo ốp tường TERA361</a></h4>
                                         <p><span class="price">230,000đ</span>
                                             <del class="prev-price">250,000đ</del>
                                         </p>
@@ -2715,10 +2718,10 @@
                                     </div>
                                     <div class="pro-actions">
                                         <div class="actions-primary">
-                                            <a href="cart.html" title="Thêm vào giỏ hàng"> + Thêm vào giỏ hàng</a>
+                                            <a href="cart.jsp" title="Thêm vào giỏ hàng"> + Thêm vào giỏ hàng</a>
                                         </div>
                                         <div class="actions-primary">
-                                            <a href="checkout.html" title="Mua ngay">Mua ngay</a>
+                                            <a href="checkout.jsp" title="Mua ngay">Mua ngay</a>
                                         </div>
 
                                     </div>
@@ -2731,7 +2734,7 @@
                             <div class="single-product">
                                 <!-- Product Image Start -->
                                 <div class="pro-img">
-                                    <a href="product.html">
+                                    <a href="product-detail.jsp">
                                         <img class="primary-img" src="img/products/nền%20gạch%20trang%20trí5.jpg"
                                              alt="single-product">
                                         <img class="secondary-img" src="img/products/gạch%20trang%20trí5.jpg"
@@ -2743,7 +2746,7 @@
                                 <!-- Product Content Start -->
                                 <div class="pro-content">
                                     <div class="pro-info">
-                                        <h4><a href="product.html">Gạch vảy cá Grey</a></h4>
+                                        <h4><a href="product-detail.jsp">Gạch vảy cá Grey</a></h4>
                                         <p><span class="price">620,000đ</span>
                                             <del class="prev-price">680,000đ</del>
                                         </p>
@@ -2751,10 +2754,10 @@
                                     </div>
                                     <div class="pro-actions">
                                         <div class="actions-primary">
-                                            <a href="cart.html" title="Thêm vào giỏ hàng"> + Thêm vào giỏ hàng</a>
+                                            <a href="cart.jsp" title="Thêm vào giỏ hàng"> + Thêm vào giỏ hàng</a>
                                         </div>
                                         <div class="actions-primary">
-                                            <a href="checkout.html" title="Mua ngay">Mua ngay</a>
+                                            <a href="checkout.jsp" title="Mua ngay">Mua ngay</a>
                                         </div>
 
                                     </div>
@@ -2764,7 +2767,7 @@
                             <div class="single-product">
                                 <!-- Product Image Start -->
                                 <div class="pro-img">
-                                    <a href="product.html">
+                                    <a href="product-detail.jsp">
                                         <img class="primary-img" src="img/products/nền%20gạch%20gỗ%20vân3.jpg"
                                              alt="single-product">
                                         <img class="secondary-img" src="img/products/gạch%20gỗ%20vân3.jpg"
@@ -2776,7 +2779,7 @@
                                 <!-- Product Content Start -->
                                 <div class="pro-content">
                                     <div class="pro-info">
-                                        <h4><a href="product.html">Super Black Slate BY612001</a></h4>
+                                        <h4><a href="product-detail.jsp">Super Black Slate BY612001</a></h4>
                                         <p><span class="price">420,000đ</span>
                                             <del class="prev-price">432,000đ</del>
                                         </p>
@@ -2784,10 +2787,10 @@
                                     </div>
                                     <div class="pro-actions">
                                         <div class="actions-primary">
-                                            <a href="cart.html" title="Thêm vào giỏ hàng"> + Thêm vào giỏ hàng</a>
+                                            <a href="cart.jsp" title="Thêm vào giỏ hàng"> + Thêm vào giỏ hàng</a>
                                         </div>
                                         <div class="actions-primary">
-                                            <a href="checkout.html" title="Mua ngay">Mua ngay</a>
+                                            <a href="checkout.jsp" title="Mua ngay">Mua ngay</a>
                                         </div>
 
                                     </div>
@@ -2800,7 +2803,7 @@
                             <div class="single-product">
                                 <!-- Product Image Start -->
                                 <div class="pro-img">
-                                    <a href="product.html">
+                                    <a href="product-detail.jsp">
                                         <img class="primary-img"
                                              src="img/products/nền%20gạch%20lát%20nền%20Sandstone%2060SD12GB.jpg"
                                              alt="single-product">
@@ -2814,7 +2817,7 @@
                                 <!-- Product Content Start -->
                                 <div class="pro-content">
                                     <div class="pro-info">
-                                        <h4><a href="product.html">Gạch lát nền Sandtone 60SD12GB</a></h4>
+                                        <h4><a href="product-detail.jsp">Gạch lát nền Sandtone 60SD12GB</a></h4>
                                         <p><span class="price">320,500đ</span>
                                             <del class="prev-price">350,000đ</del>
                                         </p>
@@ -2822,10 +2825,10 @@
                                     </div>
                                     <div class="pro-actions">
                                         <div class="actions-primary">
-                                            <a href="cart.html" title="Thêm vào giỏ hàng"> + Thêm vào giỏ hàng</a>
+                                            <a href="cart.jsp" title="Thêm vào giỏ hàng"> + Thêm vào giỏ hàng</a>
                                         </div>
                                         <div class="actions-primary">
-                                            <a href="checkout.html" title="Mua ngay">Mua ngay</a>
+                                            <a href="checkout.jsp" title="Mua ngay">Mua ngay</a>
                                         </div>
 
                                     </div>
@@ -2835,7 +2838,7 @@
                             <div class="single-product">
                                 <!-- Product Image Start -->
                                 <div class="pro-img">
-                                    <a href="product.html">
+                                    <a href="product-detail.jsp">
                                         <img class="primary-img" src="img/products/nền%20gạch%20Terrazzo%20K8755.jpg"
                                              alt="single-product">
                                         <img class="secondary-img" src="img/products/gạch%20Terrazzo%20K8755.jpg"
@@ -2847,7 +2850,7 @@
                                 <!-- Product Content Start -->
                                 <div class="pro-content">
                                     <div class="pro-info">
-                                        <h4><a href="product.html">Gạch Terrazzo K8755</a></h4>
+                                        <h4><a href="product-detail.jsp">Gạch Terrazzo K8755</a></h4>
                                         <p><span class="price">200,000đ</span>
                                             <del class="prev-price">230,000đ</del>
                                         </p>
@@ -2855,10 +2858,10 @@
                                     </div>
                                     <div class="pro-actions">
                                         <div class="actions-primary">
-                                            <a href="cart.html" title="Thêm vào giỏ hàng"> + Thêm vào giỏ hàng</a>
+                                            <a href="cart.jsp" title="Thêm vào giỏ hàng"> + Thêm vào giỏ hàng</a>
                                         </div>
                                         <div class="actions-primary">
-                                            <a href="checkout.html" title="Mua ngay">Mua ngay</a>
+                                            <a href="checkout.jsp" title="Mua ngay">Mua ngay</a>
                                         </div>
 
                                     </div>
@@ -2871,7 +2874,7 @@
                             <div class="single-product">
                                 <!-- Product Image Start -->
                                 <div class="pro-img">
-                                    <a href="product.html">
+                                    <a href="product-detail.jsp">
                                         <img class="primary-img"
                                              src="img/products/nền%20gạch%20ốp%20vi%20tinh%20K91029.jpg"
                                              alt="single-product">
@@ -2884,7 +2887,7 @@
                                 <!-- Product Content Start -->
                                 <div class="pro-content">
                                     <div class="pro-info">
-                                        <h4><a href="product.html">Gạch ốp vi tinh K91029</a></h4>
+                                        <h4><a href="product-detail.jsp">Gạch ốp vi tinh K91029</a></h4>
                                         <p><span class="price">420,000đ</span>
                                             <del class="prev-price">432,400đ</del>
                                         </p>
@@ -2892,10 +2895,10 @@
                                     </div>
                                     <div class="pro-actions">
                                         <div class="actions-primary">
-                                            <a href="cart.html" title="Thêm vào giỏ hàng"> + Thêm vào giỏ hàng</a>
+                                            <a href="cart.jsp" title="Thêm vào giỏ hàng"> + Thêm vào giỏ hàng</a>
                                         </div>
                                         <div class="actions-primary">
-                                            <a href="checkout.html" title="Mua ngay">Mua ngay</a>
+                                            <a href="checkout.jsp" title="Mua ngay">Mua ngay</a>
                                         </div>
 
                                     </div>
@@ -2905,7 +2908,7 @@
                             <div class="single-product">
                                 <!-- Product Image Start -->
                                 <div class="pro-img">
-                                    <a href="product.html">
+                                    <a href="product-detail.jsp">
                                         <img class="primary-img" src="img/products/nền%20gạch%20ốp%20tường%2069000.jpg"
                                              alt="single-product">
                                         <img class="secondary-img" src="img/products/gạch%20ốp%20tường%2069000.jpg"
@@ -2917,7 +2920,7 @@
                                 <!-- Product Content Start -->
                                 <div class="pro-content">
                                     <div class="pro-info">
-                                        <h4><a href="product.html">Gạch ốp tường 69000</a></h4>
+                                        <h4><a href="product-detail.jsp">Gạch ốp tường 69000</a></h4>
                                         <p><span class="price">205,000đ</span>
                                             <del class="prev-price">245,000đ</del>
                                         </p>
@@ -2925,10 +2928,10 @@
                                     </div>
                                     <div class="pro-actions">
                                         <div class="actions-primary">
-                                            <a href="cart.html" title="Thêm vào giỏ hàng"> + Thêm vào giỏ hàng</a>
+                                            <a href="cart.jsp" title="Thêm vào giỏ hàng"> + Thêm vào giỏ hàng</a>
                                         </div>
                                         <div class="actions-primary">
-                                            <a href="checkout.html" title="Mua ngay">Mua ngay</a>
+                                            <a href="checkout.jsp" title="Mua ngay">Mua ngay</a>
                                         </div>
 
                                     </div>
@@ -2941,7 +2944,7 @@
                             <div class="single-product">
                                 <!-- Product Image Start -->
                                 <div class="pro-img">
-                                    <a href="product.html">
+                                    <a href="product-detail.jsp">
                                         <img class="primary-img" src="img/products/nền%20gạch%20Granite%20GM6706.jpg"
                                              alt="single-product">
                                         <img class="secondary-img" src="img/products/gạch%20Granite%20GM6706.jpg"
@@ -2953,7 +2956,7 @@
                                 <!-- Product Content Start -->
                                 <div class="pro-content">
                                     <div class="pro-info">
-                                        <h4><a href="product.html">Gạch Granite GM6706</a></h4>
+                                        <h4><a href="product-detail.jsp">Gạch Granite GM6706</a></h4>
                                         <p><span class="price">420,000đ</span>
                                             <del class="prev-price">432,000đ</del>
                                         </p>
@@ -2961,10 +2964,10 @@
                                     </div>
                                     <div class="pro-actions">
                                         <div class="actions-primary">
-                                            <a href="cart.html" title="Thêm vào giỏ hàng"> + Thêm vào giỏ hàng</a>
+                                            <a href="cart.jsp" title="Thêm vào giỏ hàng"> + Thêm vào giỏ hàng</a>
                                         </div>
                                         <div class="actions-primary">
-                                            <a href="checkout.html" title="Mua ngay">Mua ngay</a>
+                                            <a href="checkout.jsp" title="Mua ngay">Mua ngay</a>
                                         </div>
 
                                     </div>
@@ -2974,7 +2977,7 @@
                             <div class="single-product">
                                 <!-- Product Image Start -->
                                 <div class="pro-img">
-                                    <a href="product.html">
+                                    <a href="product-detail.jsp">
                                         <img class="primary-img" src="img/products/nền%20gạch%20gỗ%20vân5.jpg"
                                              alt="single-product">
                                         <img class="secondary-img" src="img/products/gạch%20gỗ%20vân5.jpg"
@@ -2986,7 +2989,7 @@
                                 <!-- Product Content Start -->
                                 <div class="pro-content">
                                     <div class="pro-info">
-                                        <h4><a href="product.html">Gạch gỗ W99007</a></h4>
+                                        <h4><a href="product-detail.jsp">Gạch gỗ W99007</a></h4>
                                         <p><span class="price">310,000đ</span>
                                             <del class="prev-price">340,000đ</del>
                                         </p>
@@ -2994,10 +2997,10 @@
                                     </div>
                                     <div class="pro-actions">
                                         <div class="actions-primary">
-                                            <a href="cart.html" title="Thêm vào giỏ hàng"> + Thêm vào giỏ hàng</a>
+                                            <a href="cart.jsp" title="Thêm vào giỏ hàng"> + Thêm vào giỏ hàng</a>
                                         </div>
                                         <div class="actions-primary">
-                                            <a href="checkout.html" title="Mua ngay">Mua ngay</a>
+                                            <a href="checkout.jsp" title="Mua ngay">Mua ngay</a>
                                         </div>
 
                                     </div>
@@ -3010,7 +3013,7 @@
                             <div class="single-product">
                                 <!-- Product Image Start -->
                                 <div class="pro-img">
-                                    <a href="product.html">
+                                    <a href="product-detail.jsp">
                                         <img class="primary-img"
                                              src="img/products/nền%20gạch%20thẻ%20men%20rạn%20KHA-62006.jpg"
                                              alt="single-product">
@@ -3024,7 +3027,7 @@
                                 <!-- Product Content Start -->
                                 <div class="pro-content">
                                     <div class="pro-info">
-                                        <h4><a href="product.html">Gạch thẻ men KHA-62006</a></h4>
+                                        <h4><a href="product-detail.jsp">Gạch thẻ men KHA-62006</a></h4>
                                         <p><span class="price">200,000đ</span>
                                             <del class="prev-price">250,000đ</del>
                                         </p>
@@ -3032,10 +3035,10 @@
                                     </div>
                                     <div class="pro-actions">
                                         <div class="actions-primary">
-                                            <a href="cart.html" title="Thêm vào giỏ hàng"> + Thêm vào giỏ hàng</a>
+                                            <a href="cart.jsp" title="Thêm vào giỏ hàng"> + Thêm vào giỏ hàng</a>
                                         </div>
                                         <div class="actions-primary">
-                                            <a href="checkout.html" title="Mua ngay">Mua ngay</a>
+                                            <a href="checkout.jsp" title="Mua ngay">Mua ngay</a>
                                         </div>
 
                                     </div>
@@ -3045,7 +3048,7 @@
                             <div class="single-product">
                                 <!-- Product Image Start -->
                                 <div class="pro-img">
-                                    <a href="product.html">
+                                    <a href="product-detail.jsp">
                                         <img class="primary-img"
                                              src="img/products/nền%20gạch%20thẻ%20Ripple%20Subway.jpg"
                                              alt="single-product">
@@ -3058,7 +3061,7 @@
                                 <!-- Product Content Start -->
                                 <div class="pro-content">
                                     <div class="pro-info">
-                                        <h4><a href="product.html">Ripple Subway</a></h4>
+                                        <h4><a href="product-detail.jsp">Ripple Subway</a></h4>
                                         <p><span class="price">345,000đ</span>
                                             <del class="prev-price">375,000đ</del>
                                         </p>
@@ -3066,10 +3069,10 @@
                                     </div>
                                     <div class="pro-actions">
                                         <div class="actions-primary">
-                                            <a href="cart.html" title="Thêm vào giỏ hàng"> + Thêm vào giỏ hàng</a>
+                                            <a href="cart.jsp" title="Thêm vào giỏ hàng"> + Thêm vào giỏ hàng</a>
                                         </div>
                                         <div class="actions-primary">
-                                            <a href="checkout.html" title="Mua ngay">Mua ngay</a>
+                                            <a href="checkout.jsp" title="Mua ngay">Mua ngay</a>
                                         </div>
 
                                     </div>
@@ -3175,7 +3178,7 @@
                                                 <form action="#">
                                                     <input class="quantity mr-40" type="number" min="1" value="1">
                                                 </form>
-                                                <a class="add-cart" href="cart.html">add to cart</a>
+                                                <a class="add-cart" href="cart.jsp">add to cart</a>
                                             </div>
                                             <div class="pro-ref mt-15">
                                                 <p><span class="in-stock"><i
@@ -3232,6 +3235,7 @@
     <script src="js\plugins.js"></script>
     <!-- Main activaion js -->
     <script src="js\main.js"></script>
+
 </div>
 </body>
 
