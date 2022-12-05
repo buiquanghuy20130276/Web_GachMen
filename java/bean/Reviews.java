@@ -4,13 +4,11 @@ import java.io.Serializable;
 
 public class Reviews implements Serializable {
     private String idUser;
-    private String subject;
     private String content;
     private String postDate;
 
-    public Reviews(String idUser, String subject, String content, String postDate) {
+    public Reviews(String idUser,  String content, String postDate) {
         this.idUser = idUser;
-        this.subject = subject;
         this.content = content;
         this.postDate = postDate;
     }
@@ -23,13 +21,6 @@ public class Reviews implements Serializable {
         this.idUser = idUser;
     }
 
-    public String getSubject() {
-        return subject;
-    }
-
-    public void setSubject(String subject) {
-        this.subject = subject;
-    }
 
     public String getContent() {
         return content;
