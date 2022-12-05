@@ -72,11 +72,11 @@
                 <div class="col-xl-9 col-lg-8 col-md-12 ">
                     <nav class="d-none d-lg-block">
                         <ul class="header-bottom-list d-flex">
-                            <li><a id="index" href="index.jsp">Trang chủ</a>
+                            <li><a id="index" href="Home">Trang chủ</a>
                                 <!-- Home Version Dropdown Start -->
 
                             </li>
-                            <li><a id="product-list" href="product-list.jsp">Sản phẩm</a>
+                            <li><a id="product-list" href="ProductList">Sản phẩm</a>
 
                             </li>
 
