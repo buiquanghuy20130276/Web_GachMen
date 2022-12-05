@@ -1,5 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!doctype html>
 <html class="no-js" lang="zxx">
 
@@ -115,7 +116,8 @@
                         <!-- Product Top End -->
                         <!-- Single Banner Start -->
                         <div class="col-img">
-                            <a href="product-list.jsp"><img src="img/banner/khuyenmaigachnhap-01.webp" alt="slider-banner"></a>
+                            <a href="product-list.jsp"><img src="img/banner/khuyenmaigachnhap-01.webp"
+                                                            alt="slider-banner"></a>
                         </div>
                         <!-- Single Banner End -->
                     </div>
@@ -173,7 +175,7 @@
                                         <div class="single-product">
                                             <!-- Product Image Start -->
                                             <div class="pro-img">
-                                                <a href="product-detail.jsp">
+                                                <a href="ProductDetail?productID=${p.productID}">
                                                     <img class="primary-img"
                                                          src="${p.image1}"
                                                          alt="single-product">
@@ -189,10 +191,10 @@
                                             <!-- Product Content Start -->
                                             <div class="pro-content">
                                                 <div class="pro-info">
-                                                    <h4><a href="product-detail.jsp">${p.productName}</a></h4>
-                                                    <p><span class="price">${p.price-Math.round(p.price*(p.salePrice/100))},000đ</span>
+                                                    <h4><a href="ProductDetail?productID=${p.productID}">${p.productName}</a></h4>
+                                                    <p><span class="price"><fmt:formatNumber type="currency" currencySymbol="" minFractionDigits="0" value="${p.price-Math.round(p.price*(p.salePrice/100))}"/> VNĐ </span>
                                                         <c:if test="${p.salePrice>0}">
-                                                        <del class="prev-price">${p.price},000đ</del>
+                                                        <del class="prev-price"><fmt:formatNumber type="currency" currencySymbol="" minFractionDigits="0" value="${p.price}"/> VNĐ</del>
                                                         </c:if>
                                                     </p>
                                                     <c:if test="${p.salePrice>0}">
@@ -208,13 +210,13 @@
                                                         <a href="checkout.jsp" title="Mua ngay"> Mua ngay</a>
                                                     </div>
 
+                                                    </div>
                                                 </div>
+                                                <!-- Product Content End -->
+                                                <!-- <span class="sticker-new">Mới</span> -->
                                             </div>
-                                            <!-- Product Content End -->
-                                            <!-- <span class="sticker-new">Mới</span> -->
-                                        </div>
 
-                                    </div>
+                                        </div>
                                     </c:forEach>
                                     <!-- Single Product End -->
                                     <!-- Single Product Start -->

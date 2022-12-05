@@ -1,5 +1,7 @@
+<%--@elvariable id="product" type="bean.Product"--%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!doctype html>
 <html class="no-js" lang="zxx">
 
@@ -75,10 +77,10 @@
                             <!-- Thumbnail Large Image start -->
                             <div class="tab-content">
                                 <div id="thumb1" class="tab-pane fade show active">
-                                    <a data-fancybox="images" href="img/products/gạch granite FN6029.jpg"><img src="img/products/FN6029-1.jpg" alt="product-view"></a>
+                                    <a data-fancybox="images" href="${product.image1}"><img src="${product.image1}" alt="product-view"></a>
                                 </div>
                                 <div id="thumb2" class="tab-pane fade">
-                                    <a data-fancybox="images" href="img/products/Gạch Granite FN6029 (2).jpg"><img src="img/products/Gạch Granite FN6029 (2).jpg" alt="product-view"></a>
+                                    <a data-fancybox="images" href="${product.image2}"><img src="${product.image2}" alt="product-view"></a>
                                 </div>
                                 <!-- <div id="thumb3" class="tab-pane fade">
                                     <a data-fancybox="images" href="https://khatra.com.vn/wp-content/uploads/2020/09/D6606-map.jpg"><img src="https://khatra.com.vn/wp-content/uploads/2020/09/D6606-map.jpg" alt="product-view"></a>
@@ -94,8 +96,8 @@
                             <!-- Thumbnail Image End -->
                             <div class="product-thumbnail mt-15">
                                 <div class="thumb-menu owl-carousel nav tabs-area" role="tablist">
-                                    <a class="active" data-toggle="tab" href="#thumb1"><img src="img/products/FN6029-1.jpg" alt="product-thumbnail"></a>
-                                    <a data-toggle="tab" href="#thumb2"><img src="img/products/Gạch Granite FN6029 (2).jpg" alt="product-thumbnail"></a>
+                                    <a class="active" data-toggle="tab" href="#thumb1"><img src="${product.image1}" alt="product-thumbnail"></a>
+                                    <a data-toggle="tab" href="#thumb2"><img src="${product.image2}" alt="product-thumbnail"></a>
                                     <!-- <a data-toggle="tab" href="#thumb3"><img src="https://khatra.com.vn/wp-content/uploads/2020/09/D6606-map.jpg" alt="product-thumbnail"></a>
                                     <a data-toggle="tab" href="#thumb4"><img src="https://khatra.com.vn/wp-content/uploads/2021/07/KT-6005-map.jpg" alt="product-thumbnail"></a> -->
                                     <!-- <a data-toggle="tab" href="#thumb5"><img src="img\products\5.jpg" alt="product-thumbnail"></a> -->
@@ -107,7 +109,7 @@
                         <!-- Thumbnail Description Start -->
                         <div class="col-lg-7">
                             <div class="thubnail-desc fix">
-                                <h3 class="product-header">Gạch granite FN6029</h3>
+                                <h3 class="product-header">${product.productName}</h3>
                                 <div class="rating-summary fix mtb-10">
                                     <div class="rating">
                                         <i class="fa fa-star"></i>
@@ -121,20 +123,13 @@
                                         <a href="#">add to your review</a>
                                     </div> -->
                                 </div>
+
                                 <div class="pro-price mtb-30">
-                                    <p class="d-flex align-items-center"><span class="price">620,000đ</span></p>
-                                </div>
-                                <p class="mb-20 pro-desc-details"> Terrazzo là mẫu gạch mới, có thiết kế và kiểu dáng hiện đại. Thường được dùng để lót sàng và tường.</p>
-                                <div class="product-size mb-20 clearfix">
-                                    <label>Kích thước</label>
-                                    <select class="">
-                                      <option>300x600</option>
-                                      <option>600x600</option>
-                                    </select>
+                                    <p class="d-flex align-items-center"><span class="price"><fmt:formatNumber type="currency" currencySymbol="" minFractionDigits="0" value="${product.price-Math.round(product.price*(product.salePrice/100))}"/> VNĐ</span></p>
                                 </div>
                                 <div class="color clearfix mb-20">
                                     <label>Ứng dụng</label>
-                                    <p>Lát nền, ốp tường</p>
+                                    <p>${product.description}</p>
                                     <!-- <ul class="color-list">
                                         <li>
                                             <a class="orange active" href="#">Lát nền</a>
@@ -144,6 +139,7 @@
                                         </li>
                                     </ul> -->
                                 </div>
+                                <c:if test="${product.status!=0}">
                                 <div class="box-quantity d-flex hot-product2">
                                     <form action="#">
                                         <input class="quantity mr-15" type="number" min="1" value="1">
@@ -152,6 +148,9 @@
                                         <div class="actions-primary">
                                             <a href="cart.jsp" title="" data-original-title="Thêm vào giỏ"> + Thêm vào giỏ</a>
                                         </div>
+                                        <div class="actions-primary">
+                                            <a href="checkout.jsp" title="" data-original-title="Mua ngay">Mua ngay</a>
+                                        </div>
                                         <div class="actions-secondary">
                                             <!-- <a href="compare.html" title="" data-original-title="Compare"><i class="lnr lnr-sync"></i> <span>Thêm so sánh</span></a> -->
                                             <!-- <a href="wishlist.html" title="" data-original-title="WishList"><i class="lnr lnr-heart"></i> <span>Thêm vào danh sách yêu thích</span></a> -->
@@ -159,8 +158,14 @@
                                     </div>
                                 </div>
                                 <div class="pro-ref mt-20">
-                                    <p><span class="in-stock"><i class="ion-checkmark-round"></i> Trong kho</span></p>
+                                    <p><span class="in-stock"><i class="ion-checkmark-round"></i>Còn ${product.quantity}</span></p>
                                 </div>
+                                </c:if>
+                                <c:if test="${product.status==0}">
+                                    <div class="pro-ref mt-20">
+                                        <p><span class="in-stock"><i class="ion-close-round" style="color: red"></i>Hết hàng</span></p>
+                                    </div>
+                                </c:if>
                                 <div class="socila-sharing mt-25">
                                     <ul class="d-flex">
                                         <li>Chia sẻ</li>

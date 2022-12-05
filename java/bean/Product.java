@@ -54,7 +54,7 @@ public class Product {
         return productID;
     }
 
-    public void setProductID(String productID) {
+    public void setProductID(String C) {
         this.productID = productID;
     }
 
