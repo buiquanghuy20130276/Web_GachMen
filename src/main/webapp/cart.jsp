@@ -98,7 +98,7 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <%--@elvariable id="listCart" type="java.util.List"--%>
+                                    <%--@elvariable id="listCart" type="java.util.List"--%>
 
                                 <c:forEach items="${listCart}" var="product">
                                     <tr>
@@ -109,20 +109,30 @@
                                                     alt="cart-image"></a>
                                         </td>
                                         <td class="product-name"><a target="_blank"
-                                                href="ProductDetail?productID=${product.productID}">${product.productName}</a>
+                                                                    href="ProductDetail?productID=${product.productID}">${product.productName}</a>
                                         </td>
-                                        <td class="product-price"><span class="amount"><fmt:formatNumber type="currency" currencySymbol="" minFractionDigits="0"
-                                                                                                         value="${product.priceAfterSale}"/> VNĐ</span></td>
-                                        <td class="product-quantity"><input name="quantity" type="number" value="${product.quantityCart}"></td>
-                                        <td class="product-subtotal"><fmt:formatNumber type="currency" currencySymbol="" minFractionDigits="0"
-                                                                                       value="${product.priceAfterSale*product.quantityCart}"/> VNĐ </td>
+                                        <td class="product-price"><span class="amount"><fmt:formatNumber type="currency"
+                                                                                                         currencySymbol=""
+                                                                                                         minFractionDigits="0"
+                                                                                                         value="${product.priceAfterSale}"/> VNĐ</span>
+                                        </td>
+                                        <td class="product-quantity"><input name="quantity" onblur="updateCart(this)"
+                                                                            type="number"
+                                                                            value="${product.quantityCart}"></td>
+                                        <td class="product-subtotal"><fmt:formatNumber type="currency" currencySymbol=""
+                                                                                       minFractionDigits="0"
+                                                                                       value="${product.priceAfterSale*product.quantityCart}"/>
+                                            VNĐ
+                                        </td>
                                         <td class="product-remove">
-                                            <a href="${DeleteCart}"><i class="fa fa-times" aria-hidden="true"></i></a>
+                                            <c:url value="/DeleteCart?productID=${product.productID}" var="deleteCart"/>
+                                            <a href="${deleteCart}"><i class="fa fa-times" aria-hidden="true"></i></a>
                                         </td>
                                     </tr>
+                                </c:forEach>
                                 </tbody>
+                                </c:if>
                             </table>
-
                         </div>
                         <!-- Table Content Start -->
                         <div class="row">
@@ -134,8 +144,7 @@
                                     <a href="ProductLists">Tiếp tục mua sắm</a>
                                 </div>
                             </div>
-                            </c:forEach>
-                            </c:if>
+
                             <!-- Cart Button Start -->
                             <!-- Cart Totals Start -->
                             <div class="col-md-4 col-sm-12">
@@ -148,9 +157,12 @@
 
                                         </tr>
                                         <tr class="order-total">
-                                            <th>Tổng: </th>
+                                            <th>Tổng:</th>
                                             <td>
-                                                <strong><span class="amount"><fmt:formatNumber type="currency" currencySymbol="" minFractionDigits="0" value="${cart.total()}"/>VNĐ</span></strong>
+                                                <strong><span class="amount"><fmt:formatNumber type="currency"
+                                                                                               currencySymbol=""
+                                                                                               minFractionDigits="0"
+                                                                                               value="${cart.total()}"/>VNĐ</span></strong>
                                             </td>
                                         </tr>
                                         </tbody>
@@ -180,7 +192,11 @@
     <!-- Quick View Content End -->
 </div>
 <!-- Main Wrapper End Here -->
-
+<script>
+    function updateCart(obj) {
+        ${product.quantityCart==obj.value}
+    }
+</script>
 <!-- jquery 3.2.1 -->
 <script src="js\vendor\jquery-3.2.1.min.js"></script>
 <!-- Countdown js -->
