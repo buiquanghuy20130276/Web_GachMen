@@ -4,6 +4,8 @@ import java.sql.*;
 
 public class ConnectDB {
     static Connection con;
+    static ConnectDB install;
+
     public static PreparedStatement connect(String sql) throws SQLException, ClassNotFoundException {
         if (con == null || con.isClosed()) {
             Class.forName("com.mysql.jdbc.Driver");

@@ -201,8 +201,7 @@
                                                     <div class="label-product l_sale">${p.salePrice}<span
                                                             class="symbol-percent">%</span></div>
                                                     </c:if>
-                                                </div>
-                                                <div class="pro-actions">
+                                                </div>                                                <div class="pro-actions">
                                                     <div class="actions-primary">
                                                         <a href="cart.jsp" title="Thêm vào giỏ"> + Thêm vào giỏ</a>
                                                     </div>
