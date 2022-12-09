@@ -4,22 +4,39 @@ import java.io.Serializable;
 
 public class User implements Serializable {
     private String idUser;
-    private String name;
+    private String userName;
+    private String email;
+    private String phone;
+    private String address;
+    private String passWord;
     private String birth;
     private String gender;
-    private String address;
-    private String email;
-    private int phone;
-    private String userName;
-    private String passWord;
-    private String timeGetDay;
-    private String registerDate;
-    private String lastLogin;
+    private String name;
     private String status;
+    private String day_register;
+
+    private String lastLogin;
     private int isAdmin;
     private Role role;
 
+    public User(String idUser, String userName, String birth, String gender, String email, String phone, String address, String passWord, String status, String day_register, int isAdmin) {
+        super();
+        this.idUser = idUser;
+        this.userName = userName;
+        this.birth = birth;
+        this.gender = gender;
+        this.email = email;
+        this.phone = phone;
+        this.address = address;
+        this.passWord = passWord;
+        this.day_register = day_register;
+        this.lastLogin = lastLogin;
+        this.status = status;
+        this.isAdmin = isAdmin;
+    }
+
     public User() {
+
     }
 
     public String getIdUser() {
@@ -70,11 +87,11 @@ public class User implements Serializable {
         this.email = email;
     }
 
-    public int getPhone() {
+    public String getPhone() {
         return phone;
     }
 
-    public void setPhone(int phone) {
+    public void setPhone(String phone) {
         this.phone = phone;
     }
 
@@ -94,36 +111,37 @@ public class User implements Serializable {
         this.passWord = passWord;
     }
 
-    public String getTimeGetDay() {
-        return timeGetDay;
-    }
-
-    public void setTimeGetDay(String timeGetDay) {
-        this.timeGetDay = timeGetDay;
-    }
+//    public String getTimeGetDay() {
+//        return timeGetDay;
+//    }
+//
+//    public void setTimeGetDay(String timeGetDay) {
+//        this.timeGetDay = timeGetDay;
+//    }
 
     public String getRegisterDate() {
-        return registerDate;
+        return day_register;
     }
 
-    public void setRegisterDate(String registerDate) {
-        this.registerDate = registerDate;
+    public void setRegisterDate(String day_register) {
+        this.day_register = day_register;
     }
 
-    public String getLastLogin() {
-        return lastLogin;
-    }
-
-    public void setLastLogin(String lastLogin) {
-        this.lastLogin = lastLogin;
-    }
+//    public String getLastLogin() {
+//        return lastLogin;
+//    }
+//
+//    public void setLastLogin(String lastLogin) {
+//        this.lastLogin = lastLogin;
+//    }
 
     public String getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public String setStatus(String status) {
         this.status = status;
+        return status;
     }
 
     public int getIsAdmin() {
@@ -133,25 +151,6 @@ public class User implements Serializable {
     public void setIsAdmin(int isAdmin) {
         this.isAdmin = isAdmin;
     }
-
-    public User(String idUser, String name, String birth, String gender, String address, String email, int phone, String userName, String passWord, String timeGetDay, String registerDate, String lastLogin, String status, int isAdmin) {
-        this.idUser = idUser;
-        this.name = name;
-        this.birth = birth;
-        this.gender = gender;
-        this.address = address;
-        this.email = email;
-        this.phone = phone;
-        this.userName = userName;
-        this.passWord = passWord;
-        this.timeGetDay = timeGetDay;
-        this.registerDate = registerDate;
-        this.lastLogin = lastLogin;
-        this.status = status;
-        this.isAdmin = isAdmin;
-
-    }
-
 
     public boolean accept(String name) {
         return role.accept(name);

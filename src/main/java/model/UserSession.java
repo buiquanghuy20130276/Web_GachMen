@@ -44,7 +44,7 @@ public class UserSession {
     }
 
     public void update(String name, String birth, String gender,
-                       String address, int phone, String email){
+                       String address, String phone, String email){
         Collection<User> u = user.values();
         for(User s : u){
             s.setName(name);
@@ -57,7 +57,7 @@ public class UserSession {
     }
 
     public void updateWithPass(String name, String birth, String gender,
-                               String address, int phone, String email, String pass){
+                               String address, String phone, String email, String pass){
         Collection<User> u = user.values();
         for(User s : u){
             s.setName(name);
