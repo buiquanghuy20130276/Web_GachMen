@@ -14,11 +14,11 @@ import java.util.Collection;
 public class UpdateCart extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
         String[] id = request.getParameterValues("productID");
         String[] quantity = request.getParameterValues("quantityCart");
         HttpSession session = request.getSession();
         session.getAttribute("cart");
+
         Cart c = Cart.getCart(session);
         for (int i = 0; i < id.length; i++) {
             c.update(id[i], Integer.parseInt(quantity[i]));
@@ -28,8 +28,4 @@ public class UpdateCart extends HttpServlet {
     }
 
 
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-    }
 }

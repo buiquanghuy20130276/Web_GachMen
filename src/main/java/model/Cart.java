@@ -71,8 +71,14 @@ public class Cart implements Serializable {
         updateQuantityAndTotal();
     }
     public void update(String id, int quantity){
-        if(quantity < 0) return;
-        if(listCart.containsKey(id)) listCart.get(id).setQuantityCart(quantity);
+
+        if(listCart.containsKey(id)) {
+            Product prod = listCart.get(id);
+            prod.setQuantityCart(quantity);
+            listCart.put(id, prod);
+
+        }
+        updateQuantityAndTotal();
     }
 
     public void remove(String id){
