@@ -2,6 +2,7 @@ package controller;
 
 import bean.User;
 import service.UserService;
+import tool.MD5;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -11,48 +12,62 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.Timestamp;
 import java.util.Date;
+import java.util.Random;
 
-import static tool.MD5.getMd5;
 
 @WebServlet(name = "Register", value = "/register")
 public class Register extends HttpServlet {
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String name = request.getParameter("name");
-        String birth = request.getParameter("birth");
-        String gender = request.getParameter("gender");
-        String email = request.getParameter("email");
-        String phone = request.getParameter("number");
-        String address = request.getParameter("address");
-        String pass = request.getParameter("pass");
-        String re_pass = request.getParameter("re_pass");
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.setCharacterEncoding("utf-8");
+        response.setCharacterEncoding("utf-8");
+
+        String agree = request.getParameter("agree");
+        String name = request.getParameter("name");
+        String uname = request.getParameter("username");
+        String email = request.getParameter("email");
+        String phone = request.getParameter("phone");
+        String pass = request.getParameter("password");
+        Random rd = new Random();
         Timestamp timestamp = new Timestamp(new Date().getTime());
         String timeRegister = String.valueOf(timestamp);
 
         User user = new User();
-        user.setUserName(name);
-        user.setUserName(birth);
-        user.setUserName(gender);
+        user.setIdUser("user" + rd.nextInt(1000000) + rd.nextInt(100000));
+        user.setName(name);
+        user.setUserName(uname);
         user.setEmail(email);
+        user.setDay_register(timeRegister);
+        user.setPassWord(MD5.getMd5(pass));
         user.setPhone(phone);
-        user.setAddress(address);
-        user.setPassWord(getMd5(pass));
-        user.setStatus("Đang sử dụng");
-        user.setRegisterDate(timeRegister);
-        UserService userService = new UserService();
+        user.setIsAdmin(0);
+        user.setStatus(1);
+        UserService us = new UserService();
+
         try {
-            if (name.equals("") || birth.equals("") || gender.equals("") || email.equals("") || phone.equals("") || pass.equals("") || re_pass.equals("")) {
-                request.setAttribute("errRegister0", "Vui lòng điền đầy đủ thông tin");
+            if (name.equals("") || uname.equals("") || email.equals("") || pass.equals("")) {
+                request.setAttribute("msg", "Vui lòng điền đầy đủ thông tin");
                 request.getRequestDispatcher("register.jsp").forward(request, response);
             }
-            if (userService.existEmail(email)) {
-                request.setAttribute("errRegister1", "Email đã tồn tại");
+            if (agree==null) {
+                request.setAttribute("msg", "Vui lòng chấp nhận điều khoảng");
                 request.getRequestDispatcher("register.jsp").forward(request, response);
-            } else if (userService.register(user)) {
-                request.setAttribute("message", "Bạn đã tạo tài khoàn thành công. Mời bạn đăng nhập <a style=\"color: #F7931E\" href='login.jsp'>tại đây!</a>");
+            }if (UserService.existUserName(uname)) {
+                request.setAttribute("msg", "Tên đăng nhập đã tồn tại");
                 request.getRequestDispatcher("register.jsp").forward(request, response);
+            }
+            if (UserService.existEmail(email)) {
+                request.setAttribute("msg", "Email này đã được đăng ký tài khoảng");
+                request.getRequestDispatcher("register.jsp").forward(request, response);
+            } else if (UserService.register(user)) {
+                request.getRequestDispatcher("/").forward(request, response);
             } else {
-                request.setAttribute("errRegister2", "Tạo tài khoản thất bại.<br> Hãy thử lại!!!");
+                request.setAttribute("msg", "Tạo tài khoản thất bại.<br> Hãy thử lại!!!");
                 request.getRequestDispatcher("register.jsp").forward(request, response);
             }
         } catch (Exception e) {

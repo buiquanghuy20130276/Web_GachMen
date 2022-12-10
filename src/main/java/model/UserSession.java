@@ -1,6 +1,5 @@
 package model;
 
-import bean.Product;
 import bean.User;
 import service.UserService;
 
@@ -43,32 +42,32 @@ public class UserSession {
         return s.trim();
     }
 
-    public void update(String name, String birth, String gender,
-                       String address, String phone, String email){
-        Collection<User> u = user.values();
-        for(User s : u){
-            s.setName(name);
-            s.setBirth(birth);
-            s.setGender(gender);
-            s.setAddress(address);
-            s.setPhone(phone);
-            s.setEmail(email);
-        }
-    }
+//    public void update(String name, String birth, String gender,
+//                       String address, int phone, String email){
+//        Collection<User> u = user.values();
+//        for(User s : u){
+//            s.setName(name);
+//            s.setBirth(birth);
+//            s.setGender(gender);
+//            s.setAddress(address);
+//            s.setPhone(phone);
+//            s.setEmail(email);
+//        }
+//    }
 
-    public void updateWithPass(String name, String birth, String gender,
-                               String address, String phone, String email, String pass){
-        Collection<User> u = user.values();
-        for(User s : u){
-            s.setName(name);
-            s.setBirth(birth);
-            s.setGender(gender);
-            s.setAddress(address);
-            s.setPhone(phone);
-            s.setEmail(email);
-            s.setPassWord(pass);
-        }
-    }
+//    public void updateWithPass(String name, String birth, String gender,
+//                               String address, int phone, String email, String pass){
+//        Collection<User> u = user.values();
+//        for(User s : u){
+//            s.setName(name);
+//            s.setBirth(birth);
+//            s.setGender(gender);
+//            s.setAddress(address);
+//            s.setPhone(phone);
+//            s.setEmail(email);
+//            s.setPassWord(pass);
+//        }
+//    }
 
     public static UserSession getUS(HttpSession session){
         return session.getAttribute("user") == null

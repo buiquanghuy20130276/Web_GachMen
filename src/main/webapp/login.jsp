@@ -72,7 +72,7 @@
                             <h3 class="custom-title">ĐĂNG KÍ</h3>
                             <br>
                             <p>Bằng cách tạo tài khoản, bạn sẽ có thể mua sắm nhanh hơn, cập nhật trạng thái đơn hàng và theo dõi các đơn hàng bạn đã thực hiện trước đó</p>
-                            <a class="customer-btn" href="register.html">Tiếp tục</a>
+                            <a class="customer-btn" href="register.jsp">Tiếp tục</a>
                         </div>
                     </div>
                 </div>
@@ -83,23 +83,17 @@
                         <div class="return-customer">
                             <h3 class="mb-10 custom-title">ĐĂNG NHẬP</h3>
                             <br>
-                                <form action="LoginController" method="post">
+                            <form action="#">
                                 <div class="form-group">
                                     <label>Tài khoản</label>
-                                    <input type="text" name="username" placeholder="Nhập username..." id="input-email" class="form-control">
+                                    <input type="text" name="email" placeholder="Nhập địa chỉ email..." id="input-email" class="form-control">
                                 </div>
                                 <div class="form-group">
                                     <label>Mật khẩu</label>
-                                    <input type="password" name="password" placeholder="Mật khẩu" id="input-password" class="form-control">
+                                    <input type="text" name="pass" placeholder="Mật khẩu" id="input-password" class="form-control">
                                 </div>
                                 <p class="lost-password"><a href="forgot-password.jsp">Quên mật khẩu?</a></p>
                                 <input type="submit" value="Đăng nhập" class="return-customer-btn">
-                                    <br/>
-                                    <% if(session.getAttribute("errmsg")!=null){
-                                        String msg = (String)session.getAttribute("errmsg");
-                                    %>
-                                    <font color="red"><%=msg%></font>
-                                    <%}%>
                             </form>
                         </div>
                     </div>
