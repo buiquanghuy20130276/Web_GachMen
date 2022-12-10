@@ -53,6 +53,12 @@
 <div class="wrapper">
     <!-- Banner Popup Start -->
     <!-- Brand Banner Area Start Here -->
+    <div class="popup_banner">
+        <span class="popup_off_banner">×</span>
+        <div class="banner_popup_area">
+            <img src="img/banner/logo.png" alt="">
+        </div>
+    </div>
     <jsp:include page="header.jsp"/>
 
     <!-- Hot Deal Products Start Here -->

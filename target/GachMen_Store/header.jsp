@@ -6,6 +6,11 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%if(session.getAttribute("username") == null){
+    response.sendRedirect("login.jsp");
+}%>
+
+
 <header>
 
     <!-- Header Middle Start Here -->
@@ -45,10 +50,14 @@
                         <ul class="d-flex justify-content-lg-end justify-content-center align-items-center">
                             <li><a href="cart.jsp"><i class="lnr lnr-cart"></i><span class="my-cart"><span class="total-pro">0</span><span>Giỏ hàng</span></span></a>
                             </li>
-                            <li><a href="cart.jsp"><i class="lnr lnr-user"></i><span class="my-cart"><span><strong>Username</strong></span></span></a>
+                            <%if(session.getAttribute("username")!=null) {%>
+                            <li><a href="index.jsp"><i class="lnr lnr-user"></i><span class="my-cart"><span><strong><%=session.getAttribute("username")%></strong></span><span> Logout</span></span></a>
                             </li>
+                            <%}%>
+                            <%if(session.getAttribute("username")==null) {%>
                             <li><a href="login.jsp"><i class="lnr lnr-user"></i><span class="my-cart"><span> <strong>Đăng nhập</strong></span><span> đăng kí</span></span></a>
                             </li>
+                            <%}%>
                         </ul>
                     </div>
                 </div>
@@ -56,7 +65,7 @@
         </div>
     </div>
     <!-- Header Bottom Start Here -->
-    <div class="header-bottom  header-sticky"style="margin-left: 2%">
+    <div class="header-bottom  header-sticky">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-xl-3 col-lg-4 col-md-6 vertical-menu d-none d-lg-block">
@@ -134,8 +143,7 @@
         </div>
     </div>
 </header>
-<!-- Categorie Menu & Slider Area Start Here class="row align-items-center"-->
-
+<!-- Categorie Menu & Slider Area Start Here -->
 <div class="main-page-banner pb-50 off-white-bg">
     <div class="container">
         <div class="row">
@@ -144,21 +152,21 @@
                 <div class="vertical-menu mb-all-30">
                     <nav>
                         <ul class="vertical-menu-list" style="display: none;">
-                            <li class=""><a href="shop.html">Gạch lát nền</a>
+                            <li ><a href="product-list.jsp">Gạch lát nền</a>
                             </li>
-                            <li><a href="shop.html">Gạch ốp tường</a>
+                            <li><a href="product-list.jsp">Gạch ốp tường</a>
                                 <!-- Vertical Mega-Menu Start -->
 
                             </li>
 
-                            <li><a href="shop.html">Gạch trang trí</a>
+                            <li><a href="product-list.jsp">Gạch trang trí</a>
 
                             </li>
-                            <li><a href="shop.html">Gạch giả gỗ</i>
+                            <li><a href="product-list.jsp">Gạch giả gỗ</i>
                             </a>
 
                             </li>
-                            <li><a href="shop.html">Gạch Terrazzo</a>
+                            <li><a href="product-list.jsp">Gạch Terrazzo</a>
 
                             </li>
                         </ul>
@@ -170,8 +178,8 @@
                 <div class="slider-wrapper theme-default">
                     <!-- Slider Background  Image Start-->
                     <div id="slider" class="nivoSlider">
-                        <a href="shop.html"><img src="img\slider\banner-the.png" data-thumb="img/slider/1.jpg" alt="" title="#htmlcaption"></a>
-                        <a href="shop.html"><img src="img\slider\image2.jpg" data-thumb="img/slider/2.jpg" alt="" title="#htmlcaption2"></a>
+                        <a href="product-list.jsp"><img src="img\slider\banner-the.png" data-thumb="img/slider/1.jpg" alt="" title="#htmlcaption"></a>
+                        <a href="product-list.jsp"><img src="img\slider\image2.jpg" data-thumb="img/slider/2.jpg" alt="" title="#htmlcaption2"></a>
                     </div>
                     <!-- Slider Background  Image Start-->
                 </div>
