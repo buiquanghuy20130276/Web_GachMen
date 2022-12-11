@@ -9,7 +9,12 @@
 <%if(session.getAttribute("username") == null){
     response.sendRedirect("login.jsp");
 }%>
-
+<div class="popup_banner">
+    <span class="popup_off_banner">×</span>
+    <div class="banner_popup_area">
+        <img src="img/banner/logo.png" alt="">
+    </div>
+</div>
 
 <header>
 
@@ -51,7 +56,7 @@
                             <li><a href="cart.jsp"><i class="lnr lnr-cart"></i><span class="my-cart"><span class="total-pro">0</span><span>Giỏ hàng</span></span></a>
                             </li>
                             <%if(session.getAttribute("username")!=null) {%>
-                            <li><a href="index.jsp"><i class="lnr lnr-user"></i><span class="my-cart"><span><strong><%=session.getAttribute("username")%></strong></span><span> Logout</span></span></a>
+                            <li><a href="cart.jsp"><i class="lnr lnr-user"></i><span class="my-cart"><span><strong><%=session.getAttribute("username")%></strong></span><span> Logout</span></span></a>
                             </li>
                             <%}%>
                             <%if(session.getAttribute("username")==null) {%>
@@ -178,8 +183,8 @@
                 <div class="slider-wrapper theme-default">
                     <!-- Slider Background  Image Start-->
                     <div id="slider" class="nivoSlider">
-                        <a href="product-list.jsp"><img src="img\slider\banner-the.png" data-thumb="img/slider/1.jpg" alt="" title="#htmlcaption"></a>
-                        <a href="product-list.jsp"><img src="img\slider\image2.jpg" data-thumb="img/slider/2.jpg" alt="" title="#htmlcaption2"></a>
+                        <a href="ProductLists"><img src="img\slider\banner-the.png" data-thumb="img/slider/1.jpg" alt="" title="#htmlcaption"></a>
+                        <a href="ProductLists"><img src="img\slider\image2.jpg" data-thumb="img/slider/2.jpg" alt="" title="#htmlcaption2"></a>
                     </div>
                     <!-- Slider Background  Image Start-->
                 </div>

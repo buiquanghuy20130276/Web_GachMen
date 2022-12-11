@@ -41,7 +41,7 @@
 </head>
 
 <body>
-<jsp:include page="headerAdmin.jsp"/>
+<jsp:include page="header.jsp"/>
 <div class="container-fluid">
     <div class="row-fluid">
         <jsp:include page="menu.jsp"/>

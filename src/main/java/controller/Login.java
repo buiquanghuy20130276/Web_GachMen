@@ -16,11 +16,13 @@ public class Login extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.getRequestDispatcher("login.jsp").forward(request,response);
         response.setContentType("text/html; charset=UTF-8");
         HttpSession session = request.getSession();
         String username = request.getParameter("username");
         String password = request.getParameter("password");
         String msg = Login_Service.AuthenticateUser(username, password);
+
         if (msg.equals("Success")) {
             session.setAttribute("username", username);
             request.getRequestDispatcher("index.jsp").forward(request, response);

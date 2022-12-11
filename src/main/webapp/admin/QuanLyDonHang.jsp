@@ -1,6 +1,6 @@
-<%@ page import="bean.Order" %>
-<%@ page import="java.util.Collection" %>
-<%@ page import="model.UserSession" %><%--
+<%--<%@ page import="beans.User" %>--%>
+<%--<%@ page import="java.util.Collection" %>--%>
+<%--<%@ page import="model.UserSession" %>&lt;%&ndash;--%>
 
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -20,16 +20,16 @@
     <title>Quản lý đơn hàng</title>
     <!-- Bootstrap -->
     <meta charset="utf-8">
-    <link href="${pageContext.request.contextPath}/admin/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
-    <link href="${pageContext.request.contextPath}/admin/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" media="screen">
-    <link href="${pageContext.request.contextPath}/admin/assets/styles.css" rel="stylesheet" media="screen">
-    <link href="${pageContext.request.contextPath}/admin/assets/DT_bootstrap.css" rel="stylesheet" media="screen">
+    <link href="Admin/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="Admin/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" media="screen">
+    <link href="Admin/assets/styles.css" rel="stylesheet" media="screen">
+    <link href="Admin/assets/DT_bootstrap.css" rel="stylesheet" media="screen">
     <!--[if lte IE 8]><script language="javascript" type="text/javascript" src="vendors/flot/excanvas.min.js"></script><![endif]-->
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-    <script src="${pageContext.request.contextPath}/admin/vendors/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+    <script src="Admin/vendors/modernizr-2.6.2-respond-1.1.0.min.js"></script>
     <script src='https://kit.fontawesome.com/a076d05399.js'></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.22/pdfmake.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
@@ -39,7 +39,7 @@
 </head>
 
 <body>
-<%--<jsp:include page="headerAdmin.jsp"/>--%>
+<jsp:include page="header.jsp"/>
 <div class="container-fluid">
     <div class="row-fluid">
         <jsp:include page="menu.jsp"/>
@@ -79,17 +79,17 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <c:forEach items="${listOrder}" var="order">
+                                <c:forEach items="${listOrders}" var="order">
                                     <tr id="${order.orderID}">
                                         <td>${order.orderID}</td>
                                         <td>${order.fullName}</td>
                                         <td>${order.createDate}</td>
-                                        <td id="orderstatus"><c:if test="${order.status.equal('1')}">Đã xử lý</c:if>
-                                            <c:if test="${order.status.equal('0')}">Chưa xử lý</c:if></td>
+                                        <td id="orderstatus"><c:if test="${order.status eq '1'}">Đã xử lý</c:if>
+                                            <c:if test="${order.status eq '0'}">Chưa xử lý</c:if></td>
                                         <td id="rowupdate"><c:if test="${order.status eq '1'}"></c:if>
                                             <c:if test="${order.status eq '0'}"><a id="linkupdate" href="${order.orderID}" onclick="return false;">
                                                 <span class="fas fa-shipping-fast"></span> Xử lý</a></c:if></td>
-                                        <td><a href="ListOrderDetailAd?id=${order.orderID}&userID=${order.userID}&fullName=${order.fullName}&subTotal=${order.subTotal}&tax=${order.tax}&totalPrice=${order.totalPrice}&address=${order.address}&phone=${order.phone}&email=${order.email}&status=${order.status}&createDate=${order.createDate}&updateDate=${order.updateDate}">
+                                        <td><a href="ListOrderDetailAd?id=${order.orderID}&fullName=${order.fullName}&address=${order.address}&phone=${order.phone}&createDate=${order.createDate}&tax=${order.tax}&ship=${order.ship}&total=${order.totalPrice}">
                                             <span class="fas fa-address-book"></span> Xem chi tiết</a></td>
                                         <td><a class="text-danger" href="${order.orderID}" onclick="return false;"><span class="far fa-window-close"></span> Xóa</a></td>
                                     </tr>
