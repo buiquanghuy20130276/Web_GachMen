@@ -1,4 +1,4 @@
-<%--
+index.jsp<%--
   Created by IntelliJ IDEA.
   User: Quang Huy
   Date: 04/12/2022
@@ -6,10 +6,12 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%if(session.getAttribute("username") == null){
-    response.sendRedirect("login.jsp");
-}%>
-
+<div class="popup_banner">
+    <span class="popup_off_banner">×</span>
+    <div class="banner_popup_area">
+        <img src="img/banner/logo.png" alt="">
+    </div>
+</div>
 
 <header>
 
@@ -50,14 +52,10 @@
                         <ul class="d-flex justify-content-lg-end justify-content-center align-items-center">
                             <li><a href="cart.jsp"><i class="lnr lnr-cart"></i><span class="my-cart"><span class="total-pro">0</span><span>Giỏ hàng</span></span></a>
                             </li>
-                            <%if(session.getAttribute("username")!=null) {%>
-                            <li><a href="index.jsp"><i class="lnr lnr-user"></i><span class="my-cart"><span><strong><%=session.getAttribute("username")%></strong></span><span> Logout</span></span></a>
+                            <li><a href="cart.jsp"><i class="lnr lnr-user"></i><span class="my-cart"><span><strong>Username</strong></span></span></a>
                             </li>
-                            <%}%>
-                            <%if(session.getAttribute("username")==null) {%>
                             <li><a href="login.jsp"><i class="lnr lnr-user"></i><span class="my-cart"><span> <strong>Đăng nhập</strong></span><span> đăng kí</span></span></a>
                             </li>
-                            <%}%>
                         </ul>
                     </div>
                 </div>
@@ -74,7 +72,7 @@
                 <div class="col-xl-9 col-lg-8 col-md-12 ">
                     <nav class="d-none d-lg-block">
                         <ul class="header-bottom-list d-flex">
-                            <li><a id="index" href="Home">Trang chủ</a>
+                            <li><a id="index" href="indexHome">Trang chủ</a>
                                 <!-- Home Version Dropdown Start -->
 
                             </li>
