@@ -1,14 +1,11 @@
 package controller;
 
-import bean.Product;
 import model.Cart;
-import service.ProductService;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
-import java.util.Collection;
 
 @WebServlet(name = "UpdateCart", value = "/UpdateCart")
 public class UpdateCart extends HttpServlet {
@@ -25,7 +22,11 @@ public class UpdateCart extends HttpServlet {
             c.commit(session);
         }
         response.sendRedirect("Cart");
+
     }
 
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+    }
 }
