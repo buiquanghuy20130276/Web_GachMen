@@ -54,7 +54,7 @@
             <div class="breadcrumb">
                 <ul class="d-flex align-items-center">
                     <li><a href="index.jsp">Trang chủ</a></li>
-                    <li class="active"><a href="register.html">Đăng kí</a></li>
+                    <li class="active"><a href="register.jsp">Đăng kí</a></li>
                 </ul>
             </div>
         </div>
@@ -75,31 +75,31 @@
             <!-- Row End -->
             <div class="row">
                 <div class="col-sm-12">
-                    <form class="form-register" action="#">
+                    <form class="form-register" method="post" action="register">
                         <fieldset>
                             <legend>Thông tin cá nhân</legend>
                             <div class="form-group d-md-flex align-items-md-center">
-                                <label class="control-label col-md-2" for="f-name"><span class="require">*</span>Họ</label>
+                                <label class="control-label col-md-2" for="f-name"><span class="require">*</span>Họ và Tên</label>
                                 <div class="col-md-10">
-                                    <input type="text" class="form-control" id="f-name" placeholder="Vui lòng nhập họ">
+                                    <input type="text" class="form-control" value="<%=request.getParameter("name")==null ? "":request.getParameter("name")%>" name="name" id="f-name" placeholder="Vui lòng nhập họ và tên..">
                                 </div>
                             </div>
                             <div class="form-group d-md-flex align-items-md-center">
-                                <label class="control-label col-md-2" for="l-name"><span class="require">*</span>Tên</label>
+                                <label class="control-label col-md-2" for="l-name"><span class="require">*</span>Tên đăng nhập </label>
                                 <div class="col-md-10">
-                                    <input type="text" class="form-control" id="l-name" placeholder="vui lòng nhập tên">
+                                    <input type="text" class="form-control" id="l-name"value="<%=request.getParameter("username")==null ? "":request.getParameter("username")%>" name="username" placeholder="vui lòng nhập tên">
                                 </div>
                             </div>
                             <div class="form-group d-md-flex align-items-md-center">
                                 <label class="control-label col-md-2" for="email"><span class="require">*</span>Email</label>
                                 <div class="col-md-10">
-                                    <input type="email" class="form-control" id="email" placeholder="Nhập địa chỉ email...">
+                                    <input type="email" class="form-control"value="<%=request.getParameter("email")==null ? "":request.getParameter("email")%>" name="email" id="email" placeholder="Nhập địa chỉ email...">
                                 </div>
                             </div>
                             <div class="form-group d-md-flex align-items-md-center">
                                 <label class="control-label col-md-2" for="number"><span class="require">*</span>Số điện thoại</label>
                                 <div class="col-md-10">
-                                    <input type="email" class="form-control" id="number" placeholder="Số điện thoại">
+                                    <input type="text" class="form-control" value="<%=request.getParameter("phone")==null ? "":request.getParameter("phone")%>" name="phone" id="number" placeholder="Số điện thoại">
                                 </div>
                             </div>
                         </fieldset>
@@ -108,7 +108,7 @@
                             <div class="form-group d-md-flex align-items-md-center">
                                 <label class="control-label col-md-2" for="pwd"><span class="require">*</span>Mật khẩu:</label>
                                 <div class="col-md-10">
-                                    <input type="password" class="form-control" id="pwd" placeholder="Mật khẩu">
+                                    <input type="password" class="form-control" value="<%=request.getParameter("password")==null ? "":request.getParameter("password")%>" name="password" id="pwd" placeholder="Mật khẩu">
                                 </div>
                             </div>
                             <div class="form-group d-md-flex align-items-md-center">
@@ -117,6 +117,11 @@
                                     <input type="password" class="form-control" id="pwd-confirm" placeholder="Nhập lại mật khẩu...">
                                 </div>
                             </div>
+                            <p style="color:#62ab00; display:block; margin: auto"><%=request.getAttribute("success") == null ? " " : request.getAttribute("success")%>
+                            </p>
+                            <p style="color:red; display:block; margin: auto"><%=request.getAttribute("msg") == null ? " " : request.getAttribute("msg")%>
+                            </p>
+
                         </fieldset>
 
                         <div class="terms">

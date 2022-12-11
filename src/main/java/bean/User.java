@@ -4,22 +4,32 @@ import java.io.Serializable;
 
 public class User implements Serializable {
     private String idUser;
-    private String name;
-    private String birth;
-    private String gender;
-    private String address;
-    private String email;
-    private int phone;
     private String userName;
+    private String email;
     private String passWord;
-    private String timeGetDay;
-    private String registerDate;
-    private String lastLogin;
-    private String status;
     private int isAdmin;
+    private String name;
+    private String phone;
+
+    private int status;
+    private String day_register;
+
+
     private Role role;
 
     public User() {
+    }
+
+    public User(String idUser, String userName, String email, String passWord, int isAdmin, String name, String phone, int status, String day_register) {
+        this.idUser = idUser;
+        this.userName = userName;
+        this.email = email;
+        this.passWord = passWord;
+        this.isAdmin = isAdmin;
+        this.name = name;
+        this.phone = phone;
+        this.status = status;
+        this.day_register = day_register;
     }
 
     public String getIdUser() {
@@ -30,36 +40,12 @@ public class User implements Serializable {
         this.idUser = idUser;
     }
 
-    public String getName() {
-        return name;
+    public String getUserName() {
+        return userName;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getBirth() {
-        return birth;
-    }
-
-    public void setBirth(String birth) {
-        this.birth = birth;
-    }
-
-    public String getGender() {
-        return gender;
-    }
-
-    public void setGender(String gender) {
-        this.gender = gender;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
     public String getEmail() {
@@ -70,60 +56,12 @@ public class User implements Serializable {
         this.email = email;
     }
 
-    public int getPhone() {
-        return phone;
-    }
-
-    public void setPhone(int phone) {
-        this.phone = phone;
-    }
-
-    public String getUserName() {
-        return userName;
-    }
-
-    public void setUserName(String userName) {
-        this.userName = userName;
-    }
-
     public String getPassWord() {
         return passWord;
     }
 
     public void setPassWord(String passWord) {
         this.passWord = passWord;
-    }
-
-    public String getTimeGetDay() {
-        return timeGetDay;
-    }
-
-    public void setTimeGetDay(String timeGetDay) {
-        this.timeGetDay = timeGetDay;
-    }
-
-    public String getRegisterDate() {
-        return registerDate;
-    }
-
-    public void setRegisterDate(String registerDate) {
-        this.registerDate = registerDate;
-    }
-
-    public String getLastLogin() {
-        return lastLogin;
-    }
-
-    public void setLastLogin(String lastLogin) {
-        this.lastLogin = lastLogin;
-    }
-
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
     }
 
     public int getIsAdmin() {
@@ -134,24 +72,39 @@ public class User implements Serializable {
         this.isAdmin = isAdmin;
     }
 
-    public User(String idUser, String name, String birth, String gender, String address, String email, int phone, String userName, String passWord, String timeGetDay, String registerDate, String lastLogin, String status, int isAdmin) {
-        this.idUser = idUser;
-        this.name = name;
-        this.birth = birth;
-        this.gender = gender;
-        this.address = address;
-        this.email = email;
-        this.phone = phone;
-        this.userName = userName;
-        this.passWord = passWord;
-        this.timeGetDay = timeGetDay;
-        this.registerDate = registerDate;
-        this.lastLogin = lastLogin;
-        this.status = status;
-        this.isAdmin = isAdmin;
-
+    public String getName() {
+        return name;
     }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
+
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public int getStatus() {
+        return status;
+    }
+
+    public void setStatus(int status) {
+        this.status = status;
+    }
+
+    public String getDay_register() {
+        return day_register;
+    }
+
+    public void setDay_register(String day_register) {
+        this.day_register = day_register;
+    }
 
     public boolean accept(String name) {
         return role.accept(name);

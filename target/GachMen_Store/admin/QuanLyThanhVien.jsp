@@ -1,4 +1,4 @@
-<%@ page import="beans.User" %>
+<%@ page import="bean.User" %>
 <%@ page import="model.UserSession" %>
 <%@ page import="java.util.Collection" %><%--
   Created by IntelliJ IDEA.
@@ -10,13 +10,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
-<%
-    UserSession u = UserSession.getUS(session);
-    Collection<User> user = u.getUser();
-    String username = u.getUserName();
-    System.out.println(username);
-    if(username.equalsIgnoreCase("")||!user.iterator().next().accept("admin.index")) response.sendRedirect("http://localhost:8080/project_BookStore/Home");
-%>
+
 <!DOCTYPE html>
 <html>
 
@@ -24,16 +18,16 @@
     <title>Quản lý thành viên</title>
     <!-- Bootstrap -->
     <meta charset="utf-8">
-    <link href="Admin/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
-    <link href="Admin/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" media="screen">
-    <link href="Admin/assets/styles.css" rel="stylesheet" media="screen">
-    <link href="Admin/assets/DT_bootstrap.css" rel="stylesheet" media="screen">
+    <link href="${pageContext.request.contextPath}/admin/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="${pageContext.request.contextPath}/admin/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" media="screen">
+    <link href="${pageContext.request.contextPath}/admin/assets/styles.css" rel="stylesheet" media="screen">
+    <link href="${pageContext.request.contextPath}/admin/assets/DT_bootstrap.css" rel="stylesheet" media="screen">
     <!--[if lte IE 8]><script language="javascript" type="text/javascript" src="vendors/flot/excanvas.min.js"></script><![endif]-->
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-    <script src="Admin/vendors/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+    <script src="${pageContext.request.contextPath}/admin/vendors/modernizr-2.6.2-respond-1.1.0.min.js"></script>
     <script src='https://kit.fontawesome.com/a076d05399.js'></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.22/pdfmake.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
@@ -82,23 +76,24 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <c:forEach items="${listUsers}" var="user">
-                                <tr id="${user.userID}">
-                                    <td>${user.username}</td>
-                                    <td><c:if test="${user.isAdmin eq '1'}">Admin</c:if>
-                                        <c:if test="${user.isAdmin eq '0'}">User</c:if>
+                                <%--@elvariable id="listUser" type="java.util.List"--%>
+                                <c:forEach items="${listUser}" var="user">
+                                <tr id="${user.idUser}">
+                                    <td>${user.userName}</td>
+                                    <td><c:if test="${user.isAdmin == 1}">Admin</c:if>
+                                        <c:if test="${user.isAdmin == 0}">User</c:if>
                                     </td>
                                     <td id="status">${user.status}</td>
                                     <td id="lock-unlock">
-                                        <c:if test="${user.status eq 'Bị khóa'}"><a class="text-unlock text-primary" onclick="unlockUser(${user.userID})">
+                                        <c:if test="${user.status==0}"><a class="text-unlock text-primary" onclick="unlockUser(${user.idUser})">
                                             <span class="fas fa-lock-open"></span> Mở khóa</a></c:if>
-                                        <c:if test="${user.status eq 'Đang sử dụng'}"><a class="text-lock text-primary" onclick="lockUser(${user.userID})">
+                                        <c:if test="${user.status ==1}"><a class="text-lock text-primary" onclick="lockUser(${user.idUser})">
                                             <span class="fas fa-lock"></span> Khóa</a></c:if>
 
                                     </td>
-                                    <td><a class="text-lock text-primary" href="AddOrUpdateUserAd?action=getupdate&id=${user.userID}"><span class="fas fa-edit"></span> Chỉnh sửa</a></td>
+                                    <td><a class="text-lock text-primary" href="AddOrUpdateUserAd?action=getupdate&id=${user.idUser}"><span class="fas fa-edit"></span> Chỉnh sửa</a></td>
                                     <td>
-                                        <a class="text-danger" href="${user.userID}" onclick="return false;"><span class="far fa-window-close"></span> Xóa</a>
+                                        <a class="text-danger" href="${user.idUser}" onclick="return false;"><span class="far fa-window-close"></span> Xóa</a>
                                     </td>
                                 </tr>
                                 </c:forEach>
@@ -144,13 +139,13 @@
 </div>
 <!--/.fluid-container-->
 
-<script src="Admin/vendors/jquery-1.9.1.js"></script>
-<script src="Admin/bootstrap/js/bootstrap.min.js"></script>
-<script src="Admin/vendors/datatables/js/jquery.dataTables.min.js"></script>
+<script src="${pageContext.request.contextPath}/admin/vendors/jquery-1.9.1.js"></script>
+<script src="${pageContext.request.contextPath}/admin/bootstrap/js/bootstrap.min.js"></script>
+<script src="${pageContext.request.contextPath}/admin/vendors/datatables/js/jquery.dataTables.min.js"></script>
 
 
-<script src="Admin/assets/scripts.js"></script>
-<script src="Admin/assets/DT_bootstrap.js"></script>
+<script src="${pageContext.request.contextPath}/admin/assets/scripts.js"></script>
+<script src="${pageContext.request.contextPath}/admin/assets/DT_bootstrap.js"></script>
 <script>
     // $(document).ready( function () {
     //     $('#example2').DataTable();

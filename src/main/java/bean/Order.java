@@ -17,6 +17,4 @@ public class Order implements Serializable {
     private String createDate;
     private String updateDate;
     private LinkedList<OrderDetail> orderDetails;
-
-
 }

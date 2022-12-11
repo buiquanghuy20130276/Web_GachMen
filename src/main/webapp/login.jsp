@@ -83,17 +83,23 @@
                         <div class="return-customer">
                             <h3 class="mb-10 custom-title">ĐĂNG NHẬP</h3>
                             <br>
-                            <form action="#">
+                            <form action="login" method="post">
                                 <div class="form-group">
                                     <label>Tài khoản</label>
-                                    <input type="text" name="email" placeholder="Nhập địa chỉ email..." id="input-email" class="form-control">
+                                    <input type="text" value="<%=request.getParameter("username")==null ? "":request.getParameter("username")%>" name="username" placeholder="Nhập username..." id="input-email" class="form-control">
                                 </div>
                                 <div class="form-group">
                                     <label>Mật khẩu</label>
-                                    <input type="text" name="pass" placeholder="Mật khẩu" id="input-password" class="form-control">
+                                    <input type="password"value="<%=request.getParameter("password")==null ? "":request.getParameter("password")%>" name="password" placeholder="Mật khẩu" id="input-password" class="form-control">
                                 </div>
                                 <p class="lost-password"><a href="forgot-password.jsp">Quên mật khẩu?</a></p>
                                 <input type="submit" value="Đăng nhập" class="return-customer-btn">
+                                <br/>
+                                <% if(session.getAttribute("errmsg")!=null){
+                                    String msg = (String)session.getAttribute("errmsg");
+                                %>
+                                <font color="red"><%=msg%></font>
+                                <%}%>
                             </form>
                         </div>
                     </div>

@@ -5,8 +5,8 @@
 <%@ page import="model.Cart" %>
 <%@ page import="bean.Product" %>
 <%@ page import="java.util.Collection" %>
+<%@ page import="javax.swing.text.Document" %>
 <%--@elvariable id="cart" type="model.Cart"--%>
-<c:set var="cart" value="${cart}"/>
 
 <!doctype html>
 <html class="no-js" lang="zxx">
@@ -51,8 +51,6 @@
 
 <body>
 <!--[if lte IE 9]>
-<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade
-    your browser</a> to improve your experience and security.</p>
 <![endif]-->
 
 <!-- Main Wrapper Start Here -->
@@ -79,11 +77,11 @@
             <div class="row">
                 <div class="col-md-12 col-sm-12">
                     <!-- Form Start -->
-                    <form action="#">
+                    <form action="UpdateCart" method="get">
                         <!-- Table Content Start -->
                         <div class="table-content table-responsive mb-45">
                             <c:if test="${listCart.size()==0}">
-                                <%response.sendRedirect("ProductLists");%>
+                                <h5>Bạn chưa có sản phẩm nào trong giỏ hàng</h5>
                             </c:if>
                             <c:if test="${listCart.size()!=0}">
                             <table>
@@ -101,12 +99,13 @@
                                     <%--@elvariable id="listCart" type="java.util.List"--%>
 
                                 <c:forEach items="${listCart}" var="product">
+
                                     <tr>
                                         <td class="product-thumbnail">
-                                            <input name="productID" value="${product.productID}" type="hidden">
                                             <a href="avascript:void(0)"><img
                                                     src="${product.image2}"
                                                     alt="cart-image"></a>
+                                            <input name="productID" value="${product.productID}" type="hidden">
                                         </td>
                                         <td class="product-name"><a target="_blank"
                                                                     href="ProductDetail?productID=${product.productID}">${product.productName}</a>
@@ -116,7 +115,7 @@
                                                                                                          minFractionDigits="0"
                                                                                                          value="${product.priceAfterSale}"/> VNĐ</span>
                                         </td>
-                                        <td class="product-quantity"><input name="quantity" onblur="updateCart(this)"
+                                        <td class="product-quantity"><input onblur="/UpdateCart" name="quantityCart"
                                                                             type="number"
                                                                             value="${product.quantityCart}"></td>
                                         <td class="product-subtotal"><fmt:formatNumber type="currency" currencySymbol=""
@@ -140,7 +139,7 @@
 
                             <div class="col-md-8 col-sm-12">
                                 <div class="buttons-cart">
-                                    <a href="UpdateCart">Cập nhật giỏ hàng</a>
+                                    <input type="submit" value="Cập nhật giỏ hàng">
                                     <a href="ProductLists">Tiếp tục mua sắm</a>
                                 </div>
                             </div>
@@ -192,11 +191,7 @@
     <!-- Quick View Content End -->
 </div>
 <!-- Main Wrapper End Here -->
-<script>
-    function updateCart(obj) {
-        ${product.quantityCart==obj.value}
-    }
-</script>
+
 <!-- jquery 3.2.1 -->
 <script src="js\vendor\jquery-3.2.1.min.js"></script>
 <!-- Countdown js -->
