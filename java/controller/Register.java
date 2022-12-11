@@ -37,6 +37,7 @@ public class Register extends HttpServlet {
         user.setAddress(address);
         user.setPassWord(getMd5(pass));
         user.setStatus("Đang sử dụng");
+        user.setIsAdmin(Integer.parseInt("0"));
         user.setRegisterDate(timeRegister);
         UserService userService = new UserService();
         try {

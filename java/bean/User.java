@@ -14,10 +14,12 @@ public class User implements Serializable {
     private String name;
     private String status;
     private String day_register;
+
+    private String lastLogin;
     private int isAdmin;
     private Role role;
 
-    public User(String idUser, String userName, String birth, String gender, String email, String phone, String address, String passWord, String status, String day_register) {
+    public User(String idUser, String userName, String birth, String gender, String email, String phone, String address, String passWord, String status, String day_register, int isAdmin) {
         super();
         this.idUser = idUser;
         this.userName = userName;
@@ -28,6 +30,7 @@ public class User implements Serializable {
         this.address = address;
         this.passWord = passWord;
         this.day_register = day_register;
+        this.lastLogin = lastLogin;
         this.status = status;
         this.isAdmin = isAdmin;
     }
