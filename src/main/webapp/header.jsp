@@ -74,7 +74,7 @@
                 <div class="col-xl-9 col-lg-8 col-md-12 ">
                     <nav class="d-none d-lg-block">
                         <ul class="header-bottom-list d-flex">
-                            <li><a id="index" href="Home">Trang chủ</a>
+                            <li><a id="index" href="indexHome">Trang chủ</a>
                                 <!-- Home Version Dropdown Start -->
 
                             </li>
