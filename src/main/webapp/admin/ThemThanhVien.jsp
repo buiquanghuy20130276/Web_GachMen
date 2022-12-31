@@ -1,4 +1,4 @@
-<%@ page import="beans.User" %>
+<%@ page import="bean.User" %>
 <%@ page import="java.util.Collection" %>
 <%@ page import="model.UserSession" %><%--
   Created by IntelliJ IDEA.
@@ -10,14 +10,14 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
-<%
-    UserSession u = UserSession.getUS(session);
-    Collection<User> user = u.getUser();
-    String username = u.getUserName();
-    System.out.println(username);
-    if(username.equalsIgnoreCase("")||!user.iterator().next().accept("admin.index")) response.sendRedirect("http://localhost:8080/project_BookStore/Home");
-%>
-<c:set var="username" value="<%=username%>"/>
+<%--<%--%>
+<%--    UserSession u = UserSession.getUS(session);--%>
+<%--    Collection<User> user = u.getUser();--%>
+<%--    String username = u.getUserName();--%>
+<%--    System.out.println(username);--%>
+<%--    if(username.equalsIgnoreCase("")||!user.iterator().next().accept("admin.index")) response.sendRedirect("http://localhost:8080/project_BookStore/Home");--%>
+<%--%>--%>
+<%--<c:set var="username" value="<%=username%>"/>--%>
 <!DOCTYPE html>
 <html>
 
@@ -31,19 +31,19 @@
         thành viên</title>
     <!-- Bootstrap -->
     <meta charset="utf-8">
-    <link href="Admin/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
-    <link href="Admin/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" media="screen">
-    <link href="Admin/assets/styles.css" rel="stylesheet" media="screen">
+    <link href="admin/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="admin/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" media="screen">
+    <link href="admin/assets/styles.css" rel="stylesheet" media="screen">
     <!--[if lte IE 8]><script language="javascript" type="text/javascript" src="vendors/flot/excanvas.min.js"></script><![endif]-->
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-    <script src="Admin/vendors/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+    <script src="admin/vendors/modernizr-2.6.2-respond-1.1.0.min.js"></script>
 </head>
 
 <body>
-<jsp:include page="header.jsp"/>
+<jsp:include page="headerAd.jsp"/>
 <div class="container-fluid">
     <div class="row-fluid">
         <jsp:include page="menu.jsp"/>
@@ -170,31 +170,31 @@
         </div>
     </div>
     <hr>
-    <jsp:include page="footer.jsp"/>
+    <jsp:include page="footerAd.jsp"/>
 </div>
 
 <!--/.fluid-container-->
-<link href="Admin/vendors/datepicker.css" rel="stylesheet" media="screen">
-<link href="Admin/vendors/uniform.default.css" rel="stylesheet" media="screen">
-<link href="Admin/vendors/chosen.min.css" rel="stylesheet" media="screen">
+<link href="admin/vendors/datepicker.css" rel="stylesheet" media="screen">
+<link href="admin/vendors/uniform.default.css" rel="stylesheet" media="screen">
+<link href="admin/vendors/chosen.min.css" rel="stylesheet" media="screen">
 
-<link href="Admin/vendors/wysiwyg/bootstrap-wysihtml5.css" rel="stylesheet" media="screen">
+<link href="admin/vendors/wysiwyg/bootstrap-wysihtml5.css" rel="stylesheet" media="screen">
 
-<script src="Admin/vendors/jquery-1.9.1.js"></script>
-<script src="Admin/bootstrap/js/bootstrap.min.js"></script>
-<script src="Admin/vendors/jquery.uniform.min.js"></script>
-<script src="Admin/vendors/chosen.jquery.min.js"></script>
-<script src="Admin/vendors/bootstrap-datepicker.js"></script>
+<script src="admin/vendors/jquery-1.9.1.js"></script>
+<script src="admin/bootstrap/js/bootstrap.min.js"></script>
+<script src="admin/vendors/jquery.uniform.min.js"></script>
+<script src="admin/vendors/chosen.jquery.min.js"></script>
+<script src="admin/vendors/bootstrap-datepicker.js"></script>
 
-<script src="Admin/vendors/wysiwyg/wysihtml5-0.3.0.js"></script>
-<script src="Admin/vendors/wysiwyg/bootstrap-wysihtml5.js"></script>
+<script src="admin/vendors/wysiwyg/wysihtml5-0.3.0.js"></script>
+<script src="admin/vendors/wysiwyg/bootstrap-wysihtml5.js"></script>
 
-<script src="Admin/vendors/wizard/jquery.bootstrap.wizard.min.js"></script>
+<script src="admin/vendors/wizard/jquery.bootstrap.wizard.min.js"></script>
 
 <script type="text/javascript" src="Admin/vendors/jquery-validation/dist/jquery.validate.min.js"></script>
-<script src="Admin/assets/form-validation.js"></script>
+<script src="admin/assets/form-validation.js"></script>
 
-<script src="Admin/assets/scripts.js"></script>
+<script src="admin/assets/scripts.js"></script>
 <script>
 
     jQuery(document).ready(function() {

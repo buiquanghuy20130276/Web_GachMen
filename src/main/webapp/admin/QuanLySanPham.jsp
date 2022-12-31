@@ -41,7 +41,7 @@
 </head>
 
 <body>
-<jsp:include page="header.jsp"/>
+<jsp:include page="headerAd.jsp"/>
 <div class="container-fluid">
     <div class="row-fluid">
         <jsp:include page="menu.jsp"/>
@@ -57,7 +57,7 @@
                         <div class="span12">
                             <div class="table-toolbar">
                                 <div class="btn-group">
-                                    <a href="AddOrUpdateProductAd?action=getadd"><button class="btn btn-success">Thêm sản phẩm <i class="icon-plus icon-white"></i></button></a>
+                                    <a href="AddOrUpdateProduct?action=getadd"><button class="btn btn-success">Thêm sản phẩm <i class="icon-plus icon-white"></i></button></a>
                                 </div>
                                 <div class="btn-group pull-right">
                                     <button data-toggle="dropdown" class="btn dropdown-toggle">Công cụ <span class="caret"></span></button>
@@ -82,9 +82,6 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-
-
-
                                 <c:forEach items="${listP}" var="p">
                                 <tr id="${p.productID}">
                                     <td class="align-middle">${p.productName}</td>
@@ -98,7 +95,7 @@
                                         <c:if test="${p.status ==0}">
                                             <a class="text-nothide text-primary" onclick="nothideProduct(${p.productID})"><span class="fas fa-eye"></span> Hiển thị</a></c:if>
                                     </td>
-                                    <td><a class="text-lock text-primary" href="AddOrUpdateProductAd?action=getupdate&id=${p.productID}"><span class="fas fa-edit"></span> Chỉnh sửa</a></td>
+                                    <td><a class="text-lock text-primary" href="AddOrUpdateProduct?action=getupdate&id=${p.productID}"><span class="fas fa-edit"></span> Chỉnh sửa</a></td>
                                     <td><a class="text-danger" href="${p.productID}" onclick="return false;"><span class="far fa-window-close"></span> Xóa</a></td>
                                 </tr>
                                 </c:forEach>
@@ -126,7 +123,7 @@
         </div>
     </div>
     <hr>
-    <jsp:include page="footer.jsp"/>
+    <jsp:include page="footerAd.jsp"/>
 </div>
 <!--/.fluid-container-->
 

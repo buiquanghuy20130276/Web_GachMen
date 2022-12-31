@@ -1,15 +1,9 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Quang Huy
-  Date: 04/12/2022
-  Time: 10:14
-  To change this template use File | Settings | File Templates.
---%>
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%if(session.getAttribute("username") == null){
     response.sendRedirect("login.jsp");
 }%>
-
+<jsp:useBean id="cart" class="model.Cart" scope="session"></jsp:useBean>
 
 <header>
 
@@ -48,7 +42,7 @@
                 <div class="col-lg-4 col-md-12">
                     <div class="cart-box mt-all-30">
                         <ul class="d-flex justify-content-lg-end justify-content-center align-items-center">
-                            <li><a href="cart.jsp"><i class="lnr lnr-cart"></i><span class="my-cart"><span class="total-pro">0</span><span>Giỏ hàng</span></span></a>
+                            <li><a href="cart.jsp"><i class="lnr lnr-cart"></i><span class="my-cart"><span class="total-pro">${cart.quantityCart==0?0:cart.quantityCart}</span><span>Giỏ hàng</span></span></a>
                             </li>
                             <%if(session.getAttribute("username")!=null) {%>
                             <li><a href="index.jsp"><i class="lnr lnr-user"></i><span class="my-cart"><span><strong><%=session.getAttribute("username")%></strong></span><span> Logout</span></span></a>

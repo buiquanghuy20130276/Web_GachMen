@@ -33,10 +33,9 @@ public class ListProducts {
                         rs.getInt(7),
                         rs.getString(8),
                         rs.getString(9),
-                        rs.getString(10),
+                        rs.getInt(10),
                         rs.getInt(11),
-                        rs.getInt(12),
-                        rs.getInt(13),1));
+                        rs.getInt(12),1));
 
             }
 
@@ -68,11 +67,9 @@ public class ListProducts {
                         rs.getInt(7),
                         rs.getString(8),
                         rs.getString(9),
-                        rs.getString(10),
+                        rs.getInt(10),
                         rs.getInt(11),
-                        rs.getInt(12),
-                        rs.getInt(13),1));
-
+                        rs.getInt(12),1));
             }
 
         } catch (SQLException e) {
@@ -103,10 +100,9 @@ public class ListProducts {
                         rs.getInt(7),
                         rs.getString(8),
                         rs.getString(9),
-                        rs.getString(10),
+                        rs.getInt(10),
                         rs.getInt(11),
-                        rs.getInt(12),
-                        rs.getInt(13),1));
+                        rs.getInt(12),1));
 
             }
 
@@ -138,10 +134,9 @@ public class ListProducts {
                         rs.getInt(7),
                         rs.getString(8),
                         rs.getString(9),
-                        rs.getString(10),
+                        rs.getInt(10),
                         rs.getInt(11),
-                        rs.getInt(12),
-                        rs.getInt(13),1));
+                        rs.getInt(12),1));
 
             }
 
