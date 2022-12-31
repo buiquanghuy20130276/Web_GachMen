@@ -10,7 +10,6 @@ public class Product {
     private int salePrice;
     private String image1;
     private String image2;
-    private String image3;
     private int quantity;
 
 
@@ -18,7 +17,7 @@ public class Product {
     private int status;
     private int quantityCart;
 
-    public Product(String productID, String productName, String description, String size, String category, int price, int salePrice, String image1, String image2, String image3, int quantity, int isNew, int status, int quantityCart) {
+    public Product(String productID, String productName, String description, String size, String category, int price, int salePrice, String image1, String image2, int quantity, int isNew, int status, int quantityCart) {
         this.productID = productID;
         this.productName = productName;
         this.description = description;
@@ -28,7 +27,6 @@ public class Product {
         this.salePrice = salePrice;
         this.image1 = image1;
         this.image2 = image2;
-        this.image3 = image3;
         this.quantity = quantity;
         this.isNew = isNew;
         this.status = status;
@@ -140,13 +138,7 @@ public class Product {
         this.image2 = image2;
     }
 
-    public String getImage3() {
-        return image3;
-    }
 
-    public void setImage3(String image3) {
-        this.image3 = image3;
-    }
 
     public int getQuantity() {
         return quantity;
@@ -173,9 +165,6 @@ public class Product {
     }
 
     public static void main(String[] args) {
-        Product po = new Product("sdh","asdf","asdfa","asdfas",
-                "fasdf",40,20,"asdfa","asdfa",
-                "fsdaf",45,1,1,2);
-        System.out.println(po.getPriceAfterSale());
+
     }
 }

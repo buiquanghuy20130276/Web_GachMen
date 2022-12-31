@@ -1,9 +1,10 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%if(session.getAttribute("username") == null){
     response.sendRedirect("login.jsp");
 }%>
 <jsp:useBean id="cart" class="model.Cart" scope="session"></jsp:useBean>
+
 <header>
 
     <!-- Header Middle Start Here -->
@@ -12,7 +13,7 @@
             <div class="row align-items-center no-gutters">
                 <div class="col-lg-3 col-md-12">
                     <div class="logo mb-all-30">
-                        <a href="home"><img src="img\logo\logo.png" alt="logo-image"></a>
+                        <a href="index.jsp"><img src="img\logo\logo.png" alt="logo-image"></a>
                     </div>
                 </div>
                 <!-- Categorie Search Box Start Here -->
@@ -41,10 +42,10 @@
                 <div class="col-lg-4 col-md-12">
                     <div class="cart-box mt-all-30">
                         <ul class="d-flex justify-content-lg-end justify-content-center align-items-center">
-                            <li><a href="Cart"><i class="lnr lnr-cart"></i><span class="my-cart"><span class="total-pro">${cart.quantityCart}</span><span>Giỏ hàng</span></span></a>
+                            <li><a href="cart.jsp"><i class="lnr lnr-cart"></i><span class="my-cart"><span class="total-pro">${cart.quantityCart==0?0:cart.quantityCart}</span><span>Giỏ hàng</span></span></a>
                             </li>
                             <%if(session.getAttribute("username")!=null) {%>
-                            <li><a href="home"><i class="lnr lnr-user"></i><span class="my-cart"><span><strong><%=session.getAttribute("username")%></strong></span><span> Logout</span></span></a>
+                            <li><a href="index.jsp"><i class="lnr lnr-user"></i><span class="my-cart"><span><strong><%=session.getAttribute("username")%></strong></span><span> Logout</span></span></a>
                             </li>
                             <%}%>
                             <%if(session.getAttribute("username")==null) {%>
@@ -67,11 +68,11 @@
                 <div class="col-xl-9 col-lg-8 col-md-12 ">
                     <nav class="d-none d-lg-block">
                         <ul class="header-bottom-list d-flex">
-                            <li><a id="index" href="home">Trang chủ</a>
+                            <li><a id="index" href="Home">Trang chủ</a>
                                 <!-- Home Version Dropdown Start -->
 
                             </li>
-                            <li><a id="product-list" href="ProductLists">Sản phẩm</a>
+                            <li><a id="product-list" href="ProductList">Sản phẩm</a>
 
                             </li>
 
@@ -82,11 +83,11 @@
                     <div class="mobile-menu d-block d-lg-none">
                         <nav>
                             <ul>
-                                <li><a href="/">Trang chủ</a>
+                                <li><a href="index.jsp">Trang chủ</a>
                                     <!-- Home Version Dropdown Start -->
 
                                 </li>
-                                <li><a href="ProductLists">Sản phẩm</a>
+                                <li><a href="product-list.jsp">Sản phẩm</a>
                                     <!-- Mobile Menu Dropdown Start -->
 
                                 </li>
@@ -145,21 +146,21 @@
                 <div class="vertical-menu mb-all-30">
                     <nav>
                         <ul class="vertical-menu-list" style="display: none;">
-                            <li ><a href="ProductLists">Gạch lát nền</a>
+                            <li ><a href="product-list.jsp">Gạch lát nền</a>
                             </li>
-                            <li><a href="ProductLists">Gạch ốp tường</a>
+                            <li><a href="product-list.jsp">Gạch ốp tường</a>
                                 <!-- Vertical Mega-Menu Start -->
 
                             </li>
 
-                            <li><a href="ProductLists">Gạch trang trí</a>
+                            <li><a href="product-list.jsp">Gạch trang trí</a>
 
                             </li>
-                            <li><a href="ProductLists">Gạch giả gỗ</i>
+                            <li><a href="product-list.jsp">Gạch giả gỗ</i>
                             </a>
 
                             </li>
-                            <li><a href="ProductLists">Gạch Terrazzo</a>
+                            <li><a href="product-list.jsp">Gạch Terrazzo</a>
 
                             </li>
                         </ul>
@@ -171,8 +172,8 @@
                 <div class="slider-wrapper theme-default">
                     <!-- Slider Background  Image Start-->
                     <div id="slider" class="nivoSlider">
-                        <a href="ProductLists"><img src="img\slider\banner-the.png" data-thumb="img/slider/1.jpg" alt="" title="#htmlcaption"></a>
-                        <a href="ProductLists"><img src="img\slider\image2.jpg" data-thumb="img/slider/2.jpg" alt="" title="#htmlcaption2"></a>
+                        <a href="product-list.jsp"><img src="img\slider\banner-the.png" data-thumb="img/slider/1.jpg" alt="" title="#htmlcaption"></a>
+                        <a href="product-list.jsp"><img src="img\slider\image2.jpg" data-thumb="img/slider/2.jpg" alt="" title="#htmlcaption2"></a>
                     </div>
                     <!-- Slider Background  Image Start-->
                 </div>
