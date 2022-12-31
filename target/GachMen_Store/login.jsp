@@ -86,11 +86,11 @@
                             <form action="login" method="post">
                                 <div class="form-group">
                                     <label>Tài khoản</label>
-                                    <input type="text" name="username" placeholder="Nhập username..." id="input-email" class="form-control">
+                                    <input type="text" value="<%=request.getParameter("username")==null ? "":request.getParameter("username")%>" name="username" placeholder="Nhập username..." id="input-email" class="form-control">
                                 </div>
                                 <div class="form-group">
                                     <label>Mật khẩu</label>
-                                    <input type="password" name="password" placeholder="Mật khẩu" id="input-password" class="form-control">
+                                    <input type="password"value="<%=request.getParameter("password")==null ? "":request.getParameter("password")%>" name="password" placeholder="Mật khẩu" id="input-password" class="form-control">
                                 </div>
                                 <p class="lost-password"><a href="forgot-password.jsp">Quên mật khẩu?</a></p>
                                 <input type="submit" value="Đăng nhập" class="return-customer-btn">

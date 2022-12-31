@@ -203,13 +203,30 @@ public class UserService {
         return count;
     }
 
+    //Diem so luong product trong db
+    public int getCountProduct() {
+        PreparedStatement pre = null;
+        int count = 0;
 
+        try {
+            String sql = "select count(*) from products";
+            pre = ConnectDB.connect(sql);
+            ResultSet rs = pre.executeQuery();
+            while(rs.next()){
+                return rs.getInt(1);
+            }
+        }catch (Exception e){
+        }
+        return 0;
+    }
     public static void main(String[] args) {
         UserService service = new UserService();
         boolean u = existUserName("quanghuy.fs");
         User user = new User("user1000000000","quanghuy","quanghuy0029a@gmail.com","212002",1,"Bùi Quang Huy","09878131",1,"12/12/2002");
 
         System.out.println(u);
+        int count = service.getCountProduct();
+        System.out.println(count);
 //        System.out.println(register(user));
 //        UserService u = new UserService();
 //        System.out.println(u.register(new User("2","trung2", "trung2@gmail.com", "0912271440", "đl" , "1234")));

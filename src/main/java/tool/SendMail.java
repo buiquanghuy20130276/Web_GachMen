@@ -1,3 +1,4 @@
+/*
 package tool;
 
 
@@ -45,3 +46,4 @@ public class SendMail {
     }
 }
 
+*/
