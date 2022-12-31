@@ -1,12 +1,7 @@
 <%@ page import="bean.User" %>
 <%@ page import="java.util.Collection" %>
-<%@ page import="model.UserSession" %><%--
-  Created by IntelliJ IDEA.
-  User: NgocTan
-  Date: 21/12/2020
-  Time: 10:38 SA
-  To change this template use File | Settings | File Templates.
---%>
+<%@ page import="model.UserSession" %>
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
@@ -47,7 +42,7 @@
 <jsp:include page="headerAd.jsp"></jsp:include>
 <div class="container-fluid">
     <div class="row-fluid">
-        <!--/span-->
+        <!--/span--><jsp:include page="menu.jsp"></jsp:include>
         <div class="span9" id="content">
             <!-- block -->
             <div class="block">
@@ -63,7 +58,7 @@
                 </div>
                 <div class="block-content collapse in">
                     <div class="span12">
-                        <h4><%=request.getAttribute("err") == null ? "" : request.getAttribute("err")%>
+                        <h4 style="color: red"><%=request.getAttribute("err") == null ? "" : request.getAttribute("err")%>
                         </h4>
                         <form class="form-horizontal" action="AddOrUpdateProduct" method="get">
                             <fieldset>
@@ -222,7 +217,7 @@
                                     </div>
                                 </div>
 
-                                <div class="form-actions">
+                                <div class="form-actions" style="background: white">
                                     <button type="submit" class="btn btn-primary"><c:choose><c:when
                                             test="${param.action eq 'getadd'}">Thêm </c:when><c:when
                                             test="${param.action eq 'getupdate'}">Chỉnh sửa </c:when><c:when

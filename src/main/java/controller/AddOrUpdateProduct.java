@@ -26,8 +26,10 @@ public class AddOrUpdateProduct extends HttpServlet {
         String newProduct = request.getParameter("newProduct");
         String description = request.getParameter("description");
         request.setCharacterEncoding("UTF-8");
+        String err="";
         if (!action.equals(null)) {
             if (action.equals("getadd")) {
+                request.setAttribute("err", "");
                 request.getRequestDispatcher("admin/AddProduct.jsp").forward(request, response);
             }
 
@@ -53,11 +55,11 @@ public class AddOrUpdateProduct extends HttpServlet {
                         || quantity.equals("") || sale.equals("") || quantity.equals("") || link1.equals("")
                         || link2.equals("") || newProduct.equals("") || description.equals("")) {
                     request.setAttribute("err", "Vui lòng nhập dữ liệu trong các mục có đánh dấu *");
-                    request.getRequestDispatcher("Admin/AddProduct.jsp").forward(request, response);
+                    request.getRequestDispatcher("admin/AddProduct.jsp").forward(request, response);
                     isErr = true;
                 } else if (ProductService.existProductName(name)) {
                     request.setAttribute("err", "Tên sản phẩm đã tồn tại");
-                    request.getRequestDispatcher("Admin/AddProduct.jsp").forward(request, response);
+                    request.getRequestDispatcher("admin/AddProduct.jsp").forward(request, response);
                     isErr = true;
                 }
                 if (!isErr) {
