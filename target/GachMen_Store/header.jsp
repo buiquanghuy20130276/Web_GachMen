@@ -1,4 +1,4 @@
-index.jsp<%--
+<%--
   Created by IntelliJ IDEA.
   User: Quang Huy
   Date: 04/12/2022
@@ -6,12 +6,10 @@ index.jsp<%--
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<div class="popup_banner">
-    <span class="popup_off_banner">×</span>
-    <div class="banner_popup_area">
-        <img src="img/banner/logo.png" alt="">
-    </div>
-</div>
+<%if(session.getAttribute("username") == null){
+    response.sendRedirect("login.jsp");
+}%>
+
 
 <header>
 
@@ -52,10 +50,14 @@ index.jsp<%--
                         <ul class="d-flex justify-content-lg-end justify-content-center align-items-center">
                             <li><a href="cart.jsp"><i class="lnr lnr-cart"></i><span class="my-cart"><span class="total-pro">0</span><span>Giỏ hàng</span></span></a>
                             </li>
-                            <li><a href="cart.jsp"><i class="lnr lnr-user"></i><span class="my-cart"><span><strong>Username</strong></span></span></a>
+                            <%if(session.getAttribute("username")!=null) {%>
+                            <li><a href="index.jsp"><i class="lnr lnr-user"></i><span class="my-cart"><span><strong><%=session.getAttribute("username")%></strong></span><span> Logout</span></span></a>
                             </li>
+                            <%}%>
+                            <%if(session.getAttribute("username")==null) {%>
                             <li><a href="login.jsp"><i class="lnr lnr-user"></i><span class="my-cart"><span> <strong>Đăng nhập</strong></span><span> đăng kí</span></span></a>
                             </li>
+                            <%}%>
                         </ul>
                     </div>
                 </div>
