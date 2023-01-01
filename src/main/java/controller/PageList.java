@@ -7,7 +7,7 @@ import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
 
-@WebServlet(name = "PageList", value = "/pageList")
+@WebServlet(name = "PageList", urlPatterns = "/pageList")
 public class PageList extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -24,7 +24,7 @@ public class PageList extends HttpServlet {
         //lấy tổng số lượng sp
         UserService userSV = new UserService();
         int count = userSV.getCountProduct();
-        int endPage =   count/18;
+        int endPage = count/18;
         if(count%18!=0){
             endPage++;
         }

@@ -217,7 +217,6 @@
                                     <!-- Single Product End -->
 
                                 </div>
-                                <%--@elvariable id="endP" type=""--%>
                                 <c:forEach begin="1" end="${endP}" var="i">
                                     <a href="#">${i}</a>
                                 </c:forEach>
