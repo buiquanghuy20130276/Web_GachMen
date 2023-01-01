@@ -88,33 +88,19 @@
                                     <td>${p.price}</td>
                                     <td>${p.salePrice}</td>
                                     <td>${p.quantity}</td>
-                                    <td id="status">${p.status}</td>
+                                    <td id="status">${p.status==1?"Đang bán":"Đã ngừng bán"}</td>
                                     <td id="hide-nothide">
                                         <c:if test="${p.status ==1}">
-                                            <a class="text-hide text-primary" onclick="hideProduct(${p.productID})"><span class="fas fa-eye-slash"></span> Ẩn</a></c:if>
+                                            <a class="text-hide text-primary" href="AddOrUpdateProduct?action=hide&id=${p.productID}"><span class="fas fa-eye-slash"></span> Ẩn</a></c:if>
                                         <c:if test="${p.status ==0}">
-                                            <a class="text-nothide text-primary" onclick="nothideProduct(${p.productID})"><span class="fas fa-eye"></span> Hiển thị</a></c:if>
+                                            <a class="text-nothide text-primary" href="AddOrUpdateProduct?action=show&id=${p.productID}"><span class="fas fa-eye"></span> Hiển thị</a></c:if>
                                     </td>
                                     <td><a class="text-lock text-primary" href="AddOrUpdateProduct?action=getupdate&id=${p.productID}"><span class="fas fa-edit"></span> Chỉnh sửa</a></td>
-                                    <td><a class="text-danger" href="${p.productID}" onclick="return false;"><span class="far fa-window-close"></span> Xóa</a></td>
+                                    <td><a class="text-danger"  href="AddOrUpdateProduct?action=delete&id=${p.productID}"><span class="far fa-window-close"></span> Xóa</a></td>
                                 </tr>
                                 </c:forEach>
                                 </tbody>
                             </table>
-                            <div id="id01" class="modal">
-                                <!-- Modal Content -->
-                                <form class="modal-content animate">
-                    <span onclick="document.getElementById('id01').style.display='none'"
-                          class="close" title="Close Modal">&times;</span>
-                                    <div class="header-modal"><h3>Bạn có chắc là muốn xóa sản phẩm này</h3></div>
-<%--                                    <input id="delete" name="action" style="display: none" value="delete">--%>
-                                    <input id="deleteval" name="id" style="display: none">
-                                    <div class="button-group">
-                                        <button class="btn-yes" type="button" id="btnDelete" onclick="document.getElementById('id01').style.display='none'">Có</button>
-                                        <button class="btn-no" type="button" onclick="document.getElementById('id01').style.display='none'">Không</button>
-                                    </div>
-                                </form>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -134,92 +120,7 @@
 
 <script src="${pageContext.request.contextPath}/admin/assets/scripts.js"></script>
 <script src="${pageContext.request.contextPath}/admin/assets/DT_bootstrap.js"></script>
-<script>
-    // $(document).ready( function () {
-    //     $('#example2').DataTable();
-    // } );
-</script>
-<script>
-    // Get the modal
-    var modal = document.getElementById('id01');
 
-    // When the user clicks anywhere outside of the modal, close it
-    window.onclick = function(event) {
-        if (event.target == modal) {
-            modal.style.display = "none";
-        }
-    }
-    // // Get the modal
-    // var modal2 = document.getElementById('id02');
-    //
-    // // When the user clicks anywhere outside of the modal, close it
-    // window.onclick = function(event) {
-    //     if (event.target == modal2) {
-    //         modal2.style.display = "none";
-    //     }
-    // }
-</script>
-<script>
-    $(document).ready(function (){
-        $(".text-danger").click(function (){
-            var href= $(this).attr("href")
-            $("#deleteval").attr("value",href)
-            document.getElementById('id01').style.display='block'
-        });
-        // $(".text-lock").click(function (){
-        //     document.getElementById('id02').style.display='block'
-        // });
-    })
-</script>
-<script>
-    $(document).ready(function (){
-        $("#btnDelete").click(function (){
-            var id = $("#deleteval").attr("value");
-            $.ajax({
-                type: "GET",
-                data: {
-                    action: "delete",
-                    id: id
-                },
-                url: "/GachMen_Store_war/ListProduct"
-            })
-            $("#"+id).remove();
-        });
-    })
-</script>
-<script>
-    function hideProduct(id){
-        var id = id;
-        $.ajax({
-            type: "GET",
-            data: {
-                action: "hide",
-                id: id
-            },
-            url: "/GachMen_Store_war/ListProduct"
-        })
-        $("#"+id).find("#hide-nothide").children().remove();
-        $("#"+id).find("#hide-nothide").append("<a class=\"text-nothide text-primary\" onclick=\"nothideProduct("+id+")\">\n" +
-            "                                            <span class=\"fas fa-eye\"></span> Hiển thị</a>")
-        $("#"+id).find("#status").text("Ẩn");
-    }
-    function nothideProduct(id){
-        var id = id;
-        $.ajax({
-            type: "GET",
-            data: {
-                action: "nothide",
-                id: id
-            },
-            url: "/GachMen_Store_war/ListProduct"
-        })
-        $("#"+id).find("#hide-nothide").children().remove();
-        $("#"+id).find("#hide-nothide").append("<a class=\"text-hide text-primary\" onclick=\"hideProduct("+id+")\">\n" +
-            "                                            <span class=\"fas fa-eye-slash\"></span> Ẩn</a>")
-        $("#"+id).find("#status").text("Hiển thị");
-    }
-
-</script>
 <script type="text/javascript">
     $("body").on("click", "#exportPDF", function () {
         html2canvas($('#example2')[0], {
@@ -244,7 +145,7 @@
         var tableHTML = tableSelect.outerHTML.replace(/ /g, '%20');
 
         // Specify file name
-        filename = filename?filename+'.xls':'excel_data.xlsx';
+        filename = filename?filename+'.xlsx':'excel_data.xlsx';
 
         // Create download link element
         downloadLink = document.createElement("a");

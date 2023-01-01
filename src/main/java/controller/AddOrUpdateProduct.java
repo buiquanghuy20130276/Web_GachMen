@@ -35,7 +35,7 @@ public class AddOrUpdateProduct extends HttpServlet {
 
             if (action.equals("getupdate")) {
                 Product product = ProductService.getById(id);
-                String forward = "admin/AddProduct?";
+                String forward = "admin/AddProduct.jsp?";
                 forward += "productname=" + product.getProductName();
                 forward += "&type=" + product.getCategory();
                 forward += "&size=" + product.getSize();
@@ -53,7 +53,7 @@ public class AddOrUpdateProduct extends HttpServlet {
                 boolean isErr = false;
                 if (name.equals("") || type.equals("") || size.equals("") || price.equals("")
                         || quantity.equals("") || sale.equals("") || quantity.equals("") || link1.equals("")
-                        || link2.equals("") || newProduct.equals("") || description.equals("")) {
+                        || link2.equals("") || newProduct.equals(null) || description.equals("")) {
                     request.setAttribute("err", "Vui lòng nhập dữ liệu trong các mục có đánh dấu *");
                     request.getRequestDispatcher("admin/AddProduct.jsp").forward(request, response);
                     isErr = true;
@@ -68,7 +68,7 @@ public class AddOrUpdateProduct extends HttpServlet {
                     Product p = new Product(idPro, name, description, size, type, Integer.parseInt(price), Integer.parseInt(sale), link1, link2, Integer.parseInt(quantity), Integer.parseInt(newProduct), 1, 1);
                     ProductService.addProduct(p);
                     request.setAttribute("err", "Thêm sản phẩm thành công");
-                    response.sendRedirect("admin/QuanLySanPham.jsp");
+                    response.sendRedirect("ListProductAd");
                 }
             }
 
@@ -76,7 +76,7 @@ public class AddOrUpdateProduct extends HttpServlet {
                 boolean isErr = false;
                 if (name.equals("") || type.equals("") || size.equals("") || price.equals("")
                         || quantity.equals("") || sale.equals("") || quantity.equals("") || link1.equals("")
-                        || link2.equals("") || newProduct.equals("") || description.equals("")) {
+                        || link2.equals("") || newProduct.equals(null) || description.equals("")) {
                     request.setAttribute("err", "Vui lòng nhập dữ liệu trong các mục có đánh dấu *");
                     request.getRequestDispatcher("admin/AddProduct.jsp").forward(request, response);
                     isErr = true;
@@ -89,8 +89,19 @@ public class AddOrUpdateProduct extends HttpServlet {
                     Product p = new Product(id, name, description, size, type, Integer.parseInt(price), Integer.parseInt(sale), link1, link2, Integer.parseInt(quantity), Integer.parseInt(newProduct), 1, 1);
                     ProductService.updateProduct(id, p);
                     request.setAttribute("err", "Chỉnh sửa thành công");
-                    request.getRequestDispatcher("admin/QuanLySanPham.jsp").forward(request, response);
+                    response.sendRedirect("ListProductAd");
                 }
+            }if (action.equals("delete")) {
+                ProductService.deleteProduct(id);
+                response.sendRedirect("ListProductAd");
+            }
+            if (action.equals("hide")) {
+                ProductService.hideProduct(id);
+                response.sendRedirect("ListProductAd");
+            }
+            if (action.equals("show")) {
+                ProductService.nothideProduct(id);
+                response.sendRedirect("ListProductAd");
             }
         }
     }

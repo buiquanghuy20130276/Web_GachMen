@@ -13,7 +13,7 @@ import java.util.List;
 public class ListProductAd extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        List<Product>list = ProductService.getAllProduct();
+        List<Product>list = ProductService.getAll();
         request.setAttribute("listP",list);
         request.getRequestDispatcher("admin/QuanLySanPham.jsp").forward(request, response);
     }
