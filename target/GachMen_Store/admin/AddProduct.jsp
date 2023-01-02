@@ -202,8 +202,10 @@
                                 <div class="control-group">
                                     <label class="control-label" for="newProduct">Hàng mới</label>
                                     <div class="controls">
-                                        <input type="checkbox" name="newProduct" class="span6" id="newProduct"
-                                               value="1">
+                                        <select id="newProduct" class="chzn-select" name="newProduct">
+                                            <option value="0"<c:if test="${param.newProduct eq '0'}">selected="selected"</c:if>>Có</option>
+                                            <option value="1"<c:if test="${param.newProduct eq '1'}">selected="selected"</c:if>>Không</option>
+                                        </select>
                                     </div>
                                 </div>
 
