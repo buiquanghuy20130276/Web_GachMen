@@ -22,16 +22,15 @@ public class UpdateReset extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String email = request.getParameter("email");
         String password = request.getParameter("password");
-        User user = new User();
         UserService UserService=new UserService();
         try {
             if (email.equals("") || password.equals("")) {
                 request.setAttribute("inputEmpty", "Vui lòng nhập dữ liệu");
                 request.getRequestDispatcher("reset-password.jsp").forward(request, response);
-            } else if (UserService.existUserName(email)) {
+            } else if (UserService.existEmail(email)) {
                 UserService.updatePassword(email, password);
                 request.setAttribute("changePassSuccess", "Thành công.<br>Thử đăng nhập bằng mật khẩu mới");
-                request.getRequestDispatcher("reset-password.jsp").forward(request, response);
+                request.getRequestDispatcher("send-mail-success.jsp").forward(request, response);
             } else {
                 request.setAttribute("errUsername", "Tên đăng nhập không tồn tại!");
                 request.getRequestDispatcher("reset-password.jsp").forward(request, response);

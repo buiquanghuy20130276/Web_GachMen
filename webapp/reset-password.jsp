@@ -50,33 +50,51 @@
             <div class="col-12 col-lg-12 d-flex justify-content-center align-items-center text-center">
                 <div class="login-content">
                     <div class="login-table">
-                        <%-- NEW PASSWORD  --%>
-                        <form class="form" id="" method="get" action="/updateReset">
-                            <span class="custom-title align-bottom">ĐỔI MẬT KHẨU</span>
-                            <p style="color:#62ab00; display:block; margin: auto"><%=request.getAttribute("changePassSuccess") == null ? " " : request.getAttribute("changePassSuccess")%>
-                            </p>
-                            <p style="color:red; display:block; margin: auto"><%=request.getAttribute("inputEmpty") == null ? " " : request.getAttribute("inputEmpty")%>
-                            </p>
-                            <p style="color:red; display:block; margin: auto"><%=request.getAttribute("errUsername") == null ? " " : request.getAttribute("errUsername")%>
-                            </p>
-                            <div class="form-group">
-                                <label for="exampleInputEmail1">Nhập địa chỉ email</label>
-                                <input type="email" class="form-control" id="exampleInputEmail1" name="username"
-                                       value="<%=request.getParameter("username")==null ? "":request.getParameter("username")%>"
-                                       placeholder="Nhập địa chỉ email">
-                            </div>
-                            <div class="form-group">
-                                <label for="exampleInputPassword1">Nhập mật khẩu</label>
-                                <input type="password" class="form-control" id="exampleInputPassword1" name ="password"
-                                       placeholder="Nhập mật khẩu">
-                                <div class="btn">
-                                    <input type="submit" value="LƯU THAY ĐỔI" class="return-customer-btn">
+                        <section class="vh-100">
+                            <div class="container py-5 h-100">
+                                <div class="row d-flex align-items-center justify-content-center h-100">
+                                    <div class="col-md-8 col-lg-7 col-xl-6">
+                                        <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.svg"
+                                             class="img-fluid" alt="Phone image">
+                                    </div>
+                                    <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
+                                        <form class="register-form form-outline mb-4" id="" method="get"
+                                              action="updateReset">
+                                            <!-- Email input -->
+                                            <span class="fw-bold mb-2 text-uppercase custom-title">ĐỔI MẬT KHẨU</span>
+                                            <p style="color:#62ab00; display:block; margin: auto"><%=request.getAttribute("changePassSuccess") == null ? " " : request.getAttribute("changePassSuccess")%>
+                                            </p>
+                                            <p style="color:red; display:block; margin: auto"><%=request.getAttribute("inputEmpty") == null ? " " : request.getAttribute("inputEmpty")%>
+                                            </p>
+                                            <p style="color:red; display:block; margin: auto"><%=request.getAttribute("errUsername") == null ? " " : request.getAttribute("errUsername")%>
+                                            </p>
+                                            <div class="form-outline mb-4">
+                                                <input type="email" class="form-control" id="email"
+                                                       name="email"
+                                                       value="<%=request.getParameter("email")==null ? "":request.getParameter("email")%>"
+                                                       placeholder="Nhập địa chỉ email">
+                                            </div>
+                                            <!-- Password input -->
+                                            <div class="form-outline mb-4">
+                                                <input type="password" class="form-control"
+                                                       id="password"
+                                                       name="password"
+                                                       placeholder="Nhập mật khẩu mới">
+                                            </div>
+                                            <!-- Submit button -->
+                                            <div class="btn">
+                                                <button type="submit" class="btn-primary btn-lg btn-block">LƯU THAY
+                                                    ĐỔI
+                                                </button>
+                                            </div>
+                                            <div class="message2">
+                                                <a href="login.jsp"> Trở Về</a>
+                                            </div>
+                                        </form>
+                                    </div>
                                 </div>
-                                <div class="message2">
-                                    <a href="login.jsp"> Trở Về</a>
-                                </div>
                             </div>
-                        </form>
+                        </section>
                     </div>
                 </div>
             </div>

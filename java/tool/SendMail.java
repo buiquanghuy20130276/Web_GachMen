@@ -46,6 +46,7 @@ public class SendMail extends HttpServlet {
             message.setText(emailContect);
             Transport.send(message);
             System.out.println("Done");
+            response.sendRedirect("notification.jsp");
         } catch (Exception e) {
             e.printStackTrace();
         }
