@@ -322,6 +322,44 @@ public class ProductService {
         }
     }
 
+    //phân trang
+    // start lấy ra số sp, trong limit sản phẩm
+
+    public List<Product> getProductPage(String type, int start, int quantity){
+        PreparedStatement ps = null;
+        try{
+            String sql = "select * from products where category = ? and status = '1' limit ? offset ?";
+            ps = ConnectDB.connect(sql);
+            ps.setString(1, type);
+            ps.setInt(2, quantity);
+            ps.setInt(3, start);
+            ResultSet rs = ps.executeQuery();
+            List<Product> re = new LinkedList<>();
+            while (rs.next()) {
+                re.add(new Product(rs.getString(1),
+                        rs.getString(2),
+                        rs.getString(3),
+                        rs.getString(4),
+                        rs.getString(5),
+                        rs.getInt(6),
+                        rs.getInt(7),
+                        rs.getString(8),
+                        rs.getString(9),
+                        rs.getInt(10),
+                        rs.getInt(11),
+                        rs.getInt(12),1));
+            }
+            rs.close();
+            ps.close();
+            return re;
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+            return new LinkedList<>();
+        } catch (ClassNotFoundException classNotFoundException) {
+            classNotFoundException.printStackTrace();
+            return new LinkedList<>();
+        }
+    }
     public static void main(String[] args) {
 //        ProductService list = new ProductService();
 ////        System.out.println(list.getAllProduct().toString());

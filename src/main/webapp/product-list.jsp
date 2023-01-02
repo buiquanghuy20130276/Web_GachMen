@@ -209,6 +209,7 @@
                                             </div>
 
                                         </div>
+                                        <c:set var="productType" value="${p.type}"/>
                                     </c:forEach>
                                     <!-- Single Product End -->
                                     <!-- Single Product Start -->
@@ -217,11 +218,27 @@
                                     <!-- Single Product End -->
 
                                 </div>
-                                <%--@elvariable id="endP" type=""--%>
-                                <c:forEach begin="1" end="${endP}" var="i">
-                                    <a href="#">${i}</a>
-                                </c:forEach>
-                                <!-- Row End -->
+                                <div class="toolbar" >
+                                    <div class="pagination">
+                                        <%--@elvariable id="currentPage" type=""--%>
+                                        <c:if test="${currentPage != 1}">
+                                            <a href="/Web_GachMen/pageNumber?action=productype&type=${productType}&page=${currentPage - 1}">«</a>
+                                        </c:if>
+                                        <c:forEach begin="1" end="6" var="i">
+                                            <c:choose>
+                                                <c:when test="${currentPage eq i}">
+                                                    <a>${i}</a>
+                                                </c:when>
+                                                <c:otherwise>
+                                                    <a href="/Web_GachMen/pageNumber?action=productype&type=${productType}&page=${i}">${i}</a>
+                                                </c:otherwise>
+                                            </c:choose>
+                                        </c:forEach>
+                                        <c:if test="${currentPage != 6}">
+                                            <a href="/Web_GachMen/pageNumber?action=productype&type=${productType}&page=${currentPage + 1}">»</a>
+                                        </c:if>
+                                    </div>
+                                </div>
                             </div>
 
 
