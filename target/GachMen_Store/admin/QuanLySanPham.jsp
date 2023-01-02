@@ -70,11 +70,12 @@
                             </div>
                             <table cellpadding="0" cellspacing="0" border="0" class="table table-bordered" id="example2">
                                 <thead>
-                                <tr>
+                                <tr >
                                     <th class="align-middle">Tên Gạch</th>
                                     <th>Giá tiền</th>
                                     <th>Giảm giá %</th>
                                     <th width="10%">Số lượng</th>
+                                    <th width="12%">Hình ảnh</th>
                                     <th width="10%">Trạng thái</th>
                                     <th width="12%"></th>
                                     <th width="12%"></th>
@@ -88,7 +89,8 @@
                                     <td>${p.price}</td>
                                     <td>${p.salePrice}</td>
                                     <td>${p.quantity}</td>
-                                    <td id="status">${p.status==1?"Đang bán":"Đã ngừng bán"}</td>
+                                    <td><img src="${p.image1}"></td>
+                                    <td id="status">${p.status==1?"Đang bán":"Ngừng bán"}</td>
                                     <td id="hide-nothide">
                                         <c:if test="${p.status ==1}">
                                             <a class="text-hide text-primary" href="AddOrUpdateProduct?action=hide&id=${p.productID}"><span class="fas fa-eye-slash"></span> Ẩn</a></c:if>

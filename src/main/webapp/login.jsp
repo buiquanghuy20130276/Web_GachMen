@@ -72,7 +72,7 @@
                             <h3 class="custom-title">ĐĂNG KÍ</h3>
                             <br>
                             <p>Bằng cách tạo tài khoản, bạn sẽ có thể mua sắm nhanh hơn, cập nhật trạng thái đơn hàng và theo dõi các đơn hàng bạn đã thực hiện trước đó</p>
-                            <a class="customer-btn" href="register.html">Tiếp tục</a>
+                            <a class="customer-btn" href="register.jsp">Tiếp tục</a>
                         </div>
                     </div>
                 </div>
