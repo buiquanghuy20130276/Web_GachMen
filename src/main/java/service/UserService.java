@@ -279,6 +279,19 @@ public class UserService {
         }
         return list;
     }
+    public static void updatePassword(String email, String password) {
+        PreparedStatement preSta = null;
+        try {
+            String sql = "UPDATE user SET password=? WHERE email=? ";
+            preSta = ConnectDB.connect(sql);
+            preSta.setString(1, password);
+            preSta.setString(2, email);
+            preSta.executeUpdate();
+
+        } catch (SQLException | ClassNotFoundException ex) {
+            ex.printStackTrace();
+        }
+    }
     public static void main(String[] args) {
         UserService service = new UserService();
         boolean u = existUserName("quanghuy.fs");
