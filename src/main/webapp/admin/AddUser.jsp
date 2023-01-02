@@ -1,6 +1,12 @@
 <%@ page import="bean.User" %>
 <%@ page import="java.util.Collection" %>
-<%@ page import="model.UserSession" %>
+<%@ page import="model.UserSession" %><%--
+  Created by IntelliJ IDEA.
+  User: NgocTan
+  Date: 21/12/2020
+  Time: 10:38 SA
+  To change this template use File | Settings | File Templates.
+--%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
@@ -49,7 +55,7 @@
                     <div class="navbar navbar-inner block-header">
                         <div class="muted pull-left">
                             <c:choose>
-                                <c:when test="${param.action eq 'getadd'}">Thêm </c:when>
+                                <c:when test="${param.action eq'getadd'}">Thêm </c:when>
                                 <c:when test="${param.action eq 'getupdate'}">Chỉnh sửa </c:when>
                                 <c:when test="${param.action eq 'add'}">Thêm </c:when>
                                 <c:when test="${param.action eq 'update'}">Chỉnh sửa </c:when>
@@ -57,8 +63,8 @@
                     </div>
                     <div class="block-content collapse in">
                         <div class="span12">
-                            <h4> <%=request.getAttribute("err")==null? "":request.getAttribute("err")%></h4>
-                            <form class="form-horizontal" action="AddOrUpdateUser" method="get">
+                            <h4 style="color: red"> <%=request.getAttribute("err")==null? "":request.getAttribute("err")%></h4>
+                            <form class="form-horizontal" action="AddOfUpdateUser" method="get">
                                 <fieldset>
                                     <legend><c:choose>
                                         <c:when test="${param.action eq 'getadd'}">Thêm </c:when>
@@ -79,19 +85,9 @@
                                         </div>
                                     </div>
                                     <div class="control-group">
-                                        <label class="control-label" for="birth">Ngày sinh</label>
-                                        <div class="controls">
-                                            <input type="date" class="input-xlarge" id="birth" name="birth"
-                                                   placeholder="dd-mm-yyyy"
-                                            value="<%=(request.getParameter("birth")==null||request.getParameter("birth").equals("null")) ?"":request.getParameter("birth")%>">
-                                        </div>
-                                    </div>
-
-
-                                    <div class="control-group">
                                         <label class="control-label" for="phone">Số điện thoại </label>
                                         <div class="controls">
-                                            <input type="text" name="phone" class="span6" id="phone" placeholder="Nhập số điện thoại"
+                                            <input type="number" name="phone" class="span6" id="phone" placeholder="Nhập số điện thoại"
                                                    value="<%=(request.getParameter("phone")==null||request.getParameter("phone").equals("null")) ? "":request.getParameter("phone")%>">
                                         </div>
                                     </div>
@@ -111,18 +107,28 @@
                                     </div>
 
                                     <div class="control-group">
-                                        <label class="control-label" for="pass">Mật khẩu (*) </label>
+                                        <label class="control-label" for="password">Mật khẩu (*) </label>
                                         <div class="controls">
-                                            <input type="password" name="pass" class="span6" id="pass" placeholder="Nhập mật khẩu"
-                                                   value="<%=request.getParameter("pass")==null? "":request.getParameter("pass")%>">
+                                            <input type="password" name="password" class="span6" id="password" placeholder="Nhập mật khẩu"
+                                                   value="<%=request.getParameter("password")==null? "":request.getParameter("password")%>">
                                         </div>
                                     </div>
                                     <div class="control-group">
-                                        <label class="control-label" for="isAdmin">Quyền truy cập (*)</label>
+                                        <label class="control-label" for="status">Trạng thái(*)</label>
                                         <div class="controls">
-                                            <select id="isAdmin" class="chzn-select" name="isAdmin">
+                                            <select id="status" class="chzn-select" name="status">
+                                                <option value="1"<c:if test="${param.status eq '1'}">selected="selected"</c:if>>Mở hoạt động</option>
+                                                <option value="0"<c:if test="${param.status eq '0'}">selected="selected"</c:if>>Tắt hoạt động</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="control-group">
+                                        <label class="control-label" for="permission">Quyền truy cập (*)</label>
+                                        <div class="controls">
+                                            <select id="permission" class="chzn-select" name="permission">
                                                 <option value="0"<c:if test="${param.permission eq '0'}">selected="selected"</c:if>>User</option>
                                                 <option value="1"<c:if test="${param.permission eq '1'}">selected="selected"</c:if>>Admin</option>
+                                                <option value="1"<c:if test="${param.permission eq '3'}">selected="selected"readonly</c:if>>Boss</option>
                                             </select>
                                         </div>
                                     </div>

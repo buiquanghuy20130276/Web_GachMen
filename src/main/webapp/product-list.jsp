@@ -119,13 +119,7 @@
                 <div class="col-lg-9 order-1 order-lg-2">
                     <!-- Grid & List View Start -->
                     <div class="grid-list-top border-default universal-padding d-md-flex justify-content-md-between align-items-center mb-30">
-                        <div class="grid-list-view  mb-sm-15">
-                            <ul class="nav tabs-area d-flex align-items-center">
-                                <li><a class="active" data-toggle="tab" href="#grid-view"><i class="fa fa-th"></i></a>
-                                </li>
-                                <li><a data-toggle="tab" href="#list-view"><i class="fa fa-list-ul"></i></a></li>
-                            </ul>
-                        </div>
+
                         <!-- Toolbar Short Area Start -->
                         <div class="main-toolbar-sorter clearfix">
                             <div class="toolbar-sorter d-flex align-items-center">
@@ -159,11 +153,11 @@
                         <!-- Grid & List Main Area End -->
                         <div class="tab-content fix">
                             <div id="grid-view" class="tab-pane fade show active">
-                                <div id="content" class="row">
+                                <div class="row">
                                     <!-- Single Product Start -->
                                     <jsp:useBean id="listP" scope="request" type="java.util.List"/>
                                     <c:forEach items="${listP}" var="p">
-                                    <div class="product col-lg-4 col-md-4 col-sm-6 col-6">
+                                    <div class="col-lg-4 col-md-4 col-sm-6 col-6">
                                         <div class="single-product">
                                             <!-- Product Image Start -->
                                             <div class="pro-img">
@@ -209,39 +203,28 @@
                                             </div>
 
                                         </div>
-                                        <c:set var="productType" value="${p.type}"/>
                                     </c:forEach>
                                     <!-- Single Product End -->
                                     <!-- Single Product Start -->
 
 
                                     <!-- Single Product End -->
-
                                 </div>
-                                <div class="toolbar" >
-                                    <div class="pagination">
-                                        <%--@elvariable id="currentPage" type=""--%>
-                                        <c:if test="${currentPage != 1}">
-                                            <a href="/Web_GachMen/pageNumber?action=productype&type=${productType}&page=${currentPage - 1}">«</a>
-                                        </c:if>
-                                        <c:forEach begin="1" end="6" var="i">
-                                            <c:choose>
-                                                <c:when test="${currentPage eq i}">
-                                                    <a>${i}</a>
-                                                </c:when>
-                                                <c:otherwise>
-                                                    <a href="/Web_GachMen/pageNumber?action=productype&type=${productType}&page=${i}">${i}</a>
-                                                </c:otherwise>
-                                            </c:choose>
-                                        </c:forEach>
-                                        <c:if test="${currentPage != 6}">
-                                            <a href="/Web_GachMen/pageNumber?action=productype&type=${productType}&page=${currentPage + 1}">»</a>
-                                        </c:if>
-                                    </div>
-                                </div>
+                                <!-- Row End -->
                             </div>
+                            <!-- #grid view End -->
 
+                            <!-- #list view End -->
+                            <div class="pro-pagination">
+                                <ul class="blog-pagination">
+                                    <li class="active"><a href="shop.html">1</a></li>
+                                    <li><a href="shop-2.html">2</a></li>
+                                    <li><a href="shop-3.html">3</a></li>
+                                    <li><a href="shop-4.html">4</a></li>
+                                    <li><a href="#"><i class="fa fa-angle-right"></i></a></li>
+                                </ul>
 
+                            </div>
                             <!-- Product Pagination Info -->
                         </div>
                         <!-- Grid & List Main Area End -->
@@ -372,27 +355,6 @@
     <!-- Xem nhanh Content End -->
 </div>
 <!-- Main Wrapper End Here -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script>
-
-    function searchByName(param){
-        var txtSearch = param.value;
-        $.ajax({
-            url: "/Web_GachMen/search",
-            type: "post", //send it through get method
-            data: {
-                txt: txtSearch
-            },
-            success: function (data) {
-                var row = document.getElementById("content");
-                row.innerHTML = data;
-            },
-            error: function (xhr) {
-                //Do Something to handle error
-            }
-        });
-    }
-</script>
 
 <!-- jquery 3.2.1 -->
 <script src="js\vendor\jquery-3.2.1.min.js"></script>
