@@ -32,6 +32,22 @@ public class User implements Serializable {
         this.day_register = day_register;
     }
 
+    @Override
+    public String toString() {
+        return "User{" +
+                "idUser='" + idUser + '\'' +
+                ", userName='" + userName + '\'' +
+                ", email='" + email + '\'' +
+                ", passWord='" + passWord + '\'' +
+                ", isAdmin=" + isAdmin +
+                ", name='" + name + '\'' +
+                ", phone='" + phone + '\'' +
+                ", status=" + status +
+                ", day_register='" + day_register + '\'' +
+                ", role=" + role +
+                '}';
+    }
+
     public String getIdUser() {
         return idUser;
     }
