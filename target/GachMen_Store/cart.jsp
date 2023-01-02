@@ -7,7 +7,6 @@
 <%@ page import="java.util.Collection" %>
 <%@ page import="javax.swing.text.Document" %>
 <%--@elvariable id="cart" type="model.Cart"--%>
-<c:set var="cart" value="${cart}"/>
 
 <!doctype html>
 <html class="no-js" lang="zxx">
@@ -78,11 +77,11 @@
             <div class="row">
                 <div class="col-md-12 col-sm-12">
                     <!-- Form Start -->
-                    <form action="#">
+                    <form action="UpdateCart" method="get">
                         <!-- Table Content Start -->
                         <div class="table-content table-responsive mb-45">
                             <c:if test="${listCart.size()==0}">
-                                <%response.sendRedirect("ProductLists");%>
+                                <h5>Bạn chưa có sản phẩm nào trong giỏ hàng</h5>
                             </c:if>
                             <c:if test="${listCart.size()!=0}">
                             <table>
@@ -106,6 +105,7 @@
                                             <a href="avascript:void(0)"><img
                                                     src="${product.image2}"
                                                     alt="cart-image"></a>
+                                            <input name="productID" value="${product.productID}" type="hidden">
                                         </td>
                                         <td class="product-name"><a target="_blank"
                                                                     href="ProductDetail?productID=${product.productID}">${product.productName}</a>
@@ -115,7 +115,7 @@
                                                                                                          minFractionDigits="0"
                                                                                                          value="${product.priceAfterSale}"/> VNĐ</span>
                                         </td>
-                                        <td class="product-quantity"><input id="quantityCart" onblur="${product.quantityCart=this.value}"
+                                        <td class="product-quantity"><input onblur="/UpdateCart" name="quantityCart"
                                                                             type="number"
                                                                             value="${product.quantityCart}"></td>
                                         <td class="product-subtotal"><fmt:formatNumber type="currency" currencySymbol=""
@@ -139,8 +139,7 @@
 
                             <div class="col-md-8 col-sm-12">
                                 <div class="buttons-cart">
-                                    <c:url value="${product.productID}" var="updateCart"/>
-                                    <a href="${updateCart}">Cập nhật giỏ hàng</a>
+                                    <input type="submit" value="Cập nhật giỏ hàng">
                                     <a href="ProductLists">Tiếp tục mua sắm</a>
                                 </div>
                             </div>

@@ -9,13 +9,13 @@ import javax.servlet.annotation.*;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(name = "ManagerUser", value = "/managerUser")
-public class ManagerUser extends HttpServlet {
+@WebServlet(name = "ListUserAd", value = "/ListUserAd")
+public class ListUserAd extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        List<User>list = UserService.getAll();
-        request.setAttribute("listUser",list);
-    request.getRequestDispatcher("admin/QuanLyThanhVien.jsp").forward(request,response);
+        List<User> list = UserService.getAll();
+        request.setAttribute("listUser", list);
+        request.getRequestDispatcher("admin/QuanLyThanhVien.jsp").forward(request, response);
     }
 
     @Override

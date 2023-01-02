@@ -1,15 +1,21 @@
 package controller;
 
+import bean.Product;
+import service.ProductService;
+
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
+import java.util.List;
 
-@WebServlet(name = "HomeDefault", value = "/home")
-public class HomeDefault extends HttpServlet {
+@WebServlet(name = "ListProductAd", value = "/ListProductAd")
+public class ListProductAd extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.getRequestDispatcher("index.jsp").forward(request, response);
+        List<Product>list = ProductService.getAll();
+        request.setAttribute("listP",list);
+        request.getRequestDispatcher("admin/QuanLySanPham.jsp").forward(request, response);
     }
 
     @Override

@@ -153,7 +153,7 @@
                                                 </div>
                                                 <div class="pro-actions">
                                                     <div class="actions-primary">
-                                                        <a href="cart.jsp" title="Thêm vào giỏ"> + Thêm vào giỏ</a>
+                                                        <a href="/addCart" title="Thêm vào giỏ"> + Thêm vào giỏ</a>
                                                     </div>
                                                     <div class="actions-primary">
                                                         <a href="checkout.jsp" title="Mua ngay"> Mua ngay</a>

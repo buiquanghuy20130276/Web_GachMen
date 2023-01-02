@@ -65,7 +65,7 @@ public class Register extends HttpServlet {
                 request.setAttribute("msg", "Email này đã được đăng ký tài khoảng");
                 request.getRequestDispatcher("register.jsp").forward(request, response);
             } else if (UserService.register(user)) {
-                request.getRequestDispatcher("/").forward(request, response);
+                request.getRequestDispatcher("/login.jsp").forward(request, response);
             } else {
                 request.setAttribute("msg", "Tạo tài khoản thất bại.<br> Hãy thử lại!!!");
                 request.getRequestDispatcher("register.jsp").forward(request, response);
