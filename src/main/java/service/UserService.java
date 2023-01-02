@@ -78,6 +78,7 @@ public class UserService {
         } catch (ClassNotFoundException | SQLException e) {
             e.printStackTrace();
         }
+        return false;
     }
 
     public static boolean register(User user) {
@@ -156,6 +157,7 @@ public class UserService {
         } catch (ClassNotFoundException | SQLException e) {
             e.printStackTrace();
         }
+        return false;
     }
 
     public static boolean checkUsernameEmail(String userName, String email) {
@@ -176,6 +178,7 @@ public class UserService {
         } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
         }
+        return false;
     }
 
     public int countUser() {
@@ -271,6 +274,7 @@ public class UserService {
         } catch (Exception e) {
             e.getStackTrace();
         }
+        return list;
     }
 
     public static void main(String[] args) {

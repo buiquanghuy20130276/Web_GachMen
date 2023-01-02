@@ -4,7 +4,7 @@
     response.sendRedirect("login.jsp");
 }%>
 <jsp:useBean id="cart" class="model.Cart" scope="session"></jsp:useBean>
-
+<script scr="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <header>
 
     <!-- Header Middle Start Here -->
@@ -19,7 +19,7 @@
                 <!-- Categorie Search Box Start Here -->
                 <div class="col-lg-5 col-md-8 ml-auto mr-auto col-10">
                     <div class="categorie-search-box">
-                        <form action="#">
+                        <form action="search" method="post">
                             <div class="form-group">
                                 <select class="bootstrap-select" name="poscats">
                                     <option value="0">Sản phẩm</option>
@@ -33,7 +33,7 @@
 
                                 </select>
                             </div>
-                            <input type="text" name="search" placeholder="Bạn muốn mua gì...">
+                            <input  type="text" name="txt" placeholder="Bạn muốn mua gì...">
                             <button><i class="lnr lnr-magnifier"></i></button>
                         </form>
                     </div>
