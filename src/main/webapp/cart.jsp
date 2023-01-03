@@ -167,7 +167,7 @@
                                         </tbody>
                                     </table>
                                     <div class="wc-proceed-to-checkout">
-                                        <a href="checkout.jsp">THANH TOÁN</a>
+                                        <a href="Payment">THANH TOÁN</a>
                                     </div>
                                 </div>
                             </div>

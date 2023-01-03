@@ -3,14 +3,14 @@ package bean;
 import java.io.Serializable;
 
 public class OrderDetail implements Serializable {
-    private int productID;
-    private int orderID;
+    private String productID;
+    private String orderID;
     private String nameProduct;
-    private Double priceProduct;
+    private int priceProduct;
     private int productQuantity;
-    private double totalPrice;
+    private int totalPrice;
 
-    public OrderDetail(int productID, int orderID, String nameProduct, Double priceProduct, int productQuantity, double totalPrice) {
+    public OrderDetail(String productID, String orderID, String nameProduct, int priceProduct, int productQuantity, int totalPrice) {
         this.productID = productID;
         this.orderID = orderID;
         this.nameProduct = nameProduct;
@@ -19,19 +19,19 @@ public class OrderDetail implements Serializable {
         this.totalPrice = totalPrice;
     }
 
-    public int getProductID() {
+    public String getProductID() {
         return productID;
     }
 
-    public void setProductID(int productID) {
+    public void setProductID(String productID) {
         this.productID = productID;
     }
 
-    public int getOrderID() {
+    public String getOrderID() {
         return orderID;
     }
 
-    public void setOrderID(int orderID) {
+    public void setOrderID(String orderID) {
         this.orderID = orderID;
     }
 
@@ -43,11 +43,11 @@ public class OrderDetail implements Serializable {
         this.nameProduct = nameProduct;
     }
 
-    public Double getPriceProduct() {
+    public int getPriceProduct() {
         return priceProduct;
     }
 
-    public void setPriceProduct(Double priceProduct) {
+    public void setPriceProduct(int priceProduct) {
         this.priceProduct = priceProduct;
     }
 
@@ -59,11 +59,11 @@ public class OrderDetail implements Serializable {
         this.productQuantity = productQuantity;
     }
 
-    public double getTotalPrice() {
+    public int getTotalPrice() {
         return totalPrice;
     }
 
-    public void setTotalPrice(double totalPrice) {
+    public void setTotalPrice(int totalPrice) {
         this.totalPrice = totalPrice;
     }
 }

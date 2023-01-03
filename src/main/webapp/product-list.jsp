@@ -217,11 +217,11 @@
                             <!-- #list view End -->
                             <div class="pro-pagination">
                                 <ul class="blog-pagination">
-                                    <li class="active"><a href="shop.html">1</a></li>
-                                    <li><a href="shop-2.html">2</a></li>
-                                    <li><a href="shop-3.html">3</a></li>
-                                    <li><a href="shop-4.html">4</a></li>
+                                    <c:forEach begin="0" end="${limit}" var="i">
+                                    <li class="active"><a href="ProductLists?start">1</a></li>
+
                                     <li><a href="#"><i class="fa fa-angle-right"></i></a></li>
+                                    </c:forEach>
                                 </ul>
 
                             </div>
