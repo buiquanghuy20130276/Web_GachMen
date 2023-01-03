@@ -166,56 +166,56 @@
                             <h5>Bạn chưa có sản phẩm nào trong giỏ hàng</h5>
                         </c:if>
                         <c:if test="${listCart.size()!=0}">
-                        <div class="your-order-table table-responsive">
-                            <table>
-                                <thead>
-                                <tr>
-                                    <th class="product-name">Sản phẩm</th>
-                                    <th class="product-total">Tổng</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                    <%--@elvariable id="product" type="bean.Product"--%>
-                                <c:forEach items="${listCart}" var="product">
-                                <tr class="cart_item">
-                                    <td class="product-name">
-                                            ${product.productName}<span class="product-quantity"> ${product.quantityCart}</span>
-                                    </td>
-                                    <td class="product-total">
+                            <div class="your-order-table table-responsive">
+                                <table>
+                                    <thead>
+                                    <tr>
+                                        <th class="product-name">Sản phẩm</th>
+                                        <th class="product-total">Tổng</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                        <%--@elvariable id="product" type="bean.Product"--%>
+                                    <c:forEach items="${listCart}" var="product">
+                                    <tr class="cart_item">
+                                        <td class="product-name">
+                                                ${product.productName}<span class="product-quantity"> ${product.quantityCart}</span>
+                                        </td>
+                                        <td class="product-total">
                                         <span class="amount"><fmt:formatNumber type="currency" currencySymbol=""
                                                                                minFractionDigits="0"
                                                                                value="${product.priceAfterSale*product.quantityCart}"></fmt:formatNumber></span>
-                                    </td>
-                                </tr>
+                                        </td>
+                                    </tr>
 
-                                </tbody>
-                                </c:forEach>
-                                <tfoot>
-                                <tr class="cart-subtotal" style="">
-                                    <th>Tổng tiền thanh toán</th>
-                                    <td><span class="amount"><fmt:formatNumber type="currency"
-                                                                               currencySymbol=""
-                                                                               minFractionDigits="0"
-                                                                               value="${cart.total()}"/></span></td>
-                                </tr>
-                                <tr class="order-total">
-                                    <th>Tổng đơn đặt hàng</th>
-                                    <td><span class=" total amount"><fmt:formatNumber type="currency"
-                                                                                      currencySymbol=""
-                                                                                      minFractionDigits="0"
-                                                                                      value="${cart.total()}"/></span>
-                                    </td>
-                                </tr>
-                                </tfoot>
-                            </table>
-                            <input type="submit" style="font-size: 20px;
+                                    </tbody>
+                                    </c:forEach>
+                                    <tfoot>
+                                    <tr class="cart-subtotal" style="">
+                                        <th>Tổng tiền thanh toán</th>
+                                        <td><span class="amount"><fmt:formatNumber type="currency"
+                                                                                   currencySymbol=""
+                                                                                   minFractionDigits="0"
+                                                                                   value="${cart.total()}"/></span></td>
+                                    </tr>
+                                    <tr class="order-total">
+                                        <th>Tổng đơn đặt hàng</th>
+                                        <td><span class=" total amount"><fmt:formatNumber type="currency"
+                                                                                          currencySymbol=""
+                                                                                          minFractionDigits="0"
+                                                                                          value="${cart.total()}"/></span>
+                                        </td>
+                                    </tr>
+                                    </tfoot>
+                                </table>
+                                <input type="submit" style="font-size: 20px;
     height: 40px;
     width: 103px;
     background: orange;
     border-radius: 5px;
     border: none;
     color: whitesmoke;" value="Đặt hàng">
-                        </div>
+                            </div>
                         </c:if>
                     </div>
                 </div>
