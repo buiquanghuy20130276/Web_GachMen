@@ -1,6 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<c:set var="productType" value='<%=request.getParameter("type")%>'/>
 <!doctype html>
 <html class="no-js" lang="zxx">
 
@@ -157,6 +158,7 @@
                                     <!-- Single Product Start -->
                                     <jsp:useBean id="listP" scope="request" type="java.util.List"/>
                                     <c:forEach items="${listP}" var="p">
+                                        <input id="productype" name="productype" value="${p.type}" type="hidden">
                                     <div class="col-lg-4 col-md-4 col-sm-6 col-6">
                                         <div class="single-product">
                                             <!-- Product Image Start -->
@@ -203,6 +205,7 @@
                                             </div>
 
                                         </div>
+                                        <c:set var="productType" value="${p.type}"/>
                                     </c:forEach>
                                     <!-- Single Product End -->
                                     <!-- Single Product Start -->
@@ -215,6 +218,7 @@
                             <!-- #grid view End -->
 
                             <!-- #list view End -->
+<<<<<<< HEAD
                             <div class="pro-pagination">
                                 <ul class="blog-pagination">
                                     <c:forEach begin="0" end="${limit}" var="i">
@@ -224,6 +228,27 @@
                                     </c:forEach>
                                 </ul>
 
+=======
+                            <div class="toolbar" >
+                                <div class="pagination">
+                                    <c:if test="${currentPage != 1}">
+                                        <a href="/Web_GachMen/pageNumber?action=productype&type=${productType}&page=${currentPage - 1}">«</a>
+                                    </c:if>
+                                    <c:forEach begin="1" end="6" var="i">
+                                        <c:choose>
+                                            <c:when test="${currentPage eq i}">
+                                                <a>${i}</a>
+                                            </c:when>
+                                            <c:otherwise>
+                                                <a href="/Web_GachMen/pageNumber?action=productype&type=${productType}&page=${i}">${i}</a>
+                                            </c:otherwise>
+                                        </c:choose>
+                                    </c:forEach>
+                                    <c:if test="${currentPage != 6}">
+                                        <a href="/Web_GachMen/pageNumber?action=productype&type=${productType}&page=${currentPage + 1}">»</a>
+                                    </c:if>
+                                </div>
+>>>>>>> be0dc285e423d5e403f262240fed5ac06600078c
                             </div>
                             <!-- Product Pagination Info -->
                         </div>
@@ -356,6 +381,11 @@
 </div>
 <!-- Main Wrapper End Here -->
 
+<script
+        src="https://code.jquery.com/jquery-3.5.1.min.js"
+        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+        crossorigin="anonymous">
+</script>
 <!-- jquery 3.2.1 -->
 <script src="js\vendor\jquery-3.2.1.min.js"></script>
 <!-- Countdown js -->

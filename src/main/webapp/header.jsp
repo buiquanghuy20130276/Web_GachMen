@@ -1,9 +1,20 @@
-
+<%--
+  Created by IntelliJ IDEA.
+  User: Quang Huy
+  Date: 04/12/2022
+  Time: 10:14
+  To change this template use File | Settings | File Templates.
+--%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%if(session.getAttribute("username") == null){
-    response.sendRedirect("login.jsp");
-}%>
-<jsp:useBean id="cart" class="model.Cart" scope="session"></jsp:useBean>
+<%--<%if(session.getAttribute("username") == null){--%>
+<%--    response.sendRedirect("login.jsp");--%>
+<%--}%>--%>
+<div class="popup_banner">
+    <span class="popup_off_banner">×</span>
+    <div class="banner_popup_area">
+        <img src="img/banner/logo.png" alt="">
+    </div>
+</div>
 
 <header>
 
@@ -27,9 +38,7 @@
                                     <option value="3">Gạch ốp tường</option>
                                     <option value="4">Gạch trang trí</option>
                                     <option value="5">Gạch giả gỗ</option>
-                                    <option value="6">Gạch Terrazzo</option>
-                                    <option value="7">Gạch thẻ</option>
-                                    <option value="8">Gạch bông</option>
+
 
                                 </select>
                             </div>
@@ -42,16 +51,27 @@
                 <div class="col-lg-4 col-md-12">
                     <div class="cart-box mt-all-30">
                         <ul class="d-flex justify-content-lg-end justify-content-center align-items-center">
+<<<<<<< HEAD
                             <li><a href="Show"><i class="lnr lnr-cart"></i><span class="my-cart"><span class="total-pro">${cart.quantityCart==0?0:cart.quantityCart}</span><span>Giỏ hàng</span></span></a>
+=======
+                            <li><a href="cart.jsp"><i class="lnr lnr-cart"></i><span class="my-cart"><span class="total-pro">0</span><span>Giỏ hàng</span></span></a>
+>>>>>>> be0dc285e423d5e403f262240fed5ac06600078c
                             </li>
                             <%if(session.getAttribute("username")!=null) {%>
-                            <li><a href="index.jsp"><i class="lnr lnr-user"></i><span class="my-cart"><span><strong><%=session.getAttribute("username")%></strong></span><span> Logout</span></span></a>
+                            <li><a href="cart.jsp"><i class="lnr lnr-user"></i><span class="my-cart"><span><strong><%=session.getAttribute("username")%></strong></span><span> Logout</span></span></a>
                             </li>
                             <%}%>
                             <%if(session.getAttribute("username")==null) {%>
                             <li><a href="login.jsp"><i class="lnr lnr-user"></i><span class="my-cart"><span> <strong>Đăng nhập</strong></span><span> đăng kí</span></span></a>
                             </li>
                             <%}%>
+                            <c:if test="${sessionScope.User.isAdmin == 0}">
+                                <div class="col-lg-auto col-md-auto">
+                                    <li> <a class="col-md-12 my-cart">Chào
+                                            ${sessionScope.User.userName }</a></li>
+                                    <li><a href="logout"><i class="lnr lnr-exit"></i><span class="my-cart"><span><strong>Đăng xuất</strong></span></span></a><li>
+                                </div>
+                            </c:if>
                         </ul>
                     </div>
                 </div>
@@ -72,7 +92,7 @@
                                 <!-- Home Version Dropdown Start -->
 
                             </li>
-                            <li><a id="product-list" href="ProductList">Sản phẩm</a>
+                            <li><a id="product-list" href="ProductLists">Sản phẩm</a>
 
                             </li>
 

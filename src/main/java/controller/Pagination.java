@@ -25,7 +25,7 @@ public class Pagination extends HttpServlet {
             String type = request.getParameter("type");
             pageList = pe.getProductPage(type, (18 * (page - 1)), 18);
 
-            request.setAttribute("listP", pageList);
+            request.setAttribute("pageList", pageList);
             request.setAttribute("currentPage", page);
         }
         request.getRequestDispatcher("product-list.jsp").forward(request, response);
