@@ -1,4 +1,7 @@
 ﻿<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%--@elvariable id="cart" type="model.Cart"--%>
 <!doctype html>
 <html class="no-js" lang="zxx">
 
@@ -75,7 +78,7 @@
                             <div class="coupon-info">
                                 <p class="coupon-text">Bằng cách tạo tài khoản, bạn sẽ có thể mua sắm nhanh hơn, cập
                                     nhật trạng thái đơn hàng và theo dõi các đơn hàng bạn đã thực hiện trước đó.</p>
-                                <form action="#">
+                                <form action="Login" method="get">
                                     <p class="form-row-first">
                                         <label>Tài khoản <span class="required">*</span></label>
                                         <input type="text" name="email" placeholder="Nhập địa chỉ email..."
@@ -158,6 +161,11 @@
                 <div class="col-lg-6 col-md-6">
                     <div class="your-order">
                         <h3>Đơn đặt hàng của bạn</h3>
+                        <%--@elvariable id="listCart" type="com.sun.java.accessibility.util.Translator"--%>
+                        <c:if test="${listCart.size()==0}">
+                            <h5>Bạn chưa có sản phẩm nào trong giỏ hàng</h5>
+                        </c:if>
+                        <c:if test="${listCart.size()!=0}">
                         <div class="your-order-table table-responsive">
                             <table>
                                 <thead>
@@ -167,31 +175,35 @@
                                 </tr>
                                 </thead>
                                 <tbody>
+                                    <%--@elvariable id="product" type="bean.Product"--%>
+                                <c:forEach items="${listCart}" var="product">
                                 <tr class="cart_item">
                                     <td class="product-name">
-                                        Gạch last nền River Flow 02GB <span class="product-quantity"> × 1</span>
+                                            ${product.productName}<span class="product-quantity"> ${product.quantityCart}</span>
                                     </td>
                                     <td class="product-total">
-                                        <span class="amount">308,400đ</span>
+                                        <span class="amount"><fmt:formatNumber type="currency" currencySymbol=""
+                                                                               minFractionDigits="0"
+                                                                               value="${product.priceAfterSale*product.quantityCart}"></fmt:formatNumber></span>
                                     </td>
                                 </tr>
-                                <tr class="cart_item">
-                                    <td class="product-name">
-                                        Super Black Slate BY612001 <span class="product-quantity"> × 1</span>
-                                    </td>
-                                    <td class="product-total">
-                                        <span class="amount">420,000đ</span>
-                                    </td>
-                                </tr>
+
                                 </tbody>
+                                </c:forEach>
                                 <tfoot>
                                 <tr class="cart-subtotal" style="">
                                     <th>Tổng tiền thanh toán</th>
-                                    <td><span class="amount">728,400đ</span></td>
+                                    <td><span class="amount"><fmt:formatNumber type="currency"
+                                                                               currencySymbol=""
+                                                                               minFractionDigits="0"
+                                                                               value="${cart.total()}"/></span></td>
                                 </tr>
                                 <tr class="order-total">
                                     <th>Tổng đơn đặt hàng</th>
-                                    <td><span class=" total amount">728,400đ</span>
+                                    <td><span class=" total amount"><fmt:formatNumber type="currency"
+                                                                                      currencySymbol=""
+                                                                                      minFractionDigits="0"
+                                                                                      value="${cart.total()}"/></span>
                                     </td>
                                 </tr>
                                 </tfoot>
@@ -204,7 +216,7 @@
     border: none;
     color: whitesmoke;" value="Đặt hàng">
                         </div>
-
+                        </c:if>
                     </div>
                 </div>
             </div>

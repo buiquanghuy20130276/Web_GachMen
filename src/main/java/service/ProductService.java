@@ -1,19 +1,19 @@
 package service;
 
 import bean.Product;
+import controller.ListProduct;
 import database.ConnectDB;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
 public class ProductService {
     public static List<Product> getAllProduct() {
         List<Product> listProducts;
-
-        List<Product> listByCategory;
 
         try {
 
@@ -111,6 +111,13 @@ public class ProductService {
             throw new RuntimeException(e);
         }
         return p;
+    }
+    public static List<Product> getByPage(List<Product>list,int start,int end){
+        List<Product>listP = new ArrayList<>();
+        for(int i=0;i<end;i++){
+            listP.add(list.get(i));
+        }
+        return listP;
     }
     public static Product getById(String idProduct) {
         Product p = null;

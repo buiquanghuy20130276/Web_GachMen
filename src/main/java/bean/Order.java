@@ -4,18 +4,36 @@ import java.io.Serializable;
 import java.util.LinkedList;
 
 public class Order implements Serializable {
-    private int orderID;
-    private int userID;
+    private String orderID;
+    private String userID;
     private String fullName;
-    private double totalPrice;
+    private int totalPrice;
     private String address;
     private String phone;
     private String email;
-    private String status;
+    private int status;
     private String createDate;
+    private String updateDate;
     private LinkedList<OrderDetail> orderDetails;
 
-    public Order(int orderID, int userID, String fullName, double totalPrice, String address, String phone, String email, String status, String createDate, LinkedList<OrderDetail> orderDetails) {
+    @Override
+    public String toString() {
+        return "Order{" +
+                "orderID='" + orderID + '\'' +
+                ", userID='" + userID + '\'' +
+                ", fullName='" + fullName + '\'' +
+                ", totalPrice=" + totalPrice +
+                ", address='" + address + '\'' +
+                ", phone='" + phone + '\'' +
+                ", email='" + email + '\'' +
+                ", status=" + status +
+                ", createDate='" + createDate + '\'' +
+                ", updateDate='" + updateDate + '\'' +
+                ", orderDetails=" + orderDetails +
+                '}';
+    }
+
+    public Order(String orderID, String userID, String fullName, int totalPrice, String address, String phone, String email, int status, String createDate, String updateDate) {
         this.orderID = orderID;
         this.userID = userID;
         this.fullName = fullName;
@@ -25,22 +43,23 @@ public class Order implements Serializable {
         this.email = email;
         this.status = status;
         this.createDate = createDate;
-        this.orderDetails = orderDetails;
+        this.updateDate = updateDate;
+        this.orderDetails= new LinkedList<>();
     }
 
-    public int getOrderID() {
+    public String getOrderID() {
         return orderID;
     }
 
-    public void setOrderID(int orderID) {
+    public void setOrderID(String orderID) {
         this.orderID = orderID;
     }
 
-    public int getUserID() {
+    public String getUserID() {
         return userID;
     }
 
-    public void setUserID(int userID) {
+    public void setUserID(String userID) {
         this.userID = userID;
     }
 
@@ -52,11 +71,11 @@ public class Order implements Serializable {
         this.fullName = fullName;
     }
 
-    public double getTotalPrice() {
+    public int getTotalPrice() {
         return totalPrice;
     }
 
-    public void setTotalPrice(double totalPrice) {
+    public void setTotalPrice(int totalPrice) {
         this.totalPrice = totalPrice;
     }
 
@@ -84,11 +103,11 @@ public class Order implements Serializable {
         this.email = email;
     }
 
-    public String getStatus() {
+    public int getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(int status) {
         this.status = status;
     }
 
@@ -98,6 +117,14 @@ public class Order implements Serializable {
 
     public void setCreateDate(String createDate) {
         this.createDate = createDate;
+    }
+
+    public String getUpdateDate() {
+        return updateDate;
+    }
+
+    public void setUpdateDate(String updateDate) {
+        this.updateDate = updateDate;
     }
 
     public LinkedList<OrderDetail> getOrderDetails() {

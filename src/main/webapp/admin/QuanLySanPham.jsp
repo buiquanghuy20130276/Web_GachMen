@@ -4,6 +4,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%--<%--%>
 <%--    UserSession u = UserSession.getUS(session);--%>
 <%--    Collection<User> user = u.getUser();--%>
@@ -86,8 +87,8 @@
                                 <c:forEach items="${listP}" var="p">
                                 <tr id="${p.productID}">
                                     <td class="align-middle">${p.productName}</td>
-                                    <td>${p.price}</td>
-                                    <td>${p.salePrice}</td>
+                                    <td><fmt:formatNumber type="currency" currencySymbol="" minFractionDigits="0" value="${p.price}"/> VNĐ</td>
+                                    <td><fmt:formatNumber type="currency" currencySymbol="" minFractionDigits="0" value="${p.salePrice}"/> VNĐ</td>
                                     <td>${p.quantity}</td>
                                     <td><img src="${p.image1}"></td>
                                     <td id="status">${p.status==1?"Đang bán":"Ngừng bán"}</td>

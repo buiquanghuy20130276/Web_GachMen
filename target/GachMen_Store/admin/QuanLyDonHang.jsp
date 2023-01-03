@@ -1,18 +1,10 @@
 <%--<%@ page import="beans.User" %>--%>
 <%--<%@ page import="java.util.Collection" %>--%>
 <%--<%@ page import="model.UserSession" %>&lt;%&ndash;--%>
-
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
-<%
-//    UserSession u = UserSession.getUS(session);
-//    Collection<User> user = u.getUser();
-//    String username = u.getUserName();
-//    System.out.println(username);
-//    if(username.equalsIgnoreCase("")||!user.iterator().next().accept("admin.index")) response.sendRedirect("http://localhost:8080/project_BookStore/Home");
-%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 
@@ -20,16 +12,16 @@
     <title>Quản lý đơn hàng</title>
     <!-- Bootstrap -->
     <meta charset="utf-8">
-    <link href="Admin/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
-    <link href="Admin/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" media="screen">
-    <link href="Admin/assets/styles.css" rel="stylesheet" media="screen">
-    <link href="Admin/assets/DT_bootstrap.css" rel="stylesheet" media="screen">
+    <link href="admin/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="admin/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" media="screen">
+    <link href="admin/assets/styles.css" rel="stylesheet" media="screen">
+    <link href="admin/assets/DT_bootstrap.css" rel="stylesheet" media="screen">
     <!--[if lte IE 8]><script language="javascript" type="text/javascript" src="vendors/flot/excanvas.min.js"></script><![endif]-->
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-    <script src="Admin/vendors/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+    <script src="admin/vendors/modernizr-2.6.2-respond-1.1.0.min.js"></script>
     <script src='https://kit.fontawesome.com/a076d05399.js'></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.22/pdfmake.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
@@ -71,6 +63,7 @@
                                 <tr>
                                     <th>Mã đơn hàng</th>
                                     <th>Tên khách hàng</th>
+                                    <th>Tổng đơn hàng</th>
                                     <th>Ngày đặt</th>
                                     <th>Trạng thái</th>
                                     <th></th>
@@ -79,19 +72,21 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <c:forEach items="${listOrders}" var="order">
-                                    <tr id="${order.orderID}">
-                                        <td>${order.orderID}</td>
-                                        <td>${order.fullName}</td>
-                                        <td>${order.createDate}</td>
-                                        <td id="orderstatus"><c:if test="${order.status eq '1'}">Đã xử lý</c:if>
-                                            <c:if test="${order.status eq '0'}">Chưa xử lý</c:if></td>
-                                        <td id="rowupdate"><c:if test="${order.status eq '1'}"></c:if>
-                                            <c:if test="${order.status eq '0'}"><a id="linkupdate" href="${order.orderID}" onclick="return false;">
+                                <%--@elvariable id="listO" type="java.util.List"--%>
+                                <c:forEach items="${listO}" var="o">
+                                    <tr id="${o.orderID}">
+                                        <td>${o.orderID}</td>
+                                        <td>${o.fullName}</td>
+                                        <td><fmt:formatNumber type="currency" currencySymbol="" minFractionDigits="0" value="${o.totalPrice}"/> VNĐ</td>
+                                        <td>${o.createDate}</td>
+                                        <td id="orderstatus"><c:if test="${o.status ==1}">Đã xử lý</c:if>
+                                            <c:if test="${o.status ==0}">Chưa xử lý</c:if></td>
+                                        <td id="rowupdate"><c:if test="${o.status ==1}"></c:if>
+                                            <c:if test="${o.status ==0}"><a id="linkupdate" href="UpdateOrder?action=update&id=${o.orderID}">
                                                 <span class="fas fa-shipping-fast"></span> Xử lý</a></c:if></td>
-                                        <td><a href="ListOrderDetailAd?id=${order.orderID}&fullName=${order.fullName}&address=${order.address}&phone=${order.phone}&createDate=${order.createDate}&tax=${order.tax}&ship=${order.ship}&total=${order.totalPrice}">
+                                        <td><a href="ListOrderDetailAd?id=${o.orderID}&fullName=${o.fullName}&address=${o.address}&phone=${o.phone}&createDate=${o.createDate}&total=${o.totalPrice}">
                                             <span class="fas fa-address-book"></span> Xem chi tiết</a></td>
-                                        <td><a class="text-danger" href="${order.orderID}" onclick="return false;"><span class="far fa-window-close"></span> Xóa</a></td>
+                                        <td><a class="text-danger" href="UpdateOrder?action=delete&id=${o.orderID}" ><span class="far fa-window-close"></span> Xóa</a></td>
                                     </tr>
                                 </c:forEach>
                                 </tbody>
@@ -136,13 +131,13 @@
 </div>
 <!--/.fluid-container-->
 
-<script src="Admin/vendors/jquery-1.9.1.js"></script>
-<script src="Admin/bootstrap/js/bootstrap.min.js"></script>
-<script src="Admin/vendors/datatables/js/jquery.dataTables.min.js"></script>
+<script src="admin/vendors/jquery-1.9.1.js"></script>
+<script src="admin/bootstrap/js/bootstrap.min.js"></script>
+<script src="admin/vendors/datatables/js/jquery.dataTables.min.js"></script>
 
 
-<script src="Admin/assets/scripts.js"></script>
-<script src="Admin/assets/DT_bootstrap.js"></script>
+<script src="admin/assets/scripts.js"></script>
+<script src="admin/assets/DT_bootstrap.js"></script>
 <script>
     // $(document).ready( function () {
     //     $('#example2').DataTable();
