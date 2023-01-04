@@ -1,7 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-<c:set var="productType" value='<%=request.getParameter("type")%>'/>
 <!doctype html>
 <html class="no-js" lang="zxx">
 
@@ -156,9 +155,8 @@
                             <div id="grid-view" class="tab-pane fade show active">
                                 <div class="row">
                                     <!-- Single Product Start -->
-                                    <jsp:useBean id="listP" scope="request" type="java.util.List"/>
+                                    <%--@elvariable id="listP" type="java.util.List"--%>
                                     <c:forEach items="${listP}" var="p">
-                                        <input id="productype" name="productype" value="${p.type}" type="hidden">
                                     <div class="col-lg-4 col-md-4 col-sm-6 col-6">
                                         <div class="single-product">
                                             <!-- Product Image Start -->
@@ -171,9 +169,7 @@
                                                          src="${p.image2}"
                                                          alt="single-product">
                                                 </a>
-                                                <a href="#" class="quick_view" data-toggle="modal"
-                                                   data-target="#myModal" title="Xem nhanh"><i
-                                                        class="lnr lnr-magnifier"></i></a>
+
                                             </div>
                                             <!-- Product Image End -->
                                             <!-- Product Content Start -->
@@ -205,7 +201,6 @@
                                             </div>
 
                                         </div>
-                                        <c:set var="productType" value="${p.type}"/>
                                     </c:forEach>
                                     <!-- Single Product End -->
                                     <!-- Single Product Start -->
@@ -218,40 +213,37 @@
                             <!-- #grid view End -->
 
                             <!-- #list view End -->
-<<<<<<< HEAD
-                            <div class="pro-pagination">
-                                <ul class="blog-pagination">
-                                    <c:forEach begin="0" end="${limit}" var="i">
-                                    <li class="active"><a href="ProductLists?start">1</a></li>
+<%--                            <div class="pro-pagination">--%>
+<%--                                <ul class="blog-pagination">--%>
+<%--                                    <c:forEach begin="0" end="${limit}" var="i">--%>
+<%--                                    <li class="active"><a href="ProductLists?start">1</a></li>--%>
 
-                                    <li><a href="#"><i class="fa fa-angle-right"></i></a></li>
-                                    </c:forEach>
-                                </ul>
-
-=======
-                            <div class="toolbar" >
-                                <div class="pagination">
-                                    <c:if test="${currentPage != 1}">
-                                        <a href="/Web_GachMen/pageNumber?action=productype&type=${productType}&page=${currentPage - 1}">«</a>
-                                    </c:if>
-                                    <c:forEach begin="1" end="6" var="i">
-                                        <c:choose>
-                                            <c:when test="${currentPage eq i}">
-                                                <a>${i}</a>
-                                            </c:when>
-                                            <c:otherwise>
-                                                <a href="/Web_GachMen/pageNumber?action=productype&type=${productType}&page=${i}">${i}</a>
-                                            </c:otherwise>
-                                        </c:choose>
-                                    </c:forEach>
-                                    <c:if test="${currentPage != 6}">
-                                        <a href="/Web_GachMen/pageNumber?action=productype&type=${productType}&page=${currentPage + 1}">»</a>
-                                    </c:if>
-                                </div>
->>>>>>> be0dc285e423d5e403f262240fed5ac06600078c
-                            </div>
-                            <!-- Product Pagination Info -->
-                        </div>
+<%--                                    <li><a href="#"><i class="fa fa-angle-right"></i></a></li>--%>
+<%--                                    </c:forEach>--%>
+<%--                                </ul>--%>
+<%--                            <div class="toolbar" >--%>
+<%--                                <div class="pagination">--%>
+<%--                                    <c:if test="${currentPage != 1}">--%>
+<%--                                        <a href="/Web_GachMen/pageNumber?action=productype&type=${productType}&page=${currentPage - 1}">«</a>--%>
+<%--                                    </c:if>--%>
+<%--                                    <c:forEach begin="1" end="6" var="i">--%>
+<%--                                        <c:choose>--%>
+<%--                                            <c:when test="${currentPage eq i}">--%>
+<%--                                                <a>${i}</a>--%>
+<%--                                            </c:when>--%>
+<%--                                            <c:otherwise>--%>
+<%--                                                <a href="/Web_GachMen/pageNumber?action=productype&type=${productType}&page=${i}">${i}</a>--%>
+<%--                                            </c:otherwise>--%>
+<%--                                        </c:choose>--%>
+<%--                                    </c:forEach>--%>
+<%--                                    <c:if test="${currentPage != 6}">--%>
+<%--                                        <a href="/Web_GachMen/pageNumber?action=productype&type=${productType}&page=${currentPage + 1}">»</a>--%>
+<%--                                    </c:if>--%>
+<%--                                </div>--%>
+<%-->>>>>>> be0dc285e423d5e403f262240fed5ac06600078c--%>
+<%--                            </div>--%>
+<%--                            <!-- Product Pagination Info -->--%>
+<%--                        </div>--%>
                         <!-- Grid & List Main Area End -->
                     </div>
                 </div>
@@ -265,118 +257,6 @@
     <!-- Support Area Start Here -->
     <jsp:include page="footer.jsp"/>
     <!-- Xem nhanh Content Start -->
-    <div class="main-product-thumbnail quick-thumb-content">
-        <div class="container">
-            <!-- The Modal -->
-            <div class="modal fade" id="myModal">
-                <div class="modal-dialog modal-lg modal-dialog-centered">
-                    <div class="modal-content">
-                        <!-- Modal Header -->
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        </div>
-                        <!-- Modal body -->
-                        <div class="modal-body">
-                            <div class="row">
-                                <!-- Main Thumbnail Image Start -->
-                                <div class="col-lg-5 col-md-6 col-sm-5">
-                                    <!-- Thumbnail Large Image start -->
-                                    <div class="tab-content">
-                                        <div id="thumb-1" class="tab-pane fade show active">
-                                            <a data-fancybox="images" href="img/products/bh-158224.jpg"><img
-                                                    src="img/products/bh-158224.jpg" alt="product-view"></a>
-                                        </div>
-                                        <div id="thumb-2" class="tab-pane fade">
-                                            <a data-fancybox="images" href="img/products/go bh-58224-gach-go.jpg"><img
-                                                    src="img/products/go bh-58224-gach-go.jpg" alt="product-view"></a>
-                                        </div>
-                                        <div id="thumb-3" class="tab-pane fade">
-                                            <a data-fancybox="images" href="img\products/BH-158224-3.jpg"><img
-                                                    src="img\products/BH-158224-3.jpg" alt="product-view"></a>
-                                        </div>
-
-                                    </div>
-                                    <!-- Thumbnail Large Image End -->
-                                    <!-- Thumbnail Image End -->
-                                    <div class="product-thumbnail mt-20">
-                                        <div class="thumb-menu owl-carousel nav tabs-area" role="tablist">
-                                            <a class="active" data-toggle="tab" href="#thumb-1"><img
-                                                    src="img/products/bh-158224.jpg" alt="product-thumbnail"></a>
-                                            <a data-toggle="tab" href="#thumb-2"><img
-                                                    src="img/products/go bh-58224-gach-go.jpg" alt="product-thumbnail"></a>
-                                            <a data-toggle="tab" href="#thumb-3"><img src="img\products/BH-158224-3.jpg"
-                                                                                      alt="product-thumbnail"></a>
-                                        </div>
-                                    </div>
-                                    <!-- Thumbnail image end -->
-                                </div>
-                                <!-- Main Thumbnail Image End -->
-                                <!-- Thumbnail Description Start -->
-                                <div class="col-lg-7 col-md-6 col-sm-7">
-                                    <div class="thubnail-desc fix mt-sm-40">
-                                        <h3 class="product-header">Gạch vân gỗ </h3>
-                                        <div class="pro-price mtb-30">
-                                            <p class="d-flex align-items-center"><span class="price">385,000đ</span></p>
-                                        </div>
-                                        <p class="mb-20 pro-desc-details">Mẫu gạch vân gỗ BH-158224
-                                            <br> Kích thước: 150x800mm
-                                            <br> Bề mặt: Nhám
-                                            <br> Kiểu vân: Vân gỗ
-                                            <br> Ứng dụng: Lát nền phòng ngủ, phòng khách, bếp,…
-                                        </p>
-                                        <div class="product-size mb-20 clearfix">
-                                            <label>Kích thước</label>
-                                            <select class="">
-                                                <option>150x900</option>
-                                                <option>150x800</option>
-                                            </select>
-                                        </div>
-                                        <!-- <div class="color mb-20">
-                                                <label>color</label>
-                                                <ul class="color-list">
-                                                    <li>
-                                                        <a class="orange active" href="#"></a>
-                                                    </li>
-                                                    <li>
-                                                        <a class="paste" href="#"></a>
-                                                    </li>
-                                                </ul>
-                                            </div> -->
-                                        <div class="box-quantity d-flex">
-                                            <form action="#">
-                                                <input class="quantity mr-40" type="number" min="1" value="1">
-                                            </form>
-                                            <a class="add-cart" href="cart.html">Thêm vào giỏ</a>
-                                            <a class="add-cart checkout" href="checkout.html"
-                                               style="margin-left: 20px;">Mua ngay</a>
-
-
-                                        </div>
-                                        <div class="pro-ref mt-15">
-                                            <p><span class="in-stock"><i
-                                                    class="ion-checkmark-round"></i> Còn hàng</span></p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Thumbnail Description End -->
-                            </div>
-                        </div>
-                        <!-- Modal footer -->
-                        <div class="custom-footer">
-                            <div class="socila-sharing">
-                                <ul class="d-flex">
-                                    <li>Chia sẻ</li>
-                                    <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-google-plus-official" aria-hidden="true"></i></a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
     <!-- Xem nhanh Content End -->
 </div>
 <!-- Main Wrapper End Here -->

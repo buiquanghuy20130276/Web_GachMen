@@ -4,17 +4,18 @@ import java.io.Serializable;
 
 public class Contact implements Serializable {
     private String contactID;
-    private String userID;
     private String username;
     private String email;
     private String userSubject;
     private String contactContent;
     private String createDate;
-    private String status;
+    private int status;
 
-    public Contact(String contactID, String userID, String username, String email, String userSubject, String contactContent, String createDate, String status) {
+    public Contact() {
+    }
+
+    public Contact(String contactID, String username, String email, String userSubject, String contactContent, String createDate, int status) {
         this.contactID = contactID;
-        this.userID = userID;
         this.username = username;
         this.email = email;
         this.userSubject = userSubject;
@@ -23,24 +24,12 @@ public class Contact implements Serializable {
         this.status = status;
     }
 
-    public Contact() {
-
-    }
-
     public String getContactID() {
         return contactID;
     }
 
     public void setContactID(String contactID) {
         this.contactID = contactID;
-    }
-
-    public String getUserID() {
-        return userID;
-    }
-
-    public void setUserID(String userID) {
-        this.userID = userID;
     }
 
     public String getUsername() {
@@ -83,13 +72,11 @@ public class Contact implements Serializable {
         this.createDate = createDate;
     }
 
-
-    public String getStatus() {
+    public int getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(int status) {
         this.status = status;
     }
-
 }

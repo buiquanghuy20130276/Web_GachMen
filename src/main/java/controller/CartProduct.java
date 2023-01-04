@@ -8,10 +8,9 @@ import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
 import java.util.Collection;
-import java.util.List;
 
-@WebServlet(name = "Show", value = "/Cart")
-public class Show extends HttpServlet {
+@WebServlet(name = "CartProduct", value = "/Cart")
+public class CartProduct extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         Cart c = (Cart) request.getSession().getAttribute("cart");

@@ -1,6 +1,7 @@
 package controller;
 
 
+import bean.Contact;
 import bean.User;
 import service.ContactService;
 
@@ -13,9 +14,9 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.Random;
 
-@WebServlet(name = "Contact", urlPatterns = "/contact")
+@WebServlet(name = "AddContact", urlPatterns = "/contact")
 
-public class Contact extends HttpServlet {
+public class AddContact extends HttpServlet {
     private bean.Contact contact;
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -28,13 +29,9 @@ public class Contact extends HttpServlet {
         String email = request.getParameter("email");
         String subject = request.getParameter("subject");
         String message = request.getParameter("message");
-        HttpSession session = request.getSession();
-        User user = (User) session.getAttribute("idUser");
         Random rd = new Random();
-        bean.Contact contact = new bean.Contact();
-
-        contact.setContactID(String.valueOf(rd.nextInt(1000000)));
-        contact.setUserID(String.valueOf(rd.nextInt(1000000)));
+        Contact contact = new Contact();
+        contact.setContactID(String.valueOf(rd.nextInt(100000000)+rd.nextInt(1000000)));
         contact.setUsername(name);
         contact.setEmail(email);
         contact.setUserSubject(subject);

@@ -1,38 +1,26 @@
 package bean;
 
-public class Reviews {
-    private String idUser;
+import java.io.Serializable;
 
-    private String userName;
+public class Reviews implements Serializable {
+    private String idUser;
     private String content;
     private String postDate;
 
-    public Reviews(String idUser, String userName, String content, String postDate) {
+    public Reviews(String idUser,  String content, String postDate) {
         this.idUser = idUser;
-        this.userName = userName;
         this.content = content;
         this.postDate = postDate;
     }
 
-    public Reviews() {
-
-    }
-
-    public String getId_User() {
+    public String getIdUser() {
         return idUser;
     }
 
-    public void setId_User(String idUser) {
+    public void setIdUser(String idUser) {
         this.idUser = idUser;
     }
 
-    public String getUserName() {
-        return userName;
-    }
-
-    public void setUserName(String userName) {
-        this.userName = userName;
-    }
 
     public String getContent() {
         return content;
@@ -48,15 +36,5 @@ public class Reviews {
 
     public void setPostDate(String postDate) {
         this.postDate = postDate;
-    }
-
-    @Override
-    public String toString() {
-        return "Reviews{" +
-                "idUser='" + idUser + '\'' +
-                ", userName='" + userName + '\'' +
-                ", content='" + content + '\'' +
-                ", postDate='" + postDate + '\'' +
-                '}';
     }
 }

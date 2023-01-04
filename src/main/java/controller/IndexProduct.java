@@ -1,7 +1,7 @@
 package controller;
 
 import bean.Product;
-import service.ListProducts;
+import service.ProductService;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -16,9 +16,9 @@ public class IndexProduct extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 //        List<Product> list = ListProducts.getAllProduct();
-        List<Product>listNewProduct=ListProducts.listNewProduct();
-        List<Product>listBestSeller=ListProducts.listBestSeller();
-        List<Product>listHintForYou=ListProducts.listHintForYou();
+        List<Product>listNewProduct= ProductService.listNewProduct();
+        List<Product>listBestSeller=ProductService.listBestSeller();
+        List<Product>listHintForYou=ProductService.listHintForYou();
         request.setAttribute("homeProduct",listNewProduct);
         request.setAttribute("homeProduct1",listBestSeller);
         request.setAttribute("homeProduct2",listHintForYou);

@@ -14,7 +14,7 @@ public class Logout extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession(false);
         session.invalidate();
-        response.sendRedirect("http://localhost:8080/GachMen_Store_war/indexHome");
+        response.sendRedirect("/Home");
     }
 
     @Override

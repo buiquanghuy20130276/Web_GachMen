@@ -11,7 +11,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class ContactService {
-    public List<Contact> getAll() {
+    public static List<Contact> getAll() {
         PreparedStatement s = null;
         try {
             String sql = "select  * from contact";
@@ -26,8 +26,7 @@ public class ContactService {
                         rs.getString(4),
                         rs.getString(5),
                         rs.getString(6),
-                        rs.getString(7),
-                        rs.getString(8)
+                        rs.getInt(7)
                 ));
             }
             rs.close();
@@ -38,12 +37,13 @@ public class ContactService {
             return new LinkedList<>();
         }
     }
-    public Contact get(int id) {
+    public static Contact getContactById(String id) {
         PreparedStatement s = null;
         try {
             Contact contact=null;
-            String sql = "select  * from contact";
+            String sql = "select  * from contact where id =?";
             s = ConnectDB.connect(sql);
+            s.setString(1,id);
             ResultSet rs = s.executeQuery();
             while (rs.next()) {
                 contact= new Contact(
@@ -53,8 +53,7 @@ public class ContactService {
                         rs.getString(4),
                         rs.getString(5),
                         rs.getString(6),
-                        rs.getString(7),
-                        rs.getString(8)
+                        rs.getInt(7)
                 );
             }
             rs.close();
@@ -65,32 +64,32 @@ public class ContactService {
             return null;
         }
     }
-    public void updateStatus(int id){
+    public static void updateStatus(String id){
         PreparedStatement s = null;
         try {
             String sql="update contact set status = ? where id =?";
             s = ConnectDB.connect(sql);
-            s.setString(1,"Đã xử lý");
-            s.setInt(2,id);
+            s.setInt(1,1);
+            s.setString(2,id);
             int rs = s.executeUpdate();
             s.close();
         } catch (ClassNotFoundException | SQLException e) {
             e.printStackTrace();
         }
     }
-    public void deleteContact(int id){
+    public static void deleteContact(String id){
         PreparedStatement s = null;
         try {
             String sql="DELETE  from contact where id =?";
             s = ConnectDB.connect(sql);
-            s.setInt(1,id);
+            s.setString(1,id);
             int rs = s.executeUpdate();
             s.close();
         } catch (ClassNotFoundException | SQLException e) {
             e.printStackTrace();
         }
     }
-    public int countContact() {
+    public static int countContact() {
         PreparedStatement pre = null;
         int count=0;
         try {
@@ -108,16 +107,15 @@ public class ContactService {
     public static void insertContact(Contact contact){
         PreparedStatement ps = null;
         try{
-            String sql = "insert into contact (id, id_user, username,email,subject,content,create_date, status) values(?, ?, ?, ?, ?, ?, ?, ?)";
+            String sql = "insert into contact (id, username,email,subject,content,create_date, status) values(?, ?, ?, ?, ?, ?, ?)";
             ps = ConnectDB.connect(sql);
             ps.setString(1, contact.getContactID());
-            ps.setString(2, contact.getUserID());
-            ps.setString(3, contact.getUsername());
-            ps.setString(4, contact.getEmail());
-            ps.setString(5, contact.getUserSubject());
-            ps.setString(6, contact.getContactContent());
-            ps.setDate(7, Date.valueOf(java.time.LocalDate.now()));
-            ps.setString(8, "Chưa xử lý");
+            ps.setString(2, contact.getUsername());
+            ps.setString(3, contact.getEmail());
+            ps.setString(4, contact.getUserSubject());
+            ps.setString(5, contact.getContactContent());
+            ps.setDate(6, Date.valueOf(java.time.LocalDate.now()));
+            ps.setInt(7, 0);
             ps.executeUpdate();
             ps.close();
         }
@@ -129,6 +127,10 @@ public class ContactService {
     }
 
     public static void main(String[] args) {
-//        insertContact(new Contact("3", "trung2", "trung1@gmail.com", "SSSs", "Cccsc", "date", "Status"));
+//        insertContact(new Contact("3", "trung2", "trung1@gmail.com", "SSSs", "Cccsc", "date", 1));
+//        System.out.println(getAll().toString());
+//        System.out.println(getContactById("46464"));
+        deleteContact("3");
+
     }
 }

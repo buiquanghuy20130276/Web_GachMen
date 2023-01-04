@@ -18,16 +18,16 @@
     <title>Chi tiết đơn hàng</title>
     <!-- Bootstrap -->
     <meta charset="utf-8">
-    <link href="${pageContext.request.contextPath}Admin/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
-    <link href="Admin/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" media="screen">
-    <link href="Admin/assets/styles.css" rel="stylesheet" media="screen">
-    <link href="Admin/assets/DT_bootstrap.css" rel="stylesheet" media="screen">
+    <link href="${pageContext.request.contextPath}admin/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="admin/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" media="screen">
+    <link href="admin/assets/styles.css" rel="stylesheet" media="screen">
+    <link href="admin/assets/DT_bootstrap.css" rel="stylesheet" media="screen">
     <!--[if lte IE 8]><script language="javascript" type="text/javascript" src="vendors/flot/excanvas.min.js"></script><![endif]-->
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-    <script src="Admin/vendors/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+    <script src="admin/vendors/modernizr-2.6.2-respond-1.1.0.min.js"></script>
     <script src='https://kit.fontawesome.com/a076d05399.js'></script>
     <style>
 
@@ -128,13 +128,13 @@
 </div>
 <!--/.fluid-container-->
 
-<script src="Admin/vendors/jquery-1.9.1.js"></script>
-<script src="Admin/bootstrap/js/bootstrap.min.js"></script>
-<script src="Admin/vendors/datatables/js/jquery.dataTables.min.js"></script>
+<script src="admin/vendors/jquery-1.9.1.js"></script>
+<script src="admin/bootstrap/js/bootstrap.min.js"></script>
+<script src="admin/vendors/datatables/js/jquery.dataTables.min.js"></script>
 
 
-<script src="Admin/assets/scripts.js"></script>
-<script src="Admin/assets/DT_bootstrap.js"></script>
+<script src="admin/assets/scripts.js"></script>
+<script src="admin/assets/DT_bootstrap.js"></script>
 <script>
     // $(document).ready( function () {
     //     $('#example2').DataTable();

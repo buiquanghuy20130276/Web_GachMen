@@ -16,7 +16,6 @@ public class Login extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.getRequestDispatcher("login.jsp").forward(request,response);
         response.setContentType("text/html; charset=UTF-8");
         HttpSession session = request.getSession();
         String username = request.getParameter("username");
@@ -25,7 +24,7 @@ public class Login extends HttpServlet {
 
         if (msg.equals("Success")) {
             session.setAttribute("username", username);
-            request.getRequestDispatcher("index.jsp").forward(request, response);
+            request.getRequestDispatcher("Home").forward(request, response);
         } else {
             session.setAttribute("errmsg", msg);
             response.sendRedirect("login.jsp");

@@ -1,23 +1,17 @@
-<%@ page import="beans.User" %>
+<%@ page import="bean.User" %>
 <%@ page import="java.util.Collection" %>
-<%@ page import="model.UserSession" %><%--
-  Created by IntelliJ IDEA.
-  User: NgocTan
-  Date: 21/12/2020
-  Time: 10:36 SA
-  To change this template use File | Settings | File Templates.
---%>
+<%@ page import="model.UserSession" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
-<%
-    UserSession u = UserSession.getUS(session);
-    Collection<User> user = u.getUser();
-    String username = u.getUserName();
-    System.out.println(username);
-    if (username.equalsIgnoreCase("") || !user.iterator().next().accept("admin.index"))
-        response.sendRedirect("http://localhost:8080/project_BookStore/Home");
-%>
+<%--<%--%>
+<%--    UserSession u = UserSession.getUS(session);--%>
+<%--    Collection<User> user = u.getUser();--%>
+<%--    String username = u.getUserName();--%>
+<%--    System.out.println(username);--%>
+<%--    if (username.equalsIgnoreCase("") || !user.iterator().next().accept("admin.index"))--%>
+<%--        response.sendRedirect("http://localhost:8080/project_BookStore/Home");--%>
+<%--%>--%>
 <!DOCTYPE html>
 <html>
 
@@ -25,17 +19,17 @@
     <title>Quản lý liên hệ</title>
     <!-- Bootstrap -->
     <meta charset="utf-8">
-    <link href="Admin/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
-    <link href="Admin/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" media="screen">
-    <link href="Admin/assets/styles.css" rel="stylesheet" media="screen">
-    <link href="Admin/assets/DT_bootstrap.css" rel="stylesheet" media="screen">
+    <link href="admin/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="admin/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" media="screen">
+    <link href="admin/assets/styles.css" rel="stylesheet" media="screen">
+    <link href="admin/assets/DT_bootstrap.css" rel="stylesheet" media="screen">
     <!--[if lte IE 8]>
     <script language="javascript" type="text/javascript" src="vendors/flot/excanvas.min.js"></script><![endif]-->
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-    <script src="Admin/vendors/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+    <script src="admin/vendors/modernizr-2.6.2-respond-1.1.0.min.js"></script>
     <script src='https://kit.fontawesome.com/a076d05399.js'></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.22/pdfmake.min.js"></script>
     <script type="text/javascript"
@@ -90,44 +84,27 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <c:forEach items="${listContacts}" var="contact">
+                                <%--@elvariable id="listC" type="java.util.List"--%>
+                                <c:forEach items="${listC}" var="contact">
                                     <tr id="${contact.contactID}">
                                         <td class="align-middle">${contact.email}</td>
                                         <td class="align-middle">${contact.createDate}</td>
                                         <td class="align-middle">${contact.userSubject}</td>
-                                        <td class="align-middle">${contact.status}</td>
+                                        <td class="align-middle">${contact.status==1?'đã xử lí':'chưa xử lí'}</td>
                                         <td class="align-middle">
-                                            <c:if test="${contact.status eq 'Chưa xử lý'}">
+                                            <c:if test="${contact.status ==0}">
                                                 <a id="linkupdate"
                                                 href="ReplyContact?action=getcontact&id=${contact.contactID}">
                                                 <span class="fas fa-reply"></span> Xử lý</a>
                                             </c:if>
                                         </td>
-                                        <td class="align-middle"><a class="text-danger" href="${contact.contactID}"
-                                                                    onclick="return false;"><span
+                                        <td class="align-middle"><a class="text-danger" href="ReplyContact?action=delete&id=${contact.contactID}"><span
                                                 class="far fa-window-close" aria-hidden="true"></span> Xóa</a></td>
                                     </tr>
                                 </c:forEach>
                                 </tbody>
                             </table>
-                            <div id="id01" class="modal">
-                                <!-- Modal Content -->
-                                <form class="modal-content animate">
-                    <span onclick="document.getElementById('id01').style.display='none'"
-                          class="close" title="Close Modal">&times;</span>
-                                    <div class="header-modal"><h3>Bạn có chắc là muốn xóa liên hệ này</h3></div>
-                                    <%--                                    <input id="delete" name="action" style="display: none" value="delete">--%>
-                                    <input id="deleteval" name="id" style="display: none">
-                                    <div class="button-group">
-                                        <button id="btnDelete" class="btn-yes" type="button"
-                                                onclick="document.getElementById('id01').style.display='none'">Có
-                                        </button>
-                                        <button class="btn-no" type="button"
-                                                onclick="document.getElementById('id01').style.display='none'">Không
-                                        </button>
-                                    </div>
-                                </form>
-                            </div>
+
 
                         </div>
                     </div>
@@ -141,13 +118,13 @@
 </div>
 <!--/.fluid-container-->
 
-<script src="Admin/vendors/jquery-1.9.1.js"></script>
-<script src="Admin/bootstrap/js/bootstrap.min.js"></script>
-<script src="Admin/vendors/datatables/js/jquery.dataTables.min.js"></script>
+<script src="admin/vendors/jquery-1.9.1.js"></script>
+<script src="admin/bootstrap/js/bootstrap.min.js"></script>
+<script src="admin/vendors/datatables/js/jquery.dataTables.min.js"></script>
 
 
-<script src="Admin/assets/scripts.js"></script>
-<script src="Admin/assets/DT_bootstrap.js"></script>
+<script src="admin/assets/scripts.js"></script>
+<script src="admin/assets/DT_bootstrap.js"></script>
 <script
         src="https://code.jquery.com/jquery-3.5.1.min.js"
         integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
@@ -157,54 +134,9 @@
     //     $('#example2').DataTable();
     // } );
 </script>
-<script>
-    // Get the modal
-    var modal = document.getElementById('id01');
 
-    // When the user clicks anywhere outside of the modal, close it
-    window.onclick = function (event) {
-        if (event.target == modal) {
-            modal.style.display = "none";
-        }
-    }
-    // // Get the modal
-    // var modal2 = document.getElementById('id02');
-    //
-    // // When the user clicks anywhere outside of the modal, close it
-    // window.onclick = function(event) {
-    //     if (event.target == modal2) {
-    //         modal2.style.display = "none";
-    //     }
-    // }
-</script>
-<script>
-    $(document).ready(function () {
-        $(".text-danger").click(function () {
-            var href = $(this).attr("href")
-            $("#deleteval").attr("value", href)
-            document.getElementById('id01').style.display = 'block'
-        });
-        // $(".text-lock").click(function (){
-        //     document.getElementById('id02').style.display='block'
-        // });
-    })
-</script>
-<script>
-    $(document).ready(function () {
-        $("#btnDelete").click(function () {
-            var id = $("#deleteval").attr("value");
-            $.ajax({
-                type: "GET",
-                data: {
-                    action: "delete",
-                    id: id
-                },
-                url: "/project_BookStore/ListContactAd"
-            })
-            $("#" + id).remove();
-        });
-    })
-</script>
+
+
 <script type="text/javascript">
     $("body").on("click", "#exportPDF", function () {
         html2canvas($('#example2')[0], {
