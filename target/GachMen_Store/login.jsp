@@ -83,7 +83,7 @@
                         <div class="return-customer">
                             <h3 class="mb-10 custom-title">ĐĂNG NHẬP</h3>
                             <br>
-                            <form action="login" method="post">
+                            <form action="Login" method="post">
                                 <div class="form-group">
                                     <label>Tài khoản</label>
                                     <input type="text" value="<%=request.getParameter("username")==null ? "":request.getParameter("username")%>" name="username" placeholder="Nhập username..." id="input-email" class="form-control">

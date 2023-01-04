@@ -69,40 +69,35 @@
     <div class="contact-area ptb-100 ptb-sm-60">
         <div class="container">
             <h3 class="mb-20">Liên hệ chúng tôi</h3>
-            <p class="text-capitalize mb-20">Khách hàng là trên hết, vì thế chúng tôi luôn quang tâm đến nhu cầu của các
+            <p class="text-capitalize mb-20">Khách hàng là trên hết, vì thế chúng tôi luôn quan tâm đến nhu cầu của các
                 bạn!</p>
-            <form id="contact-form" class="contact-form" action="mail.php" method="post">
+            <form class="contact-form" id="contact-form-data" action="contact" method="get">
                 <div class="address-wrapper row">
                     <div class="col-md-12">
                         <div class="address-fname">
-                            <input class="form-control" type="text" name="name" placeholder="Tên">
+                            <input class="form-control" type="text" name="name" placeholder="Họ và tên">
                         </div>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-12">
                         <div class="address-email">
                             <input class="form-control" type="email" name="email" placeholder="Email">
                         </div>
                     </div>
-                    <div class="col-md-6">
-                        <div class="address-web">
-                            <input class="form-control" type="text" name="website" placeholder="Trang mạng">
-                        </div>
-                    </div>
                     <div class="col-md-12">
                         <div class="address-subject">
-                            <input class="form-control" type="text" name="subject" placeholder="Đối tượng">
+                            <input class="form-control" type="text" name="subject" placeholder="Vấn đề">
                         </div>
                     </div>
                     <div class="col-md-12">
                         <div class="address-textarea">
-                            <textarea name="message" class="form-control" placeholder="Ghi chú của bạn..."></textarea>
+                            <textarea name="message" class="form-control" placeholder="Lời nhắn"></textarea>
                         </div>
                     </div>
                 </div>
                 <p class="form-message">
                 <div class="footer-content mail-content clearfix">
                     <div class="send-email float-md-right">
-                        <input value="Gửi" class="return-customer-btn" type="submit">
+                        <button class="return-customer-btn" type="submit" onclick="contact()">Gửi</button>
                     </div>
                 </div>
             </form>
@@ -110,7 +105,7 @@
     </div>
     <!-- Contact Email Area End -->
     <!-- Google Map Start -->
-    <div class="goole-map">
+    <div class="google-map">
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8847.173138809838!2d106.78689936909952!3d10.867094150600991!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317527672dd1e735%3A0x7b2cc3b5d9b9676d!2zQ-G7lW5nIGNow6BvIMSQ4bqhaSBo4buNYyBOw7RuZyBMw6JtIFRwLiBI4buTIENow60gTWluaA!5e0!3m2!1svi!2s!4v1666753201131!5m2!1svi!2s"
                 width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
                 referrerpolicy="no-referrer-when-downgrade"></iframe>
@@ -125,7 +120,6 @@
     <!-- Quick View Content End -->
 </div>
 <!-- Main Wrapper End Here -->
-
 <!-- jquery 3.2.1 -->
 <script src="js\vendor\jquery-3.2.1.min.js"></script>
 <!-- ajax mail -->
@@ -254,6 +248,18 @@
 </script>
 <!-- Main activaion js -->
 <script src="js\main.js"></script>
-</body>
+<script>
 
+    function contact(){
+        var me = $('#message').val();
+        if(me === ''){
+
+        }
+        else {
+            alert("Gửi tin nhắn thành công");
+        }
+    }
+
+</script>
+</body>
 </html>

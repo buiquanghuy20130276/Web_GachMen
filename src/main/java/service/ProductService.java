@@ -278,6 +278,73 @@ public class ProductService {
         }
         return false;
     }
+    public static List<Product> listBestSeller() {
+        List<Product> listBestSeller;
+        try {
+
+            PreparedStatement pState = null;
+            String sql = "SELECT * FROM products where status =? limit 20;";
+            pState = ConnectDB.connect(sql);
+            pState.setInt(1, 1);
+            ResultSet rs = pState.executeQuery();
+            listBestSeller = new LinkedList<>();
+            while (rs.next()) {
+                listBestSeller.add(new Product(rs.getString(1),
+                        rs.getString(2),
+                        rs.getString(3),
+                        rs.getString(4),
+                        rs.getString(5),
+                        rs.getInt(6),
+                        rs.getInt(7),
+                        rs.getString(8),
+                        rs.getString(9),
+                        rs.getInt(10),
+                        rs.getInt(11),
+                        rs.getInt(12),1));
+
+            }
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+        return listBestSeller;
+    }
+
+    public static List<Product> listHintForYou() {
+        List<Product> listHintForYou;
+        try {
+
+            PreparedStatement pState = null;
+            String sql = "SELECT * FROM products where status =? limit 10;";
+            pState = ConnectDB.connect(sql);
+            pState.setInt(1, 1);
+            ResultSet rs = pState.executeQuery();
+            listHintForYou = new LinkedList<>();
+            while (rs.next()) {
+                listHintForYou.add(new Product(rs.getString(1),
+                        rs.getString(2),
+                        rs.getString(3),
+                        rs.getString(4),
+                        rs.getString(5),
+                        rs.getInt(6),
+                        rs.getInt(7),
+                        rs.getString(8),
+                        rs.getString(9),
+                        rs.getInt(10),
+                        rs.getInt(11),
+                        rs.getInt(12),1));
+
+            }
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+        return listHintForYou;
+    }
     public static void updateProduct(String id,Product product){
         PreparedStatement s = null;
         try {
@@ -329,6 +396,41 @@ public class ProductService {
         }
     }
 
+    public List<Product> getProductPage(String type, int start, int quantity){
+        PreparedStatement ps = null;
+        try{
+            String sql = "select * from products where category = ? and status = '1' limit ? offset ?";
+            ps = ConnectDB.connect(sql);
+            ps.setString(1, type);
+            ps.setInt(2, quantity);
+            ps.setInt(3, start);
+            ResultSet rs = ps.executeQuery();
+            List<Product> re = new LinkedList<>();
+            while (rs.next()) {
+                re.add(new Product(rs.getString(1),
+                        rs.getString(2),
+                        rs.getString(3),
+                        rs.getString(4),
+                        rs.getString(5),
+                        rs.getInt(6),
+                        rs.getInt(7),
+                        rs.getString(8),
+                        rs.getString(9),
+                        rs.getInt(10),
+                        rs.getInt(11),
+                        rs.getInt(12),1));
+            }
+            rs.close();
+            ps.close();
+            return re;
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+            return new LinkedList<>();
+        } catch (ClassNotFoundException classNotFoundException) {
+            classNotFoundException.printStackTrace();
+            return new LinkedList<>();
+        }
+    }
     public static void main(String[] args) {
 //        ProductService list = new ProductService();
 ////        System.out.println(list.getAllProduct().toString());

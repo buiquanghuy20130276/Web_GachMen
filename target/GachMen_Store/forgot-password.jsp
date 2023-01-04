@@ -42,92 +42,95 @@
 </head>
 
 <body>
-    <!--[if lte IE 9]>
-        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
-    <![endif]-->
+<!--[if lte IE 9]>
+<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade
+    your browser</a> to improve your experience and security.</p>
+<![endif]-->
 
-    <!-- Main Wrapper Start Here -->
-    <div class="wrapper">
-        <jsp:include page="header.jsp"/>
-        <!-- Categorie Menu & Slider Area End Here -->
-        <!-- Breadcrumb Start -->
-        <div class="breadcrumb-area mt-30">
-            <div class="container">
-                <div class="breadcrumb">
-                    <ul class="d-flex align-items-center">
-                        <li><a href="index.jsp">Trang chủ</a></li>
-                        <li class="active"><a href="forgot-password.jsp">Quên mật khẩu</a></li>
-                    </ul>
-                </div>
+<!-- Main Wrapper Start Here -->
+<div class="wrapper">
+    <jsp:include page="header.jsp"/>
+    <!-- Categorie Menu & Slider Area End Here -->
+    <!-- Breadcrumb Start -->
+    <div class="breadcrumb-area mt-30">
+        <div class="container">
+            <div class="breadcrumb">
+                <ul class="d-flex align-items-center">
+                    <li><a href="index.jsp">Trang chủ</a></li>
+                    <li class="active"><a href="forgot-password.jsp">Quên mật khẩu</a></li>
+                </ul>
             </div>
-            <!-- Container End -->
         </div>
-        <!-- Breadcrumb End -->
-        <!-- Register Account Start -->
-        <div class="Lost-pass ptb-100 ptb-sm-60">
-            <div class="container">
-                <div class="register-title">
-                    <h3 class="mb-10 custom-title">Lấy lại mật khẩu</h3>
-                    <p class="mb-10">Nếu bạn quên mật khẩu, vui lòng nhập tài khoảng email.</p>
-                </div>
-                <form class="password-forgot clearfix" action="mail.php">
+        <!-- Container End -->
+    </div>
+    <!-- Breadcrumb End -->
+    <!-- Register Account Start -->
+    <div class="Lost-pass ptb-100 ptb-sm-60" >
+        <div class="container">
+            <div class="register-title">
+                <h3 class="mb-10 custom-title">Lấy lại mật khẩu</h3>
+                <p class="mb-10">Nếu bạn quên mật khẩu, vui lòng nhập tài khoản email.</p>
+            </div>
+                <form action="sendMail" method="post">
                     <fieldset>
                         <br>
-                        <div class="form-group d-md-flex">
-                            <label class="control-label col-md-2" for="email"><span class="require">*</span>Email</label>
+                        <div  class="form-group d-md-flex">
+                            <label class="control-label col-md-2" for="email"><span
+                                    class="require">*</span>Email</label>
                             <div class="col-md-10">
-                                <input type="email" class="form-control" id="email" placeholder="Nhập địa chỉ email...">
+                                <input type="email" class="form-control" name="email" id="email"
+                                       placeholder="Nhập địa chỉ email...">
                             </div>
                         </div>
                     </fieldset>
                     <div class="buttons newsletter-input">
                         <div class="float-left float-sm-left">
-                            <a class="customer-btn mr-20" href="login.html">Quay lại</a>
+                            <a class="customer-btn mr-20" href="login.jsp">Quay lại</a>
                         </div>
                         <div class="float-right float-sm-right">
                             <input type="submit" value="Tiếp tục" class="return-customer-btn">
                         </div>
                     </div>
-                </form>
-            </div>
-            <!-- Container End -->
+            </form>
         </div>
-        <!-- Register Account End -->
-        <!-- Support Area Start Here -->
-       <jsp:include page="footer.jsp"/>
-        <!-- Footer Area End Here -->
-        <!-- Quick View Content Start -->
-
-        <!-- Quick View Content End -->
+        <!-- Container End -->
     </div>
-    <!-- Main Wrapper End Here -->
+    <!-- Register Account End -->
+    <!-- Support Area Start Here -->
+    <jsp:include page="footer.jsp"/>
+    <!-- Footer Area End Here -->
+    <!-- Quick View Content Start -->
 
-    <!-- jquery 3.2.1 -->
-    <script src="js\vendor\jquery-3.2.1.min.js"></script>
-    <!-- Countdown js -->
-    <script src="js\jquery.countdown.min.js"></script>
-    <!-- Mobile menu js -->
-    <script src="js\jquery.meanmenu.min.js"></script>
-    <!-- ScrollUp js -->
-    <script src="js\jquery.scrollUp.js"></script>
-    <!-- Nivo slider js -->
-    <script src="js\jquery.nivo.slider.js"></script>
-    <!-- Fancybox js -->
-    <script src="js\jquery.fancybox.min.js"></script>
-    <!-- Jquery nice select js -->
-    <script src="js\jquery.nice-select.min.js"></script>
-    <!-- Jquery ui price slider js -->
-    <script src="js\jquery-ui.min.js"></script>
-    <!-- Owl carousel -->
-    <script src="js\owl.carousel.min.js"></script>
-    <!-- Bootstrap popper js -->
-    <script src="js\popper.min.js"></script>
-    <!-- Bootstrap js -->
-    <script src="js\bootstrap.min.js"></script>
-    <!-- Plugin js -->
-    <script src="js\plugins.js"></script>
-    <!-- Main activaion js -->
-    <script src="js\main.js"></script>
+    <!-- Quick View Content End -->
+</div>
+<!-- Main Wrapper End Here -->
+
+<!-- jquery 3.2.1 -->
+<script src="js\vendor\jquery-3.2.1.min.js"></script>
+<!-- Countdown js -->
+<script src="js\jquery.countdown.min.js"></script>
+<!-- Mobile menu js -->
+<script src="js\jquery.meanmenu.min.js"></script>
+<!-- ScrollUp js -->
+<script src="js\jquery.scrollUp.js"></script>
+<!-- Nivo slider js -->
+<script src="js\jquery.nivo.slider.js"></script>
+<!-- Fancybox js -->
+<script src="js\jquery.fancybox.min.js"></script>
+<!-- Jquery nice select js -->
+<script src="js\jquery.nice-select.min.js"></script>
+<!-- Jquery ui price slider js -->
+<script src="js\jquery-ui.min.js"></script>
+<!-- Owl carousel -->
+<script src="js\owl.carousel.min.js"></script>
+<!-- Bootstrap popper js -->
+<script src="js\popper.min.js"></script>
+<!-- Bootstrap js -->
+<script src="js\bootstrap.min.js"></script>
+<!-- Plugin js -->
+<script src="js\plugins.js"></script>
+<!-- Main activaion js -->
+<script src="js\main.js"></script>
 </body>
 
 </html>
