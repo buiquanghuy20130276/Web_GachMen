@@ -146,21 +146,19 @@
                 <div class="vertical-menu mb-all-30">
                     <nav>
                         <ul class="vertical-menu-list" style="display: none;">
-                            <li ><a href="product-list.jsp">Gạch lát nền</a>
-                            </li>
-                            <li><a href="product-list.jsp">Gạch ốp tường</a>
+                            <li><a href="category1">Gạch lát nền</a>
                                 <!-- Vertical Mega-Menu Start -->
 
                             </li>
 
-                            <li><a href="product-list.jsp">Gạch trang trí</a>
+                            <li><a href="category2">Gạch ốp tường</a>
 
                             </li>
-                            <li><a href="product-list.jsp">Gạch giả gỗ</i>
+                            <li><a href="category3">Gạch trang trí</i>
                             </a>
 
                             </li>
-                            <li><a href="product-list.jsp">Gạch Terrazzo</a>
+                            <li><a href="category4">Gạch giả gỗ</a>
 
                             </li>
                         </ul>
