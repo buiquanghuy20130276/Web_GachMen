@@ -58,8 +58,8 @@
             <div class="container">
                 <div class="breadcrumb">
                     <ul class="d-flex align-items-center">
-                        <li><a href="index.jsp">Trang chủ</a></li>
-                        <li><a href="product-list.jsp">Sản phẩm</a></li>
+                        <li><a href="indexHome">Trang chủ</a></li>
+                        <li><a href="ProductLists">Sản phẩm</a></li>
                         <li class="active"><a href="product-detail.jsp">Chi tiết sản phẩm</a></li>
                     </ul>
                 </div>
@@ -134,8 +134,7 @@
 
                                     <div class="pro-actions">
                                         <div class="actions-primary">
-                                            <c:url value="/addCart?productID=${product.productID}" var="addCart"/>
-                                            <a href="${addCart}" title="" data-original-title="Thêm vào giỏ"> + Thêm vào giỏ</a>
+                                            <a href="cart.jsp" title="" data-original-title="Thêm vào giỏ"> + Thêm vào giỏ</a>
                                         </div>
                                         <div class="actions-primary">
                                             <a href="checkout.jsp" title="" data-original-title="Mua ngay">Mua ngay</a>
@@ -189,32 +188,32 @@
                                 <table id="product-list">
                                     <tbody>
                                         <tr id="product-list-table1">
-                                            <th id="product-item-label">Bề mặt: </th>
-                                            <td id="product-item-value">
+                                            <th id="product-item-label1">Bề mặt: </th>
+                                            <td id="product-item-value1">
                                                 <p>Mờ.</p>
                                             </td>
                                         </tr>
-                                        <tr id="product-list-table1">
-                                            <th id="product-item-label">Kích thước: </th>
-                                            <td id="product-item-value">
+                                        <tr id="product-list-table2">
+                                            <th id="product-item-label2">Kích thước: </th>
+                                            <td id="product-item-value2">
                                                 <p>600x600mm.</p>
                                             </td>
                                         </tr>
-                                        <tr id="product-list-table1">
-                                            <th id="product-item-label">Kiểu vân: </th>
-                                            <td id="product-item-value">
+                                        <tr id="product-list-table3">
+                                            <th id="product-item-label3">Kiểu vân: </th>
+                                            <td id="product-item-value3">
                                                 <p>Bê tông.</p>
                                             </td>
                                         </tr>
-                                        <tr id="product-list-table2">
-                                            <th id="product-item-label">Không gian: </th>
-                                            <td id="product-item-value">
+                                        <tr id="product-list-table4">
+                                            <th id="product-item-label4">Không gian: </th>
+                                            <td id="product-item-value4">
                                                 <p>Phòng ngủ, Phòng bếp, Phòng khách, Phòng tắm</p>
                                             </td>
                                         </tr>
-                                        <tr id="product-list-table3">
-                                            <th id="product-item-label">Phân loại: </th>
-                                            <td id="product-item-value">
+                                        <tr id="product-list-table5">
+                                            <th id="product-item-label5">Phân loại: </th>
+                                            <td id="product-item-value5">
                                                 <p>Đá.</p>
                                             </td>
                                         </tr>
@@ -227,96 +226,33 @@
                                     <div class="group-title">
                                         <h2>Đánh giá của khách hàng</h2>
                                     </div>
-                                    <h4 class="review-mini-title">Truemart</h4>
-                                    <ul class="review-list">
-                                        <!-- Single Review List Start -->
-                                        <li>
-                                            <span>Hạng</span>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star-o"></i>
-                                            <i class="fa fa-star-o"></i>
-                                            <label>Truemart</label>
-                                        </li>
-                                        <!-- Single Review List End -->
-                                        <!-- Single Review List Start -->
-                                        <li>
-                                            <span>Giá</span>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star-o"></i>
-                                            <i class="fa fa-star-o"></i>
-                                            <i class="fa fa-star-o"></i>
-                                            <label>Đánh giá bởi Truemart</label>
-                                        </li>
-                                        <!-- Single Review List End -->
-                                        <!-- Single Review List Start -->
-                                        <li>
-                                            <span>Giá trị</span>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star-o"></i>
-                                            <label>Đăng vào 7/20/18</label>
-                                        </li>
-                                        <!-- Single Review List End -->
-                                    </ul>
+                                    <%--@elvariable id="listReview" type="java.util.List"--%>
+                                    <c:forEach items="${listReview}" var="r">
+                                        <h4>${r.userName}</h4>
+                                        <h6>${r.postDate}</h6>
+                                        <p>${r.content}</p>
+                                    </c:forEach>
                                 </div>
                                 <!-- Reviews End -->
                                 <!-- Reviews Start -->
                                 <div class="review border-default universal-padding mt-30">
                                     <h2 class="review-title mb-30">Bạn đang đánh giá: <br><span>sản phẩm tốt, nhưng giá hơi đắt.</span></h2>
-                                    <p class="review-mini-title">hạng của bạn</p>
-                                    <ul class="review-list">
-                                        <!-- Single Review List Start -->
-                                        <li>
-                                            <span>Hạng</span>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star-o"></i>
-                                            <i class="fa fa-star-o"></i>
-                                        </li>
-                                        <!-- Single Review List End -->
-                                        <!-- Single Review List Start -->
-                                        <li>
-                                            <span>Giá</span>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star-o"></i>
-                                            <i class="fa fa-star-o"></i>
-                                            <i class="fa fa-star-o"></i>
-                                        </li>
-                                        <!-- Single Review List End -->
-                                        <!-- Single Review List Start -->
-                                        <li>
-                                            <span>Giá trị</span>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star-o"></i>
-                                        </li>
-                                        <!-- Single Review List End -->
-                                    </ul>
                                     <!-- Reviews Field Start -->
                                     <div class="riview-field mt-40">
-                                        <form autocomplete="off" action="#">
-                                            <div class="form-group">
-                                                <label class="req" for="sure-name">Tên tài khoản</label>
-                                                <input type="text" class="form-control" id="sure-name" required="required">
+                                        <form class="form-group" action="reviewProduct" method="get">
+                                            <div class="form">
+                                                <label class="req" for="username">Tên tài khoản</label>
+                                                <input type="text" class="form-control" id="username" name="username" required="required">
                                             </div>
-                                            <div class="form-group">
-                                                <label class="req" for="subject">Bảng tóm tắt</label>
-                                                <input type="text" class="form-control" id="subject" required="required">
-                                            </div>
-                                            <div class="form-group">
+<%--                                            <div class="form-group">--%>
+<%--                                                <label class="req" for="subject">Bảng tóm tắt</label>--%>
+<%--                                                <input type="text" class="form-control" id="subject" required="required">--%>
+<%--                                            </div>--%>
+                                            <div class="form">
                                                 <label class="req" for="comments">Đánh giá</label>
-                                                <textarea class="form-control" rows="5" id="comments" required="required"></textarea>
+                                                <textarea class="form-control" rows="5" id="comments" name="comments" required="required"></textarea>
                                             </div>
-                                            <button type="submit" class="customer-btn">Gửi</button>
+                                            <button type="submit" class="customer-btn" onclick="reviews()">Gửi</button>
                                         </form>
                                     </div>
                                     <!-- Reviews Field Start -->
@@ -370,6 +306,16 @@
     <script src="js\plugins.js"></script>
     <!-- Main activaion js -->
     <script src="js\main.js"></script>
+<script>   function reviews(){
+    var me = $('#comments').val();
+    if(me === ''){
+
+    }
+    else {
+        alert("Đánh giá thành công");
+    }
+}
+</script>
 </body>
 
 </html>
