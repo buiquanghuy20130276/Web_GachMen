@@ -4,7 +4,7 @@
     response.sendRedirect("login.jsp");
 }%>
 <jsp:useBean id="cart" class="model.Cart" scope="session"></jsp:useBean>
-
+<script scr="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <header>
 
     <!-- Header Middle Start Here -->
@@ -19,21 +19,21 @@
                 <!-- Categorie Search Box Start Here -->
                 <div class="col-lg-5 col-md-8 ml-auto mr-auto col-10">
                     <div class="categorie-search-box">
-                        <form action="#">
-                            <div class="form-group">
-                                <select class="bootstrap-select" name="poscats">
-                                    <option value="0">Sản phẩm</option>
-                                    <option value="2">Gạch lát nền</option>
-                                    <option value="3">Gạch ốp tường</option>
-                                    <option value="4">Gạch trang trí</option>
-                                    <option value="5">Gạch giả gỗ</option>
-                                    <option value="6">Gạch Terrazzo</option>
-                                    <option value="7">Gạch thẻ</option>
-                                    <option value="8">Gạch bông</option>
+                        <form action="search" method="post">
+<%--                            <div class="form-group">--%>
+<%--                                <select class="bootstrap-select" name="poscats">--%>
+<%--                                    <option value="0">Sản phẩm</option>--%>
+<%--                                    <option value="2">Gạch lát nền</option>--%>
+<%--                                    <option value="3">Gạch ốp tường</option>--%>
+<%--                                    <option value="4">Gạch trang trí</option>--%>
+<%--                                    <option value="5">Gạch giả gỗ</option>--%>
+<%--                                    <option value="6">Gạch Terrazzo</option>--%>
+<%--                                    <option value="7">Gạch thẻ</option>--%>
+<%--                                    <option value="8">Gạch bông</option>--%>
 
-                                </select>
-                            </div>
-                            <input type="text" name="search" placeholder="Bạn muốn mua gì...">
+<%--                                </select>--%>
+<%--                            </div>--%>
+                            <input  type="text" name="txt" placeholder="Bạn muốn mua gì...">
                             <button><i class="lnr lnr-magnifier"></i></button>
                         </form>
                     </div>
@@ -42,10 +42,10 @@
                 <div class="col-lg-4 col-md-12">
                     <div class="cart-box mt-all-30">
                         <ul class="d-flex justify-content-lg-end justify-content-center align-items-center">
-                            <li><a href="Show"><i class="lnr lnr-cart"></i><span class="my-cart"><span class="total-pro">${cart.quantityCart==0?0:cart.quantityCart}</span><span>Giỏ hàng</span></span></a>
+                            <li><a href="Cart"><i class="lnr lnr-cart"></i><span class="my-cart"><span class="total-pro">${cart.quantityCart==0?0:cart.quantityCart}</span><span>Giỏ hàng</span></span></a>
                             </li>
                             <%if(session.getAttribute("username")!=null) {%>
-                            <li><a href="index.jsp"><i class="lnr lnr-user"></i><span class="my-cart"><span><strong><%=session.getAttribute("username")%></strong></span><span> Logout</span></span></a>
+                            <li><a href="Home"><i class="lnr lnr-user"></i><span class="my-cart"><span><strong><%=session.getAttribute("username")%></strong></span><span> Logout</span></span></a>
                             </li>
                             <%}%>
                             <%if(session.getAttribute("username")==null) {%>
@@ -72,7 +72,7 @@
                                 <!-- Home Version Dropdown Start -->
 
                             </li>
-                            <li><a id="product-list" href="ProductList">Sản phẩm</a>
+                            <li><a id="product-list" href="ProductLists">Sản phẩm</a>
 
                             </li>
 
@@ -83,11 +83,11 @@
                     <div class="mobile-menu d-block d-lg-none">
                         <nav>
                             <ul>
-                                <li><a href="index.jsp">Trang chủ</a>
+                                <li><a href="Home">Trang chủ</a>
                                     <!-- Home Version Dropdown Start -->
 
                                 </li>
-                                <li><a href="product-list.jsp">Sản phẩm</a>
+                                <li><a href="ProductLists">Sản phẩm</a>
                                     <!-- Mobile Menu Dropdown Start -->
 
                                 </li>
@@ -109,22 +109,24 @@
             <nav>
                 <div id="cate-mobile-toggle" class="category-menu sidebar-menu sidbar-style mobile-categorei-menu-list menu-hidden ">
                     <ul>
-                        <li class="has-sub"><a href="#">Gạch lát nền</a>
+                        <li class="has-sub"><a href="category1">Gạch lát nền</a>
 
                             <!-- category submenu end-->
                         </li>
-                        <li class="has-sub"><a href="#">Gạch ốp tường</a>
+                        <li class="has-sub"><a href="category2">Gạch ốp tường</a>
 
                             <!-- category submenu end-->
                         </li>
-                        <li class="has-sub"><a href="#">Gạch trang trí</a>
+                        <li class="has-sub"><a href="category3">Gạch trang trí</a>
 
                             <!-- category submenu end-->
                         </li>
-                        <li class="has-sub"><a href="#">Gạch giả gỗ</a>
+                        <li class="has-sub"><a href="category4">Gạch giả gỗ</a>
 
                             <!-- category submenu end-->
                         </li>
+
+
                     </ul>
                 </div>
                 <!-- category-menu-end -->
@@ -141,21 +143,19 @@
                 <div class="vertical-menu mb-all-30">
                     <nav>
                         <ul class="vertical-menu-list" style="display: none;">
-                            <li><a href="category1">Gạch lát nền</a>
+                            <li ><a href="category1">Gạch lát nền</a>
+                            </li>
+                            <li><a href="category2">Gạch ốp tường</a>
                                 <!-- Vertical Mega-Menu Start -->
 
                             </li>
 
-                            <li><a href="category2">Gạch ốp tường</a>
+                            <li><a href="category3">Gạch trang trí</a>
 
                             </li>
-                            <li><a href="category3">Gạch trang trí</i>
+                            <li><a href="category4">Gạch giả gỗ</i>
                             </a>
 
-                            </li>
-                            <li><a href="category4">Gạch giả gỗ</a>
-
-                            </li>
                         </ul>
                     </nav>
                 </div>
@@ -165,8 +165,8 @@
                 <div class="slider-wrapper theme-default">
                     <!-- Slider Background  Image Start-->
                     <div id="slider" class="nivoSlider">
-                        <a href="product-list.jsp"><img src="img\slider\banner-the.png" data-thumb="img/slider/1.jpg" alt="" title="#htmlcaption"></a>
-                        <a href="product-list.jsp"><img src="img\slider\image2.jpg" data-thumb="img/slider/2.jpg" alt="" title="#htmlcaption2"></a>
+                        <a href="ProductLists"><img src="img\slider\banner-the.png" data-thumb="img/slider/1.jpg" alt="" title="#htmlcaption"></a>
+                        <a href="ProductLists"><img src="img\slider\image2.jpg" data-thumb="img/slider/2.jpg" alt="" title="#htmlcaption2"></a>
                     </div>
                     <!-- Slider Background  Image Start-->
                 </div>

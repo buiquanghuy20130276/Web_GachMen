@@ -35,7 +35,7 @@ public class ProductService {
                         rs.getString(9),
                         rs.getInt(10),
                         rs.getInt(11),
-                        rs.getInt(12),1));
+                        rs.getInt(12), 1));
 
             }
 
@@ -46,6 +46,7 @@ public class ProductService {
         }
         return listProducts;
     }
+
     public static List<Product> getAll() {
         List<Product> listProducts;
 
@@ -70,7 +71,7 @@ public class ProductService {
                         rs.getString(9),
                         rs.getInt(10),
                         rs.getInt(11),
-                        rs.getInt(12),1));
+                        rs.getInt(12), 1));
 
             }
 
@@ -104,7 +105,7 @@ public class ProductService {
                     rs.getString(9),
                     rs.getInt(10),
                     rs.getInt(11),
-                    rs.getInt(12),1);
+                    rs.getInt(12), 1);
 
 
         } catch (SQLException | ClassNotFoundException e) {
@@ -112,13 +113,15 @@ public class ProductService {
         }
         return p;
     }
-    public static List<Product> getByPage(List<Product>list,int start,int end){
-        List<Product>listP = new ArrayList<>();
-        for(int i=0;i<end;i++){
+
+    public static List<Product> getByPage(List<Product> list, int start, int end) {
+        List<Product> listP = new ArrayList<>();
+        for (int i = 0; i < end; i++) {
             listP.add(list.get(i));
         }
         return listP;
     }
+
     public static Product getById(String idProduct) {
         Product p = null;
         try {
@@ -141,13 +144,14 @@ public class ProductService {
                     rs.getString(9),
                     rs.getInt(10),
                     rs.getInt(11),
-                    rs.getInt(12),1);
+                    rs.getInt(12), 1);
 
         } catch (SQLException | ClassNotFoundException e) {
             throw new RuntimeException(e);
         }
         return p;
     }
+
     public static List<Product> listNewProduct() {
         List<Product> listNewProduct;
         try {
@@ -171,7 +175,7 @@ public class ProductService {
                         rs.getString(9),
                         rs.getInt(10),
                         rs.getInt(11),
-                        rs.getInt(12),1));
+                        rs.getInt(12), 1));
 
             }
 
@@ -206,7 +210,7 @@ public class ProductService {
                         rs.getString(9),
                         rs.getInt(10),
                         rs.getInt(11),
-                        rs.getInt(12),1));
+                        rs.getInt(12), 1));
 
             }
 
@@ -278,6 +282,7 @@ public class ProductService {
         }
         return false;
     }
+
     public static List<Product> listBestSeller() {
         List<Product> listBestSeller;
         try {
@@ -300,7 +305,7 @@ public class ProductService {
                         rs.getString(9),
                         rs.getInt(10),
                         rs.getInt(11),
-                        rs.getInt(12),1));
+                        rs.getInt(12), 1));
 
             }
 
@@ -334,7 +339,7 @@ public class ProductService {
                         rs.getString(9),
                         rs.getInt(10),
                         rs.getInt(11),
-                        rs.getInt(12),1));
+                        rs.getInt(12), 1));
 
             }
 
@@ -345,10 +350,11 @@ public class ProductService {
         }
         return listHintForYou;
     }
-    public static void updateProduct(String id,Product product){
+
+    public static void updateProduct(String id, Product product) {
         PreparedStatement s = null;
         try {
-            String sql="UPDATE products set name= ?, descripsion = ?, size = ?, category = ?, price = ?, sale = ?," +
+            String sql = "UPDATE products set name= ?, descripsion = ?, size = ?, category = ?, price = ?, sale = ?," +
                     " image1 = ?, image2 = ?, quantity = ?, isNew = ?, status = ? where id = ?";
             s = ConnectDB.connect(sql);
             s.setString(1, product.getProductName());
@@ -363,13 +369,14 @@ public class ProductService {
             s.setInt(10, product.getIsNew());
             s.setInt(11, product.getStatus());
             s.setString(12, id);
-            int rs=s.executeUpdate();
+            int rs = s.executeUpdate();
 
             s.close();
         } catch (ClassNotFoundException | SQLException e) {
             e.printStackTrace();
         }
     }
+
     public static void addProduct(Product product) {
         PreparedStatement s = null;
         try {
@@ -388,7 +395,7 @@ public class ProductService {
             s.setInt(10, product.getQuantity());
             s.setInt(11, product.getIsNew());
             s.setInt(12, product.getStatus());
-            int rs=s.executeUpdate();
+            int rs = s.executeUpdate();
 
             s.close();
         } catch (ClassNotFoundException | SQLException e) {
@@ -396,18 +403,17 @@ public class ProductService {
         }
     }
 
-    public List<Product> getProductPage(String type, int start, int quantity){
-        PreparedStatement ps = null;
-        try{
-            String sql = "select * from products where category = ? and status = '1' limit ? offset ?";
-            ps = ConnectDB.connect(sql);
-            ps.setString(1, type);
-            ps.setInt(2, quantity);
-            ps.setInt(3, start);
-            ResultSet rs = ps.executeQuery();
-            List<Product> re = new LinkedList<>();
+    public static List<Product> searchByName(String txtSearch) {
+
+        PreparedStatement pre = null;
+        List<Product> list = new ArrayList<>();
+        String sql = "SELECT * FROM products WHERE name LIKE ?;";
+        try {
+            pre = ConnectDB.connect(sql);
+            pre.setString(1, "%" + txtSearch + "%");
+            ResultSet rs = pre.executeQuery();
             while (rs.next()) {
-                re.add(new Product(rs.getString(1),
+                list.add(new Product(rs.getString(1),
                         rs.getString(2),
                         rs.getString(3),
                         rs.getString(4),
@@ -418,19 +424,23 @@ public class ProductService {
                         rs.getString(9),
                         rs.getInt(10),
                         rs.getInt(11),
-                        rs.getInt(12),1));
+                        rs.getInt(12),
+                        1));
             }
-            rs.close();
-            ps.close();
-            return re;
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
-            return new LinkedList<>();
-        } catch (ClassNotFoundException classNotFoundException) {
-            classNotFoundException.printStackTrace();
-            return new LinkedList<>();
+        } catch (Exception e) {
+            e.getStackTrace();
         }
+        return list;
     }
+
+    public List<Product> getProductPage(List<Product> list, int start, int end) {
+        List<Product> listP = new LinkedList<>();
+        for (int i = start; i < end; i++) {
+            list.add(list.get(i));
+        }
+        return listP;
+    }
+
     public static List<Product> listProductA_Z() {
         List<Product> listProductA_Z;
         try {
@@ -452,7 +462,7 @@ public class ProductService {
                         rs.getString(9),
                         rs.getInt(10),
                         rs.getInt(11),
-                        rs.getInt(12),1));
+                        rs.getInt(12), 1));
 
             }
 
@@ -485,7 +495,7 @@ public class ProductService {
                         rs.getString(9),
                         rs.getInt(10),
                         rs.getInt(11),
-                        rs.getInt(12),1));
+                        rs.getInt(12), 1));
 
             }
 
@@ -518,7 +528,7 @@ public class ProductService {
                         rs.getString(9),
                         rs.getInt(10),
                         rs.getInt(11),
-                        rs.getInt(12),1));
+                        rs.getInt(12), 1));
 
             }
 
@@ -551,7 +561,7 @@ public class ProductService {
                         rs.getString(9),
                         rs.getInt(10),
                         rs.getInt(11),
-                        rs.getInt(12),1));
+                        rs.getInt(12), 1));
 
             }
 
@@ -562,6 +572,7 @@ public class ProductService {
         }
         return listPriceLowToHigh;
     }
+
     public static List<Product> getCategory1() {
         List<Product> getCategory;
         try {
@@ -569,7 +580,7 @@ public class ProductService {
             PreparedStatement pState = null;
             String sql = "select * from products where category=?";
             pState = ConnectDB.connect(sql);
-            pState.setString(1,"Gạch lát nền");
+            pState.setString(1, "Gạch lát nền");
             ResultSet rs = pState.executeQuery();
             getCategory = new LinkedList<>();
             while (rs.next()) {
@@ -584,7 +595,7 @@ public class ProductService {
                         rs.getString(9),
                         rs.getInt(10),
                         rs.getInt(11),
-                        rs.getInt(12),1));
+                        rs.getInt(12), 1));
 
             }
 
@@ -603,7 +614,7 @@ public class ProductService {
             PreparedStatement pState = null;
             String sql = "select * from products where category=?";
             pState = ConnectDB.connect(sql);
-            pState.setString(1,"Gạch ốp tường");
+            pState.setString(1, "Gạch ốp tường");
             ResultSet rs = pState.executeQuery();
             getCategory = new LinkedList<>();
             while (rs.next()) {
@@ -618,7 +629,7 @@ public class ProductService {
                         rs.getString(9),
                         rs.getInt(10),
                         rs.getInt(11),
-                        rs.getInt(12),1));
+                        rs.getInt(12), 1));
 
             }
 
@@ -637,7 +648,7 @@ public class ProductService {
             PreparedStatement pState = null;
             String sql = "select * from products where category=?";
             pState = ConnectDB.connect(sql);
-            pState.setString(1,"Gạch trang trí");
+            pState.setString(1, "Gạch trang trí");
             ResultSet rs = pState.executeQuery();
             getCategory = new LinkedList<>();
             while (rs.next()) {
@@ -652,7 +663,7 @@ public class ProductService {
                         rs.getString(9),
                         rs.getInt(10),
                         rs.getInt(11),
-                        rs.getInt(12),1));
+                        rs.getInt(12), 1));
 
             }
 
@@ -663,6 +674,7 @@ public class ProductService {
         }
         return getCategory;
     }
+
     public static List<Product> getCategory4() {
         List<Product> getCategory;
         try {
@@ -670,7 +682,7 @@ public class ProductService {
             PreparedStatement pState = null;
             String sql = "select * from products where category=?";
             pState = ConnectDB.connect(sql);
-            pState.setString(1,"Gạch giả gỗ");
+            pState.setString(1, "Gạch giả gỗ");
             ResultSet rs = pState.executeQuery();
             getCategory = new LinkedList<>();
             while (rs.next()) {
@@ -685,7 +697,7 @@ public class ProductService {
                         rs.getString(9),
                         rs.getInt(10),
                         rs.getInt(11),
-                        rs.getInt(12),1));
+                        rs.getInt(12), 1));
 
             }
 
@@ -706,11 +718,11 @@ public class ProductService {
         Product p = new Product("sp315945", "Gạch bông F2118", "Gạch bông F2118 là sản phẩm gạch quen thuộc với người Việt Nam, được ứng dụng nhiều trong những không gian bếp, nhà vệ sinh, mảng miếng trang trí bởi tính thẩm mỹ, dễ phối màu, dễ lau " +
                 "chùi bụi bẩn. Khi bạn cần gạch ốp bếp, gạch ốp lát trang trí không gian quán cafe, sapa, ốp lát nhà tắm thì gạch bông men sẽ là 1 lựa chọn đầy thú vị cho ngôi nhà của bạn.", "200x200", "Gạch lát nền, Gạch ốp tường", 358000, 47,
                 "https://khatra.com.vn/wp-content/uploads/2022/10/F2118-view.jpg",
-                "https://khatra.com.vn/wp-content/uploads/2022/10/F2118-map.jpg", 189, 1, 1,1);
+                "https://khatra.com.vn/wp-content/uploads/2022/10/F2118-map.jpg", 189, 1, 1, 1);
 //        addProduct(p);
 //        deleteProduct("sp031");
 //        updateProduct("sp315945",p);
-        System.out.println(getCategory2().toString());
+        System.out.println(searchByName("158224").toString());
     }
 
 }

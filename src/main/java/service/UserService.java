@@ -250,35 +250,7 @@ public class UserService {
     }
 
     // tìm kiếm theo tên sản phẩm
-    public static List<Product> searchByName(String txtSearch) {
 
-        PreparedStatement pre = null;
-        List<Product> list = new ArrayList<>();
-        String sql = "SELECT * FROM products WHERE name LIKE ?;";
-        try {
-            pre = ConnectDB.connect(sql);
-            pre.setString(1, "%" + txtSearch + "%");
-            ResultSet rs = pre.executeQuery();
-            while (rs.next()) {
-                list.add(new Product(rs.getString(1),
-                        rs.getString(2),
-                        rs.getString(3),
-                        rs.getString(4),
-                        rs.getString(5),
-                        rs.getInt(6),
-                        rs.getInt(7),
-                        rs.getString(8),
-                        rs.getString(9),
-                        rs.getInt(10),
-                        rs.getInt(11),
-                        rs.getInt(12),
-                        rs.getInt(13)));
-            }
-        } catch (Exception e) {
-            e.getStackTrace();
-        }
-        return list;
-    }
     public static void updatePassword(String email, String password) {
         PreparedStatement preSta = null;
         try {
