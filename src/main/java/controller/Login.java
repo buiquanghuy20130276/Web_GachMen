@@ -24,7 +24,7 @@ public class Login extends HttpServlet {
 
         if (msg.equals("Success")) {
             session.setAttribute("username", username);
-            request.getRequestDispatcher("Home").forward(request, response);
+            response.sendRedirect("Home");
         } else {
             session.setAttribute("errmsg", msg);
             response.sendRedirect("login.jsp");
