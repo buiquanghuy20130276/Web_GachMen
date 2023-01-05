@@ -125,11 +125,10 @@
                             <div class="toolbar-sorter d-flex align-items-center">
                                 <label>Sắp xếp:</label>
                                 <select class="sorter wide">
-                                    <option value="Position">Liên quan</option>
-                                    <option value="Product Name">Tên: A-Z</option>
-                                    <option value="Product Name">Tên: Z-A</option>
-                                    <option value="Price">Giá thấp đến cao</option>
-                                    <option value="Price" selected="">Giá cao đến thấp</option>
+                                    <option href="listProductA_Z" value="Product Name" selected="">Tên: A-Z</option>
+                                    <option href="listProductZ_A" value="Product Name">Tên: Z-A</option>
+                                    <option href="listPriceHighToLow" value="Price">Giá thấp đến cao</option>
+                                    <option href="listPriceLowToHigh" value="Price">Giá cao đến thấp</option>
                                 </select>
                             </div>
                         </div>
