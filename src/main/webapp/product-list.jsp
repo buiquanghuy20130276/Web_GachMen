@@ -121,12 +121,12 @@
                     <div class="grid-list-top border-default universal-padding d-md-flex justify-content-md-between align-items-center mb-30">
 
                         <!-- Toolbar Short Area Start -->
-                        <div class="main-toolbar-sorter clearfix">
+                        <div class="main-toolbar-sorter clearfix" style="">
                             <div class="toolbar-sorter d-flex align-items-center">
                                 <label>Sắp xếp:</label>
                                 <select class="sorter wide">
-                                    <option href="listProductA_Z" value="Product Name" selected="">Tên: A-Z</option>
-                                    <option href="listProductZ_A" value="Product Name">Tên: Z-A</option>
+                                    <option href="listProductA_Z" value="ProductName" selected="">Tên gạch: A-Z</option>
+                                    <option href="listProductZ_A" value="ProductName">Tên gạch: Z-A</option>
                                     <option href="listPriceHighToLow" value="Price">Giá thấp đến cao</option>
                                     <option href="listPriceLowToHigh" value="Price">Giá cao đến thấp</option>
                                 </select>

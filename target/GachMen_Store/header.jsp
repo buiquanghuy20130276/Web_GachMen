@@ -125,11 +125,6 @@
 
                             <!-- category submenu end-->
                         </li>
-                        <li class="has-sub"><a href="#">Gạch Terrazzo</a>
-
-                            <!-- category submenu end-->
-                        </li>
-
                     </ul>
                 </div>
                 <!-- category-menu-end -->

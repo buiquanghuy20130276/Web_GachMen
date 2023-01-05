@@ -452,8 +452,7 @@ public class ProductService {
                         rs.getString(9),
                         rs.getInt(10),
                         rs.getInt(11),
-                        rs.getInt(12),
-                        rs.getInt(13)));
+                        rs.getInt(12),1));
 
             }
 
@@ -486,8 +485,7 @@ public class ProductService {
                         rs.getString(9),
                         rs.getInt(10),
                         rs.getInt(11),
-                        rs.getInt(12),
-                        rs.getInt(13)));
+                        rs.getInt(12),1));
 
             }
 
@@ -520,8 +518,7 @@ public class ProductService {
                         rs.getString(9),
                         rs.getInt(10),
                         rs.getInt(11),
-                        rs.getInt(12),
-                        rs.getInt(13)));
+                        rs.getInt(12),1));
 
             }
 
@@ -554,8 +551,7 @@ public class ProductService {
                         rs.getString(9),
                         rs.getInt(10),
                         rs.getInt(11),
-                        rs.getInt(12),
-                        rs.getInt(13)));
+                        rs.getInt(12),1));
 
             }
 
@@ -571,8 +567,9 @@ public class ProductService {
         try {
 
             PreparedStatement pState = null;
-            String sql = "select * from products where category='Gạch lát nền'";
+            String sql = "select * from products where category=?";
             pState = ConnectDB.connect(sql);
+            pState.setString(1,"Gạch lát nền");
             ResultSet rs = pState.executeQuery();
             getCategory = new LinkedList<>();
             while (rs.next()) {
@@ -587,8 +584,7 @@ public class ProductService {
                         rs.getString(9),
                         rs.getInt(10),
                         rs.getInt(11),
-                        rs.getInt(12),
-                        rs.getInt(13)));
+                        rs.getInt(12),1));
 
             }
 
@@ -605,8 +601,9 @@ public class ProductService {
         try {
 
             PreparedStatement pState = null;
-            String sql = "select * from products where category='Gạch ốp tường'";
+            String sql = "select * from products where category=?";
             pState = ConnectDB.connect(sql);
+            pState.setString(1,"Gạch ốp tường");
             ResultSet rs = pState.executeQuery();
             getCategory = new LinkedList<>();
             while (rs.next()) {
@@ -621,8 +618,7 @@ public class ProductService {
                         rs.getString(9),
                         rs.getInt(10),
                         rs.getInt(11),
-                        rs.getInt(12),
-                        rs.getInt(13)));
+                        rs.getInt(12),1));
 
             }
 
@@ -639,8 +635,9 @@ public class ProductService {
         try {
 
             PreparedStatement pState = null;
-            String sql = "select * from products where category='Gạch trang trí'";
+            String sql = "select * from products where category=?";
             pState = ConnectDB.connect(sql);
+            pState.setString(1,"Gạch trang trí");
             ResultSet rs = pState.executeQuery();
             getCategory = new LinkedList<>();
             while (rs.next()) {
@@ -655,8 +652,7 @@ public class ProductService {
                         rs.getString(9),
                         rs.getInt(10),
                         rs.getInt(11),
-                        rs.getInt(12),
-                        rs.getInt(13)));
+                        rs.getInt(12),1));
 
             }
 
@@ -672,8 +668,9 @@ public class ProductService {
         try {
 
             PreparedStatement pState = null;
-            String sql = "select * from products where category='Gạch giả gỗ'";
+            String sql = "select * from products where category=?";
             pState = ConnectDB.connect(sql);
+            pState.setString(1,"Gạch giả gỗ");
             ResultSet rs = pState.executeQuery();
             getCategory = new LinkedList<>();
             while (rs.next()) {
@@ -688,8 +685,7 @@ public class ProductService {
                         rs.getString(9),
                         rs.getInt(10),
                         rs.getInt(11),
-                        rs.getInt(12),
-                        rs.getInt(13)));
+                        rs.getInt(12),1));
 
             }
 
@@ -713,6 +709,8 @@ public class ProductService {
                 "https://khatra.com.vn/wp-content/uploads/2022/10/F2118-map.jpg", 189, 1, 1,1);
 //        addProduct(p);
 //        deleteProduct("sp031");
-        updateProduct("sp315945",p);
+//        updateProduct("sp315945",p);
+        System.out.println(getCategory2().toString());
     }
+
 }
