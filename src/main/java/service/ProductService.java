@@ -264,12 +264,12 @@ public class ProductService {
         }
     }
 
-    public static boolean existProductName(String id) {
+    public static boolean existProductName(String name) {
         PreparedStatement s = null;
         try {
-            String sql = "select * from products where id = ?";
+            String sql = "select * from products where name = ?";
             s = ConnectDB.connect(sql);
-            s.setString(1, id);
+            s.setString(1, name);
             ResultSet rs = s.executeQuery();
             if (rs.next()) return true;
             s.close();
