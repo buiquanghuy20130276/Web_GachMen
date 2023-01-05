@@ -431,6 +431,276 @@ public class ProductService {
             return new LinkedList<>();
         }
     }
+    public static List<Product> listProductA_Z() {
+        List<Product> listProductA_Z;
+        try {
+
+            PreparedStatement pState = null;
+            String sql = "select * from products order by name asc";
+            pState = ConnectDB.connect(sql);
+            ResultSet rs = pState.executeQuery();
+            listProductA_Z = new LinkedList<>();
+            while (rs.next()) {
+                listProductA_Z.add(new Product(rs.getString(1),
+                        rs.getString(2),
+                        rs.getString(3),
+                        rs.getString(4),
+                        rs.getString(5),
+                        rs.getInt(6),
+                        rs.getInt(7),
+                        rs.getString(8),
+                        rs.getString(9),
+                        rs.getInt(10),
+                        rs.getInt(11),
+                        rs.getInt(12),
+                        rs.getInt(13)));
+
+            }
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+        return listProductA_Z;
+    }
+
+    public static List<Product> listProductZ_A() {
+        List<Product> listProductZ_A;
+        try {
+
+            PreparedStatement pState = null;
+            String sql = "select * from products order by name desc";
+            pState = ConnectDB.connect(sql);
+            ResultSet rs = pState.executeQuery();
+            listProductZ_A = new LinkedList<>();
+            while (rs.next()) {
+                listProductZ_A.add(new Product(rs.getString(1),
+                        rs.getString(2),
+                        rs.getString(3),
+                        rs.getString(4),
+                        rs.getString(5),
+                        rs.getInt(6),
+                        rs.getInt(7),
+                        rs.getString(8),
+                        rs.getString(9),
+                        rs.getInt(10),
+                        rs.getInt(11),
+                        rs.getInt(12),
+                        rs.getInt(13)));
+
+            }
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+        return listProductZ_A;
+    }
+
+    public static List<Product> listPriceHighToLow() {
+        List<Product> listPriceHighToLow;
+        try {
+
+            PreparedStatement pState = null;
+            String sql = "select * from products ORDER BY price-(price*sale/100) desc";
+            pState = ConnectDB.connect(sql);
+            ResultSet rs = pState.executeQuery();
+            listPriceHighToLow = new LinkedList<>();
+            while (rs.next()) {
+                listPriceHighToLow.add(new Product(rs.getString(1),
+                        rs.getString(2),
+                        rs.getString(3),
+                        rs.getString(4),
+                        rs.getString(5),
+                        rs.getInt(6),
+                        rs.getInt(7),
+                        rs.getString(8),
+                        rs.getString(9),
+                        rs.getInt(10),
+                        rs.getInt(11),
+                        rs.getInt(12),
+                        rs.getInt(13)));
+
+            }
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+        return listPriceHighToLow;
+    }
+
+    public static List<Product> listPriceLowToHigh() {
+        List<Product> listPriceLowToHigh;
+        try {
+
+            PreparedStatement pState = null;
+            String sql = "select * from products ORDER BY price-(price*sale/100) asc";
+            pState = ConnectDB.connect(sql);
+            ResultSet rs = pState.executeQuery();
+            listPriceLowToHigh = new LinkedList<>();
+            while (rs.next()) {
+                listPriceLowToHigh.add(new Product(rs.getString(1),
+                        rs.getString(2),
+                        rs.getString(3),
+                        rs.getString(4),
+                        rs.getString(5),
+                        rs.getInt(6),
+                        rs.getInt(7),
+                        rs.getString(8),
+                        rs.getString(9),
+                        rs.getInt(10),
+                        rs.getInt(11),
+                        rs.getInt(12),
+                        rs.getInt(13)));
+
+            }
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+        return listPriceLowToHigh;
+    }
+    public static List<Product> getCategory1() {
+        List<Product> getCategory;
+        try {
+
+            PreparedStatement pState = null;
+            String sql = "select * from products where category='Gạch lát nền'";
+            pState = ConnectDB.connect(sql);
+            ResultSet rs = pState.executeQuery();
+            getCategory = new LinkedList<>();
+            while (rs.next()) {
+                getCategory.add(new Product(rs.getString(1),
+                        rs.getString(2),
+                        rs.getString(3),
+                        rs.getString(4),
+                        rs.getString(5),
+                        rs.getInt(6),
+                        rs.getInt(7),
+                        rs.getString(8),
+                        rs.getString(9),
+                        rs.getInt(10),
+                        rs.getInt(11),
+                        rs.getInt(12),
+                        rs.getInt(13)));
+
+            }
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+        return getCategory;
+    }
+
+    public static List<Product> getCategory2() {
+        List<Product> getCategory;
+        try {
+
+            PreparedStatement pState = null;
+            String sql = "select * from products where category='Gạch ốp tường'";
+            pState = ConnectDB.connect(sql);
+            ResultSet rs = pState.executeQuery();
+            getCategory = new LinkedList<>();
+            while (rs.next()) {
+                getCategory.add(new Product(rs.getString(1),
+                        rs.getString(2),
+                        rs.getString(3),
+                        rs.getString(4),
+                        rs.getString(5),
+                        rs.getInt(6),
+                        rs.getInt(7),
+                        rs.getString(8),
+                        rs.getString(9),
+                        rs.getInt(10),
+                        rs.getInt(11),
+                        rs.getInt(12),
+                        rs.getInt(13)));
+
+            }
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+        return getCategory;
+    }
+
+    public static List<Product> getCategory3() {
+        List<Product> getCategory;
+        try {
+
+            PreparedStatement pState = null;
+            String sql = "select * from products where category='Gạch trang trí'";
+            pState = ConnectDB.connect(sql);
+            ResultSet rs = pState.executeQuery();
+            getCategory = new LinkedList<>();
+            while (rs.next()) {
+                getCategory.add(new Product(rs.getString(1),
+                        rs.getString(2),
+                        rs.getString(3),
+                        rs.getString(4),
+                        rs.getString(5),
+                        rs.getInt(6),
+                        rs.getInt(7),
+                        rs.getString(8),
+                        rs.getString(9),
+                        rs.getInt(10),
+                        rs.getInt(11),
+                        rs.getInt(12),
+                        rs.getInt(13)));
+
+            }
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+        return getCategory;
+    }
+    public static List<Product> getCategory4() {
+        List<Product> getCategory;
+        try {
+
+            PreparedStatement pState = null;
+            String sql = "select * from products where category='Gạch giả gỗ'";
+            pState = ConnectDB.connect(sql);
+            ResultSet rs = pState.executeQuery();
+            getCategory = new LinkedList<>();
+            while (rs.next()) {
+                getCategory.add(new Product(rs.getString(1),
+                        rs.getString(2),
+                        rs.getString(3),
+                        rs.getString(4),
+                        rs.getString(5),
+                        rs.getInt(6),
+                        rs.getInt(7),
+                        rs.getString(8),
+                        rs.getString(9),
+                        rs.getInt(10),
+                        rs.getInt(11),
+                        rs.getInt(12),
+                        rs.getInt(13)));
+
+            }
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+        return getCategory;
+    }
+
     public static void main(String[] args) {
 //        ProductService list = new ProductService();
 ////        System.out.println(list.getAllProduct().toString());
