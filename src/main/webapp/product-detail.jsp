@@ -82,15 +82,7 @@
                                 <div id="thumb2" class="tab-pane fade">
                                     <a data-fancybox="images" href="${product.image2}"><img src="${product.image2}" alt="product-view"></a>
                                 </div>
-                                <!-- <div id="thumb3" class="tab-pane fade">
-                                    <a data-fancybox="images" href="https://khatra.com.vn/wp-content/uploads/2020/09/D6606-map.jpg"><img src="https://khatra.com.vn/wp-content/uploads/2020/09/D6606-map.jpg" alt="product-view"></a>
-                                </div>
-                                <div id="thumb4" class="tab-pane fade">
-                                    <a data-fancybox="images" href="https://khatra.com.vn/wp-content/uploads/2021/07/KT-6005-map.jpg"><img src="https://khatra.com.vn/wp-content/uploads/2021/07/KT-6005-map.jpg" alt="product-view"></a>
-                                </div> -->
-                                <!-- <div id="thumb5" class="tab-pane fade">
-                                    <a data-fancybox="images" href="img\products\5.jpg"><img src="img\products\5.jpg" alt="product-view"></a>
-                                </div> -->
+
                             </div>
                             <!-- Thumbnail Large Image End -->
                             <!-- Thumbnail Image End -->
@@ -98,9 +90,7 @@
                                 <div class="thumb-menu owl-carousel nav tabs-area" role="tablist">
                                     <a class="active" data-toggle="tab" href="#thumb1"><img src="${product.image1}" alt="product-thumbnail"></a>
                                     <a data-toggle="tab" href="#thumb2"><img src="${product.image2}" alt="product-thumbnail"></a>
-                                    <!-- <a data-toggle="tab" href="#thumb3"><img src="https://khatra.com.vn/wp-content/uploads/2020/09/D6606-map.jpg" alt="product-thumbnail"></a>
-                                    <a data-toggle="tab" href="#thumb4"><img src="https://khatra.com.vn/wp-content/uploads/2021/07/KT-6005-map.jpg" alt="product-thumbnail"></a> -->
-                                    <!-- <a data-toggle="tab" href="#thumb5"><img src="img\products\5.jpg" alt="product-thumbnail"></a> -->
+
                                 </div>
                             </div>
                             <!-- Thumbnail image end -->
@@ -141,9 +131,7 @@
                                 </div>
                                 <c:if test="${product.status!=0}">
                                 <div class="box-quantity d-flex hot-product2">
-                                    <form action="#">
-                                        <input class="quantity mr-15" type="number" min="1" value="1">
-                                    </form>
+
                                     <div class="pro-actions">
                                         <div class="actions-primary">
                                             <a href="cart.jsp" title="" data-original-title="Thêm vào giỏ"> + Thêm vào giỏ</a>
@@ -192,7 +180,7 @@
                     <div class="col-sm-12">
                         <ul class="main-thumb-desc nav tabs-area" role="tablist">
                             <li><a class="active" data-toggle="tab" href="#dtail">Thông tin sản phẩm</a></li>
-                            <li><a data-toggle="tab" href="#review">Đánh giá</a></li>
+                            <li><a data-toggle="tab" onclick="url('https://animevietsub.pro/')" href="#review">Đánh giá</a></li>
                         </ul>
                         <!-- Product Thumbnail Tab Content Start -->
                         <div class="tab-content thumb-content border-default">
