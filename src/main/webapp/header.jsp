@@ -72,7 +72,7 @@
                                 <!-- Home Version Dropdown Start -->
 
                             </li>
-                            <li><a id="product-list" href="ProductLists">Sản phẩm</a>
+                            <li><a id="product-list" href="ProductLists?page=1">Sản phẩm</a>
 
                             </li>
 
@@ -87,7 +87,7 @@
                                     <!-- Home Version Dropdown Start -->
 
                                 </li>
-                                <li><a href="ProductLists">Sản phẩm</a>
+                                <li><a href="ProductLists?page=1">Sản phẩm</a>
                                     <!-- Mobile Menu Dropdown Start -->
 
                                 </li>
@@ -109,19 +109,19 @@
             <nav>
                 <div id="cate-mobile-toggle" class="category-menu sidebar-menu sidbar-style mobile-categorei-menu-list menu-hidden ">
                     <ul>
-                        <li class="has-sub"><a href="category1">Gạch lát nền</a>
+                        <li class="has-sub"><a href="ListByType?type=Gạch lát nền&page=1">Gạch lát nền</a>
 
                             <!-- category submenu end-->
                         </li>
-                        <li class="has-sub"><a href="category2">Gạch ốp tường</a>
+                        <li class="has-sub"><a href="ListByType?type=Gạch ốp tường&page=1">Gạch ốp tường</a>
 
                             <!-- category submenu end-->
                         </li>
-                        <li class="has-sub"><a href="category3">Gạch trang trí</a>
+                        <li class="has-sub"><a href="ListByType?type=Gạch trang trí&page=1">Gạch trang trí</a>
 
                             <!-- category submenu end-->
                         </li>
-                        <li class="has-sub"><a href="category4">Gạch giả gỗ</a>
+                        <li class="has-sub"><a href="ListByType?type=Gạch giả gỗ&page=1">Gạch giả gỗ</a>
 
                             <!-- category submenu end-->
                         </li>
@@ -143,17 +143,17 @@
                 <div class="vertical-menu mb-all-30">
                     <nav>
                         <ul class="vertical-menu-list" style="display: none;">
-                            <li ><a href="category1">Gạch lát nền</a>
+                            <li ><a href="ListByType?type=Gạch lát nền&page=1">Gạch lát nền</a>
                             </li>
-                            <li><a href="category2">Gạch ốp tường</a>
+                            <li><a href="ListByType?type=Gạch ốp tường&page=1">Gạch ốp tường</a>
                                 <!-- Vertical Mega-Menu Start -->
 
                             </li>
 
-                            <li><a href="category3">Gạch trang trí</a>
+                            <li><a href="ListByType?type=Gạch trang trí&page=1">Gạch trang trí</a>
 
                             </li>
-                            <li><a href="category4">Gạch giả gỗ</i>
+                            <li><a href="ListByType?type=Gạch giả gỗ&page=1">Gạch giả gỗ</i>
                             </a>
 
                         </ul>
@@ -165,8 +165,8 @@
                 <div class="slider-wrapper theme-default">
                     <!-- Slider Background  Image Start-->
                     <div id="slider" class="nivoSlider">
-                        <a href="ProductLists"><img src="img\slider\banner-the.png" data-thumb="img/slider/1.jpg" alt="" title="#htmlcaption"></a>
-                        <a href="ProductLists"><img src="img\slider\image2.jpg" data-thumb="img/slider/2.jpg" alt="" title="#htmlcaption2"></a>
+                        <a href="ProductLists?page=1"><img src="img\slider\banner-the.png" data-thumb="img/slider/1.jpg" alt="" title="#htmlcaption"></a>
+                        <a href="ProductLists?page=1"><img src="img\slider\image2.jpg" data-thumb="img/slider/2.jpg" alt="" title="#htmlcaption2"></a>
                     </div>
                     <!-- Slider Background  Image Start-->
                 </div>

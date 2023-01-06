@@ -89,7 +89,7 @@
                         <div class="footer-content">
                             <ul class="footer-list">
                                 <li><a href="deliverypolicy.jsp">Chính sách giao hàng</a></li>
-                                <li><a href="privacy.jsp">Chính sách bảo mật</a></li>
+                                <li><a href="privacy.html">Chính sách bảo mật</a></li>
 
 
                             </ul>
@@ -103,10 +103,11 @@
                         <h3 class="footer-title">SẢN PHẨM</h3>
                         <div class="footer-content">
                             <ul class="footer-list">
-                                <li><a href="category1">Gạch lát nền</a></li>
-                                <li><a href="category2">Gạch ốp tường</a></li>
-                                <li><a href="category3">Gạch trang trí</a></li>
-                                <li><a href="category4">Gạch giả gỗ</a></li>
+                                <li><a href="product-list.jsp">Gạch lát nền</a></li>
+                                <li><a href="product-list.jsp">Gạch ốp tường</a></li>
+                                <li><a href="product-list.jsp">Gạch trang trí</a></li>
+                                <li><a href="product-list.jsp">Gạch giả gỗ</a></li>
+                                <li><a href="product-list.jsp">Gạch Terrazzo</a></li>
                             </ul>
                         </div>
                     </div>
@@ -118,8 +119,8 @@
                         <h3 class="footer-title" style="width: 170px;">DỊCH VỤ</h3>
                         <div class="footer-content">
                             <ul class="footer-list">
-                                <li><a href="Home">Trang chủ</a></li>
-                                <li><a href="ProductLists">Sản phẩm</a></li>
+                                <li><a href="index.jsp">Trang chủ</a></li>
+                                <li><a href="product-list.jsp">Sản phẩm</a></li>
                                 <li><a href="about.jsp">Giới thiệu</a></li>
                                 <li><a href="contact.jsp">Liên hệ</a></li>
                             </ul>
@@ -153,7 +154,7 @@
                                 <li><i class="lnr lnr-map-marker"></i> Địa chỉ: Phường Linh Trung, TP.Thủ Đức,
                                     TP.HCM
                                 </li>
-                                <li><i class="lnr lnr-envelope"></i><a href="#"> Email:
+                                <li><i class="lnr lnr-envelope"></i><a href="#"> EMAIL:
                                     vphanhchinh@hcmuaf.edu.vn </a></li>
                                 <li>
                                     <i class="lnr lnr-phone-handset"></i> SĐT: (84-28) 3896 6780

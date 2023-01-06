@@ -235,26 +235,28 @@
 
                                 <div class="pro-pagination">
                                     <ul class="blog-pagination">
+                                        <%--                                        <c:forEach begin="${1}" end="${requestScope.numberPage}" var="i">--%>
+                                        <%--                                            <li class="active"><a href="pageNumber?page=${i}">${i}</a></li>--%>
+                                        <%--                                        </c:forEach>--%>
                                         <c:if test="${requestScope.page >4}">
                                             <li><a href="page=${requestScope.page - 1}">«</a></li>
                                         </c:if>
                                         <c:forEach begin="1" end="${requestScope.numberPage}" var="i">
                                             <c:choose>
                                                 <c:when test="${requestScope.page eq i}">
-                                                    <li class="active"><a href="search?page=${i}">${i}</a></li>
+                                                    <li class="active"><a href="SortProduct?type&page=${i}">${i}</a></li>
                                                 </c:when>
                                                 <c:when test="${requestScope.page eq i}">
-                                                    <li class="active"><a href="search?page=${i}">${i}</a></li>
+                                                    <li class="active"><a href="SortProduct?page=${i}">${i}</a></li>
                                                 </c:when>
                                                 <c:otherwise>
-                                                    <li><a href="search?page=${i}">${i}</a></li>
+                                                    <li><a href="SortProduct?page=${i}">${i}</a></li>
                                                 </c:otherwise>
                                             </c:choose>
                                         </c:forEach>
                                         <c:if test="${requestScope.page < requestScope.numberPage}">
-                                            <li><a href="search?page=${requestScope.page + 1}">»</a></li>
+                                            <li><a href="SortProduct?page=${requestScope.page + 1}">»</a></li>
                                         </c:if>
-
                                     </ul>
 
                                 </div>

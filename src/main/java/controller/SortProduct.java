@@ -2,29 +2,30 @@ package controller;
 
 import bean.Product;
 import service.ProductService;
-import service.UserService;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.util.ArrayList;
 import java.util.List;
 
-@WebServlet(name = "SearchControl", value = "/search")
-public class SearchControl extends HttpServlet {
+@WebServlet(name = "SortProduct", value = "/SortProduct")
+public class SortProduct extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-    }
-
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-    response.setContentType("text/html;charset=UTF-8");
-    request.setCharacterEncoding("UTF-8");
-    String txtSearch = request.getParameter("txt");
-    List<Product> list = ProductService.searchByName(txtSearch);
+        String sort = request.getParameter("sort");
+        List<Product>list =null;
+        if(sort.equalsIgnoreCase("A_Z")){
+            list= ProductService.listProductA_Z();
+        }if(sort.equalsIgnoreCase("Z_A")){
+            list= ProductService.listProductZ_A();
+        }
+        if(sort.equalsIgnoreCase("price_increase")){
+            list= ProductService.listPriceLowToHigh();
+        }
+        if(sort.equalsIgnoreCase("price_decrease")){
+            list= ProductService.listPriceHighToLow();
+        }
         int page,show=12;
         int size = list.size();;
         int numberPage = size%show==0?size/show :(size/show+1);
@@ -41,7 +42,11 @@ public class SearchControl extends HttpServlet {
         request.setAttribute("listP",listP);
         request.setAttribute("page",page);
         request.setAttribute("numberPage",numberPage);
-        request.getRequestDispatcher("product-search.jsp").forward(request,response);
+        request.getRequestDispatcher("product-sort.jsp").forward(request,response);
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
     }
 }
