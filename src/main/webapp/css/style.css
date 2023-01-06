@@ -2475,7 +2475,7 @@ li.megamenu-img a {
 }
 .blog-pagination li.active a,
 .blog-pagination li a:hover {
-    background: #222222 none repeat scroll 0 0;
+    background: #e62e04 none repeat scroll 0 0;
     color: #ffffff;
 }
 .latest-blog-active .owl-dot {

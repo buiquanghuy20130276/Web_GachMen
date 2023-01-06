@@ -116,7 +116,7 @@ public class ProductService {
 
     public static List<Product> getByPage(List<Product> list, int start, int end) {
         List<Product> listP = new ArrayList<>();
-        for (int i = 0; i < end; i++) {
+        for (int i = start; i < end; i++) {
             listP.add(list.get(i));
         }
         return listP;
@@ -433,13 +433,7 @@ public class ProductService {
         return list;
     }
 
-    public List<Product> getProductPage(List<Product> list, int start, int end) {
-        List<Product> listP = new LinkedList<>();
-        for (int i = start; i < end; i++) {
-            list.add(list.get(i));
-        }
-        return listP;
-    }
+
 
     public static List<Product> listProductA_Z() {
         List<Product> listProductA_Z;
@@ -714,15 +708,15 @@ public class ProductService {
 ////        System.out.println(list.getAllProduct().toString());
 ////        System.out.println(list.listNewProduct().toString());
 //
-////        System.out.printlsn(getByType("Gạch lát nền"));
-        Product p = new Product("sp315945", "Gạch bông F2118", "Gạch bông F2118 là sản phẩm gạch quen thuộc với người Việt Nam, được ứng dụng nhiều trong những không gian bếp, nhà vệ sinh, mảng miếng trang trí bởi tính thẩm mỹ, dễ phối màu, dễ lau " +
-                "chùi bụi bẩn. Khi bạn cần gạch ốp bếp, gạch ốp lát trang trí không gian quán cafe, sapa, ốp lát nhà tắm thì gạch bông men sẽ là 1 lựa chọn đầy thú vị cho ngôi nhà của bạn.", "200x200", "Gạch lát nền, Gạch ốp tường", 358000, 47,
-                "https://khatra.com.vn/wp-content/uploads/2022/10/F2118-view.jpg",
-                "https://khatra.com.vn/wp-content/uploads/2022/10/F2118-map.jpg", 189, 1, 1, 1);
+        System.out.println(2/12);
+//        Product p = new Product("sp315945", "Gạch bông F2118", "Gạch bông F2118 là sản phẩm gạch quen thuộc với người Việt Nam, được ứng dụng nhiều trong những không gian bếp, nhà vệ sinh, mảng miếng trang trí bởi tính thẩm mỹ, dễ phối màu, dễ lau " +
+//                "chùi bụi bẩn. Khi bạn cần gạch ốp bếp, gạch ốp lát trang trí không gian quán cafe, sapa, ốp lát nhà tắm thì gạch bông men sẽ là 1 lựa chọn đầy thú vị cho ngôi nhà của bạn.", "200x200", "Gạch lát nền, Gạch ốp tường", 358000, 47,
+//                "https://khatra.com.vn/wp-content/uploads/2022/10/F2118-view.jpg",
+//                "https://khatra.com.vn/wp-content/uploads/2022/10/F2118-map.jpg", 189, 1, 1, 1);
 //        addProduct(p);
 //        deleteProduct("sp031");
 //        updateProduct("sp315945",p);
-        System.out.println(searchByName("158224").toString());
+//        System.out.println(searchByName("158224").toString());
     }
 
 }

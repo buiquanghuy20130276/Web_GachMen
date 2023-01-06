@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="css\ionicons.min.css">
     <!-- linearicons css -->
     <link rel="stylesheet" href="css\linearicons.css">
+    <link rel="stylesheet" href="css/styles.css">
     <!-- Nice select css -->
     <link rel="stylesheet" href="css\nice-select.css">
     <!-- Jquery fancybox css -->
@@ -59,8 +60,8 @@
         <div class="container">
             <div class="breadcrumb">
                 <ul class="d-flex align-items-center">
-                    <li><a href="index.jsp">Trang chủ</a></li>
-                    <li class="active"><a href="product-detail.jsp">Sản phẩm</a></li>
+                    <li><a href="Home">Trang chủ</a></li>
+                    <li class="active"><a href="ProductLists?page=1">Sản phẩm</a></li>
                 </ul>
             </div>
         </div>
@@ -80,16 +81,16 @@
                             <h3 class="sidebar-title">Sắp xếp</h3>
                             <ul class="sidbar-style" style="margin-left: 30px">
                                 <li class="form-check">
-                                    <a href="listProductA_Z">+ Tên gạch từ A-Z</a>
+                                    <a href="SortProduct?sort=A_Z&page=1">+ Tên gạch từ A-Z</a>
                                 </li>
                                 <li class="form-check">
-                                    <a href="listProductZ_A">+ Tên gạch từ Z-A</a>
+                                    <a href="SortProduct?sort=Z_A&page=1">+ Tên gạch từ Z-A</a>
                                 </li>
                                 <li class="form-check">
-                                    <a href="listPriceLowToHigh">+ Giá từ thấp đến cao</a>
+                                    <a href="SortProduct?sort=price_increase&page=1">+ Giá từ thấp đến cao</a>
                                 </li>
                                 <li class="form-check">
-                                    <a href="listPriceHighToLow">+ Giá từ cao đến thấp</a>
+                                    <a href="SortProduct?sort=price_decrease&page=1">+ Giá từ cao đến thấp</a>
                                 </li>
 
                             </ul>
@@ -99,20 +100,20 @@
                             <h3 class="sidebar-title">Loại gạch</h3>
                             <ul class="sidbar-style" style="margin-left: 30px">
                                 <li class="form-check">
-                                    <a href="ProductLists">+ Tất cả</a>
+                                    <a href="ProductLists?page=1">+ Tất cả</a>
                                 </li>
                                 <li class="form-check" style="color: black">
-                                    <a href="category1">+ Gạch lát nền</a>
+                                    <a href="ListByType?type=Gạch lát nền&page=1">+ Gạch lát nền</a>
                                 </li>
 
                                 <li class="form-check">
-                                    <a href="category2">+ Gạch ốp tường</a>
+                                    <a href="ListByType?type=Gạch ốp tường&page=1">+ Gạch ốp tường</a>
                                 </li>
                                 <li class="form-check">
-                                    <a href="category3">+ Gạch trang trí</a>
+                                    <a href="ListByType?type=Gạch trang trí&page=1">+ Gạch trang trí</a>
                                 </li>
                                 <li class="form-check">
-                                    <a href="category4">+ Gạch giả gỗ</a>
+                                    <a href="ListByType?type=Gạch giả gỗ&page=1">+ Gạch giả gỗ</a>
                                 </li>
 
                             </ul>
@@ -131,7 +132,7 @@
                         <!-- Product Top End -->
                         <!-- Single Banner Start -->
                         <div class="col-img">
-                            <a href="product-list.jsp"><img src="img/banner/khuyenmaigachnhap-01.webp"
+                            <a href="ProductLists?page=1"><img src="img/banner/khuyenmaigachnhap-01.webp"
                                                             alt="slider-banner"></a>
                         </div>
                         <!-- Single Banner End -->
@@ -231,14 +232,29 @@
                                     </div>
                                 </div>
                                 <!-- #grid view End -->
+
                                 <div class="pro-pagination">
                                     <ul class="blog-pagination">
+                                        <c:if test="${requestScope.page >4}">
+                                            <li><a href="page=${requestScope.page - 1}">«</a></li>
+                                        </c:if>
+                                        <c:forEach begin="1" end="${requestScope.numberPage}" var="i">
+                                            <c:choose>
+                                                <c:when test="${requestScope.page eq i}">
+                                                    <li class="active"><a href="ProductLists?page=${i}">${i}</a></li>
+                                                </c:when>
+                                                <c:when test="${requestScope.page eq i}">
+                                                    <li class="active"><a href="ProductLists?page=${i}">${i}</a></li>
+                                                </c:when>
+                                                <c:otherwise>
+                                                    <li><a href="ProductLists?page=${i}">${i}</a></li>
+                                                </c:otherwise>
+                                            </c:choose>
+                                        </c:forEach>
+                                        <c:if test="${requestScope.page < requestScope.numberPage}">
+                                            <li><a href="ProductLists?page=${requestScope.page + 1}">»</a></li>
+                                        </c:if>
 
-                                        <li class="active"><a href="shop.html">1</a></li>
-                                        <li><a href="shop-2.html">2</a></li>
-                                        <li><a href="shop-3.html">3</a></li>
-                                        <li><a href="shop-4.html">4</a></li>
-                                        <li><a href="#"><i class="fa fa-angle-right"></i></a></li>
                                     </ul>
 
                                 </div>
