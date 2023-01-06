@@ -1,6 +1,7 @@
 package service;
 
 import bean.Reviews;
+import controller.ProductDetail;
 import database.ConnectDB;
 
 import java.sql.Date;
@@ -24,8 +25,7 @@ public class ReviewService {
             while (rs.next()) {
                 listReviewProducts.add(new Reviews(rs.getString(1),
                         rs.getString(2),
-                        rs.getString(3),
-                        rs.getString(4)));
+                        rs.getString(3)));
             }
 
         } catch (SQLException e) {
@@ -39,12 +39,11 @@ public class ReviewService {
     public static void insertReview(Reviews reviews) {
         PreparedStatement ps = null;
         try {
-            String sql = "insert into reviews (id_user, username, content,postDate) values(?, ?, ?, ?)";
+            String sql = "insert into reviews values(?, ?, ?)";
             ps = ConnectDB.connect(sql);
-            ps.setString(1, reviews.getId_User());
-            ps.setString(2, reviews.getUserName());
-            ps.setString(3, reviews.getContent());
-            ps.setDate(4, Date.valueOf(java.time.LocalDate.now()));
+            ps.setString(1, reviews.getUserName());
+            ps.setString(2, reviews.getContent());
+            ps.setDate(3, Date.valueOf(java.time.LocalDate.now()));
             ps.executeUpdate();
             ps.close();
         } catch (SQLException throwables) {
@@ -55,7 +54,7 @@ public class ReviewService {
     }
 
     public static void main(String[] args) {
-//        insertReview(new ProductDetail("151515", "trung", "ádasdas", "2023/01/03"));
+        insertReview(new Reviews("151515", "trung"));
         System.out.println(getAllReviewProduct().toString());
     }
 }

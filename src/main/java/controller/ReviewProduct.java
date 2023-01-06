@@ -1,6 +1,8 @@
 package controller;
 
+import bean.Product;
 import bean.Reviews;
+import service.ProductService;
 import service.ReviewService;
 
 import javax.servlet.ServletException;
@@ -23,16 +25,11 @@ public class ReviewProduct extends HttpServlet {
         request.setAttribute("listReview", listReview);
         String username = request.getParameter("username");
         String comments = request.getParameter("comments");
-        HttpSession session = request.getSession();
-        Random rd = new Random();
 
-        Reviews reviews = new Reviews();
-
-        reviews.setId_User(String.valueOf(rd.nextInt(100000)));
-        reviews.setUserName(username);
-        reviews.setContent(comments);
-        ReviewService reviewService = new ReviewService();
-        reviewService.insertReview(reviews);
-        request.getRequestDispatcher("product-detail.jsp").forward(request, response);
+        ReviewService.insertReview(new Reviews(username,comments));
+        String productID = request.getParameter("productID");
+        Product p = ProductService.getProductDetail(productID);
+        request.setAttribute("product",p);
+        response.sendRedirect("ProductDetail?productID="+productID);
     }
 }
