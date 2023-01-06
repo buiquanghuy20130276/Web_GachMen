@@ -134,10 +134,14 @@
 
                                     <div class="pro-actions">
                                         <div class="actions-primary">
-                                            <a href="cart.jsp" title="" data-original-title="Thêm vào giỏ"> + Thêm vào giỏ</a>
+                                            <c:url value="/addCart?productID=${product.productID}"
+                                                   var="addCart"/>
+                                            <a href="${addCart}" title="" data-original-title="Thêm vào giỏ"> + Thêm vào giỏ</a>
                                         </div>
                                         <div class="actions-primary">
-                                            <a href="checkout.jsp" title="" data-original-title="Mua ngay">Mua ngay</a>
+                                            <c:url value="/buyNow?productID=${product.productID}"
+                                                   var="buyNow"/>
+                                            <a href="buyNow" title="" data-original-title="Mua ngay">Mua ngay</a>
                                         </div>
                                         <div class="actions-secondary">
                                             <!-- <a href="compare.html" title="" data-original-title="Compare"><i class="lnr lnr-sync"></i> <span>Thêm so sánh</span></a> -->
@@ -154,15 +158,15 @@
                                         <p><span class="in-stock"><i class="ion-close-round" style="color: red"></i>Hết hàng</span></p>
                                     </div>
                                 </c:if>
-                                <div class="socila-sharing mt-25">
-                                    <ul class="d-flex">
-                                        <li>Chia sẻ</li>
-                                        <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-google-plus-official" aria-hidden="true"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a></li>
-                                    </ul>
-                                </div>
+<%--                                <div class="socila-sharing mt-25">--%>
+<%--                                    <ul class="d-flex">--%>
+<%--                                        <li>Chia sẻ</li>--%>
+<%--                                        <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>--%>
+<%--                                        <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>--%>
+<%--                                        <li><a href="#"><i class="fa fa-google-plus-official" aria-hidden="true"></i></a></li>--%>
+<%--                                        <li><a href="#"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a></li>--%>
+<%--                                    </ul>--%>
+<%--                                </div>--%>
                             </div>
                         </div>
                         <!-- Thumbnail Description End -->
@@ -243,6 +247,7 @@
                                             <div class="form">
                                                 <label class="req" for="username">Tên tài khoản</label>
                                                 <input type="text" class="form-control" id="username" name="username" required="required">
+                                                <input type="hidden" class="form-control" id="id" name="productID" value="${product.productID}">
                                             </div>
 <%--                                            <div class="form-group">--%>
 <%--                                                <label class="req" for="subject">Bảng tóm tắt</label>--%>

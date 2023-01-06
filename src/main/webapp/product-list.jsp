@@ -207,7 +207,9 @@
                                                                         giỏ</a>
                                                                 </div>
                                                                 <div class="actions-primary">
-                                                                    <a href="checkout.jsp" title="Mua ngay"> Mua
+                                                                    <c:url value="/buyNow?productID=${p.productID}"
+                                                                           var="buyNow"/>
+                                                                    <a href="${buyNow}" title="Mua ngay"> Mua
                                                                         ngay</a>
                                                                 </div>
 
@@ -293,6 +295,7 @@
         <script src="js\plugins.js"></script>
         <!-- Main activaion js -->
         <script src="js\main.js"></script>
+
 </body>
 
 </html>

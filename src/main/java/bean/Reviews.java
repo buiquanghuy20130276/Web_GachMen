@@ -1,29 +1,23 @@
 package bean;
 
 public class Reviews {
-    private String idUser;
 
     private String userName;
     private String content;
     private String postDate;
 
-    public Reviews(String idUser, String userName, String content, String postDate) {
-        this.idUser = idUser;
+    public Reviews (String userName, String content, String postDate) {
         this.userName = userName;
         this.content = content;
         this.postDate = postDate;
     }
+    public Reviews( String userName, String content) {
+        this.userName = userName;
+        this.content = content;
+    }
 
     public Reviews() {
 
-    }
-
-    public String getId_User() {
-        return idUser;
-    }
-
-    public void setId_User(String idUser) {
-        this.idUser = idUser;
     }
 
     public String getUserName() {
@@ -53,7 +47,6 @@ public class Reviews {
     @Override
     public String toString() {
         return "Reviews{" +
-                "idUser='" + idUser + '\'' +
                 ", userName='" + userName + '\'' +
                 ", content='" + content + '\'' +
                 ", postDate='" + postDate + '\'' +
