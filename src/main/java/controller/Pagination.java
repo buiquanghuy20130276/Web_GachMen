@@ -14,24 +14,26 @@ import java.util.List;
 public class Pagination extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        List<Product>list = ProductService.getAllProduct();
-        int start=0;
-        int end=9;
-        int limit = list.size()/9;
-        String begin= request.getParameter("start");
-        String finish =request.getParameter("end");
-        if (list.size()<9){
-            end=list.size();
+        String indexPage = request.getParameter("index");
+        if(indexPage == null){
+            indexPage = "1";
         }
-        if(!begin.equals("")){
-            start=Integer.parseInt(begin);
+        int index = Integer.parseInt(indexPage);
+
+        ProductService ps = new ProductService();
+        int count = ps.getTotalProduct(); //100sp
+        //so trang
+        int endPage = count/18;
+        if(count%18!=0){
+            endPage++;
         }
-        if(!finish.equals("")){
-            end=Integer.parseInt(finish);
-        }
-       List<Product> listP = ProductService.getByPage(list,start,end);
-        request.setAttribute("listP",listP);
-        request.setAttribute("limit",limit);
+        List<Product> list = ps.pagingProduct(index);
+        //Dua du lieu len trang product-list
+        request.setAttribute("listP",list);
+        //giu index xuong product list
+        request.setAttribute("tag",index);
+        request.setAttribute("endP",endPage);
+        request.getRequestDispatcher("product-page.jsp").forward(request,response);
     }
 
     @Override

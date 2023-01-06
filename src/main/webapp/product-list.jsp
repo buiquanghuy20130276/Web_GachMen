@@ -207,9 +207,7 @@
                                                                         giỏ</a>
                                                                 </div>
                                                                 <div class="actions-primary">
-                                                                    <c:url value="/buyNow?productID=${p.productID}"
-                                                                           var="buyNow"/>
-                                                                    <a href="${buyNow}" title="Mua ngay"> Mua
+                                                                    <a href="checkout.jsp" title="Mua ngay"> Mua
                                                                         ngay</a>
                                                                 </div>
 
@@ -233,15 +231,19 @@
                                 <!-- #grid view End -->
                                 <div class="pro-pagination">
                                     <ul class="blog-pagination">
-
-                                        <li class="active"><a href="shop.html">1</a></li>
-                                        <li><a href="shop-2.html">2</a></li>
-                                        <li><a href="shop-3.html">3</a></li>
-                                        <li><a href="shop-4.html">4</a></li>
+                                        <c:forEach begin="1" end="${endP}" var="i"><%--@elvariable id="tag" type=""--%>
+                                        <li><a class="${tag == i?"active":""}" href="pageNumber?index=${i}">${i}</a></li>
+<%--                                        <li><a href="shop-2.html">2</a></li>--%>
+<%--                                        <li><a href="shop-3.html">3</a></li>--%>
+<%--                                        <li><a href="shop-4.html">4</a></li>--%>
                                         <li><a href="#"><i class="fa fa-angle-right"></i></a></li>
+                                        </c:forEach>
                                     </ul>
-
                                 </div>
+                                <%--@elvariable id="endP" type=""--%>
+<%--                                <c:forEach begin="1" end="${endP}" var="i">--%>
+<%--                                    <a class="${tag == i?"active":""}" href="pageNumber?index=${i}">${i}</a>--%>
+<%--                                </c:forEach>--%>
                                 <!-- #list view End -->
                                 <!-- Grid & List Main Area End -->
                             </div>
@@ -295,7 +297,6 @@
         <script src="js\plugins.js"></script>
         <!-- Main activaion js -->
         <script src="js\main.js"></script>
-
 </body>
 
 </html>

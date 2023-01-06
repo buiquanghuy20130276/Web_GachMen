@@ -156,8 +156,9 @@
                             <div id="grid-view" class="tab-pane fade show active">
                                 <div class="row">
                                     <!-- Single Product Start -->
-                                    <%--@elvariable id="pageList" type="java.util.List"--%>
-                                    <c:forEach items="${pageList}" var="p">
+                                   
+                                    <%--@elvariable id="listP" type="java.util.List"--%>
+                                    <c:forEach items="${listP}" var="p">
                                     <div class="col-lg-4 col-md-4 col-sm-6 col-6">
                                         <div class="single-product">
                                             <!-- Product Image Start -->
@@ -217,25 +218,16 @@
                             <!-- #grid view End -->
 
                             <!-- #list view End -->
-                            <div class="toolbar" >
-                                <div class="pagination">
-                                    <c:if test="${currentPage != 1}">
-                                        <a href="/Web_GachMen/pageNumber?action=productype&type=${productType}&page=${currentPage - 1}">«</a>
-                                    </c:if>
-                                    <c:forEach begin="1" end="6" var="i">
-                                        <c:choose>
-                                            <c:when test="${currentPage eq i}">
-                                                <a>${i}</a>
-                                            </c:when>
-                                            <c:otherwise>
-                                                <a href="/Web_GachMen/pageNumber?action=productype&type=${productType}&page=${i}">${i}</a>
-                                            </c:otherwise>
-                                        </c:choose>
+                            <div class="pro-pagination">
+                                <ul class="blog-pagination">
+                                    <c:forEach begin="1" end="${endP}" var="i"><%--@elvariable id="tag" type=""--%>
+                                        <li class="${tag == i?"active":""}"><a  href="pageNumber?index=${i}">${i}</a></li>
+                                        <%--                                        <li><a href="shop-2.html">2</a></li>--%>
+                                        <%--                                        <li><a href="shop-3.html">3</a></li>--%>
+                                        <%--                                        <li><a href="shop-4.html">4</a></li>--%>
+                                        <li><a href="#"><i class="fa fa-angle-right"></i></a></li>
                                     </c:forEach>
-                                    <c:if test="${currentPage != 6}">
-                                        <a href="/Web_GachMen/pageNumber?action=productype&type=${productType}&page=${currentPage + 1}">»</a>
-                                    </c:if>
-                                </div>
+                                </ul>
                             </div>
                             <!-- Product Pagination Info -->
                         </div>
