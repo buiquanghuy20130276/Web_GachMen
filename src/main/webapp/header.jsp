@@ -1,6 +1,7 @@
-
+<%@ page import="javax.mail.Session" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%if(session.getAttribute("username") == null){
+<%if(session.getAttribute("account") == null){
     response.sendRedirect("login.jsp");
 }%>
 <jsp:useBean id="cart" class="model.Cart" scope="session"></jsp:useBean>
@@ -20,19 +21,19 @@
                 <div class="col-lg-5 col-md-8 ml-auto mr-auto col-10">
                     <div class="categorie-search-box">
                         <form action="search" method="post">
-<%--                            <div class="form-group">--%>
-<%--                                <select class="bootstrap-select" name="poscats">--%>
-<%--                                    <option value="0">Sản phẩm</option>--%>
-<%--                                    <option value="2">Gạch lát nền</option>--%>
-<%--                                    <option value="3">Gạch ốp tường</option>--%>
-<%--                                    <option value="4">Gạch trang trí</option>--%>
-<%--                                    <option value="5">Gạch giả gỗ</option>--%>
-<%--                                    <option value="6">Gạch Terrazzo</option>--%>
-<%--                                    <option value="7">Gạch thẻ</option>--%>
-<%--                                    <option value="8">Gạch bông</option>--%>
+                            <%--                            <div class="form-group">--%>
+                            <%--                                <select class="bootstrap-select" name="poscats">--%>
+                            <%--                                    <option value="0">Sản phẩm</option>--%>
+                            <%--                                    <option value="2">Gạch lát nền</option>--%>
+                            <%--                                    <option value="3">Gạch ốp tường</option>--%>
+                            <%--                                    <option value="4">Gạch trang trí</option>--%>
+                            <%--                                    <option value="5">Gạch giả gỗ</option>--%>
+                            <%--                                    <option value="6">Gạch Terrazzo</option>--%>
+                            <%--                                    <option value="7">Gạch thẻ</option>--%>
+                            <%--                                    <option value="8">Gạch bông</option>--%>
 
-<%--                                </select>--%>
-<%--                            </div>--%>
+                            <%--                                </select>--%>
+                            <%--                            </div>--%>
                             <input  type="text" name="txt" placeholder="Bạn muốn mua gì...">
                             <button><i class="lnr lnr-magnifier"></i></button>
                         </form>
@@ -44,11 +45,19 @@
                         <ul class="d-flex justify-content-lg-end justify-content-center align-items-center">
                             <li><a href="Cart"><i class="lnr lnr-cart"></i><span class="my-cart"><span class="total-pro">${cart.quantityCart==0?0:cart.quantityCart}</span><span>Giỏ hàng</span></span></a>
                             </li>
-                            <%if(session.getAttribute("username")!=null) {%>
-                            <li><a href="Home"><i class="lnr lnr-user"></i><span class="my-cart"><span><strong><%=session.getAttribute("username")%></strong></span><span> Logout</span></span></a>
+                            <%--                            <%if(session.getAttribute("account.status") == 1 ) {%>--%>
+                            <%--                            <li><a href="login.jsp"><i class="lnr lnr-user"></i><span class="my-cart"><span> <strong>Đăng nhập</strong></span><span> đăng kí</span></span></a>--%>
+                            <%--                            </li>--%>
+                            <%--                            <%}%>--%>
+                            <%if(session.getAttribute("userID")!=null){%>
+                            <li><a href="login.jsp"><i class="lnr lnr-user"></i><span class="my-cart"><span><strong><%=session.getAttribute("userN")%></strong></span><span></span></span></a>
+
+                            </li>
+                            <li><a href="logout"><i class="lnr lnr-user"></i><span class="my-cart"><span><strong>Logout</strong></span><span></span></span></a>
+
                             </li>
                             <%}%>
-                            <%if(session.getAttribute("username")==null) {%>
+                            <%if(session.getAttribute("userID")==null) {%>
                             <li><a href="login.jsp"><i class="lnr lnr-user"></i><span class="my-cart"><span> <strong>Đăng nhập</strong></span><span> đăng kí</span></span></a>
                             </li>
                             <%}%>
