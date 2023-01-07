@@ -236,7 +236,7 @@
                                 <div class="pro-pagination">
                                     <ul class="blog-pagination">
                                         <c:if test="${requestScope.page >4}">
-                                            <li><a href="page=${requestScope.page - 1}">«</a></li>
+                                            <li><a href="ProductLists?page=${requestScope.page - 1}">«</a></li>
                                         </c:if>
                                         <c:forEach begin="1" end="${requestScope.numberPage}" var="i">
                                             <c:choose>
