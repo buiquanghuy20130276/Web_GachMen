@@ -1,3 +1,6 @@
+<%@ page import="bean.Product" %>
+<%@ page import="java.util.List" %>
+<%@ page import="service.ProductService" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
@@ -17,6 +20,7 @@
     <link rel="stylesheet" href="css\ionicons.min.css">
     <!-- linearicons css -->
     <link rel="stylesheet" href="css\linearicons.css">
+    <link rel="stylesheet" href="css/styles.css">
     <!-- Nice select css -->
     <link rel="stylesheet" href="css\nice-select.css">
     <!-- Jquery fancybox css -->
@@ -56,8 +60,8 @@
         <div class="container">
             <div class="breadcrumb">
                 <ul class="d-flex align-items-center">
-                    <li><a href="index.jsp">Trang chủ</a></li>
-                    <li class="active"><a href="product-detail.jsp">Sản phẩm</a></li>
+                    <li><a href="Home">Trang chủ</a></li>
+                    <li class="active"><a href="ProductLists?page=1">Sản phẩm</a></li>
                 </ul>
             </div>
         </div>
@@ -73,28 +77,48 @@
                 <div class="col-lg-3 order-2 order-lg-1">
                     <div class="sidebar">
                         <!-- Price Filter Options End -->
+                        <div class="sidebar-categorie mb-40">
+                            <h3 class="sidebar-title">Sắp xếp</h3>
+                            <ul class="sidbar-style" style="margin-left: 30px">
+                                <li class="form-check">
+                                    <a href="SortProduct?sort=A_Z&page=1">+ Tên gạch từ A-Z</a>
+                                </li>
+                                <li class="form-check">
+                                    <a href="SortProduct?sort=Z_A&page=1">+ Tên gạch từ Z-A</a>
+                                </li>
+                                <li class="form-check">
+                                    <a href="SortProduct?sort=price_increase&page=1">+ Giá từ thấp đến cao</a>
+                                </li>
+                                <li class="form-check">
+                                    <a href="SortProduct?sort=price_decrease&page=1">+ Giá từ cao đến thấp</a>
+                                </li>
+
+                            </ul>
+                        </div>
                         <!-- Sidebar Categorie Start -->
                         <div class="sidebar-categorie mb-40">
                             <h3 class="sidebar-title">Loại gạch</h3>
-                            <ul class="sidbar-style">
+                            <ul class="sidbar-style" style="margin-left: 30px">
                                 <li class="form-check">
-                                    <input class="form-check-input" value="#" id="camera" type="checkbox">
-                                    <label class="form-check-label" for="camera">Gạch nền(10)</label>
+                                    <a href="ProductLists?page=1">+ Tất cả</a>
+                                </li>
+                                <li class="form-check" style="color: black">
+                                    <a href="ListByType?type=Gạch lát nền&page=1">+ Gạch lát nền</a>
+                                </li>
+
+                                <li class="form-check">
+                                    <a href="ListByType?type=Gạch ốp tường&page=1">+ Gạch ốp tường</a>
                                 </li>
                                 <li class="form-check">
-                                    <input class="form-check-input" value="#" id="GamePad" type="checkbox">
-                                    <label class="form-check-label" for="GamePad">Gạch ốp tường (8)</label>
+                                    <a href="ListByType?type=Gạch trang trí&page=1">+ Gạch trang trí</a>
                                 </li>
                                 <li class="form-check">
-                                    <input class="form-check-input" value="#" id="Digital" type="checkbox">
-                                    <label class="form-check-label" for="Digital">Gạch trang trí(8)</label>
+                                    <a href="ListByType?type=Gạch giả gỗ&page=1">+ Gạch giả gỗ</a>
                                 </li>
-                                <li class="form-check">
-                                    <input class="form-check-input" value="#" id="Virtual" type="checkbox">
-                                    <label class="form-check-label" for="Virtual"> Gạch giả gỗ </label>
-                                </li>
+
                             </ul>
                         </div>
+
 
                         <!-- Sidebar Categorie Start -->
                         <!-- Product Size Start -->
@@ -108,7 +132,7 @@
                         <!-- Product Top End -->
                         <!-- Single Banner Start -->
                         <div class="col-img">
-                            <a href="product-list.jsp"><img src="img/banner/khuyenmaigachnhap-01.webp"
+                            <a href="ProductLists?page=1"><img src="img/banner/khuyenmaigachnhap-01.webp"
                                                             alt="slider-banner"></a>
                         </div>
                         <!-- Single Banner End -->
@@ -122,175 +146,172 @@
 
                         <!-- Toolbar Short Area Start -->
                         <div class="main-toolbar-sorter clearfix">
-                            <div class="toolbar-sorter d-flex align-items-center">
-                                <label>Sắp xếp:</label>
-                                <select class="sorter wide">
-                                    <option href="listProductA_Z" value="Product Name" selected="">Tên: A-Z</option>
-                                    <option href="listProductZ_A" value="Product Name">Tên: Z-A</option>
-                                    <option href="listPriceHighToLow" value="Price">Giá thấp đến cao</option>
-                                    <option href="listPriceLowToHigh" value="Price">Giá cao đến thấp</option>
-                                </select>
-                            </div>
-                        </div>
-                        <!-- Toolbar Short Area End -->
-                        <!-- Toolbar Short Area Start -->
-                        <div class="main-toolbar-sorter clearfix">
-                            <div class="toolbar-sorter d-flex align-items-center">
-                                <label>Hiển thị:</label>
-                                <select class="sorter wide">
-                                    <option value="30">30</option>
-                                    <option value="45">45</option>
-                                    <option value="60">60</option>
 
-                                </select>
-                            </div>
-                        </div>
-                        <!-- Toolbar Short Area End -->
-                    </div>
-                    <!-- Grid & List View End -->
-                    <div class="main-categorie mb-all-40">
-                        <!-- Grid & List Main Area End -->
-                        <div class="tab-content fix">
-                            <div id="grid-view" class="tab-pane fade show active">
-                                <div class="row">
-                                    <!-- Single Product Start -->
-                                    <%--@elvariable id="listP" type="java.util.List"--%>
-                                    <c:forEach items="${listP}" var="p">
-                                    <div class="col-lg-4 col-md-4 col-sm-6 col-6">
-                                        <div class="single-product">
-                                            <!-- Product Image Start -->
-                                            <div class="pro-img">
-                                                <a href="ProductDetail?productID=${p.productID}">
-                                                    <img class="primary-img"
-                                                         src="${p.image1}"
-                                                         alt="single-product">
-                                                    <img class="secondary-img"
-                                                         src="${p.image2}"
-                                                         alt="single-product">
-                                                </a>
+                            <!-- Toolbar Short Area End -->
+                            <!-- Toolbar Short Area Start -->
 
-                                            </div>
-                                            <!-- Product Image End -->
-                                            <!-- Product Content Start -->
-                                            <div class="pro-content">
-                                                <div class="pro-info">
-                                                    <h4><a href="ProductDetail?productID=${p.productID}">${p.productName}</a></h4>
-                                                    <p><span class="price"><fmt:formatNumber type="currency" currencySymbol="" minFractionDigits="0" value="${p.price-Math.round(p.price*(p.salePrice/100))}"/> VNĐ </span>
-                                                        <c:if test="${p.salePrice>0}">
-                                                        <del class="prev-price"><fmt:formatNumber type="currency" currencySymbol="" minFractionDigits="0" value="${p.price}"/> VNĐ</del>
-                                                        </c:if>
-                                                    </p>
-                                                    <c:if test="${p.salePrice>0}">
-                                                    <div class="label-product l_sale">${p.salePrice}<span
-                                                            class="symbol-percent">%</span></div>
-                                                    </c:if>
-                                                </div>                                                <div class="pro-actions">
-                                                    <div class="actions-primary">
-                                                        <c:url value="/addCart?productID=${p.productID}" var="addCart"/>
-                                                        <a href="${addCart}" title="Thêm vào giỏ"> + Thêm vào giỏ</a>
-                                                    </div>
-                                                    <div class="actions-primary">
-                                                        <a href="checkout.jsp" title="Mua ngay"> Mua ngay</a>
+                            <!-- Toolbar Short Area End -->
+
+                            <!-- Grid & List View End -->
+                            <div class="main-categorie mb-all-40">
+                                <!-- Grid & List Main Area End -->
+                                <div class="tab-content fix">
+                                    <div id="grid-view" class="tab-pane fade show active">
+                                        <div class="row">
+                                            <!-- Single Product Start -->
+                                            <%--@elvariable id="listP" type="java.util.List"--%>
+                                            <c:forEach items="${listP}" var="p">
+                                                <div class="col-lg-4 col-md-4 col-sm-6 col-6">
+                                                    <div class="single-product">
+                                                        <!-- Product Image Start -->
+                                                        <div class="pro-img">
+                                                            <a href="ProductDetail?productID=${p.productID}">
+                                                                <img class="primary-img"
+                                                                     src="${p.image1}"
+                                                                     alt="single-product">
+                                                                <img class="secondary-img"
+                                                                     src="${p.image2}"
+                                                                     alt="single-product">
+                                                            </a>
+
+                                                        </div>
+                                                        <!-- Product Image End -->
+                                                        <!-- Product Content Start -->
+                                                        <div class="pro-content">
+                                                            <div class="pro-info">
+                                                                <h4>
+                                                                    <a href="ProductDetail?productID=${p.productID}">${p.productName}</a>
+                                                                </h4>
+                                                                <p><span class="price"><fmt:formatNumber type="currency"
+                                                                                                         currencySymbol=""
+                                                                                                         minFractionDigits="0"
+                                                                                                         value="${p.price-Math.round(p.price*(p.salePrice/100))}"/> VNĐ </span>
+                                                                    <c:if test="${p.salePrice>0}">
+                                                                        <del class="prev-price"><fmt:formatNumber
+                                                                                type="currency" currencySymbol=""
+                                                                                minFractionDigits="0"
+                                                                                value="${p.price}"/> VNĐ
+                                                                        </del>
+                                                                    </c:if>
+                                                                </p>
+                                                                <c:if test="${p.salePrice>0}">
+                                                                    <div class="label-product l_sale">${p.salePrice}<span
+                                                                            class="symbol-percent">%</span></div>
+                                                                </c:if>
+                                                            </div>
+                                                            <div class="pro-actions">
+                                                                <div class="actions-primary">
+                                                                    <c:url value="/addCart?productID=${p.productID}"
+                                                                           var="addCart"/>
+                                                                    <a href="${addCart}" title="Thêm vào giỏ"> + Thêm
+                                                                        vào
+                                                                        giỏ</a>
+                                                                </div>
+                                                                <div class="actions-primary">
+                                                                    <c:url value="/buyNow?productID=${p.productID}"
+                                                                           var="buyNow"/>
+                                                                    <a href="${buyNow}" title="Mua ngay"> Mua
+                                                                        ngay</a>
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+                                                        <!-- Product Content End -->
+                                                        <!-- <span class="sticker-new">Mới</span> -->
                                                     </div>
 
-                                                    </div>
                                                 </div>
-                                                <!-- Product Content End -->
-                                                <!-- <span class="sticker-new">Mới</span> -->
-                                            </div>
+                                            </c:forEach>
+                                            <!-- Single Product End -->
+                                            <!-- Single Product Start -->
 
+
+                                            <!-- Single Product End -->
                                         </div>
-                                    </c:forEach>
-                                    <!-- Single Product End -->
-                                    <!-- Single Product Start -->
-
-
-                                    <!-- Single Product End -->
+                                        <!-- Row End -->
+                                    </div>
                                 </div>
-                                <!-- Row End -->
+                                <!-- #grid view End -->
+
+                                <div class="pro-pagination">
+                                    <ul class="blog-pagination">
+                                        <c:if test="${requestScope.page >4}">
+                                            <li><a href="page=${requestScope.page - 1}">«</a></li>
+                                        </c:if>
+                                        <c:forEach begin="1" end="${requestScope.numberPage}" var="i">
+                                            <c:choose>
+                                                <c:when test="${requestScope.page eq i}">
+                                                    <li class="active"><a href="ProductLists?page=${i}">${i}</a></li>
+                                                </c:when>
+                                                <c:when test="${requestScope.page eq i}">
+                                                    <li class="active"><a href="ProductLists?page=${i}">${i}</a></li>
+                                                </c:when>
+                                                <c:otherwise>
+                                                    <li><a href="ProductLists?page=${i}">${i}</a></li>
+                                                </c:otherwise>
+                                            </c:choose>
+                                        </c:forEach>
+                                        <c:if test="${requestScope.page < requestScope.numberPage}">
+                                            <li><a href="ProductLists?page=${requestScope.page + 1}">»</a></li>
+                                        </c:if>
+
+                                    </ul>
+
+                                </div>
+                                <!-- #list view End -->
+                                <!-- Grid & List Main Area End -->
                             </div>
-                            <!-- #grid view End -->
-
-                            <!-- #list view End -->
-<%--                            <div class="pro-pagination">--%>
-<%--                                <ul class="blog-pagination">--%>
-<%--                                    <c:forEach begin="0" end="${limit}" var="i">--%>
-<%--                                    <li class="active"><a href="ProductLists?start">1</a></li>--%>
-
-<%--                                    <li><a href="#"><i class="fa fa-angle-right"></i></a></li>--%>
-<%--                                    </c:forEach>--%>
-<%--                                </ul>--%>
-<%--                            <div class="toolbar" >--%>
-<%--                                <div class="pagination">--%>
-<%--                                    <c:if test="${currentPage != 1}">--%>
-<%--                                        <a href="/Web_GachMen/pageNumber?action=productype&type=${productType}&page=${currentPage - 1}">«</a>--%>
-<%--                                    </c:if>--%>
-<%--                                    <c:forEach begin="1" end="6" var="i">--%>
-<%--                                        <c:choose>--%>
-<%--                                            <c:when test="${currentPage eq i}">--%>
-<%--                                                <a>${i}</a>--%>
-<%--                                            </c:when>--%>
-<%--                                            <c:otherwise>--%>
-<%--                                                <a href="/Web_GachMen/pageNumber?action=productype&type=${productType}&page=${i}">${i}</a>--%>
-<%--                                            </c:otherwise>--%>
-<%--                                        </c:choose>--%>
-<%--                                    </c:forEach>--%>
-<%--                                    <c:if test="${currentPage != 6}">--%>
-<%--                                        <a href="/Web_GachMen/pageNumber?action=productype&type=${productType}&page=${currentPage + 1}">»</a>--%>
-<%--                                    </c:if>--%>
-<%--                                </div>--%>
-<%-->>>>>>> be0dc285e423d5e403f262240fed5ac06600078c--%>
-<%--                            </div>--%>
-<%--                            <!-- Product Pagination Info -->--%>
-<%--                        </div>--%>
-                        <!-- Grid & List Main Area End -->
+                        </div>
+                        <!-- product Categorie List End -->
                     </div>
+                    <!-- Row End -->
                 </div>
-                <!-- product Categorie List End -->
+                <!-- Container End -->
             </div>
-            <!-- Row End -->
+            <!-- Shop Page End -->
+            <!-- Support Area Start Here -->
+            <jsp:include page="footer.jsp"/>
+            <!-- Xem nhanh Content Start -->
+            <!-- Xem nhanh Content End -->
         </div>
-        <!-- Container End -->
-    </div>
-    <!-- Shop Page End -->
-    <!-- Support Area Start Here -->
-    <jsp:include page="footer.jsp"/>
-    <!-- Xem nhanh Content Start -->
-    <!-- Xem nhanh Content End -->
-</div>
-<!-- Main Wrapper End Here -->
+        <!-- Main Wrapper End Here -->
+        <script>
+            function submit() {
+                document.getElementById("sort").submit();
+            }
+        </script>
+        <script
+                src="https://code.jquery.com/jquery-3.5.1.min.js"
+                integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+                crossorigin="anonymous">
+        </script>
+        <!-- jquery 3.2.1 -->
+        <script src="js\vendor\jquery-3.2.1.min.js"></script>
+        <!-- Countdown js -->
+        <script src="js\jquery.countdown.min.js"></script>
+        <!-- Mobile menu js -->
+        <script src="js\jquery.meanmenu.min.js"></script>
+        <!-- ScrollUp js -->
+        <script src="js\jquery.scrollUp.js"></script>
+        <!-- Nivo slider js -->
+        <script src="js\jquery.nivo.slider.js"></script>
+        <!-- Fancybox js -->
+        <script src="js\jquery.fancybox.min.js"></script>
+        <!-- Jquery nice select js -->
+        <script src="js\jquery.nice-select.min.js"></script>
+        <!-- Jquery ui price slider js -->
+        <script src="js\jquery-ui.min.js"></script>
+        <!-- Owl carousel -->
+        <script src="js\owl.carousel.min.js"></script>
+        <!-- Bootstrap popper js -->
+        <script src="js\popper.min.js"></script>
+        <!-- Bootstrap js -->
+        <script src="js\bootstrap.min.js"></script>
+        <!-- Plugin js -->
+        <script src="js\plugins.js"></script>
+        <!-- Main activaion js -->
+        <script src="js\main.js"></script>
 
-<script
-        src="https://code.jquery.com/jquery-3.5.1.min.js"
-        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
-        crossorigin="anonymous">
-</script>
-<!-- jquery 3.2.1 -->
-<script src="js\vendor\jquery-3.2.1.min.js"></script>
-<!-- Countdown js -->
-<script src="js\jquery.countdown.min.js"></script>
-<!-- Mobile menu js -->
-<script src="js\jquery.meanmenu.min.js"></script>
-<!-- ScrollUp js -->
-<script src="js\jquery.scrollUp.js"></script>
-<!-- Nivo slider js -->
-<script src="js\jquery.nivo.slider.js"></script>
-<!-- Fancybox js -->
-<script src="js\jquery.fancybox.min.js"></script>
-<!-- Jquery nice select js -->
-<script src="js\jquery.nice-select.min.js"></script>
-<!-- Jquery ui price slider js -->
-<script src="js\jquery-ui.min.js"></script>
-<!-- Owl carousel -->
-<script src="js\owl.carousel.min.js"></script>
-<!-- Bootstrap popper js -->
-<script src="js\popper.min.js"></script>
-<!-- Bootstrap js -->
-<script src="js\bootstrap.min.js"></script>
-<!-- Plugin js -->
-<script src="js\plugins.js"></script>
-<!-- Main activaion js -->
-<script src="js\main.js"></script>
 </body>
 
 </html>
