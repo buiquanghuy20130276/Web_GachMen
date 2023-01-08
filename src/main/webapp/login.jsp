@@ -1,4 +1,5 @@
 ﻿<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!doctype html>
 <html class="no-js" lang="zxx">
 
@@ -84,6 +85,9 @@
                             <h3 class="mb-10 custom-title">ĐĂNG NHẬP</h3>
                             <br>
                             <form action="Login" method="post">
+                                <p style="color:red; display:block"><%=request.getAttribute("errMes0")==null ?" ":request.getAttribute("errMes0")%></p>
+                                <p style="color:red; display:block"><%=request.getAttribute("errMes1")==null ?" ":request.getAttribute("errMes1")%></p>
+                                <p style="color:red; display:block"><%=request.getAttribute("errMes2")==null ?" ":request.getAttribute("errMes2")%></p>
                                 <div class="form-group">
                                     <label>Tài khoản</label>
                                     <input type="text" value="<%=request.getParameter("username")==null ? "":request.getParameter("username")%>" name="username" placeholder="Nhập username..." id="input-email" class="form-control">
@@ -95,11 +99,11 @@
                                 <p class="lost-password"><a href="forgot-password.jsp">Quên mật khẩu?</a></p>
                                 <input type="submit" value="Đăng nhập" class="return-customer-btn">
                                 <br/>
-                                <% if(session.getAttribute("errmsg")!=null){
-                                    String msg = (String)session.getAttribute("errmsg");
-                                %>
-                                <font color="red"><%=msg%></font>
-                                <%}%>
+                                <%--                                <% if(session.getAttribute("errmsg")!=null){--%>
+                                <%--                                    String msg = (String)session.getAttribute("errmsg");--%>
+                                <%--                                %>--%>
+                                <%--                                <font color="red"><%=msg%></font>--%>
+                                <%--                                <%}%>--%>
                             </form>
                         </div>
                     </div>

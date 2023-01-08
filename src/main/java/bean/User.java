@@ -126,4 +126,10 @@ public class User implements Serializable {
         return role.accept(name);
     }
 
+    public Role getRole() {
+        return role;
+    }
+    public void setRole(Role role) {
+        this.role = role;
+    }
 }

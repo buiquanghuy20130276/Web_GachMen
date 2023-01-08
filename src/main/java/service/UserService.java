@@ -264,6 +264,97 @@ public class UserService {
             ex.printStackTrace();
         }
     }
+
+    public static User checkUser(String username, String password) {
+        PreparedStatement preSta = null;
+        try {
+            String sql = "select * from user where username = ? and password = ?";
+            preSta = ConnectDB.connect(sql);
+            preSta.setString(1, username);
+            preSta.setString(2, password);
+            ResultSet rs = preSta.executeQuery();
+            User user =null;
+            if (rs.next()) {
+                user = new User(
+                        rs.getString(1), rs.getString(2), rs.getString(3)
+                        , rs.getString(4),
+                        rs.getInt(5),
+                        rs.getString(6),
+                        rs.getString(7),
+                        rs.getInt(8),
+                        rs.getString(9)
+                );
+                return user;
+            }
+            rs.close();
+            preSta.close();
+        } catch (SQLException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public static int getStatus(String username) {
+        int status=0;
+        PreparedStatement pre = null;
+        try {
+            String sql = "select status from user where username=? ";
+            pre = ConnectDB.connect(sql);
+            pre.setString(1, username);
+            ResultSet rs = pre.executeQuery();
+            if (rs.next()) {
+                return status = rs.getInt(1);
+            }
+        } catch (ClassNotFoundException | SQLException e) {
+            e.printStackTrace();
+        }
+        return status;
+    }
+
+    public static User getUser(String username) {
+        PreparedStatement preSta = null;
+        try {
+            String sql = "select * from user where username = ? ";
+            preSta = ConnectDB.connect(sql);
+            preSta.setString(1, username);
+            ResultSet rs = preSta.executeQuery();
+            while (rs.next()) {
+                User user = new User(
+                        rs.getString(1), rs.getString(2), rs.getString(3)
+                        , rs.getString(4),
+                        rs.getInt(5),
+                        rs.getString(6),
+                        rs.getString(7),
+                        rs.getInt(8),
+                        rs.getString(9)
+                );
+                return user;
+            }
+            rs.close();
+            preSta.close();
+            return null;
+        } catch (SQLException | ClassNotFoundException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    public static int getRoleDB(String username){
+        int res = 0;
+        PreparedStatement pre = null;
+        try {
+            String sql = "select role from user where username=? ";
+            pre = ConnectDB.connect(sql);
+            pre.setString(1, username);
+            ResultSet rs = pre.executeQuery();
+            if (rs.next()) {
+                return res = rs.getInt(1);
+            }
+        } catch (ClassNotFoundException | SQLException e) {
+            e.printStackTrace();
+        }
+        return res;
+    }
     public static void main(String[] args) {
         UserService service = new UserService();
         boolean u = existUserName("quanghuy.fs");

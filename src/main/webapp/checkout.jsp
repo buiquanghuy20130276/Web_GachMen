@@ -58,8 +58,8 @@
         <div class="container">
             <div class="breadcrumb">
                 <ul class="d-flex align-items-center">
-                    <li><a href="index.jsp">Trang chủ</a></li>
-                    <li class="active"><a href="checkout.jsp">Thanh toán</a></li>
+                    <li><a href="Home">Trang chủ</a></li>
+                    <li class="active"><a href="Payment">Thanh toán</a></li>
                 </ul>
             </div>
         </div>
@@ -152,7 +152,7 @@
                                     <tr class="cart_item">
                                         <td class="product-name">
                                                 ${product.productName}<span
-                                                class="product-quantity"> ${product.quantityCart}</span>
+                                                class="product-quantity">   SL: ${product.quantityCart}</span>
                                         </td>
                                         <td class="product-total">
                                         <span class="amount"><fmt:formatNumber type="currency" currencySymbol=""

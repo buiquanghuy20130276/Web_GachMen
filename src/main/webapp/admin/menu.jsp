@@ -19,9 +19,7 @@
         <li>
             <a href="http://localhost:8080/GachMen_Store_war/Home"><i class="icon-chevron-right"></i> Về trang chủ</a>
         </li>
-        <li>
-            <a href="http://localhost:8080/GachMen_Store_war/admin/admin.jsp"><i class="icon-chevron-right"></i> Thông tin chung</a>
-        </li>
+
         <li>
             <a href="http://localhost:8080/GachMen_Store_war/ListUserAd"><i class="icon-chevron-right"></i> Quản lý tài khoản</a>
         </li>
