@@ -28,14 +28,13 @@ public class Login extends HttpServlet {
             if (username.equals("") || password.equals("")) {
                 request.setAttribute("errMes1", "Vui lòng điền đầy đủ thông tin!");
                 request.getRequestDispatcher("login.jsp").forward(request, response);
-            } else if (UserService.checkUser(username,password) != null) {
-                if (UserService.getStatus(username)==0) {
+            } else if (UserService.checkUser(username, password) != null) {
+                if (UserService.getStatus(username) == 0) {
                     request.setAttribute("errMes0", "Tài khoản đã bị khoá");
                     request.getRequestDispatcher("login.jsp").forward(request, response);
                 } else {
                     User u = UserService.getUser(username);
-
-                    if (u.getIsAdmin()!=0) {
+                    if (u.getIsAdmin() != 0) {
                         ArrayList<String> listRole = new ArrayList<>();
                         listRole.add("admin.index");
                         Role role = new Role(listRole);
@@ -55,9 +54,9 @@ public class Login extends HttpServlet {
                     session.setAttribute("userN", username);
                     session.setAttribute("userID", user);
                     session.setMaxInactiveInterval(900);
-                    if(u.getIsAdmin()>0) {
+                    if (u.getIsAdmin() > 0) {
                         response.sendRedirect("ListProductAd");
-                    }else
+                    } else
                         response.sendRedirect("Home");
 
                 }

@@ -9,7 +9,6 @@
     UserSession u = UserSession.getUS(session);
     Collection<User> user = u.getUser();
     String username = u.getUserName();
-    System.out.println(username);
     if(username.equalsIgnoreCase("")||!user.iterator().next().accept("admin.index")) response.sendRedirect("http://localhost:8080/GachMen_Store_war/Home");
 %>
 <!DOCTYPE html>
