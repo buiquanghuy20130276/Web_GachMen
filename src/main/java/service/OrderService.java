@@ -1,6 +1,7 @@
 package service;
 
 import bean.Order;
+import bean.OrderDetail;
 import bean.Product;
 import database.ConnectDB;
 
@@ -42,6 +43,33 @@ public class OrderService {
         }
         return listOrder;
     }
+    public static List<OrderDetail> getOrderNotDeliver(String id) {
+            PreparedStatement s = null;
+            try {
+                String sql = "SELECT o.id_product,o.id_order,p.`name`,p.price-p.price*(p.sale/100),o.quantity,o.totalPrice FROM products p join order_detail o on p.id=o.id_product JOIN `order` d on o.id_order=d.id WHERE d.id_user=? AND d.`status`=?;";
+                s = ConnectDB.connect(sql);
+                s.setString(1, id);
+                s.setInt(2, 0);
+                ResultSet rs = s.executeQuery();
+                List<OrderDetail> listOrder = new LinkedList<>();
+                while (rs.next()) {
+                    OrderDetail orderDetail = new OrderDetail(
+                            rs.getString(1),
+                            rs.getString(2),
+                            rs.getString(3),
+                            rs.getInt(4),
+                            rs.getInt(5),
+                            rs.getInt(6));
+                    listOrder.add(orderDetail);
+                }
+                rs.close();
+                s.close();
+                return listOrder;
+            } catch (ClassNotFoundException | SQLException e) {
+                e.printStackTrace();
+                return new LinkedList<>();
+            }
+        }
     public static void insertOrder(String userID, String username, int priceTotal,
                             String address, String phone,String email){
         PreparedStatement ps = null;

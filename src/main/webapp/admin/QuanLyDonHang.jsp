@@ -1,10 +1,16 @@
-<%--<%@ page import="beans.User" %>--%>
-<%--<%@ page import="java.util.Collection" %>--%>
-<%--<%@ page import="model.UserSession" %>&lt;%&ndash;--%>
+<%@ page import="bean.User" %>
+<%@ page import="java.util.Collection" %>
+<%@ page import="model.UserSession" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%
+    UserSession u = UserSession.getUS(session);
+    Collection<User> user = u.getUser();
+    String username = u.getUserName();
+    if(username.equalsIgnoreCase("")||!user.iterator().next().accept("admin.index")) response.sendRedirect("http://localhost:8080/GachMen_Store_war/Home");
+%>
 <!DOCTYPE html>
 <html>
 

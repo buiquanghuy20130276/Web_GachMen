@@ -1,9 +1,15 @@
 <%@ page import="javax.mail.Session" %>
+<%@ page import="model.UserSession" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%if(session.getAttribute("account") == null){
-    response.sendRedirect("login.jsp");
-}%>
+<%
+    if (session.getAttribute("account") == null) {
+        response.sendRedirect("login.jsp");
+    }
+%>
+<% UserSession u = UserSession.getUS(session);
+    int role = u.getRole();
+%>
 <jsp:useBean id="cart" class="model.Cart" scope="session"></jsp:useBean>
 <script scr="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <header>
@@ -21,20 +27,8 @@
                 <div class="col-lg-5 col-md-8 ml-auto mr-auto col-10">
                     <div class="categorie-search-box">
                         <form action="search" method="post">
-                            <%--                            <div class="form-group">--%>
-                            <%--                                <select class="bootstrap-select" name="poscats">--%>
-                            <%--                                    <option value="0">Sản phẩm</option>--%>
-                            <%--                                    <option value="2">Gạch lát nền</option>--%>
-                            <%--                                    <option value="3">Gạch ốp tường</option>--%>
-                            <%--                                    <option value="4">Gạch trang trí</option>--%>
-                            <%--                                    <option value="5">Gạch giả gỗ</option>--%>
-                            <%--                                    <option value="6">Gạch Terrazzo</option>--%>
-                            <%--                                    <option value="7">Gạch thẻ</option>--%>
-                            <%--                                    <option value="8">Gạch bông</option>--%>
 
-                            <%--                                </select>--%>
-                            <%--                            </div>--%>
-                            <input  type="text" name="txt" placeholder="Bạn muốn mua gì...">
+                            <input type="text" name="txt" placeholder="Bạn muốn mua gì...">
                             <button><i class="lnr lnr-magnifier"></i></button>
                         </form>
                     </div>
@@ -43,21 +37,28 @@
                 <div class="col-lg-4 col-md-12">
                     <div class="cart-box mt-all-30">
                         <ul class="d-flex justify-content-lg-end justify-content-center align-items-center">
-                            <li><a href="Cart"><i class="lnr lnr-cart"></i><span class="my-cart"><span class="total-pro">${cart.quantityCart==0?0:cart.quantityCart}</span><span>Giỏ hàng</span></span></a>
+                            <li><a href="Cart"><i class="lnr lnr-cart"></i><span class="my-cart"><span
+                                    class="total-pro">${cart.quantityCart==0?0:cart.quantityCart}</span><span>Giỏ hàng</span></span></a>
                             </li>
                             <%--                            <%if(session.getAttribute("account.status") == 1 ) {%>--%>
                             <%--                            <li><a href="login.jsp"><i class="lnr lnr-user"></i><span class="my-cart"><span> <strong>Đăng nhập</strong></span><span> đăng kí</span></span></a>--%>
                             <%--                            </li>--%>
                             <%--                            <%}%>--%>
-                            <%if(session.getAttribute("userID")!=null){%>
-                            <li><a href="login.jsp"><i class="lnr lnr-user"></i><span class="my-cart"><span><strong><%=session.getAttribute("userN")%></strong></span><span></span></span></a>
+                            <%if (session.getAttribute("userID") != null) {%>
 
-                            </li>
-                            <li><a href="logout"><i class="lnr lnr-user"></i><span class="my-cart"><span><strong>Logout</strong></span><span></span></span></a>
+                            <li><a href="logout"><i class="lnr lnr-user"></i><span
+                                    class="my-cart"><span><strong><%=session.getAttribute("userN")%></strong></span><span>đăng xuất</span></span></a>
 
                             </li>
                             <%}%>
-                            <%if(session.getAttribute("userID")==null) {%>
+                            <% if (role != 0) {%>
+
+                            <li><a href="ListProductAd"><i class="lnr lnr-pointer-right"></i><span
+                                    class="my-cart"><span><strong><%=session.getAttribute("userN")%></strong></span><span>vào admin</span></span></a>
+
+                            </li>
+                            <%}%>
+                            <%if (session.getAttribute("userID") == null) {%>
                             <li><a href="login.jsp"><i class="lnr lnr-user"></i><span class="my-cart"><span> <strong>Đăng nhập</strong></span><span> đăng kí</span></span></a>
                             </li>
                             <%}%>
@@ -78,9 +79,11 @@
                     <nav class="d-none d-lg-block">
                         <ul class="header-bottom-list d-flex">
                             <li><a id="index" href="Home">Trang chủ</a>
-                                <!-- Home Version Dropdown Start -->
-
                             </li>
+                            <%if (session.getAttribute("userID") != null) {%>
+                            <li><a id="personal" href="personalUser">Trang cá nhân</a>
+                            </li>
+                            <%}%>
                             <li><a id="product-list" href="ProductLists?page=1">Sản phẩm</a>
 
                             </li>
@@ -116,7 +119,8 @@
         <div class="vertical-menu mt-30">
             <span class="categorie-title mobile-categorei-menu">Danh mục sản phẩm</span>
             <nav>
-                <div id="cate-mobile-toggle" class="category-menu sidebar-menu sidbar-style mobile-categorei-menu-list menu-hidden ">
+                <div id="cate-mobile-toggle"
+                     class="category-menu sidebar-menu sidbar-style mobile-categorei-menu-list menu-hidden ">
                     <ul>
                         <li class="has-sub"><a href="ListByType?type=Gạch lát nền&page=1">Gạch lát nền</a>
 
@@ -152,7 +156,7 @@
                 <div class="vertical-menu mb-all-30">
                     <nav>
                         <ul class="vertical-menu-list" style="display: none;">
-                            <li ><a href="ListByType?type=Gạch lát nền&page=1">Gạch lát nền</a>
+                            <li><a href="ListByType?type=Gạch lát nền&page=1">Gạch lát nền</a>
                             </li>
                             <li><a href="ListByType?type=Gạch ốp tường&page=1">Gạch ốp tường</a>
                                 <!-- Vertical Mega-Menu Start -->
@@ -174,8 +178,10 @@
                 <div class="slider-wrapper theme-default">
                     <!-- Slider Background  Image Start-->
                     <div id="slider" class="nivoSlider">
-                        <a href="ProductLists?page=1"><img src="img\slider\banner-the.png" data-thumb="img/slider/1.jpg" alt="" title="#htmlcaption"></a>
-                        <a href="ProductLists?page=1"><img src="img\slider\image2.jpg" data-thumb="img/slider/2.jpg" alt="" title="#htmlcaption2"></a>
+                        <a href="ProductLists?page=1"><img src="img\slider\banner-the.png" data-thumb="img/slider/1.jpg"
+                                                           alt="" title="#htmlcaption"></a>
+                        <a href="ProductLists?page=1"><img src="img\slider\image2.jpg" data-thumb="img/slider/2.jpg"
+                                                           alt="" title="#htmlcaption2"></a>
                     </div>
                     <!-- Slider Background  Image Start-->
                 </div>

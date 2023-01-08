@@ -41,6 +41,14 @@ public class UserSession {
         }
         return s.trim();
     }
+    public int getRole(){
+        int s=0;
+        Collection<User> u = user.values();
+        for(User s2 : u){
+            s =  s2.getIsAdmin();
+        }
+        return s;
+    }
 
 //    public void update(String name, String birth, String gender,
 //                       String address, int phone, String email){
