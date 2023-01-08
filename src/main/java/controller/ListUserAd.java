@@ -15,7 +15,7 @@ public class ListUserAd extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         List<User> list = UserService.getAll();
         request.setAttribute("listUser", list);
-        request.getRequestDispatcher("admin/QuanLyThanhVien.jsp").forward(request, response);
+        request.getRequestDispatcher("admin/ManageUser.jsp").forward(request, response);
     }
 
     @Override

@@ -175,6 +175,6 @@ public class OrderDetailService {
 //        list.add(p2);
 //        list.add(p3);
 //        insertOrderDetail(list);
-            System.out.println(historyBuy("user64274453870").toString());
+            System.out.println(getDetailOrder("order178892416887043").toString());
     }
 }

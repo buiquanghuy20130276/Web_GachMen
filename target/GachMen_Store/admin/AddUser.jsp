@@ -9,7 +9,6 @@
     UserSession u = UserSession.getUS(session);
     Collection<User> user = u.getUser();
     String username = u.getUserName();
-    System.out.println(username);
     if(username.equalsIgnoreCase("")||!user.iterator().next().accept("admin.index")) response.sendRedirect("http://localhost:8080/GachMen_Store_war/Home");
 %>
 <c:set var="username" value="<%=username%>"/>
@@ -23,7 +22,7 @@
         <c:when test="${param.action eq 'add'}">Thêm </c:when>
         <c:when test="${param.action eq 'update'}">Chỉnh sửa </c:when>
     </c:choose>
-        thành viên</title>
+        tài khoản</title>
     <!-- Bootstrap -->
     <meta charset="utf-8">
     <link href="admin/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
@@ -54,7 +53,7 @@
                                 <c:when test="${param.action eq 'getupdate'}">Chỉnh sửa </c:when>
                                 <c:when test="${param.action eq 'add'}">Thêm </c:when>
                                 <c:when test="${param.action eq 'update'}">Chỉnh sửa </c:when>
-                            </c:choose>thành viên</div>
+                            </c:choose>tài </div>
                     </div>
                     <div class="block-content collapse in">
                         <div class="span12">
@@ -66,7 +65,7 @@
                                         <c:when test="${param.action eq 'getupdate'}">Chỉnh sửa </c:when>
                                         <c:when test="${param.action eq 'add'}">Thêm </c:when>
                                         <c:when test="${param.action eq 'update'}">Chỉnh sửa </c:when>
-                                    </c:choose>thành viên</legend>
+                                    </c:choose>tài khoản</legend>
                                     <input style="display: none" name="action" value="<c:choose><c:when test="${param.action eq 'getadd'}">add</c:when><c:when test="${param.action eq 'getupdate'}">update</c:when><c:when test="${param.action eq 'add'}">add</c:when><c:when test="${param.action eq 'update'}">update</c:when></c:choose>">
                                     <c:choose>
                                         <c:when test="${param.action eq 'getupdate'}"><input style="display: none" name="id" value="<%=request.getParameter("id")%>"></c:when>
@@ -129,7 +128,7 @@
                                     </div>
 
                                     <div class="form-actions">
-                                        <button type="submit" class="btn btn-primary"><c:choose><c:when test="${param.action eq 'getadd'}">Thêm </c:when><c:when test="${param.action eq 'getupdate'}">Chỉnh sửa </c:when><c:when test="${param.action eq 'add'}">Thêm </c:when><c:when test="${param.action eq 'update'}">Chỉnh sửa </c:when></c:choose>thành viên</legend></button>
+                                        <button type="submit" class="btn btn-primary"><c:choose><c:when test="${param.action eq 'getadd'}">Thêm </c:when><c:when test="${param.action eq 'getupdate'}">Chỉnh sửa </c:when><c:when test="${param.action eq 'add'}">Thêm </c:when><c:when test="${param.action eq 'update'}">Chỉnh sửa </c:when></c:choose>Tài khoản</legend></button>
                                     </div>
                                 </fieldset>
                             </form>

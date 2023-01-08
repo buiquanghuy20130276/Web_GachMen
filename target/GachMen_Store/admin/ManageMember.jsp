@@ -9,14 +9,13 @@
     UserSession u = UserSession.getUS(session);
     Collection<User> user = u.getUser();
     String username = u.getUserName();
-    System.out.println(username);
     if(username.equalsIgnoreCase("")||!user.iterator().next().accept("admin.index")) response.sendRedirect("http://localhost:8080/GachMen_Store_war/Home");
 %>
 <!DOCTYPE html>
 <html>
 
 <head>
-    <title>Quản lý sản phẩm</title>
+    <title>Quản lý thành viên</title>
     <!-- Bootstrap -->
     <meta charset="utf-8">
     <link href="${pageContext.request.contextPath}/admin/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">

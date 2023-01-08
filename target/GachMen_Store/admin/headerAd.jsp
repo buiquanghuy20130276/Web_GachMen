@@ -9,7 +9,6 @@
     Collection<User> user = u.getUser();
     String username = u.getUserName();
     String idUser= u.getUserId();
-    System.out.println(username);
     if(username.equalsIgnoreCase("")||!user.iterator().next().accept("admin.index")) response.sendRedirect("http://localhost:8080/project_BookStore/Home");
 %>
 <c:set var="username" value="<%=username%>"/>

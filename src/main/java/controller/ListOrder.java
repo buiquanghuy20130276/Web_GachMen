@@ -15,7 +15,7 @@ public class ListOrder extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         List<Order> listOrder = OrderService.getAllOrder();
         request.setAttribute("listO", listOrder);
-        request.getRequestDispatcher("admin/QuanLyDonHang.jsp").forward(request, response);
+        request.getRequestDispatcher("admin/ManageOrder.jsp").forward(request, response);
     }
 
     @Override
