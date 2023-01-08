@@ -16,7 +16,7 @@ public class SendToMail {
         props.put("mail.smtp.port", "587");
 
         String email_Admin = "buiquanghuy0029a@gmail.com";
-        String user_Admin = "TrueMart gach men cao cấp";
+        String user_Admin = "TrueMart gach men cao cap";
         String password = "xarryhegmxijvkju";
         Session session = Session.getInstance(props,
                 new Authenticator() {

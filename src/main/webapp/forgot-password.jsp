@@ -56,7 +56,7 @@
         <div class="container">
             <div class="breadcrumb">
                 <ul class="d-flex align-items-center">
-                    <li><a href="index.jsp">Trang chủ</a></li>
+                    <li><a href="Home">Trang chủ</a></li>
                     <li class="active"><a href="forgot-password.jsp">Quên mật khẩu</a></li>
                 </ul>
             </div>
@@ -83,6 +83,7 @@
                             </div>
                         </div>
                     </fieldset>
+                    <p style="color: blue"><%=request.getAttribute("msg")==null?"":request.getAttribute("msg")%></p>
                     <div class="buttons newsletter-input">
                         <div class="float-left float-sm-left">
                             <a class="customer-btn mr-20" href="login.jsp">Quay lại</a>

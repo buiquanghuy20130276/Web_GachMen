@@ -77,24 +77,7 @@
                 <div class="col-lg-3 order-2 order-lg-1">
                     <div class="sidebar">
                         <!-- Price Filter Options End -->
-                        <div class="sidebar-categorie mb-40">
-                            <h3 class="sidebar-title">Sắp xếp</h3>
-                            <ul class="sidbar-style" style="margin-left: 30px">
-                                <li class="form-check">
-                                    <a href="SortProduct?sort=A_Z&page=1">+ Tên gạch từ A-Z</a>
-                                </li>
-                                <li class="form-check">
-                                    <a href="SortProduct?sort=Z_A&page=1">+ Tên gạch từ Z-A</a>
-                                </li>
-                                <li class="form-check">
-                                    <a href="SortProduct?sort=price_increase&page=1">+ Giá từ thấp đến cao</a>
-                                </li>
-                                <li class="form-check">
-                                    <a href="SortProduct?sort=price_decrease&page=1">+ Giá từ cao đến thấp</a>
-                                </li>
 
-                            </ul>
-                        </div>
                         <!-- Sidebar Categorie Start -->
                         <div class="sidebar-categorie mb-40">
                             <h3 class="sidebar-title">Loại gạch</h3>
@@ -221,6 +204,7 @@
                                                     </div>
 
                                                 </div>
+                                                <c:set var="type" value="${p.category}"/>
                                             </c:forEach>
                                             <!-- Single Product End -->
                                             <!-- Single Product Start -->
@@ -242,18 +226,18 @@
                                         <c:forEach begin="1" end="${requestScope.numberPage}" var="i">
                                             <c:choose>
                                                 <c:when test="${requestScope.page eq i}">
-                                                    <li class="active"><a href="ListByType?page=${i}">${i}</a></li>
+                                                    <li class="active"><a href="ListByType?type=${type}&page=${i}">${i}</a></li>
                                                 </c:when>
                                                 <c:when test="${requestScope.page eq i}">
-                                                    <li class="active"><a href="ListByType?page=${i}">${i}</a></li>
+                                                    <li class="active"><a href="ListByType?type=${type}&page=${i}">${i}</a></li>
                                                 </c:when>
                                                 <c:otherwise>
-                                                    <li><a href="ListByType?page=${i}">${i}</a></li>
+                                                    <li><a href="ListByType?type=${type}&page=${i}">${i}</a></li>
                                                 </c:otherwise>
                                             </c:choose>
                                         </c:forEach>
                                         <c:if test="${requestScope.page < requestScope.numberPage}">
-                                            <li><a href="ListByType?page=${requestScope.page + 1}">»</a></li>
+                                            <li><a href="ListByType?type=${type}&page=${requestScope.page + 1}">»</a></li>
                                         </c:if>
 
                                     </ul>

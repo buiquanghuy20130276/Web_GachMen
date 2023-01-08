@@ -2,7 +2,6 @@ package controller;
 
 import bean.User;
 import service.UserService;
-import tool.MD5;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -42,7 +41,7 @@ public class Register extends HttpServlet {
         user.setUserName(uname);
         user.setEmail(email);
         user.setDay_register(timeRegister);
-        user.setPassWord(MD5.getMd5(pass));
+        user.setPassWord(pass);
         user.setPhone(phone);
         user.setIsAdmin(0);
         user.setStatus(1);

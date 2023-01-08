@@ -235,12 +235,12 @@
                                                 </div>
                                                 <div class="pro-actions">
                                                     <div class="actions-primary">
-                                                        <c:url value="/addCart?productID=${p.productID}"
+                                                        <c:url value="/addCart?productID=${p1.productID}"
                                                                var="addCart"/>
                                                         <a href="${addCart}" title="Thêm vào giỏ"> + Thêm vào giỏ</a>
                                                     </div>
                                                     <div class="actions-primary">
-                                                        <c:url value="/buyNow?productID=${p.productID}"
+                                                        <c:url value="/buyNow?productID=${p1.productID}"
                                                                var="buyNow"/>
                                                         <a href="${buyNow}" title="Mua ngay"> Mua ngay</a>
                                                     </div>
@@ -312,14 +312,14 @@
                                                 </div>
                                                 <div class="pro-actions">
                                                     <div class="actions-primary">
-                                                        <c:url value="/addCart?productID=${p.productID}"
+                                                        <c:url value="/addCart?productID=${p2.productID}"
                                                                var="addCart"/>
                                                         <a href="${addCart}" title="Thêm vào giỏ"> + Thêm vào giỏ</a>
                                                     </div>
                                                     <div class="actions-primary">
-                                                        <c:url value="/buyNow?productID=${p.productID}"
+                                                        <c:url value="/buyNow?productID=${p2.productID}"
                                                                var="buyNow"/>
-                                                        <a href="buyNow" title="Mua ngay"> Mua ngay</a>
+                                                        <a href="${buyNow}" title="Mua ngay"> Mua ngay</a>
                                                     </div>
 
                                                 </div>
