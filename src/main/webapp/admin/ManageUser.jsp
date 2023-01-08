@@ -9,14 +9,13 @@
     UserSession u = UserSession.getUS(session);
     Collection<User> user = u.getUser();
     String username = u.getUserName();
-    System.out.println(username);
     if(username.equalsIgnoreCase("")||!user.iterator().next().accept("admin.index")) response.sendRedirect("http://localhost:8080/GachMen_Store_war/Home");
 %>
 <!DOCTYPE html>
 <html>
 
 <head>
-    <title>Quản lý thành viên</title>
+    <title>Quản lý tài khoản</title>
     <!-- Bootstrap -->
     <meta charset="utf-8">
     <link href="admin/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
@@ -50,14 +49,14 @@
                 <!-- block -->
                 <div class="block">
                     <div class="navbar navbar-inner block-header">
-                        <div class="muted pull-left">Quản lý thành viên</div>
+                        <div class="muted pull-left">Quản lý tài khoản</div>
                     </div>
                     <div class="block-content collapse in">
                         <div class="span12">
                             <div class="table-toolbar">
                                 <div class="btn-group">
                                     <a href="AddOfUpdateUser?action=getadd">
-                                        <button class="btn btn-success">Thêm thành viên <i
+                                        <button class="btn btn-success">Thêm tài khoản <i
                                                 class="icon-plus icon-white"></i></button>
                                     </a>
                                 </div>

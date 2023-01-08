@@ -1,19 +1,6 @@
-<%--<%@ page import="entity.UserEntity" %>--%>
-<%--<%@ page import="entity.ProductEntity" %>--%>
-<%--<%@ page import="entity.ContactEntity" %>--%>
-<%--<%@ page import="entity.OrderEntity" %>&lt;%&ndash;--%>
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
-<%--    UserEntity userEntity= new UserEntity();--%>
-<%--    request.setAttribute("CountUser",userEntity.countUser());--%>
-<%--    ProductEntity productEntity = new ProductEntity();--%>
-<%--    request.setAttribute("CountProduct",productEntity.countProduct());--%>
-<%--    ContactEntity contactEntity = new ContactEntity();--%>
-<%--    request.setAttribute("CountContact",contactEntity.countContact());--%>
-<%--    OrderEntity orderEntity = new OrderEntity();--%>
-<%--    request.setAttribute("CountOrder",orderEntity.countOrder());--%>
-<%--%>--%>
 <div class="span3" id="sidebar">
     <ul class="nav nav-list bs-docs-sidenav nav-collapse collapse">
         <li>
