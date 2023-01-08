@@ -1,4 +1,4 @@
-package service;
+package controller;
 
 import tool.SendToMail;
 
@@ -14,15 +14,16 @@ import java.io.IOException;
 public class ForgetPassword extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        RequestDispatcher rd = request.getRequestDispatcher("forget-password.jsp");
-        rd.forward(request, response);
+
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String emailTo = request.getParameter("email");
-        String emailSuject = "Đặt lại mật khẩu";
-        String emailContect = "Vui lòng nhấn vào đường link sau để thay đổi mật khẩu: http://localhost:8080/Web_GachMen_war/reset-password.jsp ";
+        String emailSuject = "Reset password";
+        String emailContect = "Vui lòng nhấn vào đường link sau để thay đổi mật khẩu: http://localhost:8080/GachMen_Store_war/reset-password.jsp ";
         SendToMail.sendEmail(emailTo, emailSuject, emailContect);
+        request.setAttribute("msg","Vui lòng kiểm tra email để đổi mật khẩu");
+        request.getRequestDispatcher("forgot-password.jsp").forward(request,response);
     }
 }

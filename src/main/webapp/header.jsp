@@ -2,11 +2,7 @@
 <%@ page import="model.UserSession" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%
-    if (session.getAttribute("account") == null) {
-        response.sendRedirect("login.jsp");
-    }
-%>
+
 <% UserSession u = UserSession.getUS(session);
     int role = u.getRole();
 %>
@@ -20,7 +16,7 @@
             <div class="row align-items-center no-gutters">
                 <div class="col-lg-3 col-md-12">
                     <div class="logo mb-all-30">
-                        <a href="index.jsp"><img src="img\logo\logo.png" alt="logo-image"></a>
+                        <a href="Home"><img src="img\logo\logo.png" alt="logo-image"></a>
                     </div>
                 </div>
                 <!-- Categorie Search Box Start Here -->
@@ -88,7 +84,7 @@
 
                             </li>
 
-                            <li><a id="about" href="about.jsp">Giới thiệu</a></li>
+                            <li><a id="about" href="about">Giới thiệu</a></li>
                             <li><a id="contact" href="contact.jsp">Liên hệ</a></li>
                         </ul>
                     </nav>
@@ -105,7 +101,7 @@
                                 </li>
 
 
-                                <li><a href="about.jsp">Giới thiệu</a></li>
+                                <li><a href="about">Giới thiệu</a></li>
                                 <li><a href="contact.jsp">Liên hệ</a></li>
                             </ul>
                         </nav>
